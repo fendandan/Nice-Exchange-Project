@@ -7,7 +7,7 @@
 //
 
 #import "SWAppDelegate.h"
-
+#import "BaseShowViewController.h"
 @interface SWAppDelegate ()
 
 @end
@@ -15,8 +15,13 @@
 @implementation SWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+<<<<<<< HEAD
     // Override point for customization after application launch.
     
+=======
+    
+
+>>>>>>> 115e9a20dad7fbf31032dc6ef7641903a7b5d1de
     
     self.swWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.swWindow makeKeyAndVisible];
