@@ -7,7 +7,7 @@
 //
 
 #import "SWAppDelegate.h"
-
+#import "BaseShowViewController.h"
 @interface SWAppDelegate ()
 
 @end
@@ -16,9 +16,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
-    // Override point for customization after application launch.
-    
+
     
     return YES;
 }

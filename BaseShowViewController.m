@@ -1,31 +1,34 @@
 //
-//  ScrolleViewController.m
+//  BaseShowViewController.m
 //  NiceExchange
 //
-//  Created by lanou3g on 16/7/12.
+//  Created by Spacewalk on 16/7/12.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
-#import "ScrolleViewController.h"
+#import "BaseShowViewController.h"
 
-@interface ScrolleViewController ()
+@interface BaseShowViewController ()
 
-@property(nonatomic,strong)UIScrollView *scrollView;
+
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
-@implementation ScrolleViewController
+@implementation BaseShowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
+    self.scrollView.backgroundColor = [UIColor grayColor];
     
-//    self.scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen]];
+    [self.view addSubview:self.scrollView];
     
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 7, 0);
     
-    
-    
-    
+    self.scrollView.pagingEnabled = YES;
     
 }
 
