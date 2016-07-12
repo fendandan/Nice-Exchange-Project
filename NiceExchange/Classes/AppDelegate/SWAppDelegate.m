@@ -15,10 +15,13 @@
 @implementation SWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
     // Override point for customization after application launch.
     
+    
+    self.swWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.swWindow makeKeyAndVisible];
+    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:[BaseSwitchViewController new]];
+    [self.swWindow setRootViewController:sNC];
     
     return YES;
 }
