@@ -34,8 +34,6 @@
 		CCDA7E171D3528A000AA2AF3 /* BaseSwitchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseSwitchViewController.h; sourceTree = "<group>"; };
 		CCDA7E181D3528A000AA2AF3 /* BaseSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSwitchViewController.m; sourceTree = "<group>"; };
 		CCDA7E1A1D352E5D00AA2AF3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		D63E366D1D351FE0007E29A2 /* ScrolleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrolleViewController.h; sourceTree = "<group>"; };
-		D63E366E1D351FE0007E29A2 /* ScrolleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrolleViewController.m; sourceTree = "<group>"; };
 		D63E36701D352779007E29A2 /* BaseShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseShowViewController.h; path = ../../../../BaseShowViewController.h; sourceTree = "<group>"; };
 		D63E36711D352779007E29A2 /* BaseShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseShowViewController.m; path = ../../../../BaseShowViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,7 +297,6 @@
 			files = (
 				C278A9F51D351421007E3278 /* SWAppDelegate.m in Sources */,
 				CCDA7E191D3528A000AA2AF3 /* BaseSwitchViewController.m in Sources */,
-
 				C26DE3231D35254100730D6A /* BaseOrganViewController.m in Sources */,
 				C278A9F81D3516E4007E3278 /* BaseViewController.m in Sources */,
 				D63E36721D352779007E29A2 /* BaseShowViewController.m in Sources */,
