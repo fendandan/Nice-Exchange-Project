@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C26DE3231D35254100730D6A /* BaseOrganViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26DE3221D35254100730D6A /* BaseOrganViewController.m */; };
 		C278A9CE1D351117007E3278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C278A9CD1D351117007E3278 /* main.m */; };
 		C278A9D71D351117007E3278 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C278A9D51D351117007E3278 /* Main.storyboard */; };
 		C278A9D91D351117007E3278 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C278A9D81D351117007E3278 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C26DE3211D35254100730D6A /* BaseOrganViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseOrganViewController.h; sourceTree = "<group>"; };
+		C26DE3221D35254100730D6A /* BaseOrganViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseOrganViewController.m; sourceTree = "<group>"; };
 		C278A9C91D351116007E3278 /* NiceExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C278A9CD1D351117007E3278 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C278A9D61D351117007E3278 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				C278A9F71D3516E4007E3278 /* BaseViewController.m */,
 				D63E366D1D351FE0007E29A2 /* ScrolleViewController.h */,
 				D63E366E1D351FE0007E29A2 /* ScrolleViewController.m */,
+				C26DE3211D35254100730D6A /* BaseOrganViewController.h */,
+				C26DE3221D35254100730D6A /* BaseOrganViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +290,8 @@
 			files = (
 				C278A9F51D351421007E3278 /* SWAppDelegate.m in Sources */,
 				D63E366F1D351FE0007E29A2 /* ScrolleViewController.m in Sources */,
+				C26DE3231D35254100730D6A /* BaseOrganViewController.m in Sources */,
+
 				C278A9F81D3516E4007E3278 /* BaseViewController.m in Sources */,
 				C278A9CE1D351117007E3278 /* main.m in Sources */,
 			);
@@ -400,6 +407,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				INFOPLIST_FILE = NiceExchange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
