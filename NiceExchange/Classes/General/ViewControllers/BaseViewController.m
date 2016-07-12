@@ -2,7 +2,7 @@
 //  BaseViewController.m
 //  NiceExchange
 //
-//  Created by lanou3g on 16/7/12.
+//  Created by Spacewalk on 16/7/12.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
