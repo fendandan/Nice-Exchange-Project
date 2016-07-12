@@ -28,6 +28,7 @@
     UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:[BaseSwitchViewController new]];
     [self.swWindow setRootViewController:sNC];
     
+    
     return YES;
 }
 
