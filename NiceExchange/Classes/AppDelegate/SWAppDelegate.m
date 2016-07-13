@@ -21,7 +21,20 @@
     
     self.swWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.swWindow makeKeyAndVisible];
-    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:[BaseOrganViewController new]];
+    
+    RootViewController *rootVC = [[RootViewController alloc] init];
+    
+    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    
+    [rootVC addChildViewController:swNVCfir];
+    [rootVC addChildViewController:swNVCsec];
+    [rootVC addChildViewController:swNVCThr];
+    [rootVC addChildViewController:swNVCFou];
+    
+    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     [self.swWindow setRootViewController:sNC];
     
     

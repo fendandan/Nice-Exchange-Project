@@ -16,9 +16,20 @@
 		CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A676A1D35F758008AE01A /* BaseShowViewController.m */; };
 		CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A676C1D35F758008AE01A /* BaseSwitchViewController.m */; };
 		CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A676E1D35F758008AE01A /* BaseViewController.m */; };
-		CC5A67801D35F758008AE01A /* BaseOrganCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A67721D35F758008AE01A /* BaseOrganCollectionViewCell.m */; };
-		CC5A67811D35F758008AE01A /* BaseOrganCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67731D35F758008AE01A /* BaseOrganCollectionViewCell.xib */; };
 		CC5A67821D35F758008AE01A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A677A1D35F758008AE01A /* BaseModel.m */; };
+		CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8B71D361C25000A9B44 /* RootViewController.m */; };
+		CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8BF1D3622B6000A9B44 /* BaseOrganCollectionViewCell.m */; };
+		CC6EF8C41D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8C01D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib */; };
+		CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8C21D3622B6000A9B44 /* SWTabBar.m */; };
+		CC6EF8D51D362FA5000A9B44 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8CD1D362FA5000A9B44 /* Book.png */; };
+		CC6EF8D61D362FA5000A9B44 /* Book_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8CE1D362FA5000A9B44 /* Book_Selected.png */; };
+		CC6EF8D71D362FA5000A9B44 /* Fireworks.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8CF1D362FA5000A9B44 /* Fireworks.png */; };
+		CC6EF8D81D362FA5000A9B44 /* Fireworks_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8D01D362FA5000A9B44 /* Fireworks_Selected.png */; };
+		CC6EF8D91D362FA5000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8D11D362FA5000A9B44 /* Picture.png */; };
+		CC6EF8DA1D362FA5000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8D21D362FA5000A9B44 /* Picture_Selected.png */; };
+		CC6EF8DB1D362FA5000A9B44 /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8D31D362FA5000A9B44 /* User.png */; };
+		CC6EF8DC1D362FA5000A9B44 /* User_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8D41D362FA5000A9B44 /* User_Selected.png */; };
+		CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8DE1D36377C000A9B44 /* SWNavigationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,12 +49,26 @@
 		CC5A676C1D35F758008AE01A /* BaseSwitchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseSwitchViewController.m; sourceTree = "<group>"; };
 		CC5A676D1D35F758008AE01A /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		CC5A676E1D35F758008AE01A /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		CC5A67711D35F758008AE01A /* BaseOrganCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseOrganCollectionViewCell.h; sourceTree = "<group>"; };
-		CC5A67721D35F758008AE01A /* BaseOrganCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseOrganCollectionViewCell.m; sourceTree = "<group>"; };
-		CC5A67731D35F758008AE01A /* BaseOrganCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseOrganCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC5A67771D35F758008AE01A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		CC5A67791D35F758008AE01A /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		CC5A677A1D35F758008AE01A /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		CC6EF8B61D361C25000A9B44 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		CC6EF8B71D361C25000A9B44 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		CC6EF8BE1D3622B6000A9B44 /* BaseOrganCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseOrganCollectionViewCell.h; sourceTree = "<group>"; };
+		CC6EF8BF1D3622B6000A9B44 /* BaseOrganCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseOrganCollectionViewCell.m; sourceTree = "<group>"; };
+		CC6EF8C01D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseOrganCollectionViewCell.xib; sourceTree = "<group>"; };
+		CC6EF8C11D3622B6000A9B44 /* SWTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTabBar.h; sourceTree = "<group>"; };
+		CC6EF8C21D3622B6000A9B44 /* SWTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTabBar.m; sourceTree = "<group>"; };
+		CC6EF8CD1D362FA5000A9B44 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book.png; sourceTree = "<group>"; };
+		CC6EF8CE1D362FA5000A9B44 /* Book_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book_Selected.png; sourceTree = "<group>"; };
+		CC6EF8CF1D362FA5000A9B44 /* Fireworks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fireworks.png; sourceTree = "<group>"; };
+		CC6EF8D01D362FA5000A9B44 /* Fireworks_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fireworks_Selected.png; sourceTree = "<group>"; };
+		CC6EF8D11D362FA5000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
+		CC6EF8D21D362FA5000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
+		CC6EF8D31D362FA5000A9B44 /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
+		CC6EF8D41D362FA5000A9B44 /* User_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User_Selected.png; sourceTree = "<group>"; };
+		CC6EF8DD1D36377C000A9B44 /* SWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNavigationViewController.h; sourceTree = "<group>"; };
+		CC6EF8DE1D36377C000A9B44 /* SWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNavigationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +103,6 @@
 			children = (
 				CC5A67611D35F758008AE01A /* Classes */,
 				CC5A67531D35F71B008AE01A /* Main.storyboard */,
-				CC5A67561D35F71B008AE01A /* Assets.xcassets */,
-				CC5A67581D35F71B008AE01A /* LaunchScreen.storyboard */,
-				CC5A675B1D35F71B008AE01A /* Info.plist */,
 				CC5A674A1D35F71B008AE01A /* Supporting Files */,
 			);
 			path = NiceExchange;
@@ -89,6 +111,9 @@
 		CC5A674A1D35F71B008AE01A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC5A67561D35F71B008AE01A /* Assets.xcassets */,
+				CC5A67581D35F71B008AE01A /* LaunchScreen.storyboard */,
+				CC5A675B1D35F71B008AE01A /* Info.plist */,
 				CC5A674B1D35F71B008AE01A /* main.m */,
 			);
 			name = "Supporting Files";
@@ -101,6 +126,10 @@
 				CC5A67651D35F758008AE01A /* General */,
 				CC5A67781D35F758008AE01A /* Models */,
 				CC5A67761D35F758008AE01A /* Macros */,
+				CC6EF8C61D362F01000A9B44 /* Helpers */,
+				CC6EF8C71D362F01000A9B44 /* Resources */,
+				CC6EF8C81D362F01000A9B44 /* Scenes */,
+				CC6EF8CB1D362F01000A9B44 /* Vendors */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -118,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				CC5A67661D35F758008AE01A /* ViewControllers */,
-				CC5A67741D35F758008AE01A /* Views */,
+				CC6EF8BC1D3622B6000A9B44 /* Views */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -126,6 +155,10 @@
 		CC5A67661D35F758008AE01A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC6EF8B61D361C25000A9B44 /* RootViewController.h */,
+				CC6EF8B71D361C25000A9B44 /* RootViewController.m */,
+				CC6EF8DD1D36377C000A9B44 /* SWNavigationViewController.h */,
+				CC6EF8DE1D36377C000A9B44 /* SWNavigationViewController.m */,
 				CC5A67671D35F758008AE01A /* BaseOrganViewController.h */,
 				CC5A67681D35F758008AE01A /* BaseOrganViewController.m */,
 				CC5A67691D35F758008AE01A /* BaseShowViewController.h */,
@@ -134,42 +167,8 @@
 				CC5A676C1D35F758008AE01A /* BaseSwitchViewController.m */,
 				CC5A676D1D35F758008AE01A /* BaseViewController.h */,
 				CC5A676E1D35F758008AE01A /* BaseViewController.m */,
-				CC5A676F1D35F758008AE01A /* Views */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		CC5A676F1D35F758008AE01A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CC5A67701D35F758008AE01A /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CC5A67701D35F758008AE01A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				CC5A67711D35F758008AE01A /* BaseOrganCollectionViewCell.h */,
-				CC5A67721D35F758008AE01A /* BaseOrganCollectionViewCell.m */,
-				CC5A67731D35F758008AE01A /* BaseOrganCollectionViewCell.xib */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		CC5A67741D35F758008AE01A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CC5A67751D35F758008AE01A /* Cells */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CC5A67751D35F758008AE01A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		CC5A67761D35F758008AE01A /* Macros */ = {
@@ -187,6 +186,86 @@
 				CC5A677A1D35F758008AE01A /* BaseModel.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CC6EF8BC1D3622B6000A9B44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8BD1D3622B6000A9B44 /* Cells */,
+				CC6EF8C11D3622B6000A9B44 /* SWTabBar.h */,
+				CC6EF8C21D3622B6000A9B44 /* SWTabBar.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC6EF8BD1D3622B6000A9B44 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8BE1D3622B6000A9B44 /* BaseOrganCollectionViewCell.h */,
+				CC6EF8BF1D3622B6000A9B44 /* BaseOrganCollectionViewCell.m */,
+				CC6EF8C01D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CC6EF8C61D362F01000A9B44 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CC6EF8C71D362F01000A9B44 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8CC1D362FA5000A9B44 /* tabBarImages */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CC6EF8C81D362F01000A9B44 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8C91D362F01000A9B44 /* ViewControllers */,
+				CC6EF8CA1D362F01000A9B44 /* Views */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CC6EF8C91D362F01000A9B44 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CC6EF8CA1D362F01000A9B44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC6EF8CB1D362F01000A9B44 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		CC6EF8CC1D362FA5000A9B44 /* tabBarImages */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8CD1D362FA5000A9B44 /* Book.png */,
+				CC6EF8CE1D362FA5000A9B44 /* Book_Selected.png */,
+				CC6EF8CF1D362FA5000A9B44 /* Fireworks.png */,
+				CC6EF8D01D362FA5000A9B44 /* Fireworks_Selected.png */,
+				CC6EF8D11D362FA5000A9B44 /* Picture.png */,
+				CC6EF8D21D362FA5000A9B44 /* Picture_Selected.png */,
+				CC6EF8D31D362FA5000A9B44 /* User.png */,
+				CC6EF8D41D362FA5000A9B44 /* User_Selected.png */,
+			);
+			path = tabBarImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +326,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5A675A1D35F71B008AE01A /* LaunchScreen.storyboard in Resources */,
-				CC5A67811D35F758008AE01A /* BaseOrganCollectionViewCell.xib in Resources */,
+				CC6EF8C41D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib in Resources */,
+				CC6EF8D51D362FA5000A9B44 /* Book.png in Resources */,
+				CC6EF8DC1D362FA5000A9B44 /* User_Selected.png in Resources */,
+				CC6EF8D61D362FA5000A9B44 /* Book_Selected.png in Resources */,
+				CC6EF8D71D362FA5000A9B44 /* Fireworks.png in Resources */,
+				CC6EF8DB1D362FA5000A9B44 /* User.png in Resources */,
+				CC6EF8D81D362FA5000A9B44 /* Fireworks_Selected.png in Resources */,
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
 				CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */,
+				CC6EF8D91D362FA5000A9B44 /* Picture.png in Resources */,
+				CC6EF8DA1D362FA5000A9B44 /* Picture_Selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +348,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
-				CC5A67801D35F758008AE01A /* BaseOrganCollectionViewCell.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
+				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
+				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
+				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
+				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CC5A674C1D35F71B008AE01A /* main.m in Sources */,

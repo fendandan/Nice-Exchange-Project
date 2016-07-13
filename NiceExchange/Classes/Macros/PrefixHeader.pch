@@ -23,6 +23,9 @@
 
 #define SWLogFunc YCLog(@"%s",__func__)
 
+#import "RootViewController.h"
+#import "SWTabBar.h"
+#import "SWNavigationViewController.h"
 
 #import "BaseOrganViewController.h"
 #import "BaseSwitchViewController.h"
