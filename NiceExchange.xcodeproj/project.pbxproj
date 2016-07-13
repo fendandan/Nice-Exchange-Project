@@ -17,8 +17,12 @@
 		CC5A66E81D35D3B3008AE01A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66D61D35D3B3008AE01A /* BaseViewController.m */; };
 		CC5A66E91D35D3B3008AE01A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66DD1D35D3B3008AE01A /* BaseModel.m */; };
 		CC5A66EC1D35D5DB008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A66EA1D35D5DB008AE01A /* Main.storyboard */; };
+<<<<<<< HEAD
+		CCFFBF101D35E25300492E1A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFFBF0F1D35E25300492E1A /* 1.png */; };
+=======
 		CC5A66F11D35DCE5008AE01A /* BaseOrganCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66EF1D35DCE5008AE01A /* BaseOrganCollectionViewCell.m */; };
 		CC5A66F21D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5A66F01D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib */; };
+>>>>>>> 77715e01c6d265e8a8a72efbb9c98446684b1143
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
