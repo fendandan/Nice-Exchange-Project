@@ -23,19 +23,20 @@
             button.backgroundColor = [UIColor blackColor];
             [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:button];
+          
         }
+           self.currebtSelectedItem = items[0];
         self.currentSelected = 0;
-        self.currebtSelectedItem = items[0];
+       
         self.allItems = items;
         self.userInteractionEnabled = NO;
     }
     return self;
 }
-- (void)layoutSubviews {
-    
-}
+
 
 - (void)buttonClicked:(UIButton *)button {
+
     self.currebtSelectedItem = button;
     for (int i = 0; i < self.allItems.count; i ++) {
         UIButton *tempButton = (UIButton *)self.allItems[i];
