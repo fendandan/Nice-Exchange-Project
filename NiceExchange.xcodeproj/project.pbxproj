@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */; };
 		CC5A674C1D35F71B008AE01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A674B1D35F71B008AE01A /* main.m */; };
 		CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67531D35F71B008AE01A /* Main.storyboard */; };
 		CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67561D35F71B008AE01A /* Assets.xcassets */; };
@@ -30,9 +31,15 @@
 		CC6EF8EE1D364018000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E61D364018000A9B44 /* Picture_Selected.png */; };
 		CC6EF8EF1D364018000A9B44 /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E71D364018000A9B44 /* User.png */; };
 		CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E81D364018000A9B44 /* User_Selected.png */; };
+		CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F31D365AE0000A9B44 /* BaseRequest.m */; };
+		CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */; };
+		CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.release.xcconfig"; sourceTree = "<group>"; };
+		544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiceExchange.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.debug.xcconfig"; sourceTree = "<group>"; };
 		CC5A67471D35F71B008AE01A /* NiceExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5A674B1D35F71B008AE01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5A67541D35F71B008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -69,6 +76,12 @@
 		CC6EF8E61D364018000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
 		CC6EF8E71D364018000A9B44 /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
 		CC6EF8E81D364018000A9B44 /* User_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User_Selected.png; sourceTree = "<group>"; };
+		CC6EF8F21D365AE0000A9B44 /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
+		CC6EF8F31D365AE0000A9B44 /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
+		CC6EF8F81D365E31000A9B44 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
+		CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
+		CC6EF8FC1D365F84000A9B44 /* RequestUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
+		CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +89,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79C9667793D08D28649D7C38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E5BCBF515F530F89BF9A651 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */,
+				4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CC5A673E1D35F71B008AE01A = {
 			isa = PBXGroup;
 			children = (
 				CC5A67491D35F71B008AE01A /* NiceExchange */,
 				CC5A67481D35F71B008AE01A /* Products */,
+				7E5BCBF515F530F89BF9A651 /* Pods */,
+				79C9667793D08D28649D7C38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +155,7 @@
 		CC5A67611D35F758008AE01A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CC6EF8FB1D365F6A000A9B44 /* Const */,
 				CC5A67621D35F758008AE01A /* AppDelegate */,
 				CC5A67651D35F758008AE01A /* General */,
 				CC5A67781D35F758008AE01A /* Models */,
@@ -211,6 +245,7 @@
 		CC6EF8C61D362F01000A9B44 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CC6EF8F11D365AC5000A9B44 /* Request */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -249,6 +284,7 @@
 		CC6EF8CB1D362F01000A9B44 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -268,6 +304,25 @@
 			path = tabBarImages;
 			sourceTree = "<group>";
 		};
+		CC6EF8F11D365AC5000A9B44 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8F21D365AE0000A9B44 /* BaseRequest.h */,
+				CC6EF8F31D365AE0000A9B44 /* BaseRequest.m */,
+				CC6EF8F81D365E31000A9B44 /* NetWorkRequest.h */,
+				CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CC6EF8FB1D365F6A000A9B44 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				CC6EF8FC1D365F84000A9B44 /* RequestUrl.h */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -275,9 +330,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC5A675E1D35F71B008AE01A /* Build configuration list for PBXNativeTarget "NiceExchange" */;
 			buildPhases = (
+				36D7BA0FAA52115AEDACB14D /* Check Pods Manifest.lock */,
 				CC5A67431D35F71B008AE01A /* Sources */,
 				CC5A67441D35F71B008AE01A /* Frameworks */,
 				CC5A67451D35F71B008AE01A /* Resources */,
+				F265D1BC376D17D172F43241 /* Embed Pods Frameworks */,
+				6696A65873B87E0833A3E6BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -342,18 +400,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		36D7BA0FAA52115AEDACB14D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6696A65873B87E0833A3E6BD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F265D1BC376D17D172F43241 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CC5A67431D35F71B008AE01A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
+				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
+				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
+				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
@@ -467,6 +576,7 @@
 		};
 		CC5A675F1D35F71B008AE01A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -480,6 +590,7 @@
 		};
 		CC5A67601D35F71B008AE01A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
