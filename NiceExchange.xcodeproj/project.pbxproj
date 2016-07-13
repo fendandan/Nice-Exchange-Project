@@ -17,6 +17,7 @@
 		CC5A66E81D35D3B3008AE01A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66D61D35D3B3008AE01A /* BaseViewController.m */; };
 		CC5A66E91D35D3B3008AE01A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66DD1D35D3B3008AE01A /* BaseModel.m */; };
 		CC5A66EC1D35D5DB008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A66EA1D35D5DB008AE01A /* Main.storyboard */; };
+		CCFFBF101D35E25300492E1A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFFBF0F1D35E25300492E1A /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		CC5A66DC1D35D3B3008AE01A /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		CC5A66DD1D35D3B3008AE01A /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		CC5A66EB1D35D5DB008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCFFBF0F1D35E25300492E1A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				CC5A66D21D35D3B3008AE01A /* BaseShowViewController.m */,
 				CC5A66D31D35D3B3008AE01A /* BaseSwitchViewController.h */,
 				CC5A66D41D35D3B3008AE01A /* BaseSwitchViewController.m */,
+				CCFFBF0F1D35E25300492E1A /* 1.png */,
 				CC5A66D51D35D3B3008AE01A /* BaseViewController.h */,
 				CC5A66D61D35D3B3008AE01A /* BaseViewController.m */,
 			);
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5A66EC1D35D5DB008AE01A /* Main.storyboard in Resources */,
+				CCFFBF101D35E25300492E1A /* 1.png in Resources */,
 				CC5A66C01D35D388008AE01A /* LaunchScreen.storyboard in Resources */,
 				CC5A66BD1D35D388008AE01A /* Assets.xcassets in Resources */,
 			);
@@ -418,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceExchange/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = NiceExchange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -430,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NiceExchange/Classes/Macros/PrefixHeader.pch";
 				INFOPLIST_FILE = NiceExchange/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -457,6 +463,7 @@
 				CC5A66C61D35D388008AE01A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
