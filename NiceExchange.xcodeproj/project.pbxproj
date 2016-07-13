@@ -34,6 +34,7 @@
 		CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F31D365AE0000A9B44 /* BaseRequest.m */; };
 		CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */; };
 		CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */; };
+		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,8 @@
 		CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		CC6EF8FC1D365F84000A9B44 /* RequestUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
 		CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		CC6EF8FF1D366409000A9B44 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 		CC6EF8C91D362F01000A9B44 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
+				CC6EF9001D366409000A9B44 /* MyViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
+				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
