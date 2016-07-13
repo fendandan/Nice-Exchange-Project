@@ -100,10 +100,10 @@
 				CC5A67621D35F758008AE01A /* AppDelegate */,
 				CC5A67651D35F758008AE01A /* General */,
 				CC5A67781D35F758008AE01A /* Models */,
-				CC5A67941D35FF9A008AE01A /* Helpers */,
-				CC5A67951D35FF9A008AE01A /* Resources */,
-				CC5A67961D35FF9A008AE01A /* Scenes */,
-				CC5A67991D35FF9A008AE01A /* Vendors */,
+                CC5A67941D35FF9A008AE01A /* Helpers */,
+                CC5A67951D35FF9A008AE01A /* Resources */,
+                CC5A67961D35FF9A008AE01A /* Scenes */,
+                CC5A67991D35FF9A008AE01A /* Vendors */,
 				CC5A67761D35F758008AE01A /* Macros */,
 			);
 			path = Classes;
@@ -191,50 +191,6 @@
 				CC5A677A1D35F758008AE01A /* BaseModel.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CC5A67941D35FF9A008AE01A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		CC5A67951D35FF9A008AE01A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		CC5A67961D35FF9A008AE01A /* Scenes */ = {
-			isa = PBXGroup;
-			children = (
-				CC5A67971D35FF9A008AE01A /* ViewControllers */,
-				CC5A67981D35FF9A008AE01A /* Views */,
-			);
-			path = Scenes;
-			sourceTree = "<group>";
-		};
-		CC5A67971D35FF9A008AE01A /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		CC5A67981D35FF9A008AE01A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CC5A67991D35FF9A008AE01A /* Vendors */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
