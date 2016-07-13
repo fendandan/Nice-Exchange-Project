@@ -100,10 +100,6 @@
 				CC5A67621D35F758008AE01A /* AppDelegate */,
 				CC5A67651D35F758008AE01A /* General */,
 				CC5A67781D35F758008AE01A /* Models */,
-                CC5A67941D35FF9A008AE01A /* Helpers */,
-                CC5A67951D35FF9A008AE01A /* Resources */,
-                CC5A67961D35FF9A008AE01A /* Scenes */,
-                CC5A67991D35FF9A008AE01A /* Vendors */,
 				CC5A67761D35F758008AE01A /* Macros */,
 			);
 			path = Classes;
