@@ -28,6 +28,8 @@
 #import "BaseSwitchViewController.h"
 #import "BaseShowViewController.h"
 
+#import "BaseOrganCollectionViewCell.h"
+
 
 
 // Include any system framework and library headers here that should be included in all compilation units.
