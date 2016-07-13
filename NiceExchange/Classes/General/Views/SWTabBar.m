@@ -22,18 +22,19 @@
             button.frame = CGRectMake(i * width + 30, 0, 32, 32);
             [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:button];
+          
         }
+           self.currebtSelectedItem = items[0];
         self.currentSelected = 0;
-        self.currebtSelectedItem = items[0];
+       
         self.allItems = items;
     }
     return self;
 }
-- (void)layoutSubviews {
-    
-}
+
 
 - (void)buttonClicked:(UIButton *)button {
+
     self.currebtSelectedItem = button;
     for (int i = 0; i < self.allItems.count; i ++) {
         UIButton *tempButton = (UIButton *)self.allItems[i];
