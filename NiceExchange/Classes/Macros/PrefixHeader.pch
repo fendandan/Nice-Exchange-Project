@@ -1,0 +1,36 @@
+//
+//  PrefixHeader.pch
+//  NiceExchange
+//
+//  Created by Spacewalk on 16/7/12.
+//  Copyright © 2016年 Spacewalk. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define kColor arc4random()%256/255.0
+#define kScreenWidth    [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight   [UIScreen mainScreen].bounds.size.height
+#define kSelfWidth self.bounds.size.width
+#define kSelfHeight self.bounds.size.height
+
+#ifdef DEBUG
+#define SWLog(...) NSLog(__VA_ARGS__)
+#else
+#define SWLog(...)
+#endif
+
+#define SWLogFunc YCLog(@"%s",__func__)
+
+
+#import "BaseOrganViewController.h"
+#import "BaseSwitchViewController.h"
+#import "BaseShowViewController.h"
+
+#import "BaseOrganCollectionViewCell.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
