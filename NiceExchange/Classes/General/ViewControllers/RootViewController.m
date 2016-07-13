@@ -34,7 +34,7 @@
     
     UIButton *btn = buttons[0];
     btn.selected = YES;
-    [self.tabBar addSubview:swTabBar];
+//    [self.tabBar addSubview:swTabBar];
     
 }
 
@@ -42,7 +42,9 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_Selected",imageName]] forState:UIControlStateSelected];
-    //    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+//    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     [button setTitle:title forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:11];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;

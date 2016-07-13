@@ -20,12 +20,14 @@
             UIButton *button = (UIButton *)items[i];
             CGFloat width = kSelfWidth / items.count;
             button.frame = CGRectMake(i * width + 30, 0, 32, 32);
+            button.backgroundColor = [UIColor blackColor];
             [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:button];
         }
         self.currentSelected = 0;
         self.currebtSelectedItem = items[0];
         self.allItems = items;
+        self.userInteractionEnabled = NO;
     }
     return self;
 }
