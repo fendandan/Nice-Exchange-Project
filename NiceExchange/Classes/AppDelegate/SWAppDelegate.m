@@ -24,7 +24,9 @@
     
     RootViewController *rootVC = [[RootViewController alloc] init];
     
-    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    UIViewController * vc = [UIViewController new];
+    vc.view.backgroundColor = [UIColor redColor];
+    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:vc];
     SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];

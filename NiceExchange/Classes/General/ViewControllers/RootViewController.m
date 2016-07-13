@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController ()<SWTabBarDelegate>
 
 @end
 
@@ -30,6 +30,8 @@
     NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"User" title:@"我的"]];
     
     SWTabBar *swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, 0, kScreenWidth, 49)];
+    swTabBar.swDelegete = self; // 代理
+    
     UIButton *btn = buttons[0];
     btn.selected = YES;
     [self.tabBar addSubview:swTabBar];
@@ -46,7 +48,7 @@
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor colorWithRed:38.0/255 green:217.0/255 blue:165.0/255 alpha:1] forState:UIControlStateSelected];
-    button.titleEdgeInsets = UIEdgeInsetsMake(44, 0, 0, 0);
+    button.titleEdgeInsets = UIEdgeInsetsMake(46, 0, 0, 0);
     
     return button;
 }
@@ -54,6 +56,8 @@
 #pragma mark --- SWTabBarDelegate ---
 - (void)swTabBarItemDidClicked:(SWTabBar *)tabBar {
     self.selectedIndex = tabBar.currentSelected;
+    UIButton *b = (UIButton *)tabBar.items[tabBar.currentSelected];
+    SWLog(@"%d --- %@",b.selected, b);
 }
 /*
 #pragma mark - Navigation
