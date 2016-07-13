@@ -62,10 +62,7 @@
 
 #pragma mark --- SWTabBarDelegate ---
 - (void)swTabBarItemDidClicked:(SWTabBar *)tabBar {
-    tabBar = _swtabbar;
     self.selectedIndex = _swtabbar.currentSelected;
-    UIButton *b = (UIButton *)_swtabbar.items[_swtabbar.currentSelected];
-    SWLog(@"%d --- %@",b.selected, b);
 }
 
 /*
