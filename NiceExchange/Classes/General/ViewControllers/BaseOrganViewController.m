@@ -88,7 +88,7 @@
     if (indexPath.item == 1) {
         return NO;
     }
-    NSLog(@"%ld",indexPath.item);
+    SWLog(@"%ld",indexPath.item);
     return YES;
 }
 
