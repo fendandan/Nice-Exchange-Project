@@ -17,11 +17,13 @@
     
     // Override point for customization after application launch.
     
-    
-    
     self.swWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.swWindow makeKeyAndVisible];
-    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:[BaseSwitchViewController new]];
+<<<<<<< HEAD
+    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:[BaseShowViewController new]];
+=======
+    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:[BaseOrganViewController new]];
+>>>>>>> 77715e01c6d265e8a8a72efbb9c98446684b1143
     [self.swWindow setRootViewController:sNC];
     
     

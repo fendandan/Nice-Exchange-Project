@@ -10,4 +10,9 @@
 
 @interface BaseShowViewController : BaseViewController
 
+
+//- (UIScrollView *)addviewBasedData:(NSArray *)data;
+
+
+
 @end
