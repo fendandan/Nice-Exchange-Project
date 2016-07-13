@@ -19,7 +19,7 @@
         for (int i = 0; i < items.count; i ++) {
             UIButton *button = (UIButton *)items[i];
             CGFloat width = kSelfWidth / items.count;
-            button.frame = CGRectMake(i * width + 30, 0, width, 32);
+            button.frame = CGRectMake(i * width + 30, 0, 32, 32);
             [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:button];
           
