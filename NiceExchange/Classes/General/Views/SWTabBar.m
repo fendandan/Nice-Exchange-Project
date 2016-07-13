@@ -24,11 +24,9 @@
             [self addSubview:button];
           
         }
-           self.currebtSelectedItem = items[0];
+        self.currebtSelectedItem = items[0];
         self.currentSelected = 0;
-       
         self.allItems = items;
-        self.userInteractionEnabled = NO;
     }
     return self;
 }
