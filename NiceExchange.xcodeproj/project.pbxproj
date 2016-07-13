@@ -27,14 +27,14 @@
 		CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E21D364018000A9B44 /* Book_Selected.png */; };
 		CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E31D364018000A9B44 /* Fireworks.png */; };
 		CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E41D364018000A9B44 /* Fireworks_Selected.png */; };
-		CC6EF8ED1D364018000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E51D364018000A9B44 /* Picture.png */; };
-		CC6EF8EE1D364018000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E61D364018000A9B44 /* Picture_Selected.png */; };
 		CC6EF8EF1D364018000A9B44 /* User.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E71D364018000A9B44 /* User.png */; };
 		CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E81D364018000A9B44 /* User_Selected.png */; };
 		CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F31D365AE0000A9B44 /* BaseRequest.m */; };
 		CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */; };
 		CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */; };
 		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
+		CC6EF9041D368561000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9021D368561000A9B44 /* Picture.png */; };
+		CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9031D368561000A9B44 /* Picture_Selected.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,8 +73,6 @@
 		CC6EF8E21D364018000A9B44 /* Book_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Book_Selected.png; sourceTree = "<group>"; };
 		CC6EF8E31D364018000A9B44 /* Fireworks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fireworks.png; sourceTree = "<group>"; };
 		CC6EF8E41D364018000A9B44 /* Fireworks_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fireworks_Selected.png; sourceTree = "<group>"; };
-		CC6EF8E51D364018000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
-		CC6EF8E61D364018000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
 		CC6EF8E71D364018000A9B44 /* User.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User.png; sourceTree = "<group>"; };
 		CC6EF8E81D364018000A9B44 /* User_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = User_Selected.png; sourceTree = "<group>"; };
 		CC6EF8F21D365AE0000A9B44 /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
@@ -85,6 +83,8 @@
 		CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		CC6EF8FF1D366409000A9B44 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		CC6EF9021D368561000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
+		CC6EF9031D368561000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,8 +301,8 @@
 				CC6EF8E21D364018000A9B44 /* Book_Selected.png */,
 				CC6EF8E31D364018000A9B44 /* Fireworks.png */,
 				CC6EF8E41D364018000A9B44 /* Fireworks_Selected.png */,
-				CC6EF8E51D364018000A9B44 /* Picture.png */,
-				CC6EF8E61D364018000A9B44 /* Picture_Selected.png */,
+				CC6EF9021D368561000A9B44 /* Picture.png */,
+				CC6EF9031D368561000A9B44 /* Picture_Selected.png */,
 				CC6EF8E71D364018000A9B44 /* User.png */,
 				CC6EF8E81D364018000A9B44 /* User_Selected.png */,
 			);
@@ -395,11 +395,11 @@
 				CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
 				CC6EF8EF1D364018000A9B44 /* User.png in Resources */,
+				CC6EF9041D368561000A9B44 /* Picture.png in Resources */,
 				CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */,
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
 				CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */,
-				CC6EF8ED1D364018000A9B44 /* Picture.png in Resources */,
-				CC6EF8EE1D364018000A9B44 /* Picture_Selected.png in Resources */,
+				CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
