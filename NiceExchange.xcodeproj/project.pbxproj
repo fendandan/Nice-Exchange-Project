@@ -147,14 +147,14 @@
 		CC5A66CE1D35D3B3008AE01A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CC5A66CF1D35D3B3008AE01A /* BaseOrganViewController.h */,
-				CC5A66D01D35D3B3008AE01A /* BaseOrganViewController.m */,
+				CC5A66D51D35D3B3008AE01A /* BaseViewController.h */,
+				CC5A66D61D35D3B3008AE01A /* BaseViewController.m */,
 				CC5A66D11D35D3B3008AE01A /* BaseShowViewController.h */,
 				CC5A66D21D35D3B3008AE01A /* BaseShowViewController.m */,
 				CC5A66D31D35D3B3008AE01A /* BaseSwitchViewController.h */,
 				CC5A66D41D35D3B3008AE01A /* BaseSwitchViewController.m */,
-				CC5A66D51D35D3B3008AE01A /* BaseViewController.h */,
-				CC5A66D61D35D3B3008AE01A /* BaseViewController.m */,
+				CC5A66CF1D35D3B3008AE01A /* BaseOrganViewController.h */,
+				CC5A66D01D35D3B3008AE01A /* BaseOrganViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
