@@ -17,7 +17,12 @@
 		CC5A66E81D35D3B3008AE01A /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66D61D35D3B3008AE01A /* BaseViewController.m */; };
 		CC5A66E91D35D3B3008AE01A /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66DD1D35D3B3008AE01A /* BaseModel.m */; };
 		CC5A66EC1D35D5DB008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A66EA1D35D5DB008AE01A /* Main.storyboard */; };
+<<<<<<< HEAD
 		CCFFBF101D35E25300492E1A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CCFFBF0F1D35E25300492E1A /* 1.png */; };
+=======
+		CC5A66F11D35DCE5008AE01A /* BaseOrganCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A66EF1D35DCE5008AE01A /* BaseOrganCollectionViewCell.m */; };
+		CC5A66F21D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5A66F01D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib */; };
+>>>>>>> 77715e01c6d265e8a8a72efbb9c98446684b1143
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +45,13 @@
 		CC5A66DC1D35D3B3008AE01A /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		CC5A66DD1D35D3B3008AE01A /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		CC5A66EB1D35D5DB008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		CCFFBF0F1D35E25300492E1A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+=======
+		CC5A66EE1D35DCE5008AE01A /* BaseOrganCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseOrganCollectionViewCell.h; sourceTree = "<group>"; };
+		CC5A66EF1D35DCE5008AE01A /* BaseOrganCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseOrganCollectionViewCell.m; sourceTree = "<group>"; };
+		CC5A66F01D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseOrganCollectionViewCell.xib; sourceTree = "<group>"; };
+>>>>>>> 77715e01c6d265e8a8a72efbb9c98446684b1143
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,15 +155,20 @@
 		CC5A66CE1D35D3B3008AE01A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CC5A66CF1D35D3B3008AE01A /* BaseOrganViewController.h */,
-				CC5A66D01D35D3B3008AE01A /* BaseOrganViewController.m */,
+				CC5A66D51D35D3B3008AE01A /* BaseViewController.h */,
+				CC5A66D61D35D3B3008AE01A /* BaseViewController.m */,
 				CC5A66D11D35D3B3008AE01A /* BaseShowViewController.h */,
 				CC5A66D21D35D3B3008AE01A /* BaseShowViewController.m */,
 				CC5A66D31D35D3B3008AE01A /* BaseSwitchViewController.h */,
 				CC5A66D41D35D3B3008AE01A /* BaseSwitchViewController.m */,
+<<<<<<< HEAD
 				CCFFBF0F1D35E25300492E1A /* 1.png */,
 				CC5A66D51D35D3B3008AE01A /* BaseViewController.h */,
 				CC5A66D61D35D3B3008AE01A /* BaseViewController.m */,
+=======
+				CC5A66CF1D35D3B3008AE01A /* BaseOrganViewController.h */,
+				CC5A66D01D35D3B3008AE01A /* BaseOrganViewController.m */,
+>>>>>>> 77715e01c6d265e8a8a72efbb9c98446684b1143
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,6 +176,7 @@
 		CC5A66D71D35D3B3008AE01A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC5A66ED1D35DCD3008AE01A /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +249,16 @@
 			path = Vendors;
 			sourceTree = "<group>";
 		};
+		CC5A66ED1D35DCD3008AE01A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC5A66EE1D35DCE5008AE01A /* BaseOrganCollectionViewCell.h */,
+				CC5A66EF1D35DCE5008AE01A /* BaseOrganCollectionViewCell.m */,
+				CC5A66F01D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,7 +318,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5A66EC1D35D5DB008AE01A /* Main.storyboard in Resources */,
+<<<<<<< HEAD
 				CCFFBF101D35E25300492E1A /* 1.png in Resources */,
+=======
+				CC5A66F21D35DCE5008AE01A /* BaseOrganCollectionViewCell.xib in Resources */,
+>>>>>>> 77715e01c6d265e8a8a72efbb9c98446684b1143
 				CC5A66C01D35D388008AE01A /* LaunchScreen.storyboard in Resources */,
 				CC5A66BD1D35D388008AE01A /* Assets.xcassets in Resources */,
 			);
@@ -305,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC5A66E71D35D3B3008AE01A /* BaseSwitchViewController.m in Sources */,
+				CC5A66F11D35DCE5008AE01A /* BaseOrganCollectionViewCell.m in Sources */,
 				CC5A66E81D35D3B3008AE01A /* BaseViewController.m in Sources */,
 				CC5A66E41D35D3B3008AE01A /* SWAppDelegate.m in Sources */,
 				CC5A66E91D35D3B3008AE01A /* BaseModel.m in Sources */,
