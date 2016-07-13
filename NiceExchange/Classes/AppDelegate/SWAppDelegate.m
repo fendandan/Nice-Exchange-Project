@@ -26,8 +26,8 @@
     
     UIViewController * vc = [UIViewController new];
     vc.view.backgroundColor = [UIColor redColor];
-    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:vc];
-    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[BaseOrganViewController new]];
+    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[BaseMusicViewController new]];
     SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     

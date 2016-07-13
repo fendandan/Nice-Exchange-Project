@@ -6,20 +6,36 @@
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
-#import "BaseShowViewController.h"
+#import "BaseMusicViewController.h"
 
-@interface BaseShowViewController ()
-
+@interface BaseMusicViewController ()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
+
+
 @end
 
-@implementation BaseShowViewController
+@implementation BaseMusicViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
+    [self addScrollView];//添加滚动视图
+    
+   
+    
+    
+    
+    
+    
+}
+
+
+//添加 scrollView
+- (void)addScrollView
+{
     self.scrollView = [[UIScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     self.scrollView.backgroundColor = [UIColor grayColor];
@@ -30,7 +46,24 @@
     
     self.scrollView.pagingEnabled = YES;
     
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

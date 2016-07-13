@@ -21,15 +21,18 @@
     [super viewDidLoad];
     self.title = @"collectionview";
     
+
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    
+//    layout.sectionInset = UIEdgeInsetsMake(0, 50, 50, 50);
     
     self.collectionview = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:layout];
     self.collectionview.dataSource = self;
     self.collectionview.delegate = self;
     self.collectionview.backgroundColor = [UIColor redColor];
-    [self.collectionview registerNib:[UINib nibWithNibName:@"BaseOrganCollectionViewCell" bundle:[NSBundle mainBundle]]
-     
-          forCellWithReuseIdentifier:@"baseCell"];
+    [self.collectionview registerNib:[UINib nibWithNibName:@"BaseOrganCollectionViewCell" bundle:[NSBundle mainBundle]]forCellWithReuseIdentifier:@"baseCell"];
+    
+    
     [self.view addSubview:self.collectionview];
     
 }
@@ -38,14 +41,13 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    
     return 20;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     BaseOrganCollectionViewCell  *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"baseCell" forIndexPath:indexPath];
-    cell.baseImv.image = [UIImage imageNamed:@"zheng_5.jpg"];
+    cell.baseImv.image = [UIImage imageNamed:@"1.jpg"];
     cell.baseLable.text = @"collectionView";
     
     return cell;

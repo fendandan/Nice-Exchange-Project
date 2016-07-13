@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface BaseShowViewController : BaseViewController
+@interface BaseMusicViewController : BaseViewController
 
 @end
