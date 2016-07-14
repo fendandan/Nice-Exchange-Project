@@ -32,14 +32,21 @@
 
 #import "SWFocusonViewController.h"
 
-
+/*
+ 第三方引入头文件
+ */
 // AFNetWorking
 #import <AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
+// LeanCloud
+#import <AVOSCloud/AVOSCloud.h>
+// 如果使用了实时通信模块，请添加以下导入语句：
+//#import <AVOSCloudIM/AVOSCloudIM.h>
 
 // 数据请求工具类
 #import "BaseRequest.h" // 基类
 #import "NetWorkRequest.h"
+
 
 // 底层控制器
 #import "RootViewController.h"
