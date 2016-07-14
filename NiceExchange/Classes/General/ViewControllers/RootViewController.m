@@ -44,6 +44,7 @@
    
 }
 
+// 创建button
 - (UIButton *)buttonWithImageName:(NSString *)imageName title:(NSString *)title {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
