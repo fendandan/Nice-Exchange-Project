@@ -35,6 +35,8 @@
 		CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */; };
 		CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */; };
 		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
+		CCD077511D367E9700AF4C79 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCD077501D367E9700AF4C79 /* 1.jpg */; };
+		CCD077541D367FBB00AF4C79 /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD077531D367FBB00AF4C79 /* MusicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +87,9 @@
 		CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		CC6EF8FF1D366409000A9B44 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		CCD077501D367E9700AF4C79 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		CCD077521D367FBB00AF4C79 /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		CCD077531D367FBB00AF4C79 /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,9 @@
 				CC6EF8DE1D36377C000A9B44 /* SWNavigationViewController.m */,
 				CC5A67671D35F758008AE01A /* BaseOrganViewController.h */,
 				CC5A67681D35F758008AE01A /* BaseOrganViewController.m */,
+				CCD077521D367FBB00AF4C79 /* MusicViewController.h */,
+				CCD077531D367FBB00AF4C79 /* MusicViewController.m */,
+				CCD077501D367E9700AF4C79 /* 1.jpg */,
 				CC5A67691D35F758008AE01A /* BaseShowViewController.h */,
 				CC5A676A1D35F758008AE01A /* BaseShowViewController.m */,
 				CC5A676B1D35F758008AE01A /* BaseSwitchViewController.h */,
@@ -399,6 +407,7 @@
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
 				CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */,
 				CC6EF8ED1D364018000A9B44 /* Picture.png in Resources */,
+				CCD077511D367E9700AF4C79 /* 1.jpg in Resources */,
 				CC6EF8EE1D364018000A9B44 /* Picture_Selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD077541D367FBB00AF4C79 /* MusicViewController.m in Sources */,
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,

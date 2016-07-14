@@ -22,7 +22,7 @@
     self.swWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.swWindow makeKeyAndVisible];
     
-    BaseOrganViewController *rootVC = [[BaseOrganViewController alloc] init];
+    BaseOrganViewController *rootVC = [[MusicViewController alloc] init];
     
     [self.swWindow setRootViewController:rootVC];
 //    

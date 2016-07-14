@@ -47,7 +47,7 @@
     
     BaseOrganCollectionViewCell  *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"baseCell" forIndexPath:indexPath];
     //cell.backgroundColor = [UIColor blackColor];
-    cell.baseImv.image = [UIImage imageNamed:@"zheng_5.jpg"];
+    cell.baseImv.image = [UIImage imageNamed:@"1.jpg"];
     cell.baseLable.text = @"collectionView";
     
     return cell;
