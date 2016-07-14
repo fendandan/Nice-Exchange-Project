@@ -18,6 +18,13 @@
 
 @implementation MyViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // 回到主控制器时不隐藏
+    self.rootVC.swTabBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
@@ -52,7 +59,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //    SWLoginViewController *lVC = [SWLoginViewController new];
     //    [self.navigationController pushViewController:lVC animated:YES];
+    
+    
     SWRegisterViewController *rVC = [SWRegisterViewController new];
+    self.rootVC.swTabBar.hidden = YES;
     [self.navigationController pushViewController:rVC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,6 @@
 
 @interface RootViewController ()<SWTabBarDelegate>
 
-@property (nonatomic,strong) SWTabBar * swtabbar;
 @end
 
 @implementation RootViewController
@@ -30,14 +29,14 @@
     //
     NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"User" title:@"我的"]];
     
-  self.swtabbar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];
-  self.swtabbar.swDelegete = self; // 代理
+  self.swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];
+  self.swTabBar.swDelegete = self; // 代理
     
 
     UIButton *btn = buttons[0];
     btn.selected = YES;
     self.tabBar.hidden = YES;
-    [self.view addSubview: self.swtabbar];
+    [self.view addSubview: self.swTabBar];
     
   
 
@@ -64,7 +63,7 @@
 
 #pragma mark --- SWTabBarDelegate ---
 - (void)swTabBarItemDidClicked:(SWTabBar *)tabBar {
-    self.selectedIndex = _swtabbar.currentSelected;
+    self.selectedIndex = self.swTabBar.currentSelected;
 }
 
 /*

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class RootViewController;
 @interface BaseViewController : UIViewController
+
+@property (strong, nonatomic) RootViewController *rootVC;
 
 @end

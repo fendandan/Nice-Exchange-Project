@@ -38,8 +38,8 @@
     [rootVC addChildViewController:swNVCThr];
     [rootVC addChildViewController:swNVCFou];
     
-    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    [self.swWindow setRootViewController:sNC];
+//    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    [self.swWindow setRootViewController:rootVC];
     
     
     return YES;
