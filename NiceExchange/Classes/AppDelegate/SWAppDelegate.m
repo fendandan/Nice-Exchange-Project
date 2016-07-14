@@ -7,6 +7,7 @@
 //
 
 #import "SWAppDelegate.h"
+
 @interface SWAppDelegate ()
 
 @end
@@ -30,7 +31,7 @@
     SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:vc];
     SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
-    SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[MyViewController new]];
+    SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[SWFocusonViewController new]];
     
     [rootVC addChildViewController:swNVCfir];
     [rootVC addChildViewController:swNVCsec];
