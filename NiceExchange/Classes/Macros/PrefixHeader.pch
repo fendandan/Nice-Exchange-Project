@@ -12,7 +12,10 @@
 /***  *  ***/
 
 // 常用尺寸&数值 宏
+
 #define kColor arc4random()%256/255.0
+#define kBorderColor [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0].CGColor
+
 #define kScreenWidth    [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight   [UIScreen mainScreen].bounds.size.height
 #define kSelfWidth self.bounds.size.width
@@ -25,15 +28,25 @@
 #define SWLog(...)
 #endif
 
-#define SWLogFunc YCLog(@"%s",__func__)
+#define SWLogFunc SWLog(@"%s",__func__)
 
+#import "SWFocusonViewController.h"
+
+/*
+ 第三方引入头文件
+ */
 // AFNetWorking
 #import <AFNetworking.h>
 #import <UIImageView+AFNetworking.h>
+// LeanCloud
+#import <AVOSCloud/AVOSCloud.h>
+// 如果使用了实时通信模块，请添加以下导入语句：
+//#import <AVOSCloudIM/AVOSCloudIM.h>
 
 // 数据请求工具类
 #import "BaseRequest.h" // 基类
 #import "NetWorkRequest.h"
+
 
 // 底层控制器
 #import "RootViewController.h"
@@ -50,8 +63,17 @@
 
 // 主控制器
 #import "MyViewController.h"
-
 #import "MusicViewController.h"
+
+// 登录注册控制器
+#import "SWLoginViewController.h"
+#import "SWRegisterViewController.h"
+
+// 自定义视图
+#import "SWCertificationView.h"
+
+
+
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

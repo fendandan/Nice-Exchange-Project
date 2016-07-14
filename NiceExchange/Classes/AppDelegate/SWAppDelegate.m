@@ -7,6 +7,7 @@
 //
 
 #import "SWAppDelegate.h"
+
 @interface SWAppDelegate ()
 
 @end
@@ -29,7 +30,7 @@
 //    vc.view.backgroundColor = [UIColor redColor];
     SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[MusicViewController new]];
     SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
-    SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
+    SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[SWFocusonViewController new]];
     SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[MyViewController new]];
     
     [rootVC addChildViewController:swNVCfir];
