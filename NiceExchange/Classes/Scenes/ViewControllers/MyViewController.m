@@ -8,7 +8,11 @@
 
 #import "MyViewController.h"
 
-@interface MyViewController ()
+@interface MyViewController ()<UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) UITableView *userTableView;
+
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -17,9 +21,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    self.dataArray = @[@"d", @"sgf", @"sg"].mutableCopy; // 测试数组
+    [self createTableView];
+}
+
+- (void)createTableView {
+    self.userTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 64) style:UITableViewStylePlain];
+    [self.userTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    self.userTableView.delegate = self;
+    self.userTableView.dataSource = self;
+    
+    [self.view addSubview:self.userTableView];
     
 }
 
+#pragma mark ---- UITableViewDataSource - @required
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor grayColor];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //    SWLoginViewController *lVC = [SWLoginViewController new];
+    //    [self.navigationController pushViewController:lVC animated:YES];
+    SWRegisterViewController *rVC = [SWRegisterViewController new];
+    [self.navigationController pushViewController:rVC animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

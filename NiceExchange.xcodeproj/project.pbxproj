@@ -48,6 +48,10 @@
 		CC9B1CA01D379FD90042C7D2 /* 呵呵.png in Resources */ = {isa = PBXBuildFile; fileRef = CC9B1C9F1D379FD90042C7D2 /* 呵呵.png */; };
 		CC9B1CA21D37A6A40042C7D2 /* ii.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC9B1CA11D37A6A40042C7D2 /* ii.jpg */; };
 		CC9B1CA41D37A7130042C7D2 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC9B1CA31D37A7130042C7D2 /* 11.jpg */; };
+		CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FA51D37B4CF00AEF415 /* BaseView.m */; };
+		CCB33FAD1D37B53900AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FA81D37B53900AEF415 /* SWRegisterViewController.m */; };
+		CCB33FAE1D37B53900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FAB1D37B53900AEF415 /* SWLoginViewController.m */; };
+		CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +118,14 @@
 		CC9B1C9F1D379FD90042C7D2 /* 呵呵.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "呵呵.png"; sourceTree = "<group>"; };
 		CC9B1CA11D37A6A40042C7D2 /* ii.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ii.jpg; sourceTree = "<group>"; };
 		CC9B1CA31D37A7130042C7D2 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 11.jpg; sourceTree = "<group>"; };
+		CCB33FA41D37B4CF00AEF415 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
+		CCB33FA51D37B4CF00AEF415 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		CCB33FA71D37B53900AEF415 /* SWRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRegisterViewController.h; sourceTree = "<group>"; };
+		CCB33FA81D37B53900AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRegisterViewController.m; sourceTree = "<group>"; };
+		CCB33FAA1D37B53900AEF415 /* SWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLoginViewController.h; sourceTree = "<group>"; };
+		CCB33FAB1D37B53900AEF415 /* SWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLoginViewController.m; sourceTree = "<group>"; };
+		CCB33FAF1D37B5F600AEF415 /* SWCertificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCertificationView.h; sourceTree = "<group>"; };
+		CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCertificationView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +272,8 @@
 				CC6EF8BD1D3622B6000A9B44 /* Cells */,
 				CC6EF8C11D3622B6000A9B44 /* SWTabBar.h */,
 				CC6EF8C21D3622B6000A9B44 /* SWTabBar.m */,
+				CCB33FA41D37B4CF00AEF415 /* BaseView.h */,
+				CCB33FA51D37B4CF00AEF415 /* BaseView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,7 +319,8 @@
 			children = (
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
-				D602B0A71D3770AA00AE9EE9 /* MyMessageViewController */,
+				CCB33FA91D37B53900AEF415 /* RegisterViewController */,
+				CCB33FAC1D37B53900AEF415 /* LoginViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -313,6 +328,8 @@
 		CC6EF8CA1D362F01000A9B44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CCB33FAF1D37B5F600AEF415 /* SWCertificationView.h */,
+				CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -420,6 +437,26 @@
 				CC9B1C9B1D3796AE0042C7D2 /* 双引号-左-01.png */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		CCB33FA91D37B53900AEF415 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCB33FA71D37B53900AEF415 /* SWRegisterViewController.h */,
+				CCB33FA81D37B53900AEF415 /* SWRegisterViewController.m */,
+			);
+			name = RegisterViewController;
+			path = ../../../../../Desktop/NiceExchange/NiceExchange/Classes/Scenes/ViewControllers;
+			sourceTree = "<group>";
+		};
+		CCB33FAC1D37B53900AEF415 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCB33FAA1D37B53900AEF415 /* SWLoginViewController.h */,
+				CCB33FAB1D37B53900AEF415 /* SWLoginViewController.m */,
+			);
+			name = LoginViewController;
+			path = ../../../../../Desktop/NiceExchange/NiceExchange/Classes/Scenes/ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,12 +603,15 @@
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
+				CCB33FAD1D37B53900AEF415 /* SWRegisterViewController.m in Sources */,
 				CC9B1C971D37930A0042C7D2 /* SWJoinTableViewCell.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC9B1C881D377E890042C7D2 /* SWFridenSharOnTableViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
+				CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */,
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
+				CCB33FAE1D37B53900AEF415 /* SWLoginViewController.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
@@ -579,6 +619,7 @@
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
+				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CC5A674C1D35F71B008AE01A /* main.m in Sources */,
 			);
