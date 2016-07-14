@@ -10,4 +10,9 @@
 
 @interface BaseOrganViewController : BaseViewController
 
+
+- (void)addCollectionView;
+@property (nonatomic , strong) UICollectionView *collectionview;
+
+
 @end

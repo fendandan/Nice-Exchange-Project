@@ -35,6 +35,7 @@
 		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
 		CC6EF9041D368561000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9021D368561000A9B44 /* Picture.png */; };
 		CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9031D368561000A9B44 /* Picture_Selected.png */; };
+		CC8F34E01D372091001B61DD /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F34DF1D372091001B61DD /* MusicViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +86,8 @@
 		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		CC6EF9021D368561000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
 		CC6EF9031D368561000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
+		CC8F34DE1D372091001B61DD /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		CC8F34DF1D372091001B61DD /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +201,8 @@
 				CC6EF8DE1D36377C000A9B44 /* SWNavigationViewController.m */,
 				CC5A67671D35F758008AE01A /* BaseOrganViewController.h */,
 				CC5A67681D35F758008AE01A /* BaseOrganViewController.m */,
+				CC8F34DE1D372091001B61DD /* MusicViewController.h */,
+				CC8F34DF1D372091001B61DD /* MusicViewController.m */,
 				CC5A67691D35F758008AE01A /* BaseShowViewController.h */,
 				CC5A676A1D35F758008AE01A /* BaseShowViewController.m */,
 				CC5A676B1D35F758008AE01A /* BaseSwitchViewController.h */,
@@ -459,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8F34E01D372091001B61DD /* MusicViewController.m in Sources */,
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,

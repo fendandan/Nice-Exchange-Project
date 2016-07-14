@@ -26,8 +26,8 @@
     
 #warning  message ----- 直接把今天要写的主控制器界面替换到navigationController的根视图控制器（这要就可以直接看到效果了）如下面的第四个navigationController控制器的根视图是MyViewController。
     UIViewController * vc = [UIViewController new];
-    vc.view.backgroundColor = [UIColor redColor];
-    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:vc];
+//    vc.view.backgroundColor = [UIColor redColor];
+    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[MusicViewController new]];
     SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[UIViewController new]];
     SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[MyViewController new]];

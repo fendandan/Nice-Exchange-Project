@@ -12,7 +12,8 @@
 >
 
 
-@property (nonatomic , strong) UICollectionView *collectionview;
+
+
 @end
 
 @implementation BaseOrganViewController
@@ -21,26 +22,54 @@
     [super viewDidLoad];
     self.title = @"collectionview";
     
+    [self addCollectionView];
+    
+    
+   [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+    
+    
+    
+    
+    
+    
+}
+
+
+- (void)addCollectionView
+{
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     
     self.collectionview = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:layout];
     self.collectionview.dataSource = self;
     self.collectionview.delegate = self;
-  
-    self.collectionview.backgroundColor = [UIColor redColor];
+    
+    self.collectionview.backgroundColor = [UIColor whiteColor];
     [self.collectionview registerNib:[UINib nibWithNibName:@"BaseOrganCollectionViewCell" bundle:[NSBundle mainBundle]]
      
           forCellWithReuseIdentifier:@"baseCell"];
     [self.view addSubview:self.collectionview];
     
+    
+    
 }
+
+
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    
+    return 3;
+    
+}
+
 
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
     
-    return 20;
+    return 6;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -51,7 +80,6 @@
     cell.baseLable.text = @"collectionView";
     
     return cell;
-    
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -66,18 +94,22 @@
 
 // 设置最小行间距，也就是前一行与后一行的中间最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 5;
+    return 10;
 }
 
 // 设置最小列间距，也就是左行与右一行的中间最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 5;
+    return 10;
 }
 
-// 设置section头视图的参考大小，与tableheaderview类似
+
+// 设置 collectionView 头部视图
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(self.view.frame.size.width, 150);
+    
+
+    return CGSizeMake(self.view.frame.size.width, 0);
 }
+
 
 // 设置section尾视图的参考大小，与tablefooterview类似
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
@@ -106,6 +138,49 @@
     
     
 }
+
+
+////头部视图
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+//    
+//    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 287, 100, 30)];
+//    
+//    titleLabel.backgroundColor = [UIColor greenColor];
+//    
+//    titleLabel.text = @"歌单推荐";
+//    
+//    [headerView addSubview:titleLabel];
+//    
+//    
+//    
+//    UIButton *moreBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+//    
+//    moreBtn.frame = CGRectMake(360, 287, 50, 30);
+//    
+//    moreBtn.backgroundColor = [UIColor orangeColor];
+//    
+//    [moreBtn setTitle:@"更多" forState:(UIControlStateNormal)];
+//    
+//    [moreBtn addTarget:self action:@selector(moreBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+//    
+//    [headerView addSubview:moreBtn];
+//    
+//    
+//    
+//    
+//    return headerView;
+//}
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
