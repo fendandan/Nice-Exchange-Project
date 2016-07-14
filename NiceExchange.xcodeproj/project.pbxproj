@@ -275,6 +275,7 @@
 			children = (
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
+				D602B0A71D3770AA00AE9EE9 /* MyMessageViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +327,14 @@
 				CC6EF8FC1D365F84000A9B44 /* RequestUrl.h */,
 			);
 			path = Const;
+			sourceTree = "<group>";
+		};
+		D602B0A71D3770AA00AE9EE9 /* MyMessageViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MyMessageViewController;
+			path = ../../Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
