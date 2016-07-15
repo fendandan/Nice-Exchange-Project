@@ -21,26 +21,33 @@
     [super viewDidLoad];
     self.title = @"collectionview";
     
+    [self addCollectionView];
+    
+}
+
+
+- (void)addCollectionView
+{
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     
     self.collectionview = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:layout];
     self.collectionview.dataSource = self;
     self.collectionview.delegate = self;
-  
-//    self.collectionview.backgroundColor = [UIColor redColor];
+    
+    self.collectionview.backgroundColor = [UIColor whiteColor];
+    //    self.collectionview.backgroundColor = [UIColor redColor];
     [self.collectionview registerNib:[UINib nibWithNibName:@"BaseOrganCollectionViewCell" bundle:[NSBundle mainBundle]]
      
           forCellWithReuseIdentifier:@"baseCell"];
     [self.view addSubview:self.collectionview];
-    
 }
-
 
 
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 3;
+    return 2;
 }
 
 
@@ -85,6 +92,13 @@
     return 5;
 }
 
+
+
+// 设置 collectionView 头部视图
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    
+    return CGSizeMake(self.view.frame.size.width, 0);
+}
 
 
 // 设置section尾视图的参考大小，与tablefooterview类似
