@@ -35,6 +35,7 @@
 		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
 		CC6EF9041D368561000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9021D368561000A9B44 /* Picture.png */; };
 		CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9031D368561000A9B44 /* Picture_Selected.png */; };
+		CC8F34E31D37D4E6001B61DD /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F34E21D37D4E6001B61DD /* MusicViewController.m */; };
 		CC9B1C841D3778400042C7D2 /* SWFocusonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9B1C831D3778400042C7D2 /* SWFocusonViewController.m */; };
 		CC9B1C881D377E890042C7D2 /* SWFridenSharOnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9B1C861D377E890042C7D2 /* SWFridenSharOnTableViewCell.m */; };
 		CC9B1C891D377E890042C7D2 /* SWFridenSharOnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC9B1C871D377E890042C7D2 /* SWFridenSharOnTableViewCell.xib */; };
@@ -102,6 +103,8 @@
 		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		CC6EF9021D368561000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
 		CC6EF9031D368561000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
+		CC8F34E11D37D4E6001B61DD /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		CC8F34E21D37D4E6001B61DD /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		CC9B1C821D3778400042C7D2 /* SWFocusonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFocusonViewController.h; sourceTree = "<group>"; };
 		CC9B1C831D3778400042C7D2 /* SWFocusonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWFocusonViewController.m; sourceTree = "<group>"; };
 		CC9B1C851D377E890042C7D2 /* SWFridenSharOnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFridenSharOnTableViewCell.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 				CC6EF8DE1D36377C000A9B44 /* SWNavigationViewController.m */,
 				CC5A67671D35F758008AE01A /* BaseOrganViewController.h */,
 				CC5A67681D35F758008AE01A /* BaseOrganViewController.m */,
+				CC8F34E11D37D4E6001B61DD /* MusicViewController.h */,
+				CC8F34E21D37D4E6001B61DD /* MusicViewController.m */,
 				CC5A67691D35F758008AE01A /* BaseShowViewController.h */,
 				CC5A676A1D35F758008AE01A /* BaseShowViewController.m */,
 				CC5A676B1D35F758008AE01A /* BaseSwitchViewController.h */,
@@ -618,6 +623,7 @@
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
+				CC8F34E31D37D4E6001B61DD /* MusicViewController.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,

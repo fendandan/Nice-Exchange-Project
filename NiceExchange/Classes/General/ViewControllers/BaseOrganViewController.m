@@ -12,7 +12,7 @@
 >
 
 
-@property (nonatomic , strong) UICollectionView *collectionview;
+
 @end
 
 @implementation BaseOrganViewController
@@ -27,7 +27,7 @@
     self.collectionview.dataSource = self;
     self.collectionview.delegate = self;
   
-    self.collectionview.backgroundColor = [UIColor redColor];
+//    self.collectionview.backgroundColor = [UIColor redColor];
     [self.collectionview registerNib:[UINib nibWithNibName:@"BaseOrganCollectionViewCell" bundle:[NSBundle mainBundle]]
      
           forCellWithReuseIdentifier:@"baseCell"];
@@ -37,11 +37,20 @@
 
 
 
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 3;
+}
+
+
+
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    
-    return 20;
+    return 6;
 }
+
+
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -54,10 +63,12 @@
     
 }
 
+
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(self.view.bounds.size.width / 3 - 10, self.view.frame.size.width / 3 - 10);
 }
+
 
 // 设置每个cell上下左右相距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
@@ -74,10 +85,7 @@
     return 5;
 }
 
-// 设置section头视图的参考大小，与tableheaderview类似
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(self.view.frame.size.width, 150);
-}
+
 
 // 设置section尾视图的参考大小，与tablefooterview类似
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
@@ -106,6 +114,11 @@
     
     
 }
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
