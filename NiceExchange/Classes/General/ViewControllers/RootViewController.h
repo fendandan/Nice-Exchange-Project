@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SWTabBar;
 @interface RootViewController : UITabBarController
+
+@property (nonatomic,strong) SWTabBar * swTabBar;
 
 @end
