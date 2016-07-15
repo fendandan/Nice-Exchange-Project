@@ -63,6 +63,9 @@
 
 // 主控制器
 #import "MyViewController.h"
+#import "MusicViewController.h" //音乐
+
+#import "SWPublishViewController.h"
 
 // 登录注册控制器
 #import "SWLoginViewController.h"
@@ -70,10 +73,9 @@
 
 // 自定义视图
 #import "SWCertificationView.h"
+#import "SWAddRule.h"
 
 
-//音乐
-#import "MusicViewController.h"
 
 
 
