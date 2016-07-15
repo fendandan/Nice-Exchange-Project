@@ -29,6 +29,10 @@
     
     //注册头部视图
     [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
+    
+    
+    //分区头视图
+    [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
 }
 
 
@@ -189,7 +193,8 @@
         
     }else
     {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 287, 100, 30)];
         
@@ -223,13 +228,10 @@
 // 设置 collectionView 头部视图
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     
-    
     if (section == 0) {
-        
-        
+    
         return CGSizeMake(self.view.frame.size.width, 320);
     }
-    
     return CGSizeMake(self.view.frame.size.width, 0);
     
 }
@@ -239,7 +241,6 @@
 //button 点击事件
 - (void)moreBtnAction:(UIButton *)sender
 {
-    
     NSLog(@"更多音乐");
 }
 
