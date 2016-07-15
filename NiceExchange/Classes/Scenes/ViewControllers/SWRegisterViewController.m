@@ -72,13 +72,20 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // 注册成功
-            if (error) {
-                SWLog(@"error = %@,%@,%@",error, error.description, error.debugDescription);
-            }else {
-                SWLog(@"succeeded = %d",succeeded);
-            }
+            SWLog(@"succeeded = %d",succeeded);
         } else {
             // 失败的原因可能有多种，常见的是用户名已经存在。
+            SWLog(@"error = %@", error.userInfo);
+            
+            // 返回结果
+//            error.userInfo = {
+//                error : 此电子邮箱已经被占用。,
+//                NSLocalizedDescription : 此电子邮箱已经被占用。,
+//                code : 203
+//            }
+            
+            // 最有可能的情况是用户名已经被另一个用户注册，错误代码 202，即 _User 表中的 username 字段已存在相同的值，此时需要提示用户尝试不同的用户名来注册。
+            
         }
     }];
 }
