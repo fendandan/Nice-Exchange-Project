@@ -24,14 +24,6 @@
     self.unView.layer.cornerRadius = 20;
     self.unView.layer.borderWidth = 10.0;
     self.unView.layer.borderColor = [[UIColor whiteColor] CGColor];
-    [self.jionImg addTarget:self action:@selector(clickAction) forControlEvents:(UIControlEventTouchUpInside)];
-}
-
--(void)clickAction {
-    
-    if ([self.joinDelegate respondsToSelector:@selector(onJoinClick)]) {
-        [self.joinDelegate onJoinClick];
-    }
     
 }
 

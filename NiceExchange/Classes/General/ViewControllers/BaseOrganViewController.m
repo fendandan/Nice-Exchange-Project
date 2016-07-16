@@ -12,6 +12,8 @@
 >
 
 
+@property(nonatomic,strong)UIScrollView *scrollView;
+
 
 @end
 
@@ -21,54 +23,58 @@
     [super viewDidLoad];
     self.title = @"collectionview";
     
+    
     [self addCollectionView];
+
+    
+    [self addScrollView];
     
 }
 
 
+
+//添加 scrollView
+- (void)addScrollView
+{
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.scrollView.backgroundColor = [UIColor redColor];
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 3, 0);
+    
+    
+    
+    
+}
+
+
+
+
+
+
 - (void)addCollectionView
 {
-    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     
     self.collectionview = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:layout];
     self.collectionview.dataSource = self;
     self.collectionview.delegate = self;
-    
+    self.collectionview.showsVerticalScrollIndicator = FALSE;
     self.collectionview.backgroundColor = [UIColor whiteColor];
     //    self.collectionview.backgroundColor = [UIColor redColor];
     [self.collectionview registerNib:[UINib nibWithNibName:@"BaseOrganCollectionViewCell" bundle:[NSBundle mainBundle]]
      
           forCellWithReuseIdentifier:@"baseCell"];
     [self.view addSubview:self.collectionview];
-}
-
-
-
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 2;
-}
-
-
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 6;
-}
-
-
-
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    BaseOrganCollectionViewCell  *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"baseCell" forIndexPath:indexPath];
-    //cell.backgroundColor = [UIColor blackColor];
-    cell.baseImv.image = [UIImage imageNamed:@"zheng_5.jpg"];
-    cell.baseLable.text = @"collectionView";
-    
-    return cell;
     
 }
+
+
+
+
+
+
+
 
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -84,7 +90,7 @@
 
 // 设置最小行间距，也就是前一行与后一行的中间最小间隔
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return 5;
+    return 20;
 }
 
 // 设置最小列间距，也就是左行与右一行的中间最小间隔
@@ -94,27 +100,20 @@
 
 
 
-// 设置 collectionView 头部视图
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    
-    return CGSizeMake(self.view.frame.size.width, 0);
-}
-
-
 // 设置section尾视图的参考大小，与tablefooterview类似
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     return CGSizeMake(self.view.frame.size.width, 40);
 }
 
 // 设置是否允许选中
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.item == 1) {
-        return NO;
-    }
-    SWLog(@"%ld",indexPath.item);
-    return YES;
-}
+//- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    if (indexPath.item == 1) {
+//        return NO;
+//    }
+//    SWLog(@"%ld",indexPath.item);
+//    return YES;
+//}
 
 // 设置是否允许取消选中
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldDeselectItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -63,9 +63,6 @@
 
 // 主控制器
 #import "MyViewController.h"
-#import "MusicViewController.h" //音乐
-
-#import "SWPublishViewController.h"
 
 // 登录注册控制器
 #import "SWLoginViewController.h"
@@ -73,10 +70,24 @@
 
 // 自定义视图
 #import "SWCertificationView.h"
-#import "SWAddRule.h"
 
 
+//音乐
+#import "MusicViewController.h"
 
+//音乐详情
+#import "MusicDetailViewController.h"
+#import "MusicDetailTableViewCell.h"
+
+//URL请求
+#import "RequestUrl.h"
+
+#import "MusicRequest.h"
+
+//Model
+#import "MusicDetailModel.h"
+
+#import "MusicModel.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

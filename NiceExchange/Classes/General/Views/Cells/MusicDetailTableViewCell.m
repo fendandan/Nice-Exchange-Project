@@ -1,14 +1,14 @@
 //
-//  SWpratTableViewCell.m
+//  MusicDetailTableViewCell.m
 //  NiceExchange
 //
-//  Created by Spacewalk on 16/7/16.
+//  Created by Spacewalk on 16/7/15.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
-#import "SWpratTableViewCell.h"
+#import "MusicDetailTableViewCell.h"
 
-@implementation SWpratTableViewCell
+@implementation MusicDetailTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

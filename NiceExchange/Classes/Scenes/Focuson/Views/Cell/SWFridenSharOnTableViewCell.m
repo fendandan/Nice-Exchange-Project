@@ -23,14 +23,7 @@
     self.unView.layer.borderWidth = 10.0;
     self.unView.layer.borderColor = [[UIColor whiteColor] CGColor];
     
-    [self.Friendicon addTarget:self action:@selector(clickAction) forControlEvents:(UIControlEventTouchUpInside)];
-}
-
--(void)clickAction {
     
-    if ([self.friendDelegate respondsToSelector:@selector(onClick)]) {
-        [self.friendDelegate onClick];
-    }
     
 }
 

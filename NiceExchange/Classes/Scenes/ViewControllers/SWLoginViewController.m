@@ -66,13 +66,6 @@
 
 - (void)loginButtonClicked:(UIButton *)button {
     SWLogFunc;
-    [AVUser logInWithUsernameInBackground:self.lrView.userNameTextField.text password:self.lrView.passwordTextField.text block:^(AVUser *user, NSError *error) {
-        if (user != nil) {
-            
-        } else {
-            
-        }
-    }];
 }
 - (void)numberButtonClicked:(UIButton *)button {
     SWLogFunc;
