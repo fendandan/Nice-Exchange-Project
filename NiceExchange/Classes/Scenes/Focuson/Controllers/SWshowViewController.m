@@ -26,6 +26,7 @@
     self.touch = 0;
     //左上方返回按钮
     [self backButtonItem];
+    self.title = @"参与沙龙";
     //右上方添加分享按钮
     [self addRightButtonItem];
     //添加底部视图
@@ -137,7 +138,9 @@
 
 -(void)backButtonItem {
     
-     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回"] style:(UIBarButtonItemStylePlain) target:self action:@selector(backAction:)];
+     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回"] style:(UIBarButtonItemStylePlain) target:self action:@selector
+                                              (backAction:)];
+    
 }
 
 -(void)backAction:(UIBarButtonItem *)back {
