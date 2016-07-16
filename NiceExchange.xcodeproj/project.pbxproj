@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */; };
+		CC139A861D39C8D2002D0F6F /* SWcommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC139A841D39C8D2002D0F6F /* SWcommentViewController.m */; };
+		CC139A871D39C8D2002D0F6F /* SWcommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC139A851D39C8D2002D0F6F /* SWcommentViewController.xib */; };
 		CC5A674C1D35F71B008AE01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A674B1D35F71B008AE01A /* main.m */; };
 		CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67531D35F71B008AE01A /* Main.storyboard */; };
 		CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67561D35F71B008AE01A /* Assets.xcassets */; };
@@ -62,6 +64,9 @@
 		4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.release.xcconfig"; sourceTree = "<group>"; };
 		544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiceExchange.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.debug.xcconfig"; sourceTree = "<group>"; };
+		CC139A831D39C8D2002D0F6F /* SWcommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentViewController.h; sourceTree = "<group>"; };
+		CC139A841D39C8D2002D0F6F /* SWcommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcommentViewController.m; sourceTree = "<group>"; };
+		CC139A851D39C8D2002D0F6F /* SWcommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcommentViewController.xib; sourceTree = "<group>"; };
 		CC5A67471D35F71B008AE01A /* NiceExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5A674B1D35F71B008AE01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5A67541D35F71B008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -409,6 +414,9 @@
 				CC9B1C831D3778400042C7D2 /* SWFocusonViewController.m */,
 				CCCD16B91D39C4620088283E /* SWshowViewController.h */,
 				CCCD16BA1D39C4620088283E /* SWshowViewController.m */,
+				CC139A831D39C8D2002D0F6F /* SWcommentViewController.h */,
+				CC139A841D39C8D2002D0F6F /* SWcommentViewController.m */,
+				CC139A851D39C8D2002D0F6F /* SWcommentViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -572,6 +580,7 @@
 				CC9B1C981D37930A0042C7D2 /* SWJoinTableViewCell.xib in Resources */,
 				CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
+				CC139A871D39C8D2002D0F6F /* SWcommentViewController.xib in Resources */,
 				CC9B1C9A1D37966C0042C7D2 /* xinxian.png in Resources */,
 				CC6EF8EF1D364018000A9B44 /* User.png in Resources */,
 				CC9B1C9C1D3796AE0042C7D2 /* 双引号-左-01.png in Resources */,
@@ -652,6 +661,7 @@
 				CC9B1C881D377E890042C7D2 /* SWFridenSharOnTableViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
+				CC139A861D39C8D2002D0F6F /* SWcommentViewController.m in Sources */,
 				CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */,
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,

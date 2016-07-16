@@ -7,7 +7,7 @@
 //
 
 #import "SWshowViewController.h"
-//#import "SWcommentViewController.h"
+#import "SWcommentViewController.h"
 @interface SWshowViewController ()
 
 @property (nonatomic,assign) NSInteger touch;
@@ -66,9 +66,9 @@
 //跳转到评论界面
 -(void)commentAction:(UIButton *)sender {
     
-//    SWcommentViewController *commentVC = [[SWcommentViewController alloc]init];
-//    
-//    [self.navigationController pushViewController:commentVC animated:YES];
+    SWcommentViewController *commentVC = [[SWcommentViewController alloc]init];
+    
+    [self.navigationController pushViewController:commentVC animated:YES];
     
 }
 

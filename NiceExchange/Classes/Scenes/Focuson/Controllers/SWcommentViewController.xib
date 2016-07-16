@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SWcommentViewController">
+            <connections>
+                <outlet property="detailL" destination="Wea-0r-P8M" id="FdD-Uq-Xpd"/>
+                <outlet property="textView" destination="2le-Kh-dzB" id="LVj-7r-WBf"/>
+                <outlet property="titleL" destination="G6d-hv-Fus" id="Qvj-GZ-9z4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【玲珑好货】我把世界上" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ZE-WI-K31">
+                    <rect key="frame" x="0.0" y="55" width="592" height="71"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="71" id="faC-lE-8hj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="11.png" translatesAutoresizingMaskIntoConstraints="NO" id="eq6-Ts-tXG">
+                    <rect key="frame" x="40" y="134" width="525" height="220"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="220" id="zOC-k3-QLd"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陪伴你最长的小礼物是什么？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6d-hv-Fus">
+                    <rect key="frame" x="82" y="217" width="458" height="82"/>
+                    <color key="backgroundColor" red="0.86847303149999999" green="0.87602904640000001" blue="0.88909113220000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2le-Kh-dzB">
+                    <rect key="frame" x="40" y="362" width="525" height="238"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="他有怎样的故事？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-0r-P8M">
+                    <rect key="frame" x="82" y="307" width="458" height="30"/>
+                    <color key="backgroundColor" red="0.86847303149999999" green="0.87602904640000001" blue="0.88909113220000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="IRe-Am-AAj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eq6-Ts-tXG" secondAttribute="trailing" constant="35" id="3lM-QQ-KbB"/>
+                <constraint firstItem="G6d-hv-Fus" firstAttribute="leading" secondItem="Wea-0r-P8M" secondAttribute="leading" id="4BD-Z5-Zjf"/>
+                <constraint firstItem="eq6-Ts-tXG" firstAttribute="leading" secondItem="2le-Kh-dzB" secondAttribute="leading" id="5yq-aZ-Q8j"/>
+                <constraint firstItem="2le-Kh-dzB" firstAttribute="top" secondItem="eq6-Ts-tXG" secondAttribute="bottom" constant="8" symbolic="YES" id="FX1-hJ-G6F"/>
+                <constraint firstItem="9ZE-WI-K31" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="55" id="Hmq-hH-86H"/>
+                <constraint firstItem="eq6-Ts-tXG" firstAttribute="top" secondItem="9ZE-WI-K31" secondAttribute="bottom" constant="8" symbolic="YES" id="PIA-LV-QAm"/>
+                <constraint firstItem="eq6-Ts-tXG" firstAttribute="trailing" secondItem="2le-Kh-dzB" secondAttribute="trailing" id="Tu3-a0-DPw"/>
+                <constraint firstItem="G6d-hv-Fus" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="82" id="VXv-rJ-VR1"/>
+                <constraint firstItem="9ZE-WI-K31" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="YJi-MN-Je3"/>
+                <constraint firstItem="Wea-0r-P8M" firstAttribute="top" secondItem="G6d-hv-Fus" secondAttribute="bottom" constant="8" symbolic="YES" id="ZPO-al-XT8"/>
+                <constraint firstAttribute="trailing" secondItem="G6d-hv-Fus" secondAttribute="trailing" constant="60" id="a70-2F-eoC"/>
+                <constraint firstItem="Wea-0r-P8M" firstAttribute="trailing" secondItem="G6d-hv-Fus" secondAttribute="trailing" id="c5t-Ed-MWQ"/>
+                <constraint firstAttribute="bottom" secondItem="2le-Kh-dzB" secondAttribute="bottom" id="ibC-sg-Idd"/>
+                <constraint firstItem="eq6-Ts-tXG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="lqt-Sw-ErM"/>
+                <constraint firstItem="9ZE-WI-K31" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oMG-iq-WaO"/>
+                <constraint firstItem="2le-Kh-dzB" firstAttribute="top" secondItem="Wea-0r-P8M" secondAttribute="bottom" constant="25" id="om6-va-lcm"/>
+                <constraint firstItem="G6d-hv-Fus" firstAttribute="top" secondItem="9ZE-WI-K31" secondAttribute="bottom" constant="91" id="sWG-sn-7kR"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="11.png" width="383" height="231"/>
+    </resources>
+</document>
