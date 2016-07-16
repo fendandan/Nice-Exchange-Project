@@ -9,6 +9,7 @@
 #import "SWFocusonViewController.h"
 #import "SWFridenSharOnTableViewCell.h"
 #import "SWJoinTableViewCell.h"
+#import "SWshowViewController.h"
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 
@@ -93,8 +94,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    SWshowViewController *showVC = [[SWshowViewController alloc]init];
     
-    
+    [self.navigationController  pushViewController:showVC animated:YES];
+    self.rootVC.swTabBar.hidden = YES;
     
 }
 

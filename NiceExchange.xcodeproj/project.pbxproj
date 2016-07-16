@@ -53,6 +53,7 @@
 		CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */; };
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
 		CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */; };
+		CCCD16BB1D39C4620088283E /* SWshowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCCD16BA1D39C4620088283E /* SWshowViewController.m */; };
 		D60E10881D38768F0024AF51 /* SWPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60E10871D38768F0024AF51 /* SWPublishViewController.m */; };
 		D60E108B1D3877400024AF51 /* SWAddRule.m in Sources */ = {isa = PBXBuildFile; fileRef = D60E108A1D3877400024AF51 /* SWAddRule.m */; };
 /* End PBXBuildFile section */
@@ -131,6 +132,8 @@
 		CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLoginViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		CCB33FC41D37CD7000AEF415 /* SWRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRegisterViewController.h; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRegisterViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		CCCD16B91D39C4620088283E /* SWshowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWshowViewController.h; sourceTree = "<group>"; };
+		CCCD16BA1D39C4620088283E /* SWshowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWshowViewController.m; sourceTree = "<group>"; };
 		D60E10861D38768F0024AF51 /* SWPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPublishViewController.h; sourceTree = "<group>"; };
 		D60E10871D38768F0024AF51 /* SWPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWPublishViewController.m; sourceTree = "<group>"; };
 		D60E10891D3877400024AF51 /* SWAddRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAddRule.h; sourceTree = "<group>"; };
@@ -404,6 +407,8 @@
 			children = (
 				CC9B1C821D3778400042C7D2 /* SWFocusonViewController.h */,
 				CC9B1C831D3778400042C7D2 /* SWFocusonViewController.m */,
+				CCCD16B91D39C4620088283E /* SWshowViewController.h */,
+				CCCD16BA1D39C4620088283E /* SWshowViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -656,6 +661,7 @@
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CC9B1C841D3778400042C7D2 /* SWFocusonViewController.m in Sources */,
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
+				CCCD16BB1D39C4620088283E /* SWshowViewController.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CC8F34E31D37D4E6001B61DD /* MusicViewController.m in Sources */,
