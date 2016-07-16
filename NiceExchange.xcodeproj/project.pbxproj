@@ -79,6 +79,20 @@
 		CCF61FC61D3896190071EC51 /* MusicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */; };
 		CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */; };
 		CCF61FCC1D38FB8E0071EC51 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FCB1D38FB8E0071EC51 /* MusicModel.m */; };
+		D6616D661D3A82110018794B /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D651D3A82110018794B /* SWCreationViewController.m */; };
+		D6616D691D3A82F70018794B /* SWAddRule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D681D3A82F70018794B /* SWAddRule.m */; };
+		D6616D741D3A844F0018794B /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D711D3A844F0018794B /* SWMessViewController.m */; };
+		D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D731D3A844F0018794B /* SWTableViewCell.m */; };
+		D6616D7A1D3A84DA0018794B /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */; };
+		D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */; };
+		D6616D851D3A85190018794B /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D6616D7D1D3A85190018794B /* 1.jpeg */; };
+		D6616D861D3A85190018794B /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D7E1D3A85190018794B /* 2.png */; };
+		D6616D871D3A85190018794B /* practise_a_n_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D7F1D3A85190018794B /* practise_a_n_day.png */; };
+		D6616D881D3A85190018794B /* practise_a_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D801D3A85190018794B /* practise_a_s_day.png */; };
+		D6616D891D3A85190018794B /* practise_b_n_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D811D3A85190018794B /* practise_b_n_day.png */; };
+		D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D821D3A85190018794B /* practise_b_s_day.png */; };
+		D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D831D3A85190018794B /* practise_c_n_day.png */; };
+		D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D841D3A85190018794B /* practise_c_s_day.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +207,26 @@
 		CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDetailModel.m; sourceTree = "<group>"; };
 		CCF61FCA1D38FB8E0071EC51 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
 		CCF61FCB1D38FB8E0071EC51 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		D6616D641D3A82110018794B /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCreationViewController.h; sourceTree = "<group>"; };
+		D6616D651D3A82110018794B /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCreationViewController.m; sourceTree = "<group>"; };
+		D6616D671D3A82F70018794B /* SWAddRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAddRule.h; sourceTree = "<group>"; };
+		D6616D681D3A82F70018794B /* SWAddRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWAddRule.m; sourceTree = "<group>"; };
+		D6616D701D3A844F0018794B /* SWMessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessViewController.h; sourceTree = "<group>"; };
+		D6616D711D3A844F0018794B /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessViewController.m; sourceTree = "<group>"; };
+		D6616D721D3A844F0018794B /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
+		D6616D731D3A844F0018794B /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
+		D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNotifcationSettingViewController.h; sourceTree = "<group>"; };
+		D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNotifcationSettingViewController.m; sourceTree = "<group>"; };
+		D6616D781D3A84DA0018794B /* SWNotfcTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNotfcTableViewCell.h; sourceTree = "<group>"; };
+		D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNotfcTableViewCell.m; sourceTree = "<group>"; };
+		D6616D7D1D3A85190018794B /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
+		D6616D7E1D3A85190018794B /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		D6616D7F1D3A85190018794B /* practise_a_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_a_n_day.png; sourceTree = "<group>"; };
+		D6616D801D3A85190018794B /* practise_a_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_a_s_day.png; sourceTree = "<group>"; };
+		D6616D811D3A85190018794B /* practise_b_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_b_n_day.png; sourceTree = "<group>"; };
+		D6616D821D3A85190018794B /* practise_b_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_b_s_day.png; sourceTree = "<group>"; };
+		D6616D831D3A85190018794B /* practise_c_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_n_day.png; sourceTree = "<group>"; };
+		D6616D841D3A85190018794B /* practise_c_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_s_day.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +421,7 @@
 		CC6EF8C81D362F01000A9B44 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D6616D631D3A81830018794B /* Message */,
 				CCA3B7B41D3A7C95003361CC /* Focuson */,
 				CCA412301D3A72610025A297 /* FirstViewControllers */,
 				CC6EF8C91D362F01000A9B44 /* ViewControllers */,
@@ -574,6 +609,41 @@
 			path = ../../../../../Desktop/NiceExchange/NiceExchange/Classes/Scenes/ViewControllers;
 			sourceTree = "<group>";
 		};
+		D6616D631D3A81830018794B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				D6616D7C1D3A85010018794B /* Image */,
+				D6616D641D3A82110018794B /* SWCreationViewController.h */,
+				D6616D651D3A82110018794B /* SWCreationViewController.m */,
+				D6616D671D3A82F70018794B /* SWAddRule.h */,
+				D6616D681D3A82F70018794B /* SWAddRule.m */,
+				D6616D701D3A844F0018794B /* SWMessViewController.h */,
+				D6616D711D3A844F0018794B /* SWMessViewController.m */,
+				D6616D721D3A844F0018794B /* SWTableViewCell.h */,
+				D6616D731D3A844F0018794B /* SWTableViewCell.m */,
+				D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */,
+				D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */,
+				D6616D781D3A84DA0018794B /* SWNotfcTableViewCell.h */,
+				D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		D6616D7C1D3A85010018794B /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				D6616D7D1D3A85190018794B /* 1.jpeg */,
+				D6616D7E1D3A85190018794B /* 2.png */,
+				D6616D7F1D3A85190018794B /* practise_a_n_day.png */,
+				D6616D801D3A85190018794B /* practise_a_s_day.png */,
+				D6616D811D3A85190018794B /* practise_b_n_day.png */,
+				D6616D821D3A85190018794B /* practise_b_s_day.png */,
+				D6616D831D3A85190018794B /* practise_c_n_day.png */,
+				D6616D841D3A85190018794B /* practise_c_s_day.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -643,13 +713,19 @@
 				CCA3B7EB1D3A7C95003361CC /* 图片.png in Resources */,
 				CC6EF8C41D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib in Resources */,
 				CCA3B7F81D3A7C95003361CC /* SWcollectionTableViewCell.xib in Resources */,
+				D6616D891D3A85190018794B /* practise_b_n_day.png in Resources */,
+				D6616D851D3A85190018794B /* 1.jpeg in Resources */,
 				CCA3B7E71D3A7C95003361CC /* SWshowViewController.xib in Resources */,
+				D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */,
 				CCA3B8001D3A7C95003361CC /* SWUserDetailViewController.xib in Resources */,
+				D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */,
 				CCA3B7F21D3A7C95003361CC /* image.png in Resources */,
 				CCA3B7F31D3A7C95003361CC /* xinxian.png in Resources */,
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
 				CCA3B7F41D3A7C95003361CC /* 双引号-左-01.png in Resources */,
 				CCA3B7EE1D3A7C95003361CC /* 收藏.png in Resources */,
+				D6616D861D3A85190018794B /* 2.png in Resources */,
+				D6616D881D3A85190018794B /* practise_a_s_day.png in Resources */,
 				CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */,
 				CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */,
 				CCA3B7EA1D3A7C95003361CC /* 分享.png in Resources */,
@@ -668,8 +744,10 @@
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
 				CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */,
 				CCA3B7E41D3A7C95003361CC /* SWcommentViewController.xib in Resources */,
+				D6616D871D3A85190018794B /* practise_a_n_day.png in Resources */,
 				CCA3B7ED1D3A7C95003361CC /* 我要参加.png in Resources */,
 				CCA3B7FC1D3A7C95003361CC /* SWJoinTableViewCell.xib in Resources */,
+				D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */,
 				CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +810,7 @@
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
+				D6616D661D3A82110018794B /* SWCreationViewController.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
@@ -739,24 +818,29 @@
 				CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */,
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
+				D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
+				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CCA4122F1D3A6C400025A297 /* ScrollViewController.m in Sources */,
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
+				D6616D7A1D3A84DA0018794B /* SWNotifcationSettingViewController.m in Sources */,
 				CCA3B7FD1D3A7C95003361CC /* SWpratTableViewCell.m in Sources */,
 				CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */,
 				CCF61FCC1D38FB8E0071EC51 /* MusicModel.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
+				D6616D691D3A82F70018794B /* SWAddRule.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CCA3B8011D3A7C95003361CC /* SWusrTableViewCell.m in Sources */,
 				CC8F34E31D37D4E6001B61DD /* MusicViewController.m in Sources */,
 				CCF61FBE1D3885AC0071EC51 /* MusicRequest.m in Sources */,
 				CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */,
 				CCA3B7F91D3A7C95003361CC /* SWFridenSharOnTableViewCell.m in Sources */,
+				D6616D741D3A844F0018794B /* SWMessViewController.m in Sources */,
 				CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */,
 				CCF61FC11D388E0B0071EC51 /* MusicDetailViewController.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,

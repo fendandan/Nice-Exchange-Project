@@ -30,7 +30,7 @@
 
 #define SWLogFunc SWLog(@"%s",__func__)
 
-#import "SWFocusonViewController.h"
+
 
 /*
  第三方引入头文件
@@ -63,6 +63,10 @@
 
 // 主控制器
 #import "MyViewController.h"
+#import "SWFocusonViewController.h"
+//音乐
+#import "MusicViewController.h"
+#import "SWCreationViewController.h"
 
 // 登录注册控制器
 #import "SWLoginViewController.h"
@@ -72,8 +76,7 @@
 #import "SWCertificationView.h"
 
 
-//音乐
-#import "MusicViewController.h"
+
 
 //音乐详情
 #import "MusicDetailViewController.h"
