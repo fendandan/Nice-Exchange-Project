@@ -45,6 +45,7 @@
 		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
 		CC6EF9041D368561000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9021D368561000A9B44 /* Picture.png */; };
 		CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9031D368561000A9B44 /* Picture_Selected.png */; };
+		CC7657F41D3A5531005A6C09 /* SWshowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7657F31D3A5531005A6C09 /* SWshowViewController.xib */; };
 		CC8F34E31D37D4E6001B61DD /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F34E21D37D4E6001B61DD /* MusicViewController.m */; };
 		CC9B1C841D3778400042C7D2 /* SWFocusonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9B1C831D3778400042C7D2 /* SWFocusonViewController.m */; };
 		CC9B1C881D377E890042C7D2 /* SWFridenSharOnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9B1C861D377E890042C7D2 /* SWFridenSharOnTableViewCell.m */; };
@@ -138,6 +139,7 @@
 		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		CC6EF9021D368561000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
 		CC6EF9031D368561000A9B44 /* Picture_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture_Selected.png; sourceTree = "<group>"; };
+		CC7657F31D3A5531005A6C09 /* SWshowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWshowViewController.xib; sourceTree = "<group>"; };
 		CC8F34E11D37D4E6001B61DD /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		CC8F34E21D37D4E6001B61DD /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		CC9B1C821D3778400042C7D2 /* SWFocusonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFocusonViewController.h; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				CC9B1C831D3778400042C7D2 /* SWFocusonViewController.m */,
 				CCCD16B91D39C4620088283E /* SWshowViewController.h */,
 				CCCD16BA1D39C4620088283E /* SWshowViewController.m */,
+				CC7657F31D3A5531005A6C09 /* SWshowViewController.xib */,
 				CC139A831D39C8D2002D0F6F /* SWcommentViewController.h */,
 				CC139A841D39C8D2002D0F6F /* SWcommentViewController.m */,
 				CC139A851D39C8D2002D0F6F /* SWcommentViewController.xib */,
@@ -640,6 +643,7 @@
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
 				CC9B1C891D377E890042C7D2 /* SWFridenSharOnTableViewCell.xib in Resources */,
 				CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */,
+				CC7657F41D3A5531005A6C09 /* SWshowViewController.xib in Resources */,
 				CC9B1C981D37930A0042C7D2 /* SWJoinTableViewCell.xib in Resources */,
 				CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,

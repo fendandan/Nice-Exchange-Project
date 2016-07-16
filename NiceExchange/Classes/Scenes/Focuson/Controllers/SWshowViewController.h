@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface SWshowViewController : BaseViewController
+@property (strong, nonatomic) IBOutlet UIButton *icon;
 
 @end

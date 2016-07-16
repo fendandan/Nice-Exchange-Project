@@ -22,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor cyanColor];
+   
+    
     self.touch = 0;
     //左上方返回按钮
     [self backButtonItem];
@@ -31,6 +32,13 @@
     [self addRightButtonItem];
     //添加底部视图
     [self addtopicviews];
+    self.view.backgroundColor = [UIColor whiteColor];
+    //头像切圆角
+    self.icon.layer.cornerRadius = self.icon.frame.size.width / 2;
+    self.icon.layer.borderWidth = 1.0;
+    self.icon.layer.borderColor =[UIColor clearColor].CGColor;
+    self.icon.clipsToBounds = TRUE;//去除边界
+    
 }
 
 -(void)addtopicviews {
@@ -162,6 +170,10 @@
     NSLog(@"分享");
     
 }
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

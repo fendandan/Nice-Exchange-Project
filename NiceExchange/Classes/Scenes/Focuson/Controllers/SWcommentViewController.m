@@ -24,6 +24,7 @@
     self.textView.delegate = self;
     self.title = @"参与沙龙";
     [self tollBar];
+    self.view.backgroundColor = [UIColor whiteColor];
   
 }
 
