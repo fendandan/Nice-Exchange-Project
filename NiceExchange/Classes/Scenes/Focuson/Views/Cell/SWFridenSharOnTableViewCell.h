@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol FriendiconDelegate <NSObject>
+
+-(void)onClick;
+
+@end
+
 @interface SWFridenSharOnTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *Friendicon;
 @property (strong, nonatomic) IBOutlet UILabel *FriendName;
@@ -16,5 +22,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *collectNum;
 @property (strong, nonatomic) IBOutlet UILabel *joinNum;
 @property (strong, nonatomic) IBOutlet UIView *unView;
+
+
+@property(nonatomic,weak)id<FriendiconDelegate>friendDelegate;
 
 @end

@@ -44,7 +44,7 @@
     imageVC.layer.cornerRadius = imageVC.frame.size.width /2;
     imageVC.layer.masksToBounds = YES;
     imageVC.image = [UIImage imageNamed:@"我要参加.png"];
-
+    
     [self.view addSubview:imageVC];
     
     UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(imageVC.frame) + 30, imageVC.frame.origin.y, 80, 40)];
@@ -54,10 +54,10 @@
     lable.textColor = [UIColor colorWithRed:50/256.0 green:50/256.0 blue:50/256.0 alpha:.5];
     [self.view addSubview:lable];
     
-  self.btn = [UIButton buttonWithType:0];
-      self.btn.frame = CGRectMake(CGRectGetMaxX(view.frame) - 49, view.frame.origin.y +4.5
-                        , 40, 40);
- 
+    self.btn = [UIButton buttonWithType:0];
+    self.btn.frame = CGRectMake(CGRectGetMaxX(view.frame) - 49, view.frame.origin.y +4.5
+                                , 40, 40);
+    
     [  self.btn addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [  self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
     [self.view addSubview:  self.btn];
@@ -75,10 +75,10 @@
 //收藏按钮
 -(void)collectionAction:(UIButton *)sender {
     
-   
+    
     
     if (self.touch == 1) {
-          [self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
+        [self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
         UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 200, 10000, 400, 40)];
         lable.backgroundColor = [UIColor blackColor];
         lable.alpha = .5;
@@ -92,11 +92,11 @@
             lable.frame = CGRectMake(self.view.frame.size.width / 2 - 60, self.view.frame.size.height - 120, 120, 40);
             
         }];
-   
-                UILabel *lableV  = [self.view viewWithTag:123];
-            [lableV removeFromSuperview];
         
-            self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
+        UILabel *lableV  = [self.view viewWithTag:123];
+        [lableV removeFromSuperview];
+        
+        self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
         
         self.touch = 0;
     }else if (self.touch == 0) {
@@ -114,15 +114,15 @@
         [UIView animateWithDuration:.2 animations:^{
             lable.frame = CGRectMake(self.view.frame.size.width / 2 - 150, self.view.frame.size.height - 120, 300, 40);
         }];
-    
+        
         [  self.btn setBackgroundImage:[UIImage imageNamed:@"已收藏.png"] forState:(UIControlStateNormal)];
         
         UILabel *lableV  = [self.view viewWithTag:333];
         [lableV removeFromSuperview];
         self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
-                     self.touch = 1;
+        self.touch = 1;
     }
- 
+    
 }
 //计时器方法
 -(void)disapperAction {
@@ -138,15 +138,15 @@
 
 -(void)backButtonItem {
     
-     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回"] style:(UIBarButtonItemStylePlain) target:self action:@selector
-                                              (backAction:)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回"] style:(UIBarButtonItemStylePlain) target:self action:@selector
+                                             (backAction:)];
     
 }
 
 -(void)backAction:(UIBarButtonItem *)back {
     
     
-     [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     //返回显示tabbar
     self.rootVC.swTabBar.hidden = NO;
 }
@@ -169,14 +169,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 

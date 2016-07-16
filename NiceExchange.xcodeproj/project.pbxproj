@@ -10,6 +10,14 @@
 		8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */; };
 		CC139A861D39C8D2002D0F6F /* SWcommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC139A841D39C8D2002D0F6F /* SWcommentViewController.m */; };
 		CC139A871D39C8D2002D0F6F /* SWcommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC139A851D39C8D2002D0F6F /* SWcommentViewController.xib */; };
+		CC139AB71D3A5018002D0F6F /* SWUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC139AAC1D3A5018002D0F6F /* SWUserDetailViewController.m */; };
+		CC139AB81D3A5018002D0F6F /* SWUserDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC139AAD1D3A5018002D0F6F /* SWUserDetailViewController.xib */; };
+		CC139AB91D3A5018002D0F6F /* SWusrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC139AAF1D3A5018002D0F6F /* SWusrTableViewCell.m */; };
+		CC139ABA1D3A5018002D0F6F /* SWusrTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC139AB01D3A5018002D0F6F /* SWusrTableViewCell.xib */; };
+		CC139ABB1D3A5018002D0F6F /* SWpratTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC139AB21D3A5018002D0F6F /* SWpratTableViewCell.m */; };
+		CC139ABC1D3A5018002D0F6F /* SWpratTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC139AB31D3A5018002D0F6F /* SWpratTableViewCell.xib */; };
+		CC139ABD1D3A5018002D0F6F /* SWcollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC139AB51D3A5018002D0F6F /* SWcollectionTableViewCell.m */; };
+		CC139ABE1D3A5018002D0F6F /* SWcollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC139AB61D3A5018002D0F6F /* SWcollectionTableViewCell.xib */; };
 		CC5A674C1D35F71B008AE01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A674B1D35F71B008AE01A /* main.m */; };
 		CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67531D35F71B008AE01A /* Main.storyboard */; };
 		CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67561D35F71B008AE01A /* Assets.xcassets */; };
@@ -74,6 +82,18 @@
 		CC139A831D39C8D2002D0F6F /* SWcommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentViewController.h; sourceTree = "<group>"; };
 		CC139A841D39C8D2002D0F6F /* SWcommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcommentViewController.m; sourceTree = "<group>"; };
 		CC139A851D39C8D2002D0F6F /* SWcommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcommentViewController.xib; sourceTree = "<group>"; };
+		CC139AAB1D3A5018002D0F6F /* SWUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUserDetailViewController.h; sourceTree = "<group>"; };
+		CC139AAC1D3A5018002D0F6F /* SWUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUserDetailViewController.m; sourceTree = "<group>"; };
+		CC139AAD1D3A5018002D0F6F /* SWUserDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWUserDetailViewController.xib; sourceTree = "<group>"; };
+		CC139AAE1D3A5018002D0F6F /* SWusrTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWusrTableViewCell.h; sourceTree = "<group>"; };
+		CC139AAF1D3A5018002D0F6F /* SWusrTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWusrTableViewCell.m; sourceTree = "<group>"; };
+		CC139AB01D3A5018002D0F6F /* SWusrTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWusrTableViewCell.xib; sourceTree = "<group>"; };
+		CC139AB11D3A5018002D0F6F /* SWpratTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWpratTableViewCell.h; sourceTree = "<group>"; };
+		CC139AB21D3A5018002D0F6F /* SWpratTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWpratTableViewCell.m; sourceTree = "<group>"; };
+		CC139AB31D3A5018002D0F6F /* SWpratTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWpratTableViewCell.xib; sourceTree = "<group>"; };
+		CC139AB41D3A5018002D0F6F /* SWcollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcollectionTableViewCell.h; sourceTree = "<group>"; };
+		CC139AB51D3A5018002D0F6F /* SWcollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcollectionTableViewCell.m; sourceTree = "<group>"; };
+		CC139AB61D3A5018002D0F6F /* SWcollectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcollectionTableViewCell.xib; sourceTree = "<group>"; };
 		CC5A67471D35F71B008AE01A /* NiceExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5A674B1D35F71B008AE01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5A67541D35F71B008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -459,6 +479,18 @@
 				CC9B1C941D37930A0042C7D2 /* SWJoinTableViewCell.h */,
 				CC9B1C951D37930A0042C7D2 /* SWJoinTableViewCell.m */,
 				CC9B1C961D37930A0042C7D2 /* SWJoinTableViewCell.xib */,
+				CC139AAB1D3A5018002D0F6F /* SWUserDetailViewController.h */,
+				CC139AAC1D3A5018002D0F6F /* SWUserDetailViewController.m */,
+				CC139AAD1D3A5018002D0F6F /* SWUserDetailViewController.xib */,
+				CC139AAE1D3A5018002D0F6F /* SWusrTableViewCell.h */,
+				CC139AAF1D3A5018002D0F6F /* SWusrTableViewCell.m */,
+				CC139AB01D3A5018002D0F6F /* SWusrTableViewCell.xib */,
+				CC139AB11D3A5018002D0F6F /* SWpratTableViewCell.h */,
+				CC139AB21D3A5018002D0F6F /* SWpratTableViewCell.m */,
+				CC139AB31D3A5018002D0F6F /* SWpratTableViewCell.xib */,
+				CC139AB41D3A5018002D0F6F /* SWcollectionTableViewCell.h */,
+				CC139AB51D3A5018002D0F6F /* SWcollectionTableViewCell.m */,
+				CC139AB61D3A5018002D0F6F /* SWcollectionTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -602,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA3B7A91D39CD9E003361CC /* 图片.png in Resources */,
+				CC139AB81D3A5018002D0F6F /* SWUserDetailViewController.xib in Resources */,
 				CC5A675A1D35F71B008AE01A /* LaunchScreen.storyboard in Resources */,
 				CC6EF8C41D3622B6000A9B44 /* BaseOrganCollectionViewCell.xib in Resources */,
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
@@ -611,9 +644,11 @@
 				CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
 				CC139A871D39C8D2002D0F6F /* SWcommentViewController.xib in Resources */,
+				CC139ABE1D3A5018002D0F6F /* SWcollectionTableViewCell.xib in Resources */,
 				CC9B1C9A1D37966C0042C7D2 /* xinxian.png in Resources */,
 				CC6EF8EF1D364018000A9B44 /* User.png in Resources */,
 				CC9B1C9C1D3796AE0042C7D2 /* 双引号-左-01.png in Resources */,
+				CC139ABA1D3A5018002D0F6F /* SWusrTableViewCell.xib in Resources */,
 				CC9B1CA41D37A7130042C7D2 /* 11.jpg in Resources */,
 				CC9B1C8D1D3789610042C7D2 /* icon.jpg in Resources */,
 				CCA3B7AA1D39CD9E003361CC /* 已收藏.png in Resources */,
@@ -621,6 +656,7 @@
 				CCA3B7AC1D39CD9E003361CC /* 收藏.png in Resources */,
 				CCA3B7A81D39CD9E003361CC /* 分享.png in Resources */,
 				CC6EF9041D368561000A9B44 /* Picture.png in Resources */,
+				CC139ABC1D3A5018002D0F6F /* SWpratTableViewCell.xib in Resources */,
 				CCA3B7AB1D39CD9E003361CC /* 我要参加.png in Resources */,
 				CC9B1C9E1D379F6D0042C7D2 /* 心.png in Resources */,
 				CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */,
@@ -694,7 +730,9 @@
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
 				CC9B1C971D37930A0042C7D2 /* SWJoinTableViewCell.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
+				CC139AB91D3A5018002D0F6F /* SWusrTableViewCell.m in Sources */,
 				CC9B1C881D377E890042C7D2 /* SWFridenSharOnTableViewCell.m in Sources */,
+				CC139ABD1D3A5018002D0F6F /* SWcollectionTableViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
 				CC139A861D39C8D2002D0F6F /* SWcommentViewController.m in Sources */,
@@ -702,7 +740,9 @@
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
 				D60E108B1D3877400024AF51 /* SWAddRule.m in Sources */,
+				CC139ABB1D3A5018002D0F6F /* SWpratTableViewCell.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
+				CC139AB71D3A5018002D0F6F /* SWUserDetailViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CC9B1C841D3778400042C7D2 /* SWFocusonViewController.m in Sources */,
