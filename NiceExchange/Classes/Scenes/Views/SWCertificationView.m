@@ -31,7 +31,7 @@
     self.passwordTextField.placeholder = @"密码";
     self.passwordTextField.layer.cornerRadius = 5;
     self.passwordTextField.layer.borderWidth = 0.5;
-    self.passwordTextField.layer.borderColor = kBorderColor;
+    self.passwordTextField.layer.borderColor = kBorderCGColor;
     
     [self addSubview:self.userNameTextField];
     [self addSubview:self.passwordTextField];

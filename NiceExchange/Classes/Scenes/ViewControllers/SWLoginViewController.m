@@ -39,7 +39,7 @@
     [lButton addTarget:self action:@selector(loginButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     lButton.layer.cornerRadius = 5;
     lButton.layer.borderWidth = 0.5;
-    lButton.layer.borderColor = kBorderColor;
+    lButton.layer.borderColor = kBorderCGColor;
     
     [lButton setTitle:@"登录" forState:UIControlStateNormal];
     lButton.titleLabel.font = [UIFont systemFontOfSize:26];
@@ -66,10 +66,29 @@
 
 - (void)loginButtonClicked:(UIButton *)button {
     SWLogFunc;
+    // 登录
+    [AVUser logInWithUsernameInBackground:self.lrView.userNameTextField.text password:self.lrView.passwordTextField.text block:^(AVUser *user, NSError *error) {
+        if (user != nil) {
+            SWLog(@"use3r = %@", user);
+            [self.navigationController popViewControllerAnimated:YES];
+        } else {
+            SWLog(@"error = %@", error.userInfo);
+            
+            NSNumber *one = error.userInfo[@"code"];
+            NSString *two = one.stringValue;
+            
+            // 如果在 15 分钟内，同一个用户登录失败的次数大于 6 次，该用户账户即被云端暂时锁定，此时云端会返回错误码 {"code":1,"error":"登录失败次数超过限制，请稍候再试，或者通过忘记密码重设密码。"}
+            if ([two isEqualToString:@"1"]) {
+                SWLog(@"%@", error.userInfo[@"error"]);
+            }
+        }
+    }];
 }
 - (void)numberButtonClicked:(UIButton *)button {
     SWLogFunc;
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

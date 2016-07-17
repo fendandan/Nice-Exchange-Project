@@ -69,6 +69,12 @@
 		CCA3B8011D3A7C95003361CC /* SWusrTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7E11D3A7C95003361CC /* SWusrTableViewCell.m */; };
 		CCA3B8021D3A7C95003361CC /* SWusrTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA3B7E21D3A7C95003361CC /* SWusrTableViewCell.xib */; };
 		CCA4122F1D3A6C400025A297 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA4122E1D3A6C400025A297 /* ScrollViewController.m */; };
+		CCAC39751D3B9D8E00CCE229 /* Stamp_UserInfo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCAC39741D3B9D8E00CCE229 /* Stamp_UserInfo.jpg */; };
+		CCAC397D1D3BA2D900CCE229 /* SWUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC397C1D3BA2D900CCE229 /* SWUserInfoCell.m */; };
+		CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC397F1D3BA32B00CCE229 /* SWUserInfoView.m */; };
+		CCAC39841D3BA47B00CCE229 /* SWSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC39831D3BA47B00CCE229 /* SWSettingsViewController.m */; };
+		CCAC398A1D3BA65300CCE229 /* BaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC39871D3BA65300CCE229 /* BaseManager.m */; };
+		CCAC398B1D3BA65300CCE229 /* SWLeanCloudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCAC39891D3BA65300CCE229 /* SWLeanCloudManager.m */; };
 		CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FA51D37B4CF00AEF415 /* BaseView.m */; };
 		CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */; };
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
@@ -188,6 +194,17 @@
 		CCA3B7E21D3A7C95003361CC /* SWusrTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWusrTableViewCell.xib; sourceTree = "<group>"; };
 		CCA4122D1D3A6C400025A297 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		CCA4122E1D3A6C400025A297 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		CCAC39741D3B9D8E00CCE229 /* Stamp_UserInfo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Stamp_UserInfo.jpg; sourceTree = "<group>"; };
+		CCAC397B1D3BA2D900CCE229 /* SWUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUserInfoCell.h; sourceTree = "<group>"; };
+		CCAC397C1D3BA2D900CCE229 /* SWUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUserInfoCell.m; sourceTree = "<group>"; };
+		CCAC397E1D3BA32B00CCE229 /* SWUserInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUserInfoView.h; sourceTree = "<group>"; };
+		CCAC397F1D3BA32B00CCE229 /* SWUserInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUserInfoView.m; sourceTree = "<group>"; };
+		CCAC39821D3BA47B00CCE229 /* SWSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWSettingsViewController.h; sourceTree = "<group>"; };
+		CCAC39831D3BA47B00CCE229 /* SWSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWSettingsViewController.m; sourceTree = "<group>"; };
+		CCAC39861D3BA65300CCE229 /* BaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseManager.h; sourceTree = "<group>"; };
+		CCAC39871D3BA65300CCE229 /* BaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseManager.m; sourceTree = "<group>"; };
+		CCAC39881D3BA65300CCE229 /* SWLeanCloudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLeanCloudManager.h; sourceTree = "<group>"; };
+		CCAC39891D3BA65300CCE229 /* SWLeanCloudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLeanCloudManager.m; sourceTree = "<group>"; };
 		CCB33FA41D37B4CF00AEF415 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
 		CCB33FA51D37B4CF00AEF415 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
 		CCB33FAF1D37B5F600AEF415 /* SWCertificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCertificationView.h; sourceTree = "<group>"; };
@@ -405,6 +422,7 @@
 		CC6EF8C61D362F01000A9B44 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CCAC39851D3BA65300CCE229 /* Manager */,
 				CC6EF8F11D365AC5000A9B44 /* Request */,
 			);
 			path = Helpers;
@@ -413,6 +431,7 @@
 		CC6EF8C71D362F01000A9B44 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CCAC39741D3B9D8E00CCE229 /* Stamp_UserInfo.jpg */,
 				CC6EF8E01D364018000A9B44 /* tabBarImages */,
 			);
 			path = Resources;
@@ -435,6 +454,7 @@
 			children = (
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
+				CCAC39811D3BA47B00CCE229 /* SettingsViewController */,
 				CCB33FA91D37B53900AEF415 /* RegisterViewController */,
 				CCB33FAC1D37B53900AEF415 /* LoginViewController */,
 			);
@@ -444,8 +464,11 @@
 		CC6EF8CA1D362F01000A9B44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CCAC397A1D3BA2D900CCE229 /* Cells */,
 				CCB33FAF1D37B5F600AEF415 /* SWCertificationView.h */,
 				CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */,
+				CCAC397E1D3BA32B00CCE229 /* SWUserInfoView.h */,
+				CCAC397F1D3BA32B00CCE229 /* SWUserInfoView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -587,6 +610,35 @@
 			children = (
 			);
 			path = FirstViewControllers;
+			sourceTree = "<group>";
+		};
+		CCAC397A1D3BA2D900CCE229 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CCAC397B1D3BA2D900CCE229 /* SWUserInfoCell.h */,
+				CCAC397C1D3BA2D900CCE229 /* SWUserInfoCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		CCAC39811D3BA47B00CCE229 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCAC39821D3BA47B00CCE229 /* SWSettingsViewController.h */,
+				CCAC39831D3BA47B00CCE229 /* SWSettingsViewController.m */,
+			);
+			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		CCAC39851D3BA65300CCE229 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CCAC39861D3BA65300CCE229 /* BaseManager.h */,
+				CCAC39871D3BA65300CCE229 /* BaseManager.m */,
+				CCAC39881D3BA65300CCE229 /* SWLeanCloudManager.h */,
+				CCAC39891D3BA65300CCE229 /* SWLeanCloudManager.m */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		CCB33FA91D37B53900AEF415 /* RegisterViewController */ = {
@@ -737,6 +789,7 @@
 				CC6EF8EF1D364018000A9B44 /* User.png in Resources */,
 				CC6EF9041D368561000A9B44 /* Picture.png in Resources */,
 				CCF61FC61D3896190071EC51 /* MusicDetailTableViewCell.xib in Resources */,
+				CCAC39751D3B9D8E00CCE229 /* Stamp_UserInfo.jpg in Resources */,
 				CCA3B7F61D3A7C95003361CC /* 心.png in Resources */,
 				CCA3B7F01D3A7C95003361CC /* icon.jpg in Resources */,
 				CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */,
@@ -822,6 +875,8 @@
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
+				CCAC39841D3BA47B00CCE229 /* SWSettingsViewController.m in Sources */,
+				CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
@@ -833,6 +888,7 @@
 				CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */,
 				CCF61FCC1D38FB8E0071EC51 /* MusicModel.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
+				CCAC397D1D3BA2D900CCE229 /* SWUserInfoCell.m in Sources */,
 				D6616D691D3A82F70018794B /* SWAddRule.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CCA3B8011D3A7C95003361CC /* SWusrTableViewCell.m in Sources */,
@@ -843,7 +899,9 @@
 				D6616D741D3A844F0018794B /* SWMessViewController.m in Sources */,
 				CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */,
 				CCF61FC11D388E0B0071EC51 /* MusicDetailViewController.m in Sources */,
+				CCAC398A1D3BA65300CCE229 /* BaseManager.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
+				CCAC398B1D3BA65300CCE229 /* SWLeanCloudManager.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CCA3B7E61D3A7C95003361CC /* SWshowViewController.m in Sources */,

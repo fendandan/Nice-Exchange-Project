@@ -14,7 +14,12 @@
 // 常用尺寸&数值 宏
 
 #define kColor arc4random()%256/255.0
-#define kBorderColor [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0].CGColor
+#define kitColor [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0]
+
+#define kImageColor [UIColor colorWithPatternImage:[UIImage imageNamed:@"Stamp_UserInfo.jpg"]]
+
+#define kBorderColor [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0]
+#define kBorderCGColor [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0].CGColor
 
 #define kScreenWidth    [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight   [UIScreen mainScreen].bounds.size.height
@@ -46,7 +51,7 @@
 // 数据请求工具类
 #import "BaseRequest.h" // 基类
 #import "NetWorkRequest.h"
-
+#import "SWLeanCloudManager.h" // LeanCloud
 
 // 底层控制器
 #import "RootViewController.h"
@@ -64,19 +69,21 @@
 // 主控制器
 #import "MyViewController.h"
 #import "SWFocusonViewController.h"
-//音乐
-#import "MusicViewController.h"
+#import "MusicViewController.h" // 音乐
 #import "SWCreationViewController.h"
 
 // 登录注册控制器
 #import "SWLoginViewController.h"
 #import "SWRegisterViewController.h"
+// 设置页面
+#import "SWSettingsViewController.h"
 
 // 自定义视图
 #import "SWCertificationView.h"
+#import "SWUserInfoView.h"
 
-
-
+// 自定义Cell
+#import "SWUserInfoCell.h"
 
 //音乐详情
 #import "MusicDetailViewController.h"

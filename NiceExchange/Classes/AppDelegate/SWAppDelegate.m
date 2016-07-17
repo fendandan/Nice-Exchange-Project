@@ -16,7 +16,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Override point for customization after application launch.
+    // LeanCloud
+    // applicationId 即 App Id，clientKey 是 App Key。
+    [AVOSCloud setApplicationId:@"8nI1eCRtiepkR5jBEUt8lGNK-gzGzoHsz"
+                      clientKey:@"Q3pfWyG7k7m6277yCulivB3B"];
+    // 跟踪统计应用的打开情况
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     
     

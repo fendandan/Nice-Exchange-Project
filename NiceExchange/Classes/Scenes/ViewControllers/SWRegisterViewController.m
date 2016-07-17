@@ -37,7 +37,7 @@
     [lButton addTarget:self action:@selector(registerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     lButton.layer.cornerRadius = 5;
     lButton.layer.borderWidth = 0.5;
-    lButton.layer.borderColor = kBorderColor;
+    lButton.layer.borderColor = kBorderCGColor;
     
     [lButton setTitle:@"注册" forState:UIControlStateNormal];
     lButton.titleLabel.font = [UIFont systemFontOfSize:26];
