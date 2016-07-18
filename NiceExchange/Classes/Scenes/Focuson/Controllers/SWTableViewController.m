@@ -15,18 +15,68 @@
 #import <AddressBook/ABRecord.h>
 #import "TKAddressBook.h"
 
-@interface SWTableViewController ()
+#import <MessageUI/MessageUI.h>
+
+@interface SWTableViewController ()<MFMessageComposeViewControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic ,strong)NSMutableArray *addressBookTemp;
 @end
 
 @implementation SWTableViewController
 
+//发送短信的方法
+ -(void)sendMessage
+{
+       //用于判断是否有发送短信的功能（模拟器上就没有短信功能）
+       Class messageClass = (NSClassFromString(@"MFMessageComposeViewController"));
+   
+        //判断是否有短信功能
+    if (messageClass != nil) {
+               //有发送功能要做的事情
+            }
+     else
+           {
+         
+                    UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"iOS版本过低（iOS4.0以后）" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+            
+                   [alterView show];
+                }
 
+    
+    //有短信功能
+            if ([messageClass canSendText]) {
+                    //发送短信
+               }
+          else
+               {
+                       UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"该设备没有发送短信的功能~" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+         
+                       [alterView show];
+               }
+  
+    
+//    
+//    //实例化MFMessageComposeViewController,并设置委托
+//               MFMessageComposeViewController *messageController = [[MFMessageComposeViewController alloc] init];
+//                messageController.delegate = self;
+//   
+//    
+//               //拼接并设置短信内容
+//                NSString *messageContent = [NSString stringWithFormat:@"2222222222"];
+//              messageController.body = messageContent;
+//   
+//                //设置发送给谁
+//    messageController.recipients = @[@"11"];
+//   
+//               //推到发送试图控制器
+//               [self presentViewController:messageController animated:YES completion:^{
+//                   
+//                    }];
+    
+}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"image.png"]];
 
     _addressBookTemp = [NSMutableArray array];
@@ -182,11 +232,39 @@
 - (void)photographButtonClicked:(UIButton *)sender{
     NSLog(@"发短信");
     
+    [self sendMessage];
+    
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 60;
 }
+
+
+//发送短信后回调的方法
+ -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+ {
+         NSString *tipContent;
+         switch (result) {
+                     case MessageComposeResultCancelled:
+                        tipContent = @"发送短信已";
+                        break;
+        
+                     case MessageComposeResultFailed:
+                        tipContent = @"发送短信失败";
+                        break;
+            
+                     case MessageComposeResultSent:
+                         tipContent = @"发送成功";
+                         break;
+            
+                     default:
+                         break;
+             }
+    
+         UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:tipContent delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
+         [alterView show];
+     }
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
