@@ -12,6 +12,7 @@
 #import "SWshowViewController.h"
 #import "SWUserDetailViewController.h"
 #import "SWUserDetailViewController.h"
+#import "SWTableViewController.h"
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource,FriendiconDelegate,JoinDelegate>
 
 
@@ -62,6 +63,10 @@
 }
 //ButtonItem点击方法
 -(void)addFirends:(UIBarButtonItem *)addFriends {
+    
+    SWTableViewController *tableVC = [SWTableViewController new];
+    
+    [self.navigationController pushViewController:tableVC animated:YES];
     
 }
 

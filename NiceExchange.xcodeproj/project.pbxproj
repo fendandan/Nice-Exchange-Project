@@ -76,6 +76,10 @@
 		CC704E1D1D3CF63500D5A269 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E1C1D3CF63500D5A269 /* CoreTelephony.framework */; };
 		CC704E1F1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E1E1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd */; };
 		CC704E211D3CF64300D5A269 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */; };
+		CC7E0CEA1D3D07DE00313F32 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */; };
+		CC7E0CEC1D3D07E400313F32 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */; };
+		CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */; };
+		CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CF11D3D080700313F32 /* SWTableViewController.m */; };
 		CC8F34E31D37D4E6001B61DD /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8F34E21D37D4E6001B61DD /* MusicViewController.m */; };
 		CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */; };
 		CCA3B7E41D3A7C95003361CC /* SWcommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */; };
@@ -260,6 +264,12 @@
 		CC704E1C1D3CF63500D5A269 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CC704E1E1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		CC7E0CED1D3D07F500313F32 /* TKAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAddressBook.h; sourceTree = "<group>"; };
+		CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAddressBook.m; sourceTree = "<group>"; };
+		CC7E0CF01D3D080700313F32 /* SWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewController.h; sourceTree = "<group>"; };
+		CC7E0CF11D3D080700313F32 /* SWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewController.m; sourceTree = "<group>"; };
 		CC8F34E11D37D4E6001B61DD /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		CC8F34E21D37D4E6001B61DD /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		CCA3B7B61D3A7C95003361CC /* SWcommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentViewController.h; sourceTree = "<group>"; };
@@ -362,6 +372,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7E0CEC1D3D07E400313F32 /* AddressBookUI.framework in Frameworks */,
+				CC7E0CEA1D3D07DE00313F32 /* AddressBook.framework in Frameworks */,
 				CC704E211D3CF64300D5A269 /* libz.1.1.3.tbd in Frameworks */,
 				CC704E1F1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd in Frameworks */,
 				CC704E1D1D3CF63500D5A269 /* CoreTelephony.framework in Frameworks */,
@@ -388,6 +400,8 @@
 		79C9667793D08D28649D7C38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */,
+				CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */,
 				CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */,
 				CC704E1E1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd */,
 				CC704E1C1D3CF63500D5A269 /* CoreTelephony.framework */,
@@ -527,6 +541,8 @@
 				CCF61FCB1D38FB8E0071EC51 /* MusicModel.m */,
 				CCF61FC71D38C7F60071EC51 /* MusicDetailModel.h */,
 				CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */,
+				CC7E0CED1D3D07F500313F32 /* TKAddressBook.h */,
+				CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -806,6 +822,8 @@
 				CCA3B7BB1D3A7C95003361CC /* SWshowViewController.h */,
 				CCA3B7BC1D3A7C95003361CC /* SWshowViewController.m */,
 				CCA3B7BD1D3A7C95003361CC /* SWshowViewController.xib */,
+				CC7E0CF01D3D080700313F32 /* SWTableViewController.h */,
+				CC7E0CF11D3D080700313F32 /* SWTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1173,6 +1191,7 @@
 				CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
+				CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CCA4122F1D3A6C400025A297 /* ScrollViewController.m in Sources */,
@@ -1195,6 +1214,7 @@
 				CCF61FC11D388E0B0071EC51 /* MusicDetailViewController.m in Sources */,
 				CCAC398A1D3BA65300CCE229 /* BaseManager.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
+				CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */,
 				CCAC398B1D3BA65300CCE229 /* SWLeanCloudManager.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
