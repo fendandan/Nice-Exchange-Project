@@ -8,7 +8,12 @@
 
 #import "SWshowViewController.h"
 #import "SWcommentViewController.h"
-@interface SWshowViewController ()
+
+#import "UMSocialSnsService.h"
+#import "UMSocialData.h"
+#import "UMSocialSnsPlatformManager.h"
+
+@interface SWshowViewController ()<UMSocialUIDelegate>
 
 @property (nonatomic,assign) NSInteger touch;
 
@@ -166,8 +171,21 @@
 //ButtonItem点击方法
 -(void)shareAction:(UIBarButtonItem *)shared {
     
-    //第三方分享
-    NSLog(@"分享");
+#warning 友盟分享、、
+    
+    [[UMSocialData defaultData].urlResource setResourceType:UMSocialUrlResourceTypeImage url:@"http://7xavwz.com2.z0.glb.qiniucdn.com/5093b0ee586aef4d2ebd421daadb764a_960_1280_.jpg?imageView2/2/w/550"];
+    
+    [UMSocialData defaultData].extConfig.title = @"分享的title";
+    [UMSocialData defaultData].extConfig.qqData.url = @"http://baidu.com";
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"507fcab25270157b37000010"
+                                      shareText:@"关于我从刺绣小白到开了一家刺绣饰品店你有想了解的吗，http://www.salonwith.com/?salonid=23316"
+                                     shareImage:[UIImage imageNamed:@"icon"]
+                                shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSina,UMShareToQQ,UMShareToQzone]
+                                       delegate:self];
+    
+    
+
     
 }
 
