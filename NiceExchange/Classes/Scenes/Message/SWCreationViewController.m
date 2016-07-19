@@ -21,13 +21,15 @@ UINavigationControllerDelegate
 >
 @property(nonatomic,strong)UIImageView *imageview;//箭头
 @property (nonatomic,strong)UITextField *titleTF;//标题
-//@property (nonatomic,strong)UITextView *textview;//
 @property (nonatomic, strong)SWAddRule *addrule;
 @property (strong, nonatomic)SWLayoutTextView *textView;
 @property (nonatomic, strong)UIScrollView *scrollview;
 @property(nonatomic,strong) UIImagePickerController *imagepicker;
 @property (strong ,nonatomic) UIImageView *photoimageView;
 @property (strong, nonatomic) UIView *Viewaddimage;
+@property (strong, nonatomic) UIView *tageView;
+@property (strong, nonatomic) UIButton *addtageButton;
+
 @end
 
 @implementation SWCreationViewController
@@ -77,7 +79,9 @@ UINavigationControllerDelegate
     [addlabBtn setTitle:@"➕添加标签" forState:UIControlStateNormal];
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
     [scroll addSubview:addlabBtn];
+      self.addtageButton = addlabBtn;
     //活动标题
     self.titleTF.delegate = self;
     self.titleTF = [[UITextField alloc]initWithFrame:CGRectMake(20 , 220,self.view.bounds.size.width -40, 60)];
@@ -96,6 +100,7 @@ UINavigationControllerDelegate
     [scroll addSubview:self.Viewaddimage];
     //
     self.textView = [[SWLayoutTextView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.Viewaddimage.frame) , CGRectGetMaxY(self.Viewaddimage.frame)+10,self.Viewaddimage.frame.size.width, 100)];
+    self.textView.placeholder = @"说点啥呢!";
     [scroll addSubview:self.textView];
     self.textView.delegate = self;
     //self.textview.frame = CGRectMake(CGRectGetMinX(self.titleTF.frame), CGRectGetMaxY(self.titleTF.frame)+10, self.titleTF.frame.size.width, self.textview.contentSize.height);
@@ -154,15 +159,16 @@ UINavigationControllerDelegate
 }
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     NSLog(@"嘿嘿");
+    [self.navigationController pushViewController:[[SWMessViewController alloc] init] animated:YES];
 }
 //button
 -(void)uploadAction:(UIButton *)sender{
-    NSLog(@"上传图片");
+   // NSLog(@"上传图片");
     [self pusenotice];
 }
 -(void)addlabBtnAction:(UIButton *)sender{
-    NSLog(@"添加标签");
-    [self.navigationController pushViewController:[[SWMessViewController alloc] init] animated:YES];
+    //NSLog(@"添加标签");
+    [self addTags];
 }
 
 //调用系pusenotice统相册
@@ -219,6 +225,44 @@ UINavigationControllerDelegate
     //设置摄像头模式（拍照，录制视频）为录像模式
     self.imagepicker.cameraCaptureMode =  UIImagePickerControllerSourceTypeCamera;
     [self presentViewController:self.imagepicker animated:YES completion:nil];
+    
+}
+//添加标签
+-(void)addTags
+{
+    //
+    UIView *tagsview = [[UIView alloc]initWithFrame:CGRectMake(30, 240, 340, 110)];
+    tagsview.backgroundColor = [UIColor whiteColor];
+    tagsview.layer.masksToBounds = YES;
+    tagsview.layer.cornerRadius = tagsview.frame.size.height/4;
+    [self.view addSubview:tagsview];
+    self.tageView = tagsview;
+    NSArray *array = @[@"娱乐",@"文艺",@"乐活",@"旅行",@"吃喝",@"时尚",@"美容",@"情感"];
+    for (int j = 0; j < 2; j++) {
+        for (int i = 0; i < 4; i++) {
+            UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+            btn.frame = CGRectMake(20+i*80, 10 +j*50, 60, 40);
+            btn.backgroundColor = [UIColor orangeColor];
+            [tagsview addSubview:btn];
+            btn.layer.masksToBounds = YES;
+            btn.layer.cornerRadius = btn.frame.size.height/4;
+            [btn addTarget:self action:@selector(tagsAssignment:) forControlEvents:(UIControlEventTouchUpInside)];
+            [btn setTitle:[NSString stringWithFormat:@"%@",array.firstObject] forState:UIControlStateNormal];
+        }
+        
+    }
+    
+    
+}
+//tagsAssignment赋值
+-(void)tagsAssignment:(UIButton *)sender
+{
+    
+    self.addtageButton.titleLabel.text = sender.titleLabel.text;
+    [self.tageView removeFromSuperview];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
     
 }
 
