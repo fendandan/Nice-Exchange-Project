@@ -17,6 +17,13 @@
 
 @implementation SWUserDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    
+    self.rootVC.swTabBar.hidden = NO;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 self.title = @"个人资料";
@@ -44,10 +51,17 @@ self.title = @"个人资料";
 }
 
 -(void)addviews {
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"" style:(UIBarButtonItemStylePlain) target:self action:@selector(messageAction:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"发私信" style:(UIBarButtonItemStylePlain) target:self action:@selector(messageAction:)];
     
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"返回"] style:(UIBarButtonItemStylePlain) target:self action:@selector(popAction:)];
 }
+
+-(void)popAction:(UIButton *)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    self.rootVC.swTabBar.hidden = YES;
+}
+
 -(void)messageAction:(UIBarButtonItem *)sender {
     
     NSLog(@"发私信");
