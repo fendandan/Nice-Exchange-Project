@@ -84,6 +84,9 @@
 
 // 自定义Cell
 #import "SWUserInfoCell.h"
+#import "SWTableViewCell.h" // 我的&消息（cell）
+#import "SWActivityList.h"
+#import "SWLcAvUSer.h"
 
 //音乐详情
 #import "MusicDetailViewController.h"

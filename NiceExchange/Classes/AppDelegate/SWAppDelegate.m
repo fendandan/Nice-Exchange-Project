@@ -20,6 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [SWActivityList registerSubclass];
+    [SWLcAvUSer registerSubclass];
+    
     // LeanCloud
     // applicationId 即 App Id，clientKey 是 App Key。
     [AVOSCloud setApplicationId:@"8nI1eCRtiepkR5jBEUt8lGNK-gzGzoHsz"
