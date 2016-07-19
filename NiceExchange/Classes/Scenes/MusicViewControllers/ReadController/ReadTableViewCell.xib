@@ -17,15 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-1N-pGx">
-                        <rect key="frame" x="332" y="11" width="60" height="30"/>
-                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="60" id="3VN-V3-DpP"/>
-                            <constraint firstAttribute="height" constant="30" id="vtB-2Q-X2C"/>
-                        </constraints>
-                        <state key="normal" title="关注"/>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="york 发起了沙龙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMV-Wa-QlN">
                         <rect key="frame" x="74" y="14" width="214" height="24"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,14 +28,6 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-pd-c4q">
-                        <rect key="frame" x="22" y="8" width="38" height="35"/>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="38" id="1y7-Ew-4U0"/>
-                            <constraint firstAttribute="height" constant="35" id="6bc-Ko-Eh5"/>
-                        </constraints>
-                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Gy-fi-3af">
                         <rect key="frame" x="22" y="49" width="370" height="142"/>
                         <subviews>
@@ -103,6 +86,23 @@
                             <constraint firstItem="cdc-Oj-nVb" firstAttribute="leading" secondItem="d1P-Qo-O12" secondAttribute="trailing" constant="1" id="zS0-Dr-UGK"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-pd-c4q">
+                        <rect key="frame" x="22" y="8" width="38" height="35"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="1y7-Ew-4U0"/>
+                            <constraint firstAttribute="height" constant="35" id="6bc-Ko-Eh5"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-1N-pGx">
+                        <rect key="frame" x="332" y="11" width="60" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="3VN-V3-DpP"/>
+                            <constraint firstAttribute="height" constant="30" id="vtB-2Q-X2C"/>
+                        </constraints>
+                        <state key="normal" title="关注"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="yBb-1N-pGx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="2mI-wT-E3I"/>

@@ -37,6 +37,8 @@
 @property(nonatomic,strong)UIButton *readBtn;
 @property(nonatomic,strong)UIButton *movieBtn;
 
+@property(nonatomic,strong)NSTimer *timer;
+
 @end
 
 @implementation MusicViewController
@@ -65,6 +67,10 @@
     
     
     self.musicBtn.selected = YES;
+    
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
+    
 }
 
 
@@ -365,6 +371,21 @@
     
     return self.scrollView;
 }
+
+
+int a = 0;
+- (void)timerAction{
+    a++;
+    if (a == 5) {
+        a = 0;
+    }
+    
+    [self.scrollView setContentOffset:CGPointMake(414*a, 0)];
+    
+    [self.pageControl setCurrentPage:a];
+    
+}
+
 
 
 
