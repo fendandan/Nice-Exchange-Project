@@ -155,10 +155,28 @@ UINavigationControllerDelegate
 
 //navgation
 -(void)itemRightAction:(UIBarButtonItem *)sender{
-    NSLog(@"嘿嘿");
+    SWLog(@"嘿嘿");
+    // 发布活动
+    if (self.titleTF.text.length == 0) {
+        [self aalertViewShowWithMessage:@"忘了写标题了？" title:@"哦" otherTitle:nil];
+    }else if (self.textView.textView.text.length == 0) {
+        [self aalertViewShowWithMessage:@"忘写内容了？" title:@"哦" otherTitle:nil];
+    }else {
+        SWActivityList *activity = [SWActivityList object];
+        activity.title = self.titleTF.text;
+        activity.content = self.textView.textView.text;
+        NSData *data = UIImageJPEGRepresentation(self.imageview.image, 0.5);
+        AVFile *file = [AVFile fileWithName:@"resume.jpg" data:data];
+        [activity setObject:file forKey:@"images"];
+        [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                SWLog(@"%d",succeeded);
+            }
+        }];
+    }
 }
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
-    NSLog(@"嘿嘿");
+    SWLog(@"嘿嘿");
     [self.navigationController pushViewController:[[SWMessViewController alloc] init] animated:YES];
 }
 //button
