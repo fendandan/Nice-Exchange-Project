@@ -145,6 +145,7 @@
 		D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D821D3A85190018794B /* practise_b_s_day.png */; };
 		D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D831D3A85190018794B /* practise_c_n_day.png */; };
 		D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D841D3A85190018794B /* practise_c_s_day.png */; };
+		D6F554A11D3DD62A00CB1B3D /* SWLayoutTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -367,6 +368,8 @@
 		D6616D821D3A85190018794B /* practise_b_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_b_s_day.png; sourceTree = "<group>"; };
 		D6616D831D3A85190018794B /* practise_c_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_n_day.png; sourceTree = "<group>"; };
 		D6616D841D3A85190018794B /* practise_c_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_s_day.png; sourceTree = "<group>"; };
+		D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLayoutTextView.h; sourceTree = "<group>"; };
+		D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLayoutTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -957,6 +960,8 @@
 				D6616D7C1D3A85010018794B /* Image */,
 				D6616D641D3A82110018794B /* SWCreationViewController.h */,
 				D6616D651D3A82110018794B /* SWCreationViewController.m */,
+				D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */,
+				D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */,
 				D6616D671D3A82F70018794B /* SWAddRule.h */,
 				D6616D681D3A82F70018794B /* SWAddRule.m */,
 				D6616D701D3A844F0018794B /* SWMessViewController.h */,
@@ -1186,6 +1191,7 @@
 				CCA3B7FF1D3A7C95003361CC /* SWUserDetailViewController.m in Sources */,
 				CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */,
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
+				D6F554A11D3DD62A00CB1B3D /* SWLayoutTextView.m in Sources */,
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
 				D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
