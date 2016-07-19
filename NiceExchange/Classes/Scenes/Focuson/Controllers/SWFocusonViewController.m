@@ -21,6 +21,12 @@
 
 @implementation SWFocusonViewController
 
+-(void)viewWillAppear:(BOOL)animated {
+    
+    
+    self.rootVC.swTabBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"关注";

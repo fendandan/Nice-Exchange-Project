@@ -15,6 +15,7 @@
    UITableViewDelegate
 >
 
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -25,23 +26,23 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
+    self.dataArray = [NSMutableArray array];
+    [self requestData];
     [self addTableView];
     
 }
 
 - (void)addTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, kScreenWidth, kScreenHeight) style:(UITableViewStylePlain)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, kScreenHeight) style:(UITableViewStylePlain)];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+
     [self.view addSubview:self.tableView];
     
     //注册
     [self.tableView registerNib:[UINib nibWithNibName:@"ReadTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ReadTableViewCell_Identifiter];
-    
 }
 
 
@@ -50,7 +51,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.dataArray.count;
     
 }
 
@@ -60,6 +61,10 @@
 {
     ReadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ReadTableViewCell_Identifiter forIndexPath:indexPath];
     
+    
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    cell.titleLabel.text = activity.title;
     
     return cell;
 }
@@ -72,7 +77,20 @@
 }
 
 
-
+- (void)requestData {
+    // 查询活动
+    AVQuery *aQ = [SWActivityList query];
+    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
+    [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (SWActivityList *a in objects) {
+            SWActivityList *ac = a;
+            [self.dataArray addObject:ac];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
 
 
 

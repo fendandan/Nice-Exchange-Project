@@ -520,10 +520,10 @@
 		CC26E1DB1D3DDA82007FDAEE /* MusicController */ = {
 			isa = PBXGroup;
 			children = (
-				CC26E1DC1D3DDA82007FDAEE /* MusicDetailViewController.h */,
-				CC26E1DD1D3DDA82007FDAEE /* MusicDetailViewController.m */,
 				CC26E1DE1D3DDA82007FDAEE /* MusicViewController.h */,
 				CC26E1DF1D3DDA82007FDAEE /* MusicViewController.m */,
+				CC26E1DC1D3DDA82007FDAEE /* MusicDetailViewController.h */,
+				CC26E1DD1D3DDA82007FDAEE /* MusicDetailViewController.m */,
 				CC26E1E01D3DDA82007FDAEE /* ScrollViewController */,
 			);
 			path = MusicController;
