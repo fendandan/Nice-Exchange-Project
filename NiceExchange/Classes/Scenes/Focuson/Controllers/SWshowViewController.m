@@ -8,7 +8,7 @@
 
 #import "SWshowViewController.h"
 #import "SWcommentViewController.h"
-
+#import "SWUserDetailViewController.h"
 #import "UMSocialSnsService.h"
 #import "UMSocialData.h"
 #import "UMSocialSnsPlatformManager.h"
@@ -43,7 +43,13 @@
     self.icon.layer.borderWidth = 1.0;
     self.icon.layer.borderColor =[UIColor clearColor].CGColor;
     self.icon.clipsToBounds = TRUE;//去除边界
+    [self.icon addTarget:self action:@selector(PushAction:) forControlEvents:(UIControlEventTouchUpInside)];
+}
+
+-(void)PushAction:(UIButton *)sender {
+    SWUserDetailViewController *usrVC = [[SWUserDetailViewController alloc]init];
     
+    [self.navigationController pushViewController:usrVC animated:YES];
 }
 
 -(void)addtopicviews {

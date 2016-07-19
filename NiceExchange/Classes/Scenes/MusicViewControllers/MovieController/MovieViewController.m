@@ -1,24 +1,24 @@
 //
-//  ScrollViewController.m
+//  MovieViewController.m
 //  NiceExchange
 //
-//  Created by Spacewalk on 16/7/16.
+//  Created by Spacewalk on 16/7/18.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
-#import "ScrollViewController.h"
+#import "MovieViewController.h"
 
-@interface ScrollViewController ()
+@interface MovieViewController ()
 
 @end
 
-@implementation ScrollViewController
+@implementation MovieViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     
-    self.view.backgroundColor = [UIColor greenColor];
+    self.view.backgroundColor = [UIColor grayColor];
     
     
 }

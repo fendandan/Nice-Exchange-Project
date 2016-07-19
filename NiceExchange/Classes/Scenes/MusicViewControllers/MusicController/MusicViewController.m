@@ -8,27 +8,34 @@
 
 #import "MusicViewController.h"
 #import "ScrollViewController.h"
+#import "RedaViewController.h"
+#import "MovieViewController.h"
+#import "OneScrollViewController.h"
+#import "TwoViewController.h"
+#import "ThreeViewController.h"
+#import "FourViewController.h"
 
 @interface MusicViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property(nonatomic,strong)UIScrollView *scrollView;
 @property(nonatomic,strong)UIScrollView *ScrollViewnNav;
 @property(nonatomic,strong)UIPageControl *pageControl;
-
 @property(nonatomic,strong)UIView *collectionHeaderView;
 
+@property(nonatomic,strong)UIScrollView *BottomScrollView;
+
 @property(nonatomic,strong)NSMutableArray *musicArray;
-
 @property(nonatomic,strong)NSMutableArray *oneArray;
-
 @property(nonatomic,strong)NSMutableArray *twoArray;
 @property(nonatomic,strong)NSMutableArray *threeArray;
 @property(nonatomic,strong)NSMutableArray *fourArray;
 @property(nonatomic,strong)NSArray *dataArray;
-
-
 @property(nonatomic,strong)NSMutableArray *titleArray;
 
+
+@property(nonatomic,strong)UIButton *musicBtn;
+@property(nonatomic,strong)UIButton *readBtn;
+@property(nonatomic,strong)UIButton *movieBtn;
 
 @end
 
@@ -37,10 +44,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //添加底层滚动视图
+    [self addScrollView];
+    [self.collectionview removeFromSuperview];
+    [self.BottomScrollView addSubview:self.collectionview];
     
+    //添加导航 scrollView
     [self addScrollViewnNavigation];
-    
-    
     
     
     //注册头部视图
@@ -50,10 +60,56 @@
     [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
 
     
+    //请求数据
     [self MusicRequestData];
     
-
+    
+    self.musicBtn.selected = YES;
 }
+
+
+
+
+
+
+
+
+//添加底层scrollView
+- (void)addScrollView
+{
+    self.BottomScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    self.BottomScrollView.backgroundColor = [UIColor redColor];
+    
+    self.BottomScrollView.pagingEnabled = YES;
+    
+    self.BottomScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 3, 0);
+    
+
+    //添加 view
+    
+        RedaViewController *readVC = [[RedaViewController alloc] init];
+        readVC.view.frame = CGRectMake(kScreenWidth, 80, kScreenWidth, kScreenHeight - 80);
+        [self addChildViewController:readVC];
+        [self.BottomScrollView addSubview:readVC.view];
+    
+        MovieViewController *movieVC = [[MovieViewController alloc] init];
+        movieVC.view.frame = CGRectMake(kScreenWidth*2, 80, kScreenWidth, kScreenHeight - 80);
+        [self addChildViewController:movieVC];
+        [self.BottomScrollView addSubview:movieVC.view];
+
+    
+    self.BottomScrollView.delegate = self;
+    
+    [self.view addSubview:self.BottomScrollView];
+}
+
+
+
+
+
+
+
 
 
 
@@ -82,7 +138,6 @@
                [self.titleArray addObject:[tempDIC objectForKey:@"title"]];
             }
             
-        
             for (NSDictionary *DIC in collectionsArray) {
            
                 MusicModel *model = [MusicModel new];
@@ -98,28 +153,24 @@
         
         self.oneArray = [NSMutableArray new];
         for (int i = 0; i < 6; i++) {
-            
             [self.oneArray addObject:self.musicArray[i]];
 
         }
-        
+
         self.twoArray = [NSMutableArray new];
         for (int i = 6; i < 12; i++) {
-            
             [self.twoArray addObject:self.musicArray[i]];
             
         }
         
         self.threeArray = [NSMutableArray new];
         for (int i =12; i < 18; i++) {
-            
             [self.threeArray addObject:self.musicArray[i]];
             
         }
         
         self.fourArray = [NSMutableArray new];
         for (int i = 18; i < 24; i++) {
-            
             [self.fourArray addObject:self.musicArray[i]];
         }
         
@@ -148,7 +199,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-        return 6;
+        return self.oneArray.count;
 }
 
 
@@ -194,50 +245,75 @@
     
     
     //添加导航按钮
-    UIButton *musicBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [musicBtn setTitle:@"音乐" forState:(UIControlStateNormal)];
-    musicBtn.frame = CGRectMake(10, 0, 50, 50);
-    [self.ScrollViewnNav addSubview:musicBtn];
+    _musicBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_musicBtn setTitle:@"音乐" forState:(UIControlStateNormal)];
+    _musicBtn.frame = CGRectMake(10, 0, 50, 50);
     
-    [musicBtn addTarget:self action:@selector(musicBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.ScrollViewnNav addSubview:_musicBtn];
     
-    
-    UIButton *readBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [readBtn setTitle:@"阅读" forState:(UIControlStateNormal)];
-    readBtn.frame = CGRectMake(100, 0, 50, 50);
-    [self.ScrollViewnNav addSubview:readBtn];
-    
-    [readBtn addTarget:self action:@selector(readBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_musicBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_musicBtn addTarget:self action:@selector(musicBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     
-    UIButton *movieBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [movieBtn setTitle:@"视频" forState:(UIControlStateNormal)];
-    movieBtn.frame = CGRectMake(180, 0, 50, 50);
-    [self.ScrollViewnNav addSubview:movieBtn];
     
-    [movieBtn addTarget:self action:@selector(movieBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    _readBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_readBtn setTitle:@"阅读" forState:(UIControlStateNormal)];
+    _readBtn.frame = CGRectMake(100, 0, 50, 50);
+    [self.ScrollViewnNav addSubview:_readBtn];
+    
+
+    [_readBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    
+    [_readBtn addTarget:self action:@selector(readBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    
+    _movieBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_movieBtn setTitle:@"视频" forState:(UIControlStateNormal)];
+    _movieBtn.frame = CGRectMake(180, 0, 50, 50);
+    [self.ScrollViewnNav addSubview:_movieBtn];
+    
+    [_movieBtn addTarget:self action:@selector(movieBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_movieBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
 }
+
+
+
+
+
 
 
 
 //音乐点击事件
-- (void)musicBtnAction:(UIButton *)sender
+- (void)musicBtnAction:(UIButton *)btn
 {
-    NSLog(@"音乐");
+    btn.selected = YES;
+    self.readBtn.selected = NO;
+    self.movieBtn.selected = NO;
+    self.BottomScrollView.contentOffset = CGPointMake(self.BottomScrollView.frame.size.width/414, 0);
 }
 
 
 //阅读点击事件
-- (void)readBtnAction:(UIButton *)sender
+- (void)readBtnAction:(UIButton *)btn
 {
-    NSLog(@"阅读");
+    self.musicBtn.selected = NO;
+    btn.selected = YES;
+    self.movieBtn.selected = NO;
+    
+    self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth, 0);
 }
 
 
 //视频点击事件
-- (void)movieBtnAction:(UIButton *)sender
+- (void)movieBtnAction:(UIButton *)btn
 {
-    NSLog(@"视频");
+    self.musicBtn.selected = NO;
+    self.readBtn.selected = NO;
+    btn.selected = YES;
+    
+    self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 2, 0);
+    
 }
 
 
@@ -251,7 +327,7 @@
 
 
 //添加轮播图
-- (UIScrollView *)addScrollView{
+- (UIScrollView *)addscrollView{
     
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height - 540)];
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width * 5, 0);
@@ -262,16 +338,21 @@
     
     
     //轮播图布局
-    for (NSInteger i = 1; i < 5; i ++) {
-        UIImageView *imageV  = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width,self.view.frame.size.height - 540)];
+    for (NSInteger i = 1; i < 6; i ++) {
+        UIImageView *imageV  = [[UIImageView alloc] initWithFrame:CGRectMake((i-1)*kScreenWidth, 30, kScreenWidth,kScreenHeight - 540)];
         imageV.backgroundColor = [UIColor cyanColor];
         imageV.userInteractionEnabled = YES;
         
-        //imageView 的点击事件
-        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
-        [imageV addGestureRecognizer:singleTap];
+        imageV.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.png",i]];
         
-        [self.scrollView addSubview:imageV];
+        
+        //imageView 的点击事件
+        for (int i = 1; i < 6; i++) {
+            UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(action:)];
+            [imageV addGestureRecognizer:singleTap];
+            [self.scrollView addSubview:imageV];
+        }
+        
     }
     
     self.pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(160, 250, 100, 30)];
@@ -292,10 +373,38 @@
 //点击imageView 跳转页面
 - (void)action:(UITapGestureRecognizer *)sender
 {
-   
+    
+    if (self.scrollView.contentOffset.x == 0) {
+        
         ScrollViewController *scrVC = [ScrollViewController new];
         
         [self.navigationController pushViewController:scrVC animated:YES];
+        
+    }else if (self.scrollView.contentOffset.x == 414) {
+        
+        OneScrollViewController *oneVC = [OneScrollViewController new];
+        
+        [self.navigationController pushViewController:oneVC animated:YES];
+    }else if (self.scrollView.contentOffset.x == kScreenWidth * 2) {
+        
+        TwoViewController *twoVC = [TwoViewController new];
+        
+        [self.navigationController pushViewController:twoVC animated:YES];
+        
+    }else if (self.scrollView.contentOffset.x == kScreenWidth * 3) {
+        
+        ThreeViewController *threeVC = [ThreeViewController new];
+        
+        [self.navigationController pushViewController:threeVC animated:YES];
+    }else if (self.scrollView.contentOffset.x == kScreenWidth * 4) {
+        
+        FourViewController *fourVC = [FourViewController new];
+        
+        [self.navigationController pushViewController:fourVC animated:YES];
+    }
+    
+   
+    
 
 }
 
@@ -315,15 +424,42 @@
 
 
 
-//滑动页面 page 动
+//滑动页面 page 动(当滚动视图停止的时候)
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if (scrollView == self.scrollView) {
         NSLog(@"page 代理方法");
         
-        self.pageControl.currentPage = self.scrollView.contentOffset.x/414;
+        self.pageControl.currentPage = self.scrollView.contentOffset.x/kScreenWidth;
+    }else if (scrollView == self.BottomScrollView)
+    {
+        double d = self.BottomScrollView.contentOffset.x/kScreenWidth;
+        int i = (int)d;
+        if (i == 0) {
+            
+            self.musicBtn.selected = YES;
+            self.readBtn.selected = NO;
+            self.movieBtn.selected = NO;
+            
+        }else if (i == 1) {
+            
+            self.musicBtn.selected = NO;
+            self.readBtn.selected = YES;
+            self.movieBtn.selected = NO;
+            
+
+            
+        }else if (i == 2) {
+
+            
+            self.musicBtn.selected = NO;
+            self.readBtn.selected = NO;
+            self.movieBtn.selected = YES;
+        }
+        
+     
+        
     }
-    
 }
 
 
@@ -347,16 +483,11 @@
     
         UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView" forIndexPath:indexPath];
         //添加轮播视图
-        [headerView addSubview:[self addScrollView]];
-        
-        
-
+        [headerView addSubview:[self addscrollView]];
         
         //collectionView 分区视图
         self.collectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 275, self.view.frame.size.width, 30)];
-        
-
-        
+    
         [headerView addSubview:self.collectionHeaderView];
         
         
@@ -398,11 +529,6 @@
             }else if (indexPath.section == 3){
                 titleLabel.text = self.titleArray[3];
             }
-            
-    
-        
-        
-        
         
         [self.collectionHeaderView addSubview:titleLabel];
         
@@ -414,7 +540,6 @@
 //        [self.collectionHeaderView addSubview:moreBtn];
         
             return headerView;
-
         }
     
     return nil;
