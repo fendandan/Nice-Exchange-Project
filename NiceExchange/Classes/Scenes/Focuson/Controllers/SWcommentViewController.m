@@ -14,6 +14,7 @@
 
 @implementation SWcommentViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //左上方返回按钮
