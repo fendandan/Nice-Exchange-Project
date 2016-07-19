@@ -34,16 +34,15 @@
 
 - (void)addTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 60, kScreenWidth, kScreenHeight) style:(UITableViewStylePlain)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, kScreenHeight) style:(UITableViewStylePlain)];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
+
     [self.view addSubview:self.tableView];
     
     //注册
     [self.tableView registerNib:[UINib nibWithNibName:@"ReadTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ReadTableViewCell_Identifiter];
-    
 }
 
 
