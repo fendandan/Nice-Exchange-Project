@@ -16,5 +16,23 @@
 
 
 
+//轮播请求
+#define oneMusicrequest_Url @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=6751&isUGC=0&version=5.7.2&from=ios&channel=appstore&operator=0"
+
+
+#define twoMusicRequest_Url @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=6134&isUGC=0&version=5.7.2&from=ios&channel=appstore&operator=0"
+
+
+#define threeMusicRequest_Url @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=6790&isUGC=0&version=5.7.2&from=ios&channel=appstore&operator=0"
+
+
+#define fourMusicRequest_Url @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=6775&isUGC=0&version=5.7.2&from=ios&channel=appstore&operator=0"
+
+
+
+#define fiveMusicRequest_Url @"http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.diy.gedanInfo&from=ios&listid=6012&isUGC=0&version=5.7.2&from=ios&channel=appstore&operator=0"
+
+
+
 
 #endif /* RequestUrl_h */

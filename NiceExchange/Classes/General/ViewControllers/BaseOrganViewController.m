@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"collectionview";
+    self.title = @"首页";
     
     
     [self addCollectionView];
