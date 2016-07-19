@@ -41,7 +41,17 @@ UINavigationControllerDelegate
     self.imagepicker = [[UIImagePickerController alloc]init];
     self.imagepicker.delegate = self;
     [self addImageview];
-
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
+    //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
+    tapGestureRecognizer.cancelsTouchesInView = NO;
+    //将触摸事件添加到当前view
+    [self.scrollview addGestureRecognizer:tapGestureRecognizer];
+    
+}
+-(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    [self.titleTF resignFirstResponder];
+    [self.textView.textView resignFirstResponder];
+    [self.addrule.textfield resignFirstResponder];
 }
 -(void)releaseAction
 {
@@ -155,7 +165,7 @@ UINavigationControllerDelegate
 
 //navgation
 -(void)itemRightAction:(UIBarButtonItem *)sender{
-    NSLog(@"嘿嘿");
+    //NSLog(@"嘿嘿");
 }
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     NSLog(@"嘿嘿");
@@ -237,7 +247,7 @@ UINavigationControllerDelegate
     tagsview.layer.cornerRadius = tagsview.frame.size.height/4;
     [self.view addSubview:tagsview];
     self.tageView = tagsview;
-    NSArray *array = @[@"娱乐",@"文艺",@"乐活",@"旅行",@"吃喝",@"时尚",@"美容",@"情感"];
+    NSArray *array = @[@[@"娱乐",@"文艺",@"乐活",@"旅行"],@[@"吃喝",@"时尚",@"美容",@"情感"]];
     for (int j = 0; j < 2; j++) {
         for (int i = 0; i < 4; i++) {
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -247,7 +257,7 @@ UINavigationControllerDelegate
             btn.layer.masksToBounds = YES;
             btn.layer.cornerRadius = btn.frame.size.height/4;
             [btn addTarget:self action:@selector(tagsAssignment:) forControlEvents:(UIControlEventTouchUpInside)];
-            [btn setTitle:[NSString stringWithFormat:@"%@",array.firstObject] forState:UIControlStateNormal];
+            [btn setTitle:[NSString stringWithFormat:@"%@",array[j][i]] forState:UIControlStateNormal];
         }
         
     }
@@ -259,14 +269,25 @@ UINavigationControllerDelegate
 {
     
     self.addtageButton.titleLabel.text = sender.titleLabel.text;
+    
     [self.tageView removeFromSuperview];
+    
     [self dismissViewControllerAnimated:YES completion:^{
-        
+
     }];
     
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+     [self.titleTF resignFirstResponder];
+    [self.textView resignFirstResponder];
+    return YES;
+}
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.scrollview resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
