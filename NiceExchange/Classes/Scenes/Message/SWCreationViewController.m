@@ -52,7 +52,7 @@ UINavigationControllerDelegate
     //
     UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:scroll];
-    
+    self.scrollview = scroll;
     UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1.jpeg"]];
     image.backgroundColor = [UIColor grayColor];
     [scroll addSubview:image];
