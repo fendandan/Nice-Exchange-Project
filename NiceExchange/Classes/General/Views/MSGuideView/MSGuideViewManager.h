@@ -1,6 +1,6 @@
 //
-//  HcdGuideViewManager.h
-//  HcdGuideViewDemo
+//  MSGuideViewManager.h
+//  MSGuideViewDemo
 //
 //  Created by Spacewalk on 16/7/19.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
