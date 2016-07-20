@@ -132,9 +132,6 @@
         cell.attentionBtn.selected = YES;
     }
     
-    
-    
-    
 }
 
 

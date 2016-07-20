@@ -512,11 +512,11 @@
 		CC26E1CB1D3DD6C7007FDAEE /* ReadController */ = {
 			isa = PBXGroup;
 			children = (
+				CC26E1CF1D3DD6C7007FDAEE /* RedaViewController.h */,
+				CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */,
 				CC26E1CC1D3DD6C7007FDAEE /* ReadTableViewCell.h */,
 				CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */,
 				CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */,
-				CC26E1CF1D3DD6C7007FDAEE /* RedaViewController.h */,
-				CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */,
 			);
 			path = ReadController;
 			sourceTree = "<group>";
@@ -545,16 +545,16 @@
 		CC26E1E01D3DDA82007FDAEE /* ScrollViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CC26E1E11D3DDA82007FDAEE /* FourViewController.h */,
-				CC26E1E21D3DDA82007FDAEE /* FourViewController.m */,
-				CC26E1E31D3DDA82007FDAEE /* OneScrollViewController.h */,
-				CC26E1E41D3DDA82007FDAEE /* OneScrollViewController.m */,
 				CC26E1E51D3DDA82007FDAEE /* ScrollViewController.h */,
 				CC26E1E61D3DDA82007FDAEE /* ScrollViewController.m */,
-				CC26E1E71D3DDA82007FDAEE /* ThreeViewController.h */,
-				CC26E1E81D3DDA82007FDAEE /* ThreeViewController.m */,
+				CC26E1E31D3DDA82007FDAEE /* OneScrollViewController.h */,
+				CC26E1E41D3DDA82007FDAEE /* OneScrollViewController.m */,
 				CC26E1E91D3DDA82007FDAEE /* TwoViewController.h */,
 				CC26E1EA1D3DDA82007FDAEE /* TwoViewController.m */,
+				CC26E1E71D3DDA82007FDAEE /* ThreeViewController.h */,
+				CC26E1E81D3DDA82007FDAEE /* ThreeViewController.m */,
+				CC26E1E11D3DDA82007FDAEE /* FourViewController.h */,
+				CC26E1E21D3DDA82007FDAEE /* FourViewController.m */,
 			);
 			path = ScrollViewController;
 			sourceTree = "<group>";
