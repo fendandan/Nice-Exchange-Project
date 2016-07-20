@@ -36,22 +36,11 @@
     [self.swWindow makeKeyAndVisible];
     
     RootViewController *rootVC = [[RootViewController alloc] init];
-    
 #warning  message ----- 直接把今天要写的主控制器界面替换到navigationController的根视图控制器（这要就可以直接看到效果了）如下面的第四个navigationController控制器的根视图是MyViewController。
-    UIViewController * vc = [UIViewController new];
-    vc.view.backgroundColor = [UIColor redColor];
-    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[MusicViewController new]];
-    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[SWCreationViewController new]];
-    SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[SWFocusonViewController new]];
-    SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[MyViewController new]];
+   
     
-    [rootVC addChildViewController:swNVCfir];
-    [rootVC addChildViewController:swNVCsec];
-    [rootVC addChildViewController:swNVCThr];
-    [rootVC addChildViewController:swNVCFou];
-    
-//    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    [self.swWindow setRootViewController:rootVC];
+    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
+    [self.swWindow setRootViewController:sNC];
     
     
 #warning 设置你的友盟Appkey，在 AppDelegate文件内设置你的AppKey：

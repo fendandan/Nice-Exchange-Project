@@ -25,6 +25,11 @@
 		CC26E1FB1D3DDD21007FDAEE /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F61D3DDD21007FDAEE /* 3.png */; };
 		CC26E1FC1D3DDD21007FDAEE /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F71D3DDD21007FDAEE /* 4.png */; };
 		CC26E1FD1D3DDD21007FDAEE /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F81D3DDD21007FDAEE /* 5.png */; };
+		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
+		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
+		CC592B6A1D3F16CB002CD37D /* 444.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B671D3F16CB002CD37D /* 444.png */; };
+		CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC592B6E1D3F1701002CD37D /* MSGuideViewCell.m */; };
+		CC592B721D3F1701002CD37D /* MSGuideViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CC592B701D3F1701002CD37D /* MSGuideViewManager.m */; };
 		CC5A674C1D35F71B008AE01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A674B1D35F71B008AE01A /* main.m */; };
 		CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67531D35F71B008AE01A /* Main.storyboard */; };
 		CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67561D35F71B008AE01A /* Assets.xcassets */; };
@@ -196,6 +201,14 @@
 		CC26E1F61D3DDD21007FDAEE /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		CC26E1F71D3DDD21007FDAEE /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		CC26E1F81D3DDD21007FDAEE /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
+		CC592B661D3F16CB002CD37D /* 333.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 333.png; sourceTree = "<group>"; };
+		CC592B671D3F16CB002CD37D /* 444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 444.png; sourceTree = "<group>"; };
+		CC592B6C1D3F1701002CD37D /* MSGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGuideView.h; sourceTree = "<group>"; };
+		CC592B6D1D3F1701002CD37D /* MSGuideViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGuideViewCell.h; sourceTree = "<group>"; };
+		CC592B6E1D3F1701002CD37D /* MSGuideViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGuideViewCell.m; sourceTree = "<group>"; };
+		CC592B6F1D3F1701002CD37D /* MSGuideViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSGuideViewManager.h; sourceTree = "<group>"; };
+		CC592B701D3F1701002CD37D /* MSGuideViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSGuideViewManager.m; sourceTree = "<group>"; };
 		CC5A67471D35F71B008AE01A /* NiceExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5A674B1D35F71B008AE01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5A67541D35F71B008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -568,6 +581,28 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		CC592B641D3F16CB002CD37D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				CC592B651D3F16CB002CD37D /* 222.png */,
+				CC592B661D3F16CB002CD37D /* 333.png */,
+				CC592B671D3F16CB002CD37D /* 444.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		CC592B6B1D3F1701002CD37D /* MSGuideView */ = {
+			isa = PBXGroup;
+			children = (
+				CC592B6C1D3F1701002CD37D /* MSGuideView.h */,
+				CC592B6D1D3F1701002CD37D /* MSGuideViewCell.h */,
+				CC592B6E1D3F1701002CD37D /* MSGuideViewCell.m */,
+				CC592B6F1D3F1701002CD37D /* MSGuideViewManager.h */,
+				CC592B701D3F1701002CD37D /* MSGuideViewManager.m */,
+			);
+			path = MSGuideView;
+			sourceTree = "<group>";
+		};
 		CC5A673E1D35F71B008AE01A = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +723,7 @@
 		CC6EF8BC1D3622B6000A9B44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC592B6B1D3F1701002CD37D /* MSGuideView */,
 				CC6EF8BD1D3622B6000A9B44 /* Cells */,
 				CC6EF8C11D3622B6000A9B44 /* SWTabBar.h */,
 				CC6EF8C21D3622B6000A9B44 /* SWTabBar.m */,
@@ -719,6 +755,7 @@
 		CC6EF8C71D362F01000A9B44 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CC592B641D3F16CB002CD37D /* images */,
 				CCAC39741D3B9D8E00CCE229 /* Stamp_UserInfo.jpg */,
 				CC6EF8E01D364018000A9B44 /* tabBarImages */,
 			);
@@ -1211,6 +1248,7 @@
 				CC704E0A1D3CF5CC00D5A269 /* ios-social-sdk-login-quick.html in Resources */,
 				D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */,
 				CCA3B7F21D3A7C95003361CC /* image.png in Resources */,
+				CC592B681D3F16CB002CD37D /* 222.png in Resources */,
 				CCA3B7F31D3A7C95003361CC /* xinxian.png in Resources */,
 				CC704DF91D3CF5CC00D5A269 /* UMSShareListController.xib in Resources */,
 				CC704E091D3CF5CC00D5A269 /* ios-social-sdk-login-detail.html in Resources */,
@@ -1247,11 +1285,13 @@
 				CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */,
 				CC704DF21D3CF5CC00D5A269 /* UMSCommentDetailController.xib in Resources */,
 				CC704E0B1D3CF5CC00D5A269 /* ios-social-sdk-shake.html in Resources */,
+				CC592B691D3F16CB002CD37D /* 333.png in Resources */,
 				CCA3B7EF1D3A7C95003361CC /* 返回.png in Resources */,
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
 				CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */,
 				CC704E041D3CF5CC00D5A269 /* iOS-social-analytics-releasenote.html in Resources */,
 				CCA3B7E41D3A7C95003361CC /* SWcommentViewController.xib in Resources */,
+				CC592B6A1D3F16CB002CD37D /* 444.png in Resources */,
 				CC704E001D3CF5CC00D5A269 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				CC704DF71D3CF5CC00D5A269 /* UMSLoginViewController.xib in Resources */,
 				CC704DF31D3CF5CC00D5A269 /* UMSCommentInputController.xib in Resources */,
@@ -1351,6 +1391,7 @@
 				CC26E1F01D3DDA82007FDAEE /* ThreeViewController.m in Sources */,
 				CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
+				CC592B721D3F1701002CD37D /* MSGuideViewManager.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
 				D6616D7A1D3A84DA0018794B /* SWNotifcationSettingViewController.m in Sources */,
@@ -1376,6 +1417,7 @@
 				CC26E1EB1D3DDA82007FDAEE /* MusicDetailViewController.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
+				CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */,
 				CCA3B7E61D3A7C95003361CC /* SWshowViewController.m in Sources */,
 				CC5A674C1D35F71B008AE01A /* main.m in Sources */,
 			);
