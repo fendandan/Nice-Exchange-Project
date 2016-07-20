@@ -7,7 +7,7 @@
 //
 
 #import "RootViewController.h"
-
+#import "MSGuideView.h"
 @interface RootViewController ()<SWTabBarDelegate>
 
 @end
@@ -15,6 +15,17 @@
 @implementation RootViewController
 
 //
+- (void)viewWillAppear:(BOOL)animated {
+    
+    NSMutableArray *array = [NSMutableArray array];
+    [array addObject:[UIImage imageNamed:@"222"]];
+    [array addObject:[UIImage imageNamed:@"333"]];
+    [array addObject:[UIImage imageNamed:@"444"]];
+    
+    [[MSGuideViewManager sharedInstance]showGuideViewWithImages:array andButtonTitle:@"立即体验" andButtonTitleColor:[UIColor redColor] andButtonBGColor:[UIColor greenColor] andButtonBorderColor:[UIColor blackColor]];
+    
+}
+
 + (void)initialize {
     
     NSDictionary *attrs = @{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor grayColor]};
@@ -39,8 +50,12 @@
     [self.view addSubview: self.swTabBar];
     
   
+    SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[MusicViewController new]];
+    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[SWCreationViewController new]];
+    SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[SWFocusonViewController new]];
+    SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[MyViewController new]];
 
-   
+    self.viewControllers = @[swNVCfir,swNVCsec,swNVCThr,swNVCFou];
 }
 
 // 创建button
