@@ -1,6 +1,6 @@
 //
-//  HcdGuideViewManager.m
-//  HcdGuideViewDemo
+//  MSGuideViewManager.m
+//  MSGuideViewDemo
 //
 //  Created by Spacewalk on 16/7/19.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
@@ -58,7 +58,7 @@
         _view.delegate = self;
         RootViewController *rootVC = [[RootViewController alloc]init];
         self.window.rootViewController = rootVC;
-        [_view registerClass:[HcdGuideViewCell class] forCellWithReuseIdentifier:kCellIdentifier_HcdGuideViewCell];
+        [_view registerClass:[MsGuideViewCell class] forCellWithReuseIdentifier:kCellIdentifier_MsGuideViewCell];
     }
     return _view;
 }
@@ -71,8 +71,8 @@
 - (UIPageControl *)pageControl {
     if (_pageControl == nil) {
         _pageControl = [[UIPageControl alloc] init];
-        _pageControl.frame = CGRectMake(0, 0, kMSGuideViewBounds.size.width, 44.0f);
-        _pageControl.center = CGPointMake(kMSGuideViewBounds.size.width / 2, kMSGuideViewBounds.size.height - 60);
+       _pageControl.frame = CGRectMake(kMSGuideViewBounds.size.width / 2 - 200, kMSGuideViewBounds.size.height - 60, 400, 44);
+       // _pageControl.center = CGPointMake(kMSGuideViewBounds.size.width / 2, kMSGuideViewBounds.size.height - 60);
     }
     return _pageControl;
 }
@@ -116,7 +116,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    HcdGuideViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier_HcdGuideViewCell forIndexPath:indexPath];
+    MsGuideViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier_MsGuideViewCell forIndexPath:indexPath];
     
     UIImage *img = [self.images objectAtIndex:indexPath.row];
     CGSize size = [self adapterSizeImageSize:img.size compareSize:kMSGuideViewBounds.size];
@@ -177,6 +177,7 @@
     [self.view removeFromSuperview];
     [self setWindow:nil];
     [self setView:nil];
+     _pageControl.frame = CGRectMake(1000, kMSGuideViewBounds.size.height - 60, 400, 44);
     [self setPageControl:nil];
     
   

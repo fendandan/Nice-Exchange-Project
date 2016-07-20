@@ -1,6 +1,6 @@
 //
-//  HcdGuideViewCell.m
-//  HcdGuideViewDemo
+//  MSGuideViewCell.m
+//  MSGuideViewDemo
 //
 //  Created by Spacewalk on 16/7/19.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import "MSGuideViewCell.h"
 #import "MSGuideView.h"
-@interface HcdGuideViewCell()
+@interface MsGuideViewCell()
 
 @end
 
-@implementation HcdGuideViewCell
+@implementation MsGuideViewCell
 
 - (instancetype)init {
     if (self = [super init]) {
