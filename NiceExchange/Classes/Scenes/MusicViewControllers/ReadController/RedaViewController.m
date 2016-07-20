@@ -8,7 +8,7 @@
 
 #import "RedaViewController.h"
 #import "ReadTableViewCell.h"
-
+#import "SWUserDetailViewController.h"
 
 @interface RedaViewController ()
 <
@@ -34,11 +34,6 @@
     
     
     self.tableView.delegate = self;
-    
-    
-    
-    
-    
 }
 
 - (void)addTableView
@@ -106,10 +101,10 @@
 
 
 
+//关注
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell
 {
-    
-    
+
     if (cell.attentionBtn.selected == YES) {
         
         UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -117,9 +112,7 @@
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-            
             cell.attentionBtn.selected = NO;
-            
         }];
         
         [uialert addAction:action1];
@@ -127,12 +120,31 @@
         
         [self presentViewController:uialert animated:YES completion:nil];
         
-        
     }else{
         cell.attentionBtn.selected = YES;
     }
     
+    
 }
+
+
+
+//点击头像
+- (void)readTableViewPlayImageViewClickend:(ReadTableViewCell *)cell
+{
+    
+    cell.ImageView.userInteractionEnabled = YES;
+    
+    SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
+    
+    [self.navigationController pushViewController:usweVC animated:YES];
+    
+}
+
+
+
+
+
 
 
 

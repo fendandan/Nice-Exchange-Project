@@ -10,7 +10,6 @@
 
 @interface RedaViewController : BaseViewController
 
-
 @property(nonatomic,strong)UITableView *tableView;
 
 @end
