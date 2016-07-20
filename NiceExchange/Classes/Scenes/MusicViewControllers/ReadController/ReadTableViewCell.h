@@ -9,6 +9,16 @@
 #import <UIKit/UIKit.h>
 
 #define ReadTableViewCell_Identifiter @"ReadTableViewCell_Identifiter"
+
+@class ReadTableViewCell;
+
+@protocol ReadTableViewCellDelegate<NSObject>
+
+- (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell;
+
+@end
+
+
 @interface ReadTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *ImageView;
@@ -24,6 +34,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *participationBtn;
 
 @property (strong, nonatomic) IBOutlet UILabel *participationLabel;
+
+
+
+@property(nonatomic,assign)id<ReadTableViewCellDelegate>delegate;
+
 
 
 @end

@@ -71,6 +71,7 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
     
+    
 }
 
 
@@ -319,7 +320,6 @@
     btn.selected = YES;
     
     self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 2, 0);
-    
 }
 
 

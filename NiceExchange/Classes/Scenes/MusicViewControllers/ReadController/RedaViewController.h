@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RedaViewController : UIViewController
+@interface RedaViewController : BaseViewController
 
 
 @property(nonatomic,strong)UITableView *tableView;

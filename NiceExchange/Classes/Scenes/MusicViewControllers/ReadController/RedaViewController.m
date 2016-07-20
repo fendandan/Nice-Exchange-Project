@@ -9,10 +9,12 @@
 #import "RedaViewController.h"
 #import "ReadTableViewCell.h"
 
+
 @interface RedaViewController ()
 <
    UITableViewDataSource,
-   UITableViewDelegate
+   UITableViewDelegate,
+   ReadTableViewCellDelegate
 >
 
 @property (strong, nonatomic) NSMutableArray *dataArray;
@@ -30,11 +32,18 @@
     [self requestData];
     [self addTableView];
     
+    
+    self.tableView.delegate = self;
+    
+    
+    
+    
+    
 }
 
 - (void)addTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 50, kScreenWidth, kScreenHeight) style:(UITableViewStylePlain)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, kScreenWidth, kScreenHeight - 114) style:(UITableViewStylePlain)];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -44,7 +53,6 @@
     //注册
     [self.tableView registerNib:[UINib nibWithNibName:@"ReadTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ReadTableViewCell_Identifiter];
 }
-
 
 
 
@@ -61,6 +69,8 @@
 {
     ReadTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ReadTableViewCell_Identifiter forIndexPath:indexPath];
     
+    cell.delegate = self;
+    
     
     SWActivityList *activity = self.dataArray[indexPath.row];
     
@@ -73,7 +83,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 250;
+    return 200;
 }
 
 
@@ -90,6 +100,41 @@
             [self.tableView reloadData];
         });
     }];
+}
+
+
+
+
+
+- (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell
+{
+    
+    
+    if (cell.attentionBtn.selected == YES) {
+        
+        UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
+        
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+            cell.attentionBtn.selected = NO;
+            
+        }];
+        
+        [uialert addAction:action1];
+        [uialert addAction:action2];
+        
+        [self presentViewController:uialert animated:YES completion:nil];
+        
+        
+    }else{
+        cell.attentionBtn.selected = YES;
+    }
+    
+    
+    
+    
 }
 
 
