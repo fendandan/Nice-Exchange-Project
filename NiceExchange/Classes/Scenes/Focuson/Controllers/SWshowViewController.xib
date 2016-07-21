@@ -16,8 +16,130 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kxr-8S-W46">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxr-8S-W46">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okT-bR-jD1">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="V20-4E-OVz">
+                                    <rect key="frame" x="0.0" y="19" width="414" height="209"/>
+                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一起聊聊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6i-Mr-1ee">
+                                    <rect key="frame" x="14" y="67" width="69" height="23"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收藏  33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgT-cB-jW2">
+                                    <rect key="frame" x="125" y="189" width="47" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参与21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arb-zz-CCM">
+                                    <rect key="frame" x="224" y="189" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一起聊聊改善生活质量的那些小物件吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri5-8J-YPl">
+                                    <rect key="frame" x="66" y="125" width="283" height="47"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  想和大家一起聊聊有哪些可以提升生活质量的小物件。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-ad-YqP">
+                                    <rect key="frame" x="0.0" y="228" width="414" height="45"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk1-FL-Zle">
+                                    <rect key="frame" x="0.0" y="268" width="414" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mps-MK-DwU">
+                                    <rect key="frame" x="175" y="277" width="50" height="50"/>
+                                    <state key="normal" title="Button" image="icon.jpg"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ZZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEt-YJ-UnZ">
+                                    <rect key="frame" x="171" y="335" width="58" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="沙龙主人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLu-Uf-AGQ">
+                                    <rect key="frame" x="179" y="359" width="42" height="15"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已关注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-cu-hZv">
+                                    <rect key="frame" x="179" y="382" width="42" height="21"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="心.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-8T-EbR">
+                                    <rect key="frame" x="142" y="411" width="20" height="20"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.092125669189999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="心.png" translatesAutoresizingMaskIntoConstraints="NO" id="cyM-hG-86n">
+                                    <rect key="frame" x="239" y="411" width="20" height="20"/>
+                                    <color key="backgroundColor" red="1" green="0.0" blue="0.092125669189999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一起聊聊" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yz-bT-8bg">
+                                    <rect key="frame" x="162" y="411" width="76" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="所以今天再跟大家讨论有关自己的小物的话题，带来了我的黄铜花盆和黄铜笔架。 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoI-Bf-J32">
+                                    <rect key="frame" x="8" y="439" width="398" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="75S-k7-hkk">
+                                    <rect key="frame" x="1" y="471" width="413" height="130"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="乐活" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE1-SQ-5B9">
+                                    <rect key="frame" x="179" y="93" width="42" height="24"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="czI-G9-doR">
+                                    <rect key="frame" x="146" y="736" width="121" height="29"/>
+                                    <segments>
+                                        <segment title="First"/>
+                                        <segment title="Second"/>
+                                    </segments>
+                                </segmentedControl>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一件物品能有多少意义？生活实实在在，有温度有形状有颜色，都是由日常中每一件伸手可及的物品构成的。你的方方面面都在不知不觉中被时光嵌在了物品中，慢慢地，它的情感寄托就会超过功能性。 它们就像不会说话的老朋友，忠诚地保存着很多让人喜悦或悲伤的珍重记忆" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-0c-LMb">
+                                    <rect key="frame" x="3" y="609" width="406" height="143"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1500" id="iy7-PK-KzH"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="okT-bR-jD1" firstAttribute="leading" secondItem="Kxr-8S-W46" secondAttribute="leading" id="3GZ-CX-GSH"/>
+                        <constraint firstItem="okT-bR-jD1" firstAttribute="width" secondItem="Kxr-8S-W46" secondAttribute="width" id="RWV-ht-gw6"/>
+                        <constraint firstItem="okT-bR-jD1" firstAttribute="top" secondItem="Kxr-8S-W46" secondAttribute="top" id="gxb-5O-Og0"/>
+                        <constraint firstAttribute="trailing" secondItem="okT-bR-jD1" secondAttribute="trailing" id="qbx-kC-a6d"/>
+                        <constraint firstAttribute="bottom" secondItem="okT-bR-jD1" secondAttribute="bottom" id="y9A-7c-a5u"/>
+                    </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,110 +151,11 @@
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-            <point key="canvasLocation" x="71" y="101"/>
+            <point key="canvasLocation" x="375" y="108"/>
         </view>
         <view contentMode="scaleToFill" id="EEU-oK-PdE">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="11.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="V20-4E-OVz">
-                    <rect key="frame" x="49" y="-28" width="414" height="209"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一起聊聊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H6i-Mr-1ee">
-                    <rect key="frame" x="63" y="20" width="69" height="23"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="收藏  33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgT-cB-jW2">
-                    <rect key="frame" x="174" y="142" width="47" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参与21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arb-zz-CCM">
-                    <rect key="frame" x="273" y="142" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一起聊聊改善生活质量的那些小物件吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ri5-8J-YPl">
-                    <rect key="frame" x="115" y="78" width="283" height="47"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  想和大家一起聊聊有哪些可以提升生活质量的小物件。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-ad-YqP">
-                    <rect key="frame" x="49" y="181" width="414" height="45"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vk1-FL-Zle">
-                    <rect key="frame" x="49" y="221" width="414" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mps-MK-DwU">
-                    <rect key="frame" x="224" y="230" width="50" height="50"/>
-                    <state key="normal" title="Button" image="icon.jpg"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ZZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEt-YJ-UnZ">
-                    <rect key="frame" x="220" y="288" width="58" height="16"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="沙龙主人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLu-Uf-AGQ">
-                    <rect key="frame" x="228" y="312" width="42" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已关注" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-cu-hZv">
-                    <rect key="frame" x="228" y="335" width="42" height="21"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="心.png" translatesAutoresizingMaskIntoConstraints="NO" id="nZC-8T-EbR">
-                    <rect key="frame" x="191" y="364" width="20" height="20"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.092125669189999995" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="心.png" translatesAutoresizingMaskIntoConstraints="NO" id="cyM-hG-86n">
-                    <rect key="frame" x="288" y="364" width="20" height="20"/>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.092125669189999995" alpha="1" colorSpace="calibratedRGB"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一起聊聊" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yz-bT-8bg">
-                    <rect key="frame" x="211" y="364" width="76" height="20"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="所以今天再跟大家讨论有关自己的小物的话题，带来了我的黄铜花盆和黄铜笔架。 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoI-Bf-J32">
-                    <rect key="frame" x="57" y="392" width="398" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="75S-k7-hkk">
-                    <rect key="frame" x="50" y="424" width="413" height="130"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="一件物品能有多少意义？生活实实在在，有温度有形状有颜色，都是由日常中每一件伸手可及的物品构成的。你的方方面面都在不知不觉中被时光嵌在了物品中，慢慢地，它的情感寄托就会超过功能性。 它们就像不会说话的老朋友，忠诚地保存着很多让人喜悦或悲伤的珍重记忆" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-0c-LMb">
-                    <rect key="frame" x="49" y="562" width="414" height="89"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="乐活" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE1-SQ-5B9">
-                    <rect key="frame" x="228" y="46" width="42" height="24"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="670" y="101"/>
         </view>

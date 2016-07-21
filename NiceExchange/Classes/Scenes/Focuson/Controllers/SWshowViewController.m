@@ -20,16 +20,17 @@
 @property (nonatomic,strong) UIButton *btn;
 
 @property (nonatomic,strong)NSTimer *time;
-
+@property (nonatomic,strong)UILabel *lable;
+@property (nonatomic,strong)UILabel *lable1;
 @end
 
 @implementation SWshowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     
-    self.touch = 0;
+    
+      self.touch =0;
     //左上方返回按钮
     [self backButtonItem];
     self.title = @"参与沙龙";
@@ -80,7 +81,7 @@
     [  self.btn addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [  self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
     [self.view addSubview:  self.btn];
-    
+    self.scrollView .contentSize = CGSizeMake(0 ,self.view.frame.size.height * 7);
 }
 //跳转到评论界面
 -(void)commentAction:(UIButton *)sender {
@@ -94,6 +95,7 @@
 //收藏按钮
 -(void)collectionAction:(UIButton *)sender {
     
+
     
     
     if (self.touch == 1) {
@@ -153,7 +155,6 @@
     [lable removeFromSuperview];
     
 }
-
 
 -(void)backButtonItem {
     
