@@ -38,7 +38,7 @@
     self.rootVC = (RootViewController *)[[UIApplication sharedApplication].keyWindow rootViewController];
     
     // 视图控制器view背景色
-    self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
+//    self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
 }
 
 #pragma mark ---- 父类方法

@@ -23,6 +23,12 @@
 
 @implementation RedaViewController
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.rootVC.swTabBar.hidden = NO;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
