@@ -35,9 +35,10 @@
 /// 清除缓存方法
 - (void)removeCache;
 
+/// 一对一对的键值对 -- 增加持久化的字典的内容
+- (void)addSaveK8VWithDicName:(NSString *)dicName Key:(NSString *)key Value:(NSString *)value;
 /// 写入字典plist文件到本地
 - (void)goToSaveK8VWithDicName:(NSString *)dicName Dic:(NSDictionary *)dic;
-
 /// 读取字典的key对应的value
 - (NSString *)getMarkWithKey:(NSString *)key marcoPath:(NSString *)marcoPath;
 
