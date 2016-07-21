@@ -17,6 +17,7 @@
 @end
 
 static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifiter";
+static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifiter";
 
 @implementation MyViewController
 
@@ -34,9 +35,13 @@ static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifite
     //
     self.title = @"我的";
     
-    SWLog(@"\u7b7e\u540d\u5f02\u5e38");
     self.dataArray = @[@"d", @"sgf", @"sg"].mutableCopy;
     [self createTableView];
+    
+    // 个人信息设置
+//    SWLcAvUSer * user = [SWLcAvUSer currentUser];
+//    user.displayName = @"小助手";
+//    [user saveInBackground];
     
 }
 
@@ -45,6 +50,7 @@ static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifite
     self.userTableView.scrollEnabled = NO;
     [self.userTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     [self.userTableView registerClass:[SWUserInfoCell class] forCellReuseIdentifier:SWUserInfoCell_Identifiter];
+    [self.userTableView registerClass:[SWTableViewCell class] forCellReuseIdentifier:SWTableViewCell_Identifiter];
     self.userTableView.delegate = self;
     self.userTableView.dataSource = self;
     
@@ -100,6 +106,7 @@ static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifite
             cell.userNameLabel.hidden = YES;
             cell.userInfoView.hidden = YES;
             [cell.loginButton setTitle:@"点击登录" forState:UIControlStateNormal];
+            cell.portraitView.image = nil;  // // // // // // // // //
             cell.portraitView.center = CGPointMake(kScreenWidth / 2, kScreenWidth / 6);
             cell.loginButton.center = CGPointMake(kScreenWidth / 2, CGRectGetMaxY(cell.portraitView.frame) + 20);
         }else {
@@ -108,16 +115,46 @@ static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifite
             cell.userNameLabel.hidden = NO;
             cell.userInfoView.hidden = NO;
             [cell.loginButton setTitle:@"编辑资料" forState:UIControlStateNormal];
-            cell.avUser = self.currentUser;
+            cell.avUser = [SWLcAvUSer currentUser];
         }
         cell.backgroundColor = kImageColor;
         return cell;
-    }else {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    }else if (indexPath.section == 1){
+        SWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SWTableViewCell_Identifiter forIndexPath:indexPath];
         cell.backgroundColor = [UIColor whiteColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        cell.textLabel.text = @"++++===++++";
+        switch (indexPath.row) {
+            case 0:
+                cell.titlelabel.text = @"我的";
+                break;
+            case 1:
+                cell.titlelabel.text = @"我的活动";
+                break;
+            case 2:
+                cell.titlelabel.text = @"我的收藏";
+                break;
+                
+            default:
+                break;
+        }
+        
+        if ([SWLcAvUSer currentUser]) {
+            // 查询计数数量
+            AVQuery *countQ = [AVQuery queryWithClassName:@"Count"];
+            [countQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+            [countQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                SWCount *count = objects[0];
+                cell.numberlabel.text = [count.followC stringValue];
+                SWLog(@"%@",count);
+            }];
+        }
+        
+        return cell;
+    }else {
+        SWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SWTableViewCell_Identifiter forIndexPath:indexPath];
+        cell.backgroundColor = [UIColor whiteColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
 }
@@ -157,11 +194,14 @@ static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifite
 //        [todoFolder setObject:@"工作" forKey:@"name"];// 设置名称
 //        [todoFolder setObject:@1 forKey:@"priority"];// 设置优先级
 //        [[SWLeanCloudManager shareManager] lcSaveObjectWithAVObject:todoFolder];
-        AVObject *game= [AVObject objectWithClassName:@"Game"];
-        [game setObject:@"5656" forKey:@"P"];
-        [game setObject:[AVUser currentUser] forKey:@"createdBy"];
-        [[SWLeanCloudManager shareManager] lcSaveObjectWithAVObject:game];
-        SWLog(@"%@", [AVUser currentUser]);
+        
+        // 保存
+//        AVObject *game= [AVObject objectWithClassName:@"Game"];
+//        [game setObject:@"5656" forKey:@"P"];
+//        [game setObject:[AVUser currentUser] forKey:@"createdBy"];
+//        [game incrementKey:@"df"];
+//        [[SWLeanCloudManager shareManager] lcSaveObjectWithAVObject:game];
+//        SWLog(@"%@", [AVUser currentUser]);
         
     }else {
 //        // 根据Id查询实例对象的数据
@@ -185,12 +225,14 @@ static NSString * const SWUserInfoCell_Identifiter = @"SWUserInfoCell_Identifite
 //        } failureRespon:^(NSError *error) {
 //            SWLog(@"%@",error);
 //        }];
-        AVQuery *gameQuery = [AVQuery queryWithClassName:@"Game"];
-//        [gameQuery whereKey:@"createdBy" equalTo:[AVUser currentUser]];
-        [gameQuery whereKey:@"P" equalTo:@"566"];
-        [gameQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            SWLog(@"%@",objects);
-        }];
+        
+        // 请求
+//        AVQuery *gameQuery = [AVQuery queryWithClassName:@"Game"];
+////        [gameQuery whereKey:@"createdBy" equalTo:[AVUser currentUser]];
+//        [gameQuery whereKey:@"P" equalTo:@"566"];
+//        [gameQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//            SWLog(@"%@",objects);
+//        }];
     }
     
 }

@@ -22,6 +22,9 @@
     
     [SWActivityList registerSubclass];
     [SWLcAvUSer registerSubclass];
+    [SWCount registerSubclass];
+    [SWMark registerSubclass];
+    [SWFollow registerSubclass];
     
     // LeanCloud
     // applicationId 即 App Id，clientKey 是 App Key。

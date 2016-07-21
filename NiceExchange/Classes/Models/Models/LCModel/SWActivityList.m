@@ -12,10 +12,13 @@
 
 @dynamic title;
 @dynamic content;
-@dynamic imageUrl;
-@dynamic mark;
+@dynamic titleImage;
+@dynamic markC;
 @dynamic createBy;
-@dynamic talk;
+@dynamic commentRelation;
+
+@dynamic label;
+@dynamic rule;
 
 + (NSString *)parseClassName {
     return @"ActivityList";

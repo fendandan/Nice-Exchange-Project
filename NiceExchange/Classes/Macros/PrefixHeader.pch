@@ -87,6 +87,9 @@
 #import "SWTableViewCell.h" // 我的&消息（cell）
 #import "SWActivityList.h"
 #import "SWLcAvUSer.h"
+#import "SWCount.h"
+#import "SWMark.h"
+#import "SWFollow.h"
 
 //音乐详情
 #import "MusicDetailViewController.h"
