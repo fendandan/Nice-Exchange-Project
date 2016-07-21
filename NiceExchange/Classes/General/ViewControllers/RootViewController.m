@@ -24,8 +24,33 @@
     
     [[MSGuideViewManager sharedInstance]showGuideViewWithImages:array andButtonTitle:@"立即体验" andButtonTitleColor:[UIColor redColor] andButtonBGColor:[UIColor greenColor] andButtonBorderColor:[UIColor blackColor]];
     
+    [self getFollowInfo];
 }
-
+- (void)getFollowInfo {
+    AVQuery *followQ = [AVQuery queryWithClassName:@"Follow"];
+    if ([SWLcAvUSer currentUser]) {
+        self.followArray = [NSMutableArray array];
+        
+        __weak typeof(self) weakself = self;
+        
+        [followQ whereKey:@"from" equalTo:[SWLcAvUSer currentUser]];
+        [followQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for (SWFollow *follow in objects) {
+                [weakself.followArray addObject:follow];
+            }
+        }];
+        
+        self.followedArray = [NSMutableArray array];
+        [followQ whereKey:@"to" equalTo:[SWLcAvUSer currentUser]];
+        [followQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            for (SWFollow *follow in objects) {
+                [weakself.followedArray addObject:follow];
+            }
+        }];
+        
+    }
+    
+}
 + (void)initialize {
     
     NSDictionary *attrs = @{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor grayColor]};

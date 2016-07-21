@@ -12,4 +12,7 @@
 
 @property (nonatomic,strong) SWTabBar * swTabBar;
 
+@property (strong, nonatomic) NSMutableArray *followArray;
+@property (strong, nonatomic) NSMutableArray *followedArray;
+
 @end

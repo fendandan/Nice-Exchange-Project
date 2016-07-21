@@ -165,8 +165,8 @@ UINavigationControllerDelegate
 
 //navgation
 -(void)itemRightAction:(UIBarButtonItem *)sender{
-
-
+    
+    
     SWLog(@"嘿嘿");
     // 发布活动
     if (self.titleTF.text.length == 0) {
@@ -186,7 +186,7 @@ UINavigationControllerDelegate
             }
         }];
     }
-
+    
 }
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     SWLog(@"嘿嘿");

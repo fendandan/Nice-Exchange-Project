@@ -72,14 +72,17 @@
     
     cell.delegate = self;
     
+    if ([self.rootVC.followArray containsObject:[SWLcAvUSer user]]) {
+        cell.attentionBtn.selected = YES;
+    }
     
     SWActivityList *activity = self.dataArray[indexPath.row];
     
     cell.titleLabel.text = activity.title;
+    [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
     
     return cell;
 }
-
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,12 +90,15 @@
     return 200;
 }
 
-
 - (void)requestData {
     // 查询活动
     AVQuery *aQ = [SWActivityList query];
+    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
+    aQ.limit = 20;
     //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
     [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        //        SWActivityList *acc = objects[16];
+        //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
         for (SWActivityList *a in objects) {
             SWActivityList *ac = a;
             [self.dataArray addObject:ac];
@@ -103,14 +109,11 @@
     }];
 }
 
-
-
-
-
-//关注
+#pragma mark --- ReadTableViewCellDelegate
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell
 {
-
+    
+    
     if (cell.attentionBtn.selected == YES) {
         
         UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
@@ -118,7 +121,46 @@
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-            cell.attentionBtn.selected = NO;
+            
+            NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+            SWLog(@"indexPath %@",indexPath);
+            // suppose we have a user we want to follow
+            SWActivityList *activity = self.dataArray[indexPath.row];
+            SWLog(@"activity %@",activity);
+            AVUser *otherUser = activity.createBy;
+            SWLog(@"otherUser %@",otherUser);
+            
+            // create an entry in the Follow table
+            AVQuery *fromQuery = [AVQuery queryWithClassName:@"Follow"];
+            [fromQuery whereKey:@"from" equalTo:[AVUser currentUser]];
+            AVQuery *toQuery = [AVQuery queryWithClassName:@"Follow"];
+            [toQuery whereKey:@"to" equalTo:otherUser];
+            AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:fromQuery,toQuery,nil]];
+            [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+                //
+                AVObject *follow = results[0];
+                [follow deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    SWLog(@" error %@",error);
+                    
+                    if (succeeded) {
+                        // 更新关注计数
+                        AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+                        [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+                        [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                            SWCount *count = objects[0];
+                            [count incrementKey:@"followC" byAmount:@(-1)];
+                            count.fetchWhenSave = true;
+                            [count saveInBackground];
+                        }];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            cell.attentionBtn.selected = NO;
+                        });
+                    }
+                    
+                }];
+            }];
+            
+            
         }];
         
         [uialert addAction:action1];
@@ -126,9 +168,46 @@
         
         [self presentViewController:uialert animated:YES completion:nil];
         
+        
     }else{
-        cell.attentionBtn.selected = YES;
+        
+        NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+        SWLog(@"indexPath %@",indexPath);
+        // suppose we have a user we want to follow
+        SWActivityList *activity = self.dataArray[indexPath.row];
+        SWLog(@"activity %@",activity);
+        AVUser *otherUser = activity.createBy;
+        SWLog(@"otherUser %@",otherUser);
+        
+        // create an entry in the Follow table
+        AVObject *follow = [AVObject objectWithClassName:@"Follow"];
+        [follow setObject:[AVUser currentUser]  forKey:@"from"];
+        [follow setObject:otherUser forKey:@"to"];
+        [follow setObject:[NSDate date] forKey:@"date"];
+        [follow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            
+            if (succeeded) {
+                
+                // 更新关注计数
+                AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+                [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+                [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    SWCount *count = objects[0];
+                    [count incrementKey:@"followC"];
+                    count.fetchWhenSave = true;
+                    [count saveInBackground];
+                }];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    cell.attentionBtn.selected = YES;
+                });
+            }
+        }];
+        
+        
     }
+    
+    
     
     
 }

@@ -11,6 +11,13 @@
 @implementation SWLcAvUSer
 
 @dynamic displayName;
+@dynamic userImage;
+@dynamic markActivitys;
+@dynamic myActivitys;
+@dynamic comment;
+@dynamic count;
+
+@dynamic friends;
 
 + (NSString *)parseClassName {
     return @"_User";
