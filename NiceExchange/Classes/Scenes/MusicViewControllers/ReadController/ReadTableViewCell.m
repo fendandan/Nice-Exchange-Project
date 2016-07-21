@@ -11,8 +11,6 @@
 
 @implementation ReadTableViewCell
 
-
-
 - (IBAction)attentionBtnAction:(UIButton *)sender {
     
     if (_delegate && [_delegate respondsToSelector:@selector(readTableViewPlayBtnClickend:)]) {
@@ -26,6 +24,15 @@
 }
 
 
+- (IBAction)userNameBtn:(UIButton *)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(readtableviewUserNameBtnClickend:)]) {
+        
+        [_delegate readtableviewUserNameBtnClickend:self];
+    }
+    
+    
+}
 
 
 - (void)awakeFromNib {

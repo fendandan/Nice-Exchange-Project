@@ -129,6 +129,23 @@
 
 
 
+
+//点击title
+- (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell
+{
+    
+    SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
+    
+    [self.navigationController pushViewController:usweVC animated:YES];
+    
+    
+}
+
+
+
+
+
+
 //点击头像
 - (void)readTableViewPlayImageViewClickend:(ReadTableViewCell *)cell
 {

@@ -17,6 +17,10 @@
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell;
 
 - (void)readTableViewPlayImageViewClickend:(ReadTableViewCell *)cell;
+
+- (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell;
+
+
 @end
 
 
