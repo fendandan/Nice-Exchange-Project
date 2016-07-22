@@ -11,5 +11,4 @@
 @interface BaseOrganCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *baseImv;
 @property (strong, nonatomic) IBOutlet UILabel *baseLable;
-
 @end

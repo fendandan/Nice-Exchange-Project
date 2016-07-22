@@ -2274,7 +2274,6 @@
 				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,
 				CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
-				CCCE16A11D3E2EE1008C1FBE /* SWLcAvUSer.m in Sources */,
 				CC5A3DB21D40C5D200984F1F /* XYSpriteHelper.m in Sources */,
 				CC9BFC3C1D40C3B500F40EF6 /* SWBaseLCModel.m in Sources */,
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
@@ -2316,9 +2315,7 @@
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
 				CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */,
 				CCAC398B1D3BA65300CCE229 /* SWLeanCloudManager.m in Sources */,
-
 				CC9BFC3D1D40C3B500F40EF6 /* SWCount.m in Sources */,
-				CC26E1EB1D3DDA82007FDAEE /* MusicDetailViewController.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */,

@@ -9,6 +9,7 @@
 #import "RedaViewController.h"
 #import "ReadTableViewCell.h"
 #import "SWUserDetailViewController.h"
+#import "SWshowViewController.h"
 
 @interface RedaViewController ()
 <
@@ -246,8 +247,13 @@
 
 
 
-
-
+//cell 的点击事件
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWshowViewController *swshowVC = [SWshowViewController new];
+    
+    [self.navigationController pushViewController:swshowVC animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {
