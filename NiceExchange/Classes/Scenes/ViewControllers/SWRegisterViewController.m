@@ -64,21 +64,58 @@
 
 - (void)registerButtonClicked:(UIButton *)button {
     SWLogFunc;
-    AVUser *user = [AVUser user];// 新建 AVUser 对象实例
-    user.username = self.lrView.userNameTextField.text;// 设置用户名
+    SWLcAvUSer *user = [SWLcAvUSer user]; // 新建 AVUser 对象实例
+    user.username = user.email = self.lrView.userNameTextField.text;// 设置用户名 // 设置邮箱
     user.password = self.lrView.passwordTextField.text;// 设置密码
-    user.email = @"tom@leancloud.cn";// 设置邮箱
+//    AVObject *file = [AVObject objectWithClassName:@"_File" objectId:@"578de602a34131005b87f994"];
+//    user.userImage = (AVFile *)file;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             // 注册成功
-            if (error) {
-                SWLog(@"error = %@,%@,%@",error, error.description, error.debugDescription);
-            }else {
-                SWLog(@"succeeded = %d",succeeded);
-            }
+            SWLog(@"succeeded = %d",succeeded);
+            
+            // 默认关注 -- 小助手
+//            SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57902fb28ac247005ffb4ccf"};
+            AVObject *fO = [AVObject objectWithClassName:@"Follow"];
+            [fO setObject:user forKey:@"from"];
+            [fO setObject:user forKey:@"to"];
+            [fO setObject:[NSDate date] forKey:@"date"];
+            [fO saveInBackground];
+            
+            SWCount *count = [SWCount objectWithClassName:@"Count"];
+            count.activityC = @0;
+            count.followedC = @0;
+            count.markC = @0;
+            count.commentC = @0;
+            count.followC = @1;
+            count.createBy = user;
+            [count saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [user setObject:(SWCount *)count forKey:@"count"];
+                    [user saveInBackground];
+                };
+            }];
         } else {
+            
             // 失败的原因可能有多种，常见的是用户名已经存在。
+            SWLog(@"error = %@", error.userInfo);
+            
+// 返回结果
+//            error.userInfo = {
+//                error : 此电子邮箱已经被占用。,
+//                NSLocalizedDescription : 此电子邮箱已经被占用。,
+//                code : 203
+//            }
+            
+            // 最有可能的情况是用户名已经被另一个用户注册，错误代码 202，即 _User 表中的 username 字段已存在相同的值，此时需要提示用户尝试不同的用户名来注册。
+            
+            // 邮箱输入不正确
+//            error = {
+//                error : The email address was invalid.,
+//                NSLocalizedDescription : The email address was invalid.,
+//                code : 125
+//            }
         }
     }];
 }

@@ -10,15 +10,6 @@
 
 @interface BaseSwitchViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) UISegmentedControl *segmentedControl;
-
-@property (strong, nonatomic) UIScrollView *scrollView;
-
-@property (strong, nonatomic) UITableView *leftTableView;
-@property (strong, nonatomic) UITableView *rightTableView;
-
-@property (strong, nonatomic) NSMutableArray *leftDataArray;
-@property (strong, nonatomic) NSMutableArray *rightDataArray;
 
 @end
 
@@ -30,7 +21,7 @@ static NSString * const tableViewSystemCell_Identifiter = @"tableViewSystemCell_
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.scrollView.backgroundColor = [UIColor brownColor];
+    self.scrollView.backgroundColor = [UIColor whiteColor];
     self.leftDataArray = @[@"f",@"f"].mutableCopy;
     self.rightDataArray = @[@"f",@"f"].mutableCopy;
     [self settingDoubleTableView];

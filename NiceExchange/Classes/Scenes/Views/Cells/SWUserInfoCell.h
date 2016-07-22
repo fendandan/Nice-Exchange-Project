@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class SWUserInfoCell;
+@class SWLcAvUSer;
 
 @protocol UserIfonCellDelegate <NSObject>
 
@@ -25,6 +26,6 @@
 
 @property (weak, nonatomic) id<UserIfonCellDelegate> delegate;
 
-@property (strong, nonatomic) AVUser *avUser;
+@property (strong, nonatomic) SWLcAvUSer *avUser;
 
 @end

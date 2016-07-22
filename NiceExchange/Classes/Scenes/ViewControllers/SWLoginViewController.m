@@ -81,6 +81,15 @@
             if ([two isEqualToString:@"1"]) {
                 SWLog(@"%@", error.userInfo[@"error"]);
             }
+            
+            // 不匹配
+//            error = {
+//                error : The username and password mismatch.,
+//                NSLocalizedDescription : The username and password mismatch.,
+//                code : 210
+//            }
+
+            
         }
     }];
 }

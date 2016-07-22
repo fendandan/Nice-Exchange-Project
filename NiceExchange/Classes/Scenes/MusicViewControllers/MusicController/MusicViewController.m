@@ -75,7 +75,7 @@
 
     
     //请求数据
-    [self MusicRequestData];
+  //  [self MusicRequestData];
     
     
     self.musicBtn.selected = YES;

@@ -22,7 +22,7 @@
 
 - (void)createView {
     self.userNameTextField = [[UITextField alloc] initWithFrame:CGRectMake(kSelfWidth / 6, 130, kSelfWidth * 2 / 3, 38)];
-    self.userNameTextField.placeholder = @"用户名/邮箱";
+    self.userNameTextField.placeholder = @"邮箱";
     self.userNameTextField.layer.cornerRadius = 5;
     self.userNameTextField.layer.borderWidth = 0.5;
     self.userNameTextField.layer.borderColor = [UIColor colorWithRed:246/256.0 green:246/256.0 blue:246/256.0 alpha:1.0].CGColor;

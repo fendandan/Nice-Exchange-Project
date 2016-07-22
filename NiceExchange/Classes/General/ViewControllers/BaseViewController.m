@@ -38,7 +38,7 @@
     self.rootVC = (RootViewController *)[[UIApplication sharedApplication].keyWindow rootViewController];
     
     // 视图控制器view背景色
-    self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
+//    self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
 }
 
 #pragma mark ---- 父类方法
@@ -127,11 +127,40 @@
     
 }
 
-// 写入字典plist
-- (void)goToSaveK8VWithDicName:(NSString *)dicName Dic:(NSDictionary *)dic {
+// 一对一对的键值对 -- 增加持久化的字典的内容
+- (void)addSaveK8VWithDicName:(NSString *)dicName Key:(NSString *)key Value:(NSString *)value {
     
     NSString *dicPath = [self.documentPath stringByAppendingPathComponent:dicName];
-    [dic writeToFile:dicPath atomically:YES];
+    if ([self getMarkWithKey:@"xxoo" marcoPath:dicName]) {
+        
+        NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithContentsOfFile:dicPath];
+        [resultDic setObject:value forKey:key];
+        [resultDic writeToFile:dicPath atomically:YES];
+    }else {
+        NSMutableDictionary *mDic = @{@"xxoo":@"1"}.mutableCopy;
+        [mDic setObject:value forKey:key];
+        [mDic writeToFile:dicPath atomically:YES];
+    }
+}
+// 写入字典plist
+- (void)goToSaveK8VWithDicName:(NSString *)dicName Dic:(NSDictionary *)dic {
+    NSString *dicPath = [self.documentPath stringByAppendingPathComponent:dicName];
+    if ([self getMarkWithKey:@"xxoo" marcoPath:dicName]) {
+        
+        NSMutableDictionary *resultDic = [NSMutableDictionary dictionaryWithContentsOfFile:dicPath];
+        for (NSString *key in dic) {
+            [resultDic setObject:dic[key] forKey:key];
+        }
+        [resultDic writeToFile:dicPath atomically:YES];
+        
+    }else {
+        NSMutableDictionary *resultDic = @{@"xxoo":@"1"}.mutableCopy;
+        for (NSString *key in dic) {
+            [resultDic setObject:dic[key] forKey:key];
+        }
+        [resultDic writeToFile:dicPath atomically:YES];
+    }
+    
 }
 // 读取字典的key对应的value
 - (NSString *)getMarkWithKey:(NSString *)key marcoPath:(NSString *)marcoPath {
