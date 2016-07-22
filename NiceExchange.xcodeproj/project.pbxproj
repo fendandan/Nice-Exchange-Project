@@ -305,6 +305,7 @@
 		CC704E1D1D3CF63500D5A269 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E1C1D3CF63500D5A269 /* CoreTelephony.framework */; };
 		CC704E1F1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E1E1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd */; };
 		CC704E211D3CF64300D5A269 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */; };
+		CC7257A31D4225B600500D16 /* SWAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */; };
 		CC7E0CEA1D3D07DE00313F32 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */; };
 		CC7E0CEC1D3D07E400313F32 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */; };
 		CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */; };
@@ -743,6 +744,8 @@
 		CC704E1C1D3CF63500D5A269 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CC704E1E1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		CC7257A11D4225B600500D16 /* SWAboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAboutMeViewController.h; path = NiceExchange/Classes/Scenes/ViewControllers/SWAboutMeViewController.h; sourceTree = SOURCE_ROOT; };
+		CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAboutMeViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWAboutMeViewController.m; sourceTree = SOURCE_ROOT; };
 		CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CC7E0CED1D3D07F500313F32 /* TKAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAddressBook.h; sourceTree = "<group>"; };
@@ -1454,12 +1457,13 @@
 		CC6EF8C91D362F01000A9B44 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CC5A3DB41D40C75300984F1F /* collectionTableviewcontroller */,
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
 				CCAC39811D3BA47B00CCE229 /* SettingsViewController */,
 				CCB33FA91D37B53900AEF415 /* RegisterViewController */,
 				CCB33FAC1D37B53900AEF415 /* LoginViewController */,
+				CC72579D1D42109500500D16 /* AboutMeVIewController */,
+				CC5A3DB41D40C75300984F1F /* collectionTableviewcontroller */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1647,6 +1651,16 @@
 				CC704DEF1D3CF5CC00D5A269 /* markdown.css */,
 			);
 			path = UMSocial_Sdk_Instructions;
+			sourceTree = "<group>";
+		};
+		CC72579D1D42109500500D16 /* AboutMeVIewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC7257A11D4225B600500D16 /* SWAboutMeViewController.h */,
+				CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */,
+			);
+			name = AboutMeVIewController;
+			path = collectionTableviewcontroller;
 			sourceTree = "<group>";
 		};
 		CC9BFC2E1D40C3B500F40EF6 /* LCModel */ = {
@@ -2260,6 +2274,7 @@
 				D6616D661D3A82110018794B /* SWCreationViewController.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
+				CC7257A31D4225B600500D16 /* SWAboutMeViewController.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
 				CC26E1F11D3DDA82007FDAEE /* TwoViewController.m in Sources */,
 				CCA3B7FF1D3A7C95003361CC /* SWUserDetailViewController.m in Sources */,
