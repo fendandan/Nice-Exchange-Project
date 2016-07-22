@@ -71,7 +71,7 @@
 
 - (void)addTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:(UITableViewStylePlain)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height) style:(UITableViewStylePlain)];
     
     [self.view addSubview:self.tableView];
     

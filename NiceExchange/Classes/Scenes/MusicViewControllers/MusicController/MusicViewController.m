@@ -39,6 +39,18 @@
 
 @property(nonatomic,strong)NSTimer *timer;
 
+
+@property(nonatomic,strong)NSArray *urlArray;
+
+@property(nonatomic,strong)NSArray *onesectionArr;
+
+@property(nonatomic,strong)NSArray *twosectionArr;
+
+@property(nonatomic,strong)NSArray *threesectionArr;
+
+@property(nonatomic,strong)NSArray *foursectionArr;
+
+
 @end
 
 @implementation MusicViewController
@@ -72,6 +84,17 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timerAction) userInfo:nil repeats:YES];
     
     
+    
+    self.onesectionArr = @[MusicOneSectionRequest_Url1,MusicOneSectionRequest_Url2,MusicOneSectionRequest_Url3,MusicOneSectionRequest_Url4,MusicOneSectionRequest_Url5,MusicOneSectionRequest_Url6];
+    
+    
+    self.twosectionArr = @[MusicTwoSectionRequest_Url1,MusicTwoSectionRequest_Url2,MusicTwoSectionRequest_Url3,MusicTwoSectionRequest_Url4,MusicTwoSectionRequest_Url5,MusicTwoSectionRequest_Url6];
+    
+    self.threesectionArr = @[MusicThreeSectionRequest_Url1,MusicThreeSectionRequest_Url2,MusicThreeSectionRequest_Url3,MusicThreeSectionRequest_Url4,MusicThreeSectionRequest_Url5,MusicThreeSectionRequest_Url6];
+    
+    self.foursectionArr = @[MusicFourSectionRequest_Url1,MusicFourSectionRequest_Url2,MusicFourSectionRequest_Url3,MusicFourSectionRequest_Url4,MusicFourSectionRequest_Url5,MusicFourSectionRequest_Url6];
+    
+    self.urlArray = @[self.onesectionArr,self.twosectionArr,self.threesectionArr,self.foursectionArr];
 }
 
 
@@ -94,7 +117,6 @@
     
 
     //添加 view
-    
         RedaViewController *readVC = [[RedaViewController alloc] init];
         readVC.view.frame = CGRectMake(kScreenWidth, 80, kScreenWidth, kScreenHeight - 80);
         [self addChildViewController:readVC];
@@ -158,6 +180,7 @@
             i++;
         }
         
+        
         self.oneArray = [NSMutableArray new];
         for (int i = 0; i < 6; i++) {
             [self.oneArray addObject:self.musicArray[i]];
@@ -208,6 +231,7 @@
     
         return self.oneArray.count;
 }
+
 
 
 
@@ -346,7 +370,7 @@
     //轮播图布局
     for (NSInteger i = 1; i < 6; i ++) {
         UIImageView *imageV  = [[UIImageView alloc] initWithFrame:CGRectMake((i-1)*kScreenWidth, 30, kScreenWidth,kScreenHeight - 540)];
-        imageV.backgroundColor = [UIColor cyanColor];
+//        imageV.backgroundColor = [UIColor cyanColor];
         imageV.userInteractionEnabled = YES;
         
         imageV.image = [UIImage imageNamed:[NSString stringWithFormat:@"%ld.png",i]];
@@ -518,13 +542,6 @@ int a = 0;
         
         titleLabel.text = self.titleArray[0];
         
-//        UIButton *moreBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//        moreBtn.frame = CGRectMake(359, 10, 50, 20);
-//        moreBtn.backgroundColor = [UIColor orangeColor];
-//        [moreBtn setTitle:@"更多" forState:(UIControlStateNormal)];
-//        [moreBtn addTarget:self action:@selector(moreBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-//        [self.collectionHeaderView addSubview:moreBtn];
-        
         return headerView;
         
     }
@@ -553,14 +570,7 @@ int a = 0;
         
         [self.collectionHeaderView addSubview:titleLabel];
         
-//        UIButton *moreBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-//        moreBtn.frame = CGRectMake(359, 5, 50, 20);
-//        moreBtn.backgroundColor = [UIColor orangeColor];
-//        [moreBtn setTitle:@"更多" forState:(UIControlStateNormal)];
-//        [moreBtn addTarget:self action:@selector(moreBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-//        [self.collectionHeaderView addSubview:moreBtn];
-        
-            return headerView;
+        return headerView;
         }
     
     return nil;
@@ -593,6 +603,9 @@ int a = 0;
     
    
     MusicDetailViewController *dteaVC = [MusicDetailViewController new];
+    
+    dteaVC.urlString = self.urlArray[indexPath.section][indexPath.row];
+    
     
     [self.navigationController pushViewController:dteaVC animated:YES];
 }

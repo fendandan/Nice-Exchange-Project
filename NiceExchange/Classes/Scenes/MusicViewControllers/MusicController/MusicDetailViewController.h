@@ -10,4 +10,6 @@
 
 @interface MusicDetailViewController : UIViewController
 
+@property(nonatomic,strong)NSString *urlString;
+
 @end

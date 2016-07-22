@@ -13,6 +13,7 @@
 
 - (void)musicRequestparameter:(NSDictionary *)parameterDic success:(SuccessResponse)success failure:(FailureResponse)failure
 {
+    
     NetWorkRequest *requst = [[NetWorkRequest alloc] init];
     [requst requestWithUrl:MusicRequest_Url parameters:nil successResponse:^(NSDictionary *dic) {
         
@@ -25,9 +26,32 @@
 
 
 
+- (void)musicDetailRequestparameter:(NSDictionary *)parameterDic success:(SuccessResponse)success failure:(FailureResponse)failure{
+    
+    NetWorkRequest *request = [[NetWorkRequest alloc] init];
+    
+    
+    [request requestWithUrl:parameterDic[@"urlString"] parameters:nil successResponse:^(NSDictionary *dic) {
+        
+        success(dic);
+        
+    } failureResponse:^(NSError *error) {
+        
+        failure(error);
+        
+    }];
+    
+}
 
 
 
+
+
+
+
+
+
+//轮播请求
 - (void)oneScrollRequestparameter:(NSDictionary *)parameterDic success:(SuccessResponse)success failure:(FailureResponse)failure
 {
     NetWorkRequest *requst = [[NetWorkRequest alloc] init];
@@ -108,6 +132,7 @@
     
     
 }
+
 
 
 

@@ -13,8 +13,6 @@
 		CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */; };
 		CC26E1D71D3DD6CF007FDAEE /* MovieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */; };
 		CC26E1DA1D3DD8F0007FDAEE /* MusicRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D91D3DD8F0007FDAEE /* MusicRequest.m */; };
-		CC26E1EB1D3DDA82007FDAEE /* MusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1DD1D3DDA82007FDAEE /* MusicDetailViewController.m */; };
-		CC26E1EC1D3DDA82007FDAEE /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1DF1D3DDA82007FDAEE /* MusicViewController.m */; };
 		CC26E1ED1D3DDA82007FDAEE /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1E21D3DDA82007FDAEE /* FourViewController.m */; };
 		CC26E1EE1D3DDA82007FDAEE /* OneScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1E41D3DDA82007FDAEE /* OneScrollViewController.m */; };
 		CC26E1EF1D3DDA82007FDAEE /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1E61D3DDA82007FDAEE /* ScrollViewController.m */; };
@@ -103,6 +101,8 @@
 		CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */; };
 		CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CF11D3D080700313F32 /* SWTableViewController.m */; };
 		CC7E0CF41D3D09E700313F32 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CF31D3D09E700313F32 /* MessageUI.framework */; };
+		CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A95D41D41CE0F00EA23BB /* MusicDetailViewController.m */; };
+		CC9A95D91D41CF0E00EA23BB /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A95D71D41CF0E00EA23BB /* MusicViewController.m */; };
 		CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */; };
 		CCA3B7E41D3A7C95003361CC /* SWcommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */; };
 		CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7BA1D3A7C95003361CC /* SWFocusonViewController.m */; };
@@ -182,10 +182,6 @@
 		CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieViewController.m; sourceTree = "<group>"; };
 		CC26E1D81D3DD8F0007FDAEE /* MusicRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicRequest.h; sourceTree = "<group>"; };
 		CC26E1D91D3DD8F0007FDAEE /* MusicRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicRequest.m; sourceTree = "<group>"; };
-		CC26E1DC1D3DDA82007FDAEE /* MusicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDetailViewController.h; sourceTree = "<group>"; };
-		CC26E1DD1D3DDA82007FDAEE /* MusicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDetailViewController.m; sourceTree = "<group>"; };
-		CC26E1DE1D3DDA82007FDAEE /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
-		CC26E1DF1D3DDA82007FDAEE /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
 		CC26E1E11D3DDA82007FDAEE /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
 		CC26E1E21D3DDA82007FDAEE /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 		CC26E1E31D3DDA82007FDAEE /* OneScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneScrollViewController.h; sourceTree = "<group>"; };
@@ -330,6 +326,10 @@
 		CC7E0CF01D3D080700313F32 /* SWTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewController.h; sourceTree = "<group>"; };
 		CC7E0CF11D3D080700313F32 /* SWTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewController.m; sourceTree = "<group>"; };
 		CC7E0CF31D3D09E700313F32 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		CC9A95D41D41CE0F00EA23BB /* MusicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDetailViewController.m; sourceTree = "<group>"; };
+		CC9A95D51D41CE0F00EA23BB /* MusicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDetailViewController.h; sourceTree = "<group>"; };
+		CC9A95D71D41CF0E00EA23BB /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
+		CC9A95D81D41CF0E00EA23BB /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
 		CCA3B7B61D3A7C95003361CC /* SWcommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentViewController.h; sourceTree = "<group>"; };
 		CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcommentViewController.m; sourceTree = "<group>"; };
 		CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcommentViewController.xib; sourceTree = "<group>"; };
@@ -533,10 +533,10 @@
 		CC26E1DB1D3DDA82007FDAEE /* MusicController */ = {
 			isa = PBXGroup;
 			children = (
-				CC26E1DE1D3DDA82007FDAEE /* MusicViewController.h */,
-				CC26E1DF1D3DDA82007FDAEE /* MusicViewController.m */,
-				CC26E1DC1D3DDA82007FDAEE /* MusicDetailViewController.h */,
-				CC26E1DD1D3DDA82007FDAEE /* MusicDetailViewController.m */,
+				CC9A95D81D41CF0E00EA23BB /* MusicViewController.h */,
+				CC9A95D71D41CF0E00EA23BB /* MusicViewController.m */,
+				CC9A95D51D41CE0F00EA23BB /* MusicDetailViewController.h */,
+				CC9A95D41D41CE0F00EA23BB /* MusicDetailViewController.m */,
 				CC26E1E01D3DDA82007FDAEE /* ScrollViewController */,
 			);
 			path = MusicController;
@@ -1377,6 +1377,7 @@
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
 				D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
+				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,
 				CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
 				CCCE16A11D3E2EE1008C1FBE /* SWLcAvUSer.m in Sources */,
@@ -1384,6 +1385,7 @@
 				CCCE16A01D3E2EE1008C1FBE /* SWBaseLCModel.m in Sources */,
 				CCAC39841D3BA47B00CCE229 /* SWSettingsViewController.m in Sources */,
 				CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */,
+				CC9A95D91D41CF0E00EA23BB /* MusicViewController.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
 				CC26E1EF1D3DDA82007FDAEE /* ScrollViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
@@ -1399,7 +1401,6 @@
 				CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */,
 				CCF61FCC1D38FB8E0071EC51 /* MusicModel.m in Sources */,
 				CC26E1D71D3DD6CF007FDAEE /* MovieViewController.m in Sources */,
-				CC26E1EC1D3DDA82007FDAEE /* MusicViewController.m in Sources */,
 				CC26E1DA1D3DD8F0007FDAEE /* MusicRequest.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CCAC397D1D3BA2D900CCE229 /* SWUserInfoCell.m in Sources */,
@@ -1414,7 +1415,6 @@
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
 				CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */,
 				CCAC398B1D3BA65300CCE229 /* SWLeanCloudManager.m in Sources */,
-				CC26E1EB1D3DDA82007FDAEE /* MusicDetailViewController.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */,

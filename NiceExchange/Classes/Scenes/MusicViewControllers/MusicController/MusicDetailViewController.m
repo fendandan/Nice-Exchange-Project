@@ -14,6 +14,9 @@
 
 @property(nonatomic,strong)NSMutableArray *MusicArray;
 
+@property(nonatomic,strong)UIImageView *imageV;
+
+
 @end
 
 @implementation MusicDetailViewController
@@ -24,28 +27,44 @@
     self.view.backgroundColor = [UIColor grayColor];
     
     [self addTableView];
+    
+    
+   [self MusicRequest];
+    
+    
+   
+    
 }
 
 
 //添加 tableView
 - (void)addTableView
 {
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
     
     [self.view addSubview:self.tableView];
     
+    
+    //添加头视图
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 550)];
+    
+    view.backgroundColor = [UIColor yellowColor];
+    
+    self.imageV = [[UIImageView alloc] initWithFrame:view.frame];
+    
+    [view addSubview:self.imageV];
+    
+    self.tableView.tableHeaderView = view;
     
     //注册
     [self.tableView  registerNib:[UINib nibWithNibName:@"MusicDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MusicDetailTableViewCell_Identifiter];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    
-    
-    [self MusicRequest];
-    
-    
 }
+
+
+
 
 
 
@@ -56,39 +75,36 @@
     
     MusicRequest *request = [MusicRequest new];
     
-    [request musicRequestparameter:nil success:^(NSDictionary *dic) {
+    [request musicDetailRequestparameter:@{@"urlString":self.urlString} success:^(NSDictionary *dic) {
         
-//        NSLog(@"DIC----%@",dic);
+        NSDictionary *dataDic = dic[@"data"];
+        
+        [self.imageV setImageWithURL:[NSURL URLWithString:[dataDic objectForKey:@"album_logo"]]];
+        
+    
+        NSMutableArray *songsArr = dataDic[@"songs"];
         
         
-        NSMutableArray *contentArray = [dic objectForKey:@"content"];
-        
-//        NSLog(@"1111%@",contentArray);
         
         
-        for (NSDictionary *Dic in contentArray) {
+        for (NSDictionary *dic in songsArr) {
             
-//            NSLog(@"DIC%@",Dic);
-            MusicDetailModel *model = [MusicDetailModel new];
+//            [self.imageV setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"album_logo"]]];
             
-            [model setValuesForKeysWithDictionary:Dic];
+            [self.MusicArray addObject:dic];
             
-            
-            [self.MusicArray addObject:model];
         }
-        
-//        NSLog(@"self.MusicArray%@",self.MusicArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.tableView reloadData];
-            
         });
         
         
     } failure:^(NSError *error) {
         
         NSLog(@"%@",error);
+        
     }];
 }
 
@@ -97,7 +113,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.MusicArray.count;
 }
 
 
@@ -107,17 +123,15 @@
 {
     MusicDetailTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MusicDetailTableViewCell_Identifiter forIndexPath:indexPath];
     
+    NSDictionary *dic = self.MusicArray[indexPath.row];
     
+    cell.titleLabel.text = dic[@"song_name"];
+    
+    cell.authorLabel.text = dic[@"singers"];
     
     
     return cell;
 }
-
-
-
-
-
-
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
