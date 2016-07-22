@@ -24,7 +24,7 @@
     butt.frame =  CGRectMake(80,10,100, 30);
     butt.layer.masksToBounds = YES;
     butt.layer.cornerRadius = butt.frame.size.height/4;
-    butt.backgroundColor = [UIColor orangeColor];
+     butt.backgroundColor = [UIColor cyanColor];
     [butt setTitle:@"大家聊聊" forState:UIControlStateNormal];
     [butt addTarget:self action:@selector(buttonAction:) forControlEvents:(UIControlEventTouchUpInside)];
     self.button = butt;
@@ -52,21 +52,24 @@
     [bton setTitle:@"➕添加规则" forState:UIControlStateNormal];
     [bton addTarget:self action:@selector(btonActon:) forControlEvents:(UIControlEventTouchUpInside)];
     [self addSubview:bton];
+    
 }
 -(void)buttonAction:(UIButton *)sender{
-    if (sender == self.button) {
-         sender.backgroundColor = [UIColor cyanColor];
-        self.bton.backgroundColor = [UIColor orangeColor];
-    }else if (sender == self.bton)
-    {
+    if (sender == self.bton) {
         sender.backgroundColor = [UIColor cyanColor];
         self.button.backgroundColor = [UIColor orangeColor];
-        
+        self.string = self.bton.titleLabel.text;
+    }else //if (sender == self.bton)
+    {
+        sender.backgroundColor = [UIColor cyanColor];
+        self.bton.backgroundColor = [UIColor orangeColor];
+        self.string = self.button.titleLabel.text;
     }
     SWLog(@"呵呵");
-   
+
 }
 -(void)btonActon:(UIButton *)sender{
     NSLog(@"规则");
+     self.textFstring = self.textfield.text;
 }
 @end

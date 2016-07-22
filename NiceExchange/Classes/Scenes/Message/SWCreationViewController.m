@@ -37,6 +37,9 @@ UINavigationControllerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self releaseAction];
+    //
+    
+    //
     //[self.view addSubview:self.backgrandHeaderView];
     self.imagepicker = [[UIImagePickerController alloc]init];
     self.imagepicker.delegate = self;
@@ -86,7 +89,7 @@ UINavigationControllerDelegate
     addlabBtn.frame = CGRectMake(150,180 , 120, 30);
     addlabBtn.layer.masksToBounds = YES;
     addlabBtn.layer.cornerRadius = addlabBtn.bounds.size.height/4;
-    [addlabBtn setTitle:@"➕添加标签" forState:UIControlStateNormal];
+    [addlabBtn setTitle:@"娱乐" forState:UIControlStateNormal];
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
@@ -166,7 +169,7 @@ UINavigationControllerDelegate
 //navgation
 -(void)itemRightAction:(UIBarButtonItem *)sender{
     
-    
+   // SWLog(@"%@",self.addtageButton.titleLabel.text);
     SWLog(@"嘿嘿");
     // 发布活动
     if (self.titleTF.text.length == 0) {

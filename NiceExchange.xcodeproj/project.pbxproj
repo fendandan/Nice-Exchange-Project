@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */; };
 		CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */; };
 		CC26E1D21D3DD6C7007FDAEE /* ReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */; };
 		CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */; };
@@ -364,6 +363,7 @@
 		CCF61FC61D3896190071EC51 /* MusicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */; };
 		CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */; };
 		CCF61FCC1D38FB8E0071EC51 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FCB1D38FB8E0071EC51 /* MusicModel.m */; };
+		D60167671D421DBB00CA54BA /* SWBaiduAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60167661D421DBB00CA54BA /* SWBaiduAPIViewController.m */; };
 		D6616D661D3A82110018794B /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D651D3A82110018794B /* SWCreationViewController.m */; };
 		D6616D691D3A82F70018794B /* SWAddRule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D681D3A82F70018794B /* SWAddRule.m */; };
 		D6616D741D3A844F0018794B /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D711D3A844F0018794B /* SWMessViewController.m */; };
@@ -382,9 +382,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.release.xcconfig"; sourceTree = "<group>"; };
-		544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiceExchange.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.debug.xcconfig"; sourceTree = "<group>"; };
 		CC26E1CC1D3DD6C7007FDAEE /* ReadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadTableViewCell.h; sourceTree = "<group>"; };
 		CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadTableViewCell.m; sourceTree = "<group>"; };
 		CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadTableViewCell.xib; sourceTree = "<group>"; };
@@ -833,18 +830,20 @@
 		CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDetailModel.m; sourceTree = "<group>"; };
 		CCF61FCA1D38FB8E0071EC51 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
 		CCF61FCB1D38FB8E0071EC51 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
-		D6616D641D3A82110018794B /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCreationViewController.h; sourceTree = "<group>"; };
-		D6616D651D3A82110018794B /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCreationViewController.m; sourceTree = "<group>"; };
-		D6616D671D3A82F70018794B /* SWAddRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAddRule.h; sourceTree = "<group>"; };
-		D6616D681D3A82F70018794B /* SWAddRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWAddRule.m; sourceTree = "<group>"; };
-		D6616D701D3A844F0018794B /* SWMessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessViewController.h; sourceTree = "<group>"; };
-		D6616D711D3A844F0018794B /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessViewController.m; sourceTree = "<group>"; };
-		D6616D721D3A844F0018794B /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWTableViewCell.h; sourceTree = "<group>"; };
-		D6616D731D3A844F0018794B /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWTableViewCell.m; sourceTree = "<group>"; };
-		D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNotifcationSettingViewController.h; sourceTree = "<group>"; };
-		D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNotifcationSettingViewController.m; sourceTree = "<group>"; };
-		D6616D781D3A84DA0018794B /* SWNotfcTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNotfcTableViewCell.h; sourceTree = "<group>"; };
-		D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNotfcTableViewCell.m; sourceTree = "<group>"; };
+		D60167651D421DBB00CA54BA /* SWBaiduAPIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWBaiduAPIViewController.h; sourceTree = "<group>"; };
+		D60167661D421DBB00CA54BA /* SWBaiduAPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBaiduAPIViewController.m; sourceTree = "<group>"; };
+		D6616D641D3A82110018794B /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCreationViewController.h; path = ../SWCreationViewController.h; sourceTree = "<group>"; };
+		D6616D651D3A82110018794B /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCreationViewController.m; path = ../SWCreationViewController.m; sourceTree = "<group>"; };
+		D6616D671D3A82F70018794B /* SWAddRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAddRule.h; path = ../SWAddRule.h; sourceTree = "<group>"; };
+		D6616D681D3A82F70018794B /* SWAddRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAddRule.m; path = ../SWAddRule.m; sourceTree = "<group>"; };
+		D6616D701D3A844F0018794B /* SWMessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMessViewController.h; path = ../SWMessViewController.h; sourceTree = "<group>"; };
+		D6616D711D3A844F0018794B /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = ../SWMessViewController.m; sourceTree = "<group>"; };
+		D6616D721D3A844F0018794B /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWTableViewCell.h; path = ../SWTableViewCell.h; sourceTree = "<group>"; };
+		D6616D731D3A844F0018794B /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWTableViewCell.m; path = ../SWTableViewCell.m; sourceTree = "<group>"; };
+		D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = ../SWNotifcationSettingViewController.h; sourceTree = "<group>"; };
+		D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = ../SWNotifcationSettingViewController.m; sourceTree = "<group>"; };
+		D6616D781D3A84DA0018794B /* SWNotfcTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotfcTableViewCell.h; path = ../SWNotfcTableViewCell.h; sourceTree = "<group>"; };
+		D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotfcTableViewCell.m; path = ../SWNotfcTableViewCell.m; sourceTree = "<group>"; };
 		D6616D7D1D3A85190018794B /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 		D6616D7E1D3A85190018794B /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		D6616D7F1D3A85190018794B /* practise_a_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_a_n_day.png; sourceTree = "<group>"; };
@@ -853,8 +852,8 @@
 		D6616D821D3A85190018794B /* practise_b_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_b_s_day.png; sourceTree = "<group>"; };
 		D6616D831D3A85190018794B /* practise_c_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_n_day.png; sourceTree = "<group>"; };
 		D6616D841D3A85190018794B /* practise_c_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_s_day.png; sourceTree = "<group>"; };
-		D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWLayoutTextView.h; sourceTree = "<group>"; };
-		D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLayoutTextView.m; sourceTree = "<group>"; };
+		D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWLayoutTextView.h; path = ../SWLayoutTextView.h; sourceTree = "<group>"; };
+		D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLayoutTextView.m; path = ../SWLayoutTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -878,7 +877,6 @@
 				CC704DFF1D3CF5CC00D5A269 /* TencentOpenAPI.framework in Frameworks */,
 				CC704E021D3CF5CC00D5A269 /* libWeChatSDK.a in Frameworks */,
 				CC704DF11D3CF5CC00D5A269 /* libUMSocial_Sdk_5.2.1.a in Frameworks */,
-				8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */,
 				CC704DFB1D3CF5CC00D5A269 /* libSocialSinaSSO.a in Frameworks */,
 				CC704DFC1D3CF5CC00D5A269 /* libWeiboSDK.a in Frameworks */,
 				CC704E011D3CF5CC00D5A269 /* libSocialWechat.a in Frameworks */,
@@ -903,18 +901,8 @@
 				CC704E141D3CF61700D5A269 /* libiconv.2.4.0.tbd */,
 				CC704E121D3CF60300D5A269 /* Security.framework */,
 				CC704E101D3CF5F900D5A269 /* ImageIO.framework */,
-				544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7E5BCBF515F530F89BF9A651 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */,
-				4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		CC26E1471D3DD56F007FDAEE /* MusicViewControllers */ = {
@@ -1284,7 +1272,6 @@
 			children = (
 				CC5A67491D35F71B008AE01A /* NiceExchange */,
 				CC5A67481D35F71B008AE01A /* Products */,
-				7E5BCBF515F530F89BF9A651 /* Pods */,
 				79C9667793D08D28649D7C38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -1812,24 +1799,42 @@
 			path = ../../../../../Desktop/NiceExchange/NiceExchange/Classes/Scenes/ViewControllers;
 			sourceTree = "<group>";
 		};
-		D6616D631D3A81830018794B /* Message */ = {
+		D60167631D421D4400CA54BA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D6616D7C1D3A85010018794B /* Image */,
-				D6616D641D3A82110018794B /* SWCreationViewController.h */,
-				D6616D651D3A82110018794B /* SWCreationViewController.m */,
 				D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */,
 				D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */,
 				D6616D671D3A82F70018794B /* SWAddRule.h */,
 				D6616D681D3A82F70018794B /* SWAddRule.m */,
-				D6616D701D3A844F0018794B /* SWMessViewController.h */,
-				D6616D711D3A844F0018794B /* SWMessViewController.m */,
 				D6616D721D3A844F0018794B /* SWTableViewCell.h */,
 				D6616D731D3A844F0018794B /* SWTableViewCell.m */,
-				D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */,
-				D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */,
 				D6616D781D3A84DA0018794B /* SWNotfcTableViewCell.h */,
 				D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */,
+				D60167651D421DBB00CA54BA /* SWBaiduAPIViewController.h */,
+				D60167661D421DBB00CA54BA /* SWBaiduAPIViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D60167641D421D4400CA54BA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6616D641D3A82110018794B /* SWCreationViewController.h */,
+				D6616D651D3A82110018794B /* SWCreationViewController.m */,
+				D6616D701D3A844F0018794B /* SWMessViewController.h */,
+				D6616D711D3A844F0018794B /* SWMessViewController.m */,
+				D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */,
+				D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D6616D631D3A81830018794B /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				D60167631D421D4400CA54BA /* View */,
+				D60167641D421D4400CA54BA /* ViewControllers */,
+				D6616D7C1D3A85010018794B /* Image */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1856,12 +1861,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC5A675E1D35F71B008AE01A /* Build configuration list for PBXNativeTarget "NiceExchange" */;
 			buildPhases = (
-				36D7BA0FAA52115AEDACB14D /* Check Pods Manifest.lock */,
 				CC5A67431D35F71B008AE01A /* Sources */,
 				CC5A67441D35F71B008AE01A /* Frameworks */,
 				CC5A67451D35F71B008AE01A /* Resources */,
-				F265D1BC376D17D172F43241 /* Embed Pods Frameworks */,
-				6696A65873B87E0833A3E6BD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2201,54 +2203,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		36D7BA0FAA52115AEDACB14D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		6696A65873B87E0833A3E6BD /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F265D1BC376D17D172F43241 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		CC5A67431D35F71B008AE01A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -2274,7 +2228,6 @@
 				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,
 				CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
-				CCCE16A11D3E2EE1008C1FBE /* SWLcAvUSer.m in Sources */,
 				CC5A3DB21D40C5D200984F1F /* XYSpriteHelper.m in Sources */,
 				CC9BFC3C1D40C3B500F40EF6 /* SWBaseLCModel.m in Sources */,
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
@@ -2304,6 +2257,7 @@
 				CC26E1D71D3DD6CF007FDAEE /* MovieViewController.m in Sources */,
 				CC26E1DA1D3DD8F0007FDAEE /* MusicRequest.m in Sources */,
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
+				D60167671D421DBB00CA54BA /* SWBaiduAPIViewController.m in Sources */,
 				CCAC397D1D3BA2D900CCE229 /* SWUserInfoCell.m in Sources */,
 				D6616D691D3A82F70018794B /* SWAddRule.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
@@ -2316,9 +2270,7 @@
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
 				CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */,
 				CCAC398B1D3BA65300CCE229 /* SWLeanCloudManager.m in Sources */,
-
 				CC9BFC3D1D40C3B500F40EF6 /* SWCount.m in Sources */,
-				CC26E1EB1D3DDA82007FDAEE /* MusicDetailViewController.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */,
@@ -2442,7 +2394,6 @@
 		};
 		CC5A675F1D35F71B008AE01A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2467,7 +2418,6 @@
 		};
 		CC5A67601D35F71B008AE01A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
