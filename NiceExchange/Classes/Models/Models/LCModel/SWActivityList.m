@@ -19,6 +19,8 @@
 
 @dynamic label;
 @dynamic rule;
+@dynamic point;
+@dynamic subhead;
 
 + (NSString *)parseClassName {
     return @"ActivityList";

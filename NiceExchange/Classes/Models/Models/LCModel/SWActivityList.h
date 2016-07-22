@@ -19,5 +19,7 @@
 
 @property (copy) NSString *label;
 @property (copy) NSString *rule;
+@property (strong) AVGeoPoint *point;
+@property (strong) NSString *subhead;
 
 @end

@@ -177,9 +177,9 @@ UINavigationControllerDelegate
         SWActivityList *activity = [SWActivityList object];
         activity.title = self.titleTF.text;
         activity.content = self.textView.textView.text;
-        NSData *data = UIImageJPEGRepresentation(self.imageview.image, 0.5);
-        AVFile *file = [AVFile fileWithName:@"resume.jpg" data:data];
-        [activity setObject:file forKey:@"images"];
+        NSData *data = UIImageJPEGRepresentation(self.photoimageView.image, 0.5);
+        AVFile *file = [AVFile fileWithName:@"title.jpg" data:data];
+        [activity setObject:file forKey:@"titleImage"];
         [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 SWLog(@"%d",succeeded);

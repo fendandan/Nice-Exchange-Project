@@ -17,14 +17,22 @@
     return self;
 }
 
-- (void)setAvUser:(AVUser *)avUser {
+- (void)setAvUser:(SWLcAvUSer *)avUser {
     if (_avUser != avUser) {
         _avUser = nil;
         _avUser = avUser;
         
-//        self.portraitView
-        self.userNameLabel.text = avUser.username;
-//        self.userInfoView
+        
+        
+        
+        [self.portraitView setImageWithURL:[NSURL URLWithString:@"http://ac-8nI1eCRt.clouddn.com/XJT3FKPr096iVDIpDUfVJtA.jpg"]];
+        if (avUser.displayName) {
+            self.userNameLabel.text = avUser.displayName;
+        }else {
+            self.userNameLabel.text = avUser.username;
+        }
+        
+        //        self.userInfoView
         
     }
 }
