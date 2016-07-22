@@ -40,8 +40,28 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
     
     // 个人信息设置
 //    SWLcAvUSer * user = [SWLcAvUSer currentUser];
-//    user.displayName = @"小助手";
+//    user.displayName = @"mmm";
 //    [user saveInBackground];
+    
+//    SWActivityList *activity = [SWActivityList object];
+//    activity.title = @"25岁，从来没谈过恋爱是不是很奇葩"; // 标题
+//    activity.content = @"和许多人聊过天，其中包含：新认识的同事、新认识的朋友等等。在问道你的年龄好一定会问的问题就是你有没有男朋友，说完没有后就会问你处没处过对象，说没有后大家就会觉得不可思议，觉得很惊讶。所以现在每当和别人谈论到这里，我都觉得特别特别丢人，真想挖个地缝钻下去。不知道有没有和我有同感的。好难过"; // 内容
+//    activity.subhead = @""; // 副标题
+//    NSData *data = UIImagePNGRepresentation([UIImage imageNamed:@"xxxcx.jpg"]);
+//    AVFile *file = [AVFile fileWithName:@"title.jpg" data:data]; // 图片
+//    [activity setObject:file forKey:@"titleImage"];
+//    activity.rule = @"一起聊聊"; // 规则
+//    activity.label = @"三观"; // 标签
+//    activity.point = [AVGeoPoint geoPointWithLatitude:39.6 longitude:40]; // 坐标
+//    
+//    activity.markC = @0; // 收藏数累计，默认0
+//    [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
+//    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        SWLog(@"error %@",error);
+//        if (succeeded) {
+//            SWLog(@"succeeded %d",succeeded);
+//        }
+//    }];
     
 }
 
@@ -138,15 +158,18 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
             default:
                 break;
         }
-        
+        cell.numberlabel.text = @"x";
         if ([SWLcAvUSer currentUser]) {
             // 查询计数数量
             AVQuery *countQ = [AVQuery queryWithClassName:@"Count"];
             [countQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
             [countQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                SWCount *count = objects[0];
-                cell.numberlabel.text = [count.followC stringValue];
-                SWLog(@"%@",count);
+                if (objects.count != 0) {
+                    SWCount *count = objects[0];
+                    cell.numberlabel.text = [count.followC stringValue];
+                    SWLog(@"%@",count);
+                }
+                
             }];
         }
         
@@ -244,7 +267,8 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
         SWLoginViewController *lVC = [SWLoginViewController new];
         [self.navigationController pushViewController:lVC animated:YES];
     }else {
-        
+        SWAboutMeViewController *amVC = [SWAboutMeViewController new];
+        [self.navigationController pushViewController:amVC animated:YES];
     }
     
 }

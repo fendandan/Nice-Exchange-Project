@@ -42,13 +42,9 @@
 
 
 @property(nonatomic,strong)NSArray *urlArray;
-
 @property(nonatomic,strong)NSArray *onesectionArr;
-
 @property(nonatomic,strong)NSArray *twosectionArr;
-
 @property(nonatomic,strong)NSArray *threesectionArr;
-
 @property(nonatomic,strong)NSArray *foursectionArr;
 
 
@@ -58,7 +54,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     //添加底层滚动视图
     [self addScrollView];
     [self.collectionview removeFromSuperview];
@@ -89,13 +85,18 @@
     self.onesectionArr = @[MusicOneSectionRequest_Url1,MusicOneSectionRequest_Url2,MusicOneSectionRequest_Url3,MusicOneSectionRequest_Url4,MusicOneSectionRequest_Url5,MusicOneSectionRequest_Url6];
     
     
-    self.twosectionArr = @[MusicTwoSectionRequest_Url1,MusicTwoSectionRequest_Url2,MusicTwoSectionRequest_Url3,MusicTwoSectionRequest_Url4,MusicTwoSectionRequest_Url5,MusicTwoSectionRequest_Url6];
+    self.twosectionArr = @[MusicTwoSectionRequest_Url2,MusicTwoSectionRequest_Url1,MusicTwoSectionRequest_Url3,MusicTwoSectionRequest_Url4,MusicTwoSectionRequest_Url5,MusicTwoSectionRequest_Url6];
     
     self.threesectionArr = @[MusicThreeSectionRequest_Url1,MusicThreeSectionRequest_Url2,MusicThreeSectionRequest_Url3,MusicThreeSectionRequest_Url4,MusicThreeSectionRequest_Url5,MusicThreeSectionRequest_Url6];
     
     self.foursectionArr = @[MusicFourSectionRequest_Url1,MusicFourSectionRequest_Url2,MusicFourSectionRequest_Url3,MusicFourSectionRequest_Url4,MusicFourSectionRequest_Url5,MusicFourSectionRequest_Url6];
     
     self.urlArray = @[self.onesectionArr,self.twosectionArr,self.threesectionArr,self.foursectionArr];
+    
+    
+    
+    
+    
 }
 
 
@@ -163,10 +164,12 @@
             
             NSMutableArray *collectionsArray = [tempDIC objectForKey:@"collections"];
             
-            if (i==4 || i==5 || i==7 || i==8) {
+            if (i==4 || i==6 || i==8 || i==9) {
                 
                [self.titleArray addObject:[tempDIC objectForKey:@"title"]];
             }
+            
+            NSLog(@"self.titleArray%@",self.titleArray);
             
             for (NSDictionary *DIC in collectionsArray) {
            
@@ -177,7 +180,6 @@
                 [self.musicArray addObject:model];
              
             }
-            
             i++;
         }
         
@@ -247,12 +249,7 @@
     NSRange range = [string rangeOfString:@"@"];
     
     NSString *str = [string substringToIndex:range.location];
-    
-    MusicDetailViewController *mdetaVC = [MusicDetailViewController new];
-    
-    
-    mdetaVC.imageStr = [NSString stringWithString:str];
-    
+
     [cell.baseImv setImageWithURL:[NSURL URLWithString:str]];
     
     cell.baseLable.text = model.name;
@@ -261,12 +258,6 @@
     
     return cell;
 }
-
-
-
-
-
-
 
 
 
@@ -318,9 +309,6 @@
 
 
 
-
-
-
 //音乐点击事件
 - (void)musicBtnAction:(UIButton *)btn
 {
@@ -337,7 +325,6 @@
     self.musicBtn.selected = NO;
     btn.selected = YES;
     self.movieBtn.selected = NO;
-    
     self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth, 0);
 }
 
@@ -348,13 +335,8 @@
     self.musicBtn.selected = NO;
     self.readBtn.selected = NO;
     btn.selected = YES;
-    
     self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 2, 0);
 }
-
-
-
-
 
 
 
@@ -403,6 +385,7 @@
 }
 
 
+
 int a = 0;
 - (void)timerAction{
     a++;
@@ -415,8 +398,6 @@ int a = 0;
     [self.pageControl setCurrentPage:a];
     
 }
-
-
 
 
 
@@ -518,14 +499,6 @@ int a = 0;
 
 
 
-
-
-
-
-
-
-
-
 ////头部视图
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
@@ -612,7 +585,13 @@ int a = 0;
     
     dteaVC.urlString = self.urlArray[indexPath.section][indexPath.row];
     
+    MusicModel *model = self.dataArray[indexPath.section][indexPath.row];
     
+    NSString *string = model.logo;
+    
+    dteaVC.detailImage = string;
+    
+
     [self.navigationController pushViewController:dteaVC animated:YES];
 }
 

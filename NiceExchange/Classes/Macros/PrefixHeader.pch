@@ -77,6 +77,7 @@
 #import "SWRegisterViewController.h"
 // 设置页面
 #import "SWSettingsViewController.h"
+#import "SWAboutMeViewController.h"
 
 // 自定义视图
 #import "SWCertificationView.h"

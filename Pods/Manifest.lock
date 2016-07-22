@@ -17,15 +17,18 @@ PODS:
   - AVOSCloud (3.3.5)
   - AVOSCloudCrashReporting (3.3.5):
     - AVOSCloud
+  - BaiduMapKit (3.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AVOSCloud
   - AVOSCloudCrashReporting
+  - BaiduMapKit
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   AVOSCloud: 1fe170768bee7e05bc3ea86e38d5bddb105cb957
   AVOSCloudCrashReporting: 7ad087db785a25d6ef03cb54c2c0b460eb32dabb
+  BaiduMapKit: de2a726d5296d6b2dc0e974b683af73153608dcd
 
 COCOAPODS: 0.39.0

@@ -7,6 +7,7 @@
 //
 
 #import "MusicDetailViewController.h"
+#import "BaseOrganViewController.h"
 
 @interface MusicDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -21,18 +22,14 @@
 
 @implementation MusicDetailViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor grayColor];
-    
     
     [self addTableView];
     
     
    [self MusicRequest];
-
-    
 }
 
 
@@ -46,14 +43,16 @@
     
     //添加头视图
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 550)];
-    
     view.backgroundColor = [UIColor yellowColor];
-    
     self.imageV = [[UIImageView alloc] initWithFrame:view.frame];
-    
     [view addSubview:self.imageV];
-    
     self.tableView.tableHeaderView = view;
+    
+    
+    
+
+    
+    
     
     //注册
     [self.tableView  registerNib:[UINib nibWithNibName:@"MusicDetailTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MusicDetailTableViewCell_Identifiter];
@@ -78,7 +77,7 @@
         
         NSDictionary *dataDic = dic[@"data"];
         
-        [self.imageV setImageWithURL:[NSURL URLWithString:[dataDic objectForKey:@"album_logo"]]];
+//        [self.imageV setImageWithURL:[NSURL URLWithString:[dataDic objectForKey:@"album_logo"]]];
         
     
         NSMutableArray *songsArr = dataDic[@"songs"];
@@ -88,7 +87,8 @@
         
         for (NSDictionary *dic in songsArr) {
             
-//            [self.imageV setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"album_logo"]]];
+//            [self.imageView setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"album_logo"]]];
+            
             
             [self.MusicArray addObject:dic];
             
@@ -98,7 +98,6 @@
             
             [self.tableView reloadData];
         });
-        
         
     } failure:^(NSError *error) {
         
@@ -127,6 +126,15 @@
     cell.titleLabel.text = dic[@"song_name"];
     
     cell.authorLabel.text = dic[@"singers"];
+    
+    NSString *string = self.detailImage;
+
+    NSRange range = [string rangeOfString:@"@"];
+    
+    NSString *str = [string substringToIndex:range.location];
+    
+    [self.imageV setImageWithURL:[NSURL URLWithString:str]];
+    
     
     
     return cell;
