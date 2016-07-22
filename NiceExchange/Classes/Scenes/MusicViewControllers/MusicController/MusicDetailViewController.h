@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MusicDetailViewController : UIViewController
-
+//传 url
 @property(nonatomic,strong)NSString *urlString;
 
-@property(nonatomic,strong)NSString *imageStr;
+@property(nonatomic,strong)NSString *detailImage;
 
 @end
