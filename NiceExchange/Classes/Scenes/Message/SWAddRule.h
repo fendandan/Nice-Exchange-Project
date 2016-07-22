@@ -13,5 +13,6 @@
 @property(nonatomic,strong)UITextField *textfield;
 @property(nonatomic,strong)UIButton *button;
 @property(nonatomic,strong)UIButton *bton;
-
+@property (nonatomic,strong)NSString *string;//取值用<大家聊聊& 尽管问我 >
+@property (nonatomic,strong)NSString *textFstring; //规则取值
 @end
