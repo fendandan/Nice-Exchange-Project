@@ -14,6 +14,7 @@
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
 #import "FourViewController.h"
+#import "MusicDetailViewController.h"
 
 @interface MusicViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
@@ -75,7 +76,7 @@
 
     
     //请求数据
-  //  [self MusicRequestData];
+    [self MusicRequestData];
     
     
     self.musicBtn.selected = YES;
@@ -246,6 +247,11 @@
     NSRange range = [string rangeOfString:@"@"];
     
     NSString *str = [string substringToIndex:range.location];
+    
+    MusicDetailViewController *mdetaVC = [MusicDetailViewController new];
+    
+    
+    mdetaVC.imageStr = [NSString stringWithString:str];
     
     [cell.baseImv setImageWithURL:[NSURL URLWithString:str]];
     

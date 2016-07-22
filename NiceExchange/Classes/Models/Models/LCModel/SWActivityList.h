@@ -13,13 +13,13 @@
 @property (copy) NSString *title;
 @property (copy) NSString *content;
 @property (strong) AVFile *titleImage;
-@property (strong) NSNumber *markC;
+@property (copy) NSNumber *markC;
 @property (strong) SWLcAvUSer *createBy;
 @property (strong) AVRelation *commentRelation;
 
 @property (copy) NSString *label;
 @property (copy) NSString *rule;
 @property (strong) AVGeoPoint *point;
-@property (strong) NSString *subhead;
+@property (copy) NSString *subhead;
 
 @end

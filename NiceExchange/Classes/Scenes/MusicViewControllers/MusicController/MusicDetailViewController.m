@@ -26,13 +26,12 @@
     
     self.view.backgroundColor = [UIColor grayColor];
     
+    
     [self addTableView];
     
     
    [self MusicRequest];
-    
-    
-   
+
     
 }
 

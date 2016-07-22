@@ -76,10 +76,10 @@
             SWLog(@"succeeded = %d",succeeded);
             
             // 默认关注 -- 小助手
-//            SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57902fb28ac247005ffb4ccf"};
+            SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57902fb28ac247005ffb4ccf"};
             AVObject *fO = [AVObject objectWithClassName:@"Follow"];
             [fO setObject:user forKey:@"from"];
-            [fO setObject:user forKey:@"to"];
+            [fO setObject:swUser forKey:@"to"];
             [fO setObject:[NSDate date] forKey:@"date"];
             [fO saveInBackground];
             
@@ -91,10 +91,11 @@
             count.followC = @1;
             count.createBy = user;
             [count saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    [user setObject:(SWCount *)count forKey:@"count"];
-                    [user saveInBackground];
-                };
+//                if (succeeded) {
+//                    [user setObject:(SWCount *)count forKey:@"count"];
+//                    [user saveInBackground];
+//                };
+                SWLog(@" error %@",error);
             }];
         } else {
             
