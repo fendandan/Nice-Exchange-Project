@@ -31,5 +31,5 @@
             andButtonTitleColor:(UIColor *)titleColor
                andButtonBGColor:(UIColor *)bgColor
            andButtonBorderColor:(UIColor *)borderColor;
-
+- (void)removeAllViews;
 @end

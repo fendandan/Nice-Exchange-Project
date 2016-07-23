@@ -15,11 +15,12 @@
 #import "XYSpriteHelper.h"
 #import "BaseSwitchViewController.h"
 #import "SWCommentsTableViewCell.h"
+#import "SWPLTableViewController.h"
 #define kFirstSegmentedIndex 0
 
 #define kSecondSegmentedIndex 1
 
-@interface SWshowViewController ()<UMSocialUIDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface SWshowViewController ()<UMSocialUIDelegate,PLDelgate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *collectionScrollView;
 
 @property (strong, nonatomic) IBOutlet UIView *stView;
@@ -195,6 +196,16 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
+
+-(void)PLBtn {
+    
+    SWPLTableViewController *plvc = [SWPLTableViewController new];
+    
+    [self.navigationController pushViewController:plvc animated:YES];
+    
+    
+    
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
  
@@ -208,6 +219,7 @@
         
                 SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
         cell.selectionStyle = UITableViewCellEditingStyleNone;
+        cell.plDelegate = self;
         return cell;
     
         
@@ -224,6 +236,7 @@
 
     SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
     cell.selectionStyle = UITableViewCellEditingStyleNone;
+    cell.plDelegate = self;
    return cell;
   
 }

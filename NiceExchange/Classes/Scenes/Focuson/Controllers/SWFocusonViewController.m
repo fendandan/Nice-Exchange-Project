@@ -24,7 +24,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     
-    self.rootVC.swTabBar.hidden = NO;
+    self.rootVC.tabBar.hidden = YES;
 }
 
 - (void)viewDidLoad {

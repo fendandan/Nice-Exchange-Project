@@ -8,8 +8,10 @@
 
 #import "RootViewController.h"
 #import "MSGuideView.h"
-@interface RootViewController ()<SWTabBarDelegate>
 
+@class MSGuideViewManager;
+@interface RootViewController ()<SWTabBarDelegate>
+@property (nonatomic,strong)UIWindow *window;
 @end
 
 @implementation RootViewController
@@ -24,7 +26,10 @@
     
     [[MSGuideViewManager sharedInstance]showGuideViewWithImages:array andButtonTitle:@"立即体验" andButtonTitleColor:[UIColor redColor] andButtonBGColor:[UIColor greenColor] andButtonBorderColor:[UIColor blackColor]];
 //
+    
     [self getFollowInfo];
+    
+
     
 }
 - (void)getFollowInfo {
@@ -60,15 +65,18 @@
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:selectAttrs forState:UIControlStateSelected];
 }
-
+- (void)viewDidAppear:(BOOL)animated {
+    RootViewController *rootvc = [[RootViewController alloc]init];
+    self.window.rootViewController = rootvc;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //
+    [[MSGuideViewManager sharedInstance]removeAllViews];
     NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"User" title:@"我的"]];
     
   self.swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];
   self.swTabBar.swDelegete = self; // 代理
-    
+  
 
     UIButton *btn = buttons[0];
     btn.selected = YES;
@@ -104,7 +112,11 @@
 
 #pragma mark --- SWTabBarDelegate ---
 - (void)swTabBarItemDidClicked:(SWTabBar *)tabBar {
+ 
+ 
+    
     self.selectedIndex = self.swTabBar.currentSelected;
+   
 }
 
 /*

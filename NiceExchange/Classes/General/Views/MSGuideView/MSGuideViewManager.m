@@ -167,11 +167,20 @@
     self.pageControl.currentPage = (scrollView.contentOffset.x / kMSGuideViewBounds.size.width);
 }
 
+- (void)removeAllViews {
+    
+    [self.view removeFromSuperview];
+    [self setWindow:nil];
+    [self setView:nil];
+    _pageControl.frame = CGRectMake(1000, kMSGuideViewBounds.size.height - 60, 400, 44);
+    [self setPageControl:nil];
+}
 /**
  *  点击立即体验按钮响应事件
  *
  *  @param sender sender
  */
+ 
 - (void)nextButtonHandler:(id)sender {
     
     [self.view removeFromSuperview];

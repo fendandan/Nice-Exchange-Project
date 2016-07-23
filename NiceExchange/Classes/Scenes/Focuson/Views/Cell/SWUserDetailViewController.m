@@ -10,7 +10,7 @@
 #import "SWusrTableViewCell.h"
 #import "SWpratTableViewCell.h"
 #import "SWcollectionTableViewCell.h"
-@interface SWUserDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface SWUserDetailViewController ()<UITableViewDataSource,UITableViewDelegate,SWTabBarDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *focusTableview;
 
 @end
@@ -20,12 +20,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     
-    self.rootVC.swTabBar.hidden = NO;
+//    self.rootVC.swTabBar.hidden = NO;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.rootVC.tabBar.hidden = YES;
 self.title = @"个人资料";
     self.headerView.layer.masksToBounds = YES;
     self.headerView.layer.cornerRadius = 20;
@@ -57,7 +59,7 @@ self.title = @"个人资料";
 }
 
 -(void)popAction:(UIButton *)sender {
-    
+#warning -------
     [self.navigationController popViewControllerAnimated:YES];
     self.rootVC.swTabBar.hidden = YES;
 }

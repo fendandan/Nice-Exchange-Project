@@ -8,7 +8,7 @@
 
 #import "SWcommentViewController.h"
 
-@interface SWcommentViewController ()<UITextViewDelegate>
+@interface SWcommentViewController ()<UITextViewDelegate,SWTabBarDelegate>
 
 @end
 
@@ -28,6 +28,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
   
 }
+
+
 
 -(void)tollBar {
     //定义一个toolBar

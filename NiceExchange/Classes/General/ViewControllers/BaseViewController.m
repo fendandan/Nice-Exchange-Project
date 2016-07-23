@@ -36,11 +36,12 @@
     
     // 根视图控制器（tabBarController）
 //    self.rootVC = (RootViewController *)[[UIApplication sharedApplication].keyWindow rootViewController];
+       self.rootVC = [[RootViewController alloc]init];
     UINavigationController *nacV = [[UINavigationController alloc]initWithRootViewController:self.rootVC];
    
-    RootViewController *rootVC = [[RootViewController alloc]init];
+  
     
-    self.window.rootViewController = nacV;
+    self.window.rootViewController =  nacV;
     // 视图控制器view背景色
 //    self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
 }

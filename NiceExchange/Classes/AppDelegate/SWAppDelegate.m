@@ -44,8 +44,7 @@
     
     UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
     sNC.navigationBarHidden = YES;
-    sNC.navigationController.navigationBarHidden = YES;
-    sNC.navigationBar.hidden = YES;
+
     [self.swWindow setRootViewController:sNC];
     
     

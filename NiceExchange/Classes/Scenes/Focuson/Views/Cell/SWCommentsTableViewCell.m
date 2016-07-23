@@ -7,7 +7,9 @@
 //
 
 #import "SWCommentsTableViewCell.h"
+
 @class SWCommentsTableViewCell;
+
 @implementation SWCommentsTableViewCell
 
 - (void)awakeFromNib {
@@ -87,8 +89,16 @@
 }
 - (IBAction)commentsLClick:(id)sender {
     
+    if ([self.plDelegate respondsToSelector:@selector(PLBtn)]) {
+        [self.plDelegate PLBtn];
+    }
     
     if (self.touch == 0) {
+        
+        
+      
+        
+        
         [self.commentsL setTitleColor:[UIColor cyanColor] forState:0];
         self.commentsL.tintColor = [UIColor cyanColor];
         
@@ -104,6 +114,9 @@
         self.commentsL.tintColor = [UIColor groupTableViewBackgroundColor];
         
         self.touch = 0;
+        
+      
+        
     }
     
     

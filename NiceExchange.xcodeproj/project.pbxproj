@@ -26,6 +26,9 @@
 		CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70831D438ECE00F0909F /* SWCreationViewController.m */; };
 		CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70851D438ECE00F0909F /* SWMessViewController.m */; };
 		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
+		CC3F708D1D43B31200F0909F /* SWPLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F708C1D43B31200F0909F /* SWPLTableViewController.m */; };
+		CC3F70991D43B47800F0909F /* SWPLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70971D43B47800F0909F /* SWPLTableViewCell.m */; };
+		CC3F709A1D43B47800F0909F /* SWPLTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3F70981D43B47800F0909F /* SWPLTableViewCell.xib */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
 		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
 		CC592B6A1D3F16CB002CD37D /* 444.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B671D3F16CB002CD37D /* 444.png */; };
@@ -418,6 +421,11 @@
 		CC3F70851D438ECE00F0909F /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.m; sourceTree = SOURCE_ROOT; };
 		CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.m; sourceTree = SOURCE_ROOT; };
+		CC3F708B1D43B31200F0909F /* SWPLTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPLTableViewController.h; sourceTree = "<group>"; };
+		CC3F708C1D43B31200F0909F /* SWPLTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWPLTableViewController.m; sourceTree = "<group>"; };
+		CC3F70961D43B47800F0909F /* SWPLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWPLTableViewCell.h; sourceTree = "<group>"; };
+		CC3F70971D43B47800F0909F /* SWPLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWPLTableViewCell.m; sourceTree = "<group>"; };
+		CC3F70981D43B47800F0909F /* SWPLTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWPLTableViewCell.xib; sourceTree = "<group>"; };
 		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
 		CC592B661D3F16CB002CD37D /* 333.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 333.png; sourceTree = "<group>"; };
 		CC592B671D3F16CB002CD37D /* 444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 444.png; sourceTree = "<group>"; };
@@ -1712,6 +1720,11 @@
 				CCA3B7BD1D3A7C95003361CC /* SWshowViewController.xib */,
 				CC7E0CF01D3D080700313F32 /* SWTableViewController.h */,
 				CC7E0CF11D3D080700313F32 /* SWTableViewController.m */,
+				CC3F708B1D43B31200F0909F /* SWPLTableViewController.h */,
+				CC3F708C1D43B31200F0909F /* SWPLTableViewController.m */,
+				CC3F70961D43B47800F0909F /* SWPLTableViewCell.h */,
+				CC3F70971D43B47800F0909F /* SWPLTableViewCell.m */,
+				CC3F70981D43B47800F0909F /* SWPLTableViewCell.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -2236,6 +2249,7 @@
 				CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */,
 				CC5A3D3E1D40C5D200984F1F /* p31b0089.png in Resources */,
 				CC5A3CEF1D40C5D200984F1F /* p31b0010.png in Resources */,
+				CC3F709A1D43B47800F0909F /* SWPLTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2301,6 +2315,7 @@
 				D601676F1D4249CA00CA54BA /* SWAnnotation.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
+				CC3F70991D43B47800F0909F /* SWPLTableViewCell.m in Sources */,
 				CC7257A31D4225B600500D16 /* SWAboutMeViewController.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
 				CC26E1F11D3DDA82007FDAEE /* TwoViewController.m in Sources */,
@@ -2317,6 +2332,7 @@
 				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,
 				CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */,
 				CC5A677F1D35F758008AE01A /* BaseViewController.m in Sources */,
+				CC3F708D1D43B31200F0909F /* SWPLTableViewController.m in Sources */,
 				CC5A3DB21D40C5D200984F1F /* XYSpriteHelper.m in Sources */,
 				CC9BFC3C1D40C3B500F40EF6 /* SWBaseLCModel.m in Sources */,
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
