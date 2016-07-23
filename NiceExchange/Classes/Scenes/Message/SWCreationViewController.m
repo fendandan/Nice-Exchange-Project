@@ -274,8 +274,9 @@ UINavigationControllerDelegate
     [self.view addSubview:tagsview];
     self.tageView = tagsview;
     NSArray *array = @[@[@"娱乐",@"文艺",@"乐活",@"旅行"],@[@"吃喝",@"时尚",@"美容",@"情感"]];
-    for (int j = 0; j < 2; j++) {
-        for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < array.count; j++) {
+        NSArray *arr = array[j];
+        for (int i = 0; i < arr.count; i++) {
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(20+i*80, 10 +j*50, 60, 40);
             btn.backgroundColor = [UIColor orangeColor];
