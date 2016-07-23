@@ -11,6 +11,7 @@
 #import "SWMessViewController.h"
 #import "SWLayoutTextView.h"
 
+#import "SWBaiduAPIViewController.h"
 @interface SWCreationViewController ()
 <
 UITextFieldDelegate,
@@ -86,7 +87,7 @@ UINavigationControllerDelegate
     addlabBtn.frame = CGRectMake(150,180 , 120, 30);
     addlabBtn.layer.masksToBounds = YES;
     addlabBtn.layer.cornerRadius = addlabBtn.bounds.size.height/4;
-    [addlabBtn setTitle:@"➕添加标签" forState:UIControlStateNormal];
+    [addlabBtn setTitle:@"娱乐" forState:UIControlStateNormal];
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
@@ -188,9 +189,13 @@ UINavigationControllerDelegate
     }
     
 }
+//存草稿
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     SWLog(@"嘿嘿");
-    [self.navigationController pushViewController:[[SWMessViewController alloc] init] animated:YES];
+   
+    SWBaiduAPIViewController *baidu = [[SWBaiduAPIViewController alloc]init];
+    [self.navigationController pushViewController:baidu animated:YES];
+
 }
 //button
 -(void)uploadAction:(UIButton *)sender{
