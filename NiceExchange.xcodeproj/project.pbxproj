@@ -23,6 +23,9 @@
 		CC26E1FB1D3DDD21007FDAEE /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F61D3DDD21007FDAEE /* 3.png */; };
 		CC26E1FC1D3DDD21007FDAEE /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F71D3DDD21007FDAEE /* 4.png */; };
 		CC26E1FD1D3DDD21007FDAEE /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F81D3DDD21007FDAEE /* 5.png */; };
+		CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70831D438ECE00F0909F /* SWCreationViewController.m */; };
+		CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70851D438ECE00F0909F /* SWMessViewController.m */; };
+		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
 		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
 		CC592B6A1D3F16CB002CD37D /* 444.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B671D3F16CB002CD37D /* 444.png */; };
@@ -367,11 +370,8 @@
 		CCF61FCC1D38FB8E0071EC51 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FCB1D38FB8E0071EC51 /* MusicModel.m */; };
 		D601676C1D4244A700CA54BA /* SWBaiduAPIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D601676B1D4244A700CA54BA /* SWBaiduAPIViewController.m */; };
 		D601676F1D4249CA00CA54BA /* SWAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D601676E1D4249CA00CA54BA /* SWAnnotation.m */; };
-		D6616D661D3A82110018794B /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D651D3A82110018794B /* SWCreationViewController.m */; };
 		D6616D691D3A82F70018794B /* SWAddRule.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D681D3A82F70018794B /* SWAddRule.m */; };
-		D6616D741D3A844F0018794B /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D711D3A844F0018794B /* SWMessViewController.m */; };
 		D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D731D3A844F0018794B /* SWTableViewCell.m */; };
-		D6616D7A1D3A84DA0018794B /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */; };
 		D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */; };
 		D6616D851D3A85190018794B /* 1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = D6616D7D1D3A85190018794B /* 1.jpeg */; };
 		D6616D861D3A85190018794B /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D7E1D3A85190018794B /* 2.png */; };
@@ -412,6 +412,12 @@
 		CC26E1F61D3DDD21007FDAEE /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		CC26E1F71D3DDD21007FDAEE /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		CC26E1F81D3DDD21007FDAEE /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		CC3F70821D438ECE00F0909F /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCreationViewController.h; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.h; sourceTree = SOURCE_ROOT; };
+		CC3F70831D438ECE00F0909F /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCreationViewController.m; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.m; sourceTree = SOURCE_ROOT; };
+		CC3F70841D438ECE00F0909F /* SWMessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMessViewController.h; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.h; sourceTree = SOURCE_ROOT; };
+		CC3F70851D438ECE00F0909F /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.m; sourceTree = SOURCE_ROOT; };
+		CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.h; sourceTree = SOURCE_ROOT; };
+		CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.m; sourceTree = SOURCE_ROOT; };
 		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
 		CC592B661D3F16CB002CD37D /* 333.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 333.png; sourceTree = "<group>"; };
 		CC592B671D3F16CB002CD37D /* 444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 444.png; sourceTree = "<group>"; };
@@ -842,16 +848,10 @@
 		D601676B1D4244A700CA54BA /* SWBaiduAPIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWBaiduAPIViewController.m; sourceTree = "<group>"; };
 		D601676D1D4249CA00CA54BA /* SWAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWAnnotation.h; sourceTree = "<group>"; };
 		D601676E1D4249CA00CA54BA /* SWAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWAnnotation.m; sourceTree = "<group>"; };
-		D6616D641D3A82110018794B /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCreationViewController.h; path = ../SWCreationViewController.h; sourceTree = "<group>"; };
-		D6616D651D3A82110018794B /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCreationViewController.m; path = ../SWCreationViewController.m; sourceTree = "<group>"; };
 		D6616D671D3A82F70018794B /* SWAddRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAddRule.h; path = ../SWAddRule.h; sourceTree = "<group>"; };
 		D6616D681D3A82F70018794B /* SWAddRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAddRule.m; path = ../SWAddRule.m; sourceTree = "<group>"; };
-		D6616D701D3A844F0018794B /* SWMessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMessViewController.h; path = ../SWMessViewController.h; sourceTree = "<group>"; };
-		D6616D711D3A844F0018794B /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = ../SWMessViewController.m; sourceTree = "<group>"; };
 		D6616D721D3A844F0018794B /* SWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWTableViewCell.h; path = ../SWTableViewCell.h; sourceTree = "<group>"; };
 		D6616D731D3A844F0018794B /* SWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWTableViewCell.m; path = ../SWTableViewCell.m; sourceTree = "<group>"; };
-		D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = ../SWNotifcationSettingViewController.h; sourceTree = "<group>"; };
-		D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = ../SWNotifcationSettingViewController.m; sourceTree = "<group>"; };
 		D6616D781D3A84DA0018794B /* SWNotfcTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotfcTableViewCell.h; path = ../SWNotfcTableViewCell.h; sourceTree = "<group>"; };
 		D6616D791D3A84DA0018794B /* SWNotfcTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotfcTableViewCell.m; path = ../SWNotfcTableViewCell.m; sourceTree = "<group>"; };
 		D6616D7D1D3A85190018794B /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
@@ -1736,12 +1736,12 @@
 			isa = PBXGroup;
 			children = (
 				CC5A3DE01D4103F200984F1F /* 评论.png */,
+				CCA3B7C61D3A7C95003361CC /* 收藏.png */,
 				CCA3B7C11D3A7C95003361CC /* 11.png */,
 				CCA3B7C21D3A7C95003361CC /* 分享.png */,
 				CCA3B7C31D3A7C95003361CC /* 图片.png */,
 				CCA3B7C41D3A7C95003361CC /* 已收藏.png */,
 				CCA3B7C51D3A7C95003361CC /* 我要参加.png */,
-				CCA3B7C61D3A7C95003361CC /* 收藏.png */,
 				CCA3B7C71D3A7C95003361CC /* 返回.png */,
 			);
 			path = fImage;
@@ -1835,12 +1835,12 @@
 		D60167681D42445200CA54BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D6616D641D3A82110018794B /* SWCreationViewController.h */,
-				D6616D651D3A82110018794B /* SWCreationViewController.m */,
-				D6616D701D3A844F0018794B /* SWMessViewController.h */,
-				D6616D711D3A844F0018794B /* SWMessViewController.m */,
-				D6616D761D3A84DA0018794B /* SWNotifcationSettingViewController.h */,
-				D6616D771D3A84DA0018794B /* SWNotifcationSettingViewController.m */,
+				CC3F70821D438ECE00F0909F /* SWCreationViewController.h */,
+				CC3F70831D438ECE00F0909F /* SWCreationViewController.m */,
+				CC3F70841D438ECE00F0909F /* SWMessViewController.h */,
+				CC3F70851D438ECE00F0909F /* SWMessViewController.m */,
+				CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */,
+				CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2296,8 +2296,8 @@
 			files = (
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
+				CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
-				D6616D661D3A82110018794B /* SWCreationViewController.m in Sources */,
 				D601676F1D4249CA00CA54BA /* SWAnnotation.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
@@ -2321,6 +2321,7 @@
 				CC9BFC3C1D40C3B500F40EF6 /* SWBaseLCModel.m in Sources */,
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
 				CCAC39841D3BA47B00CCE229 /* SWSettingsViewController.m in Sources */,
+				CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */,
 				CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */,
 				CC9A95D91D41CF0E00EA23BB /* MusicViewController.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
@@ -2337,7 +2338,6 @@
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
 				CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */,
 				CC9BFC3E1D40C3B500F40EF6 /* SWFollow.m in Sources */,
-				D6616D7A1D3A84DA0018794B /* SWNotifcationSettingViewController.m in Sources */,
 				CCA3B7FD1D3A7C95003361CC /* SWpratTableViewCell.m in Sources */,
 				CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */,
 				CC5A3DB81D40EECA00984F1F /* SWCommentsTableViewCell.m in Sources */,
@@ -2351,8 +2351,8 @@
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CCA3B8011D3A7C95003361CC /* SWusrTableViewCell.m in Sources */,
 				CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */,
+				CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */,
 				CCA3B7F91D3A7C95003361CC /* SWFridenSharOnTableViewCell.m in Sources */,
-				D6616D741D3A844F0018794B /* SWMessViewController.m in Sources */,
 				CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */,
 				CCAC398A1D3BA65300CCE229 /* BaseManager.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,

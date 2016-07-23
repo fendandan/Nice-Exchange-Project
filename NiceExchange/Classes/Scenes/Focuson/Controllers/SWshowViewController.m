@@ -146,8 +146,8 @@
     _switchVC.rightTableView.dataSource = self;
     _switchVC.leftTableView.backgroundColor = [UIColor whiteColor];
     [_switchVC.leftTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"commentCell"];
-// 
-      [_switchVC.rightTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"RcommentCell"];
+//// 
+     [_switchVC.rightTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"RcommentCell"];
     
     _switchVC.scrollView.contentSize =  CGSizeMake(800 , 0);
     ////////////////////////////  XYSpriteView ////////////////////////////
@@ -177,15 +177,11 @@
     [self.collectionView addSubview:_segmented];
     
 }
-- (IBAction)chageFram:(UIButton *)sender {
-   
-  
-    
-}
+
 
 -(void)chageClick:(UISegmentedControl *)sender {
     
-    _switchVC.scrollView.contentOffset = CGPointMake(_segmented.selectedSegmentIndex * _switchVC.scrollView.frame.size.width *10, 0);
+    _switchVC.scrollView.contentOffset = CGPointMake(_segmented.selectedSegmentIndex * _switchVC.scrollView.frame.size.width , 0);
     
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -194,7 +190,7 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 8;
+    return 100;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -203,16 +199,32 @@
     
  
     if ( tableView == _switchVC.rightTableView) {
-      
+    
+//        NSString *CellIdentifier = [NSString stringWithFormat:@"RcommentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+//        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+//        
+//        if (cell == nil) {
+//            cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
-        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
+                SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
         cell.selectionStyle = UITableViewCellEditingStyleNone;
         return cell;
-    }
     
+        
+        }
+    
+
+    
+//
+//    NSString *CellIdentifier = [NSString stringWithFormat:@"commentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+//    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+//    if (cell == nil) {
+//        cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+   
+
     SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
-     cell.selectionStyle = UITableViewCellEditingStyleNone;
-    return cell;
+    cell.selectionStyle = UITableViewCellEditingStyleNone;
+   return cell;
   
 }
 

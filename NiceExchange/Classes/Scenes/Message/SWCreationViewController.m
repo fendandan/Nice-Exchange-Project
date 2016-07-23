@@ -12,6 +12,7 @@
 #import "SWLayoutTextView.h"
 
 #import "SWBaiduAPIViewController.h"
+@class SWAppDelegate;
 @interface SWCreationViewController ()
 <
 UITextFieldDelegate,
@@ -30,10 +31,12 @@ UINavigationControllerDelegate
 @property (strong, nonatomic) UIView *Viewaddimage;
 @property (strong, nonatomic) UIView *tageView;
 @property (strong, nonatomic) UIButton *addtageButton;
-
+@property (nonatomic,strong)UIWindow *window;
 @end
 
 @implementation SWCreationViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

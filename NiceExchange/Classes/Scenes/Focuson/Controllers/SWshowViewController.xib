@@ -129,7 +129,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="411" id="pfU-oB-ROo"/>
                                     </constraints>
-                                    <mutableString key="text">先，我先来讲几个故事：
+                                    <string key="text">先，我先来讲几个故事：
 
 故事一：我爹在2004年一次感冒后丧失了听力，具体原因并不清楚，只是猜测是以前在部队当炮兵时没有做好防护措施，对听力有很大损伤。有一边耳朵尚且能用助听器，但是也很勉强。从此升职无望，调岗只能做基础工作。我是独生子女，2004年才上小学四年级，在那之前跟我爹交流甚少，只会要求他回家时给我带冰激凌，对他大喊大叫⋯⋯
 
@@ -137,7 +137,7 @@
 
 故事三：我在爱丁堡独立旅游，酒吧歇脚抽烟，有个人过来搭讪说：姑娘，少抽烟啊！我就跟他聊了起来，后来他请我喝一杯，还留了电话，号称未来几天相约一起游玩。我们聊得开心极了。临走时他说他得去看他妈妈：“我妈90多岁了，抽了一辈子烟。所以，姑娘，抽烟可能也没事。”
 
-这些故事来自不同的人。</mutableString>
+这些故事来自不同的人。</string>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -145,7 +145,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-2Z-kq5">
                                     <rect key="frame" x="372" y="645" width="42" height="88"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
