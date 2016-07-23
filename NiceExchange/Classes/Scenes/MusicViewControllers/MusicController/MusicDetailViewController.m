@@ -77,17 +77,11 @@
         
         NSDictionary *dataDic = dic[@"data"];
         
-//        [self.imageV setImageWithURL:[NSURL URLWithString:[dataDic objectForKey:@"album_logo"]]];
-        
     
         NSMutableArray *songsArr = dataDic[@"songs"];
         
         
-        
-        
         for (NSDictionary *dic in songsArr) {
-            
-//            [self.imageView setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"album_logo"]]];
             
             
             [self.MusicArray addObject:dic];
@@ -132,7 +126,6 @@
     NSRange range = [string rangeOfString:@"@"];
     
     NSString *str = [string substringToIndex:range.location];
-    
     [self.imageV setImageWithURL:[NSURL URLWithString:str]];
     
     

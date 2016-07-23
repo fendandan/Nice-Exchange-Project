@@ -104,7 +104,7 @@
 
 
 
-#define MusicFourSectionRequest_Url2 @"spark.api.xiami.com/api?album_id=2100366952&api_key=655bdb5fc1e0d21a53fce2cb8e1ba0ae&api_sig=5e3c4afa9502c75e2312d089c242a3a0&app_v=5060200&call_id=1469101908.179363&ch=201200&device_id=A35A17BF-BF6D-4846-AE1B-846C63226062&lg=1&method=album.music-detail&network=1&os_v=9.3.2&platform_id=2&proxy"
+#define MusicFourSectionRequest_Url2 @"http://spark.api.xiami.com/api?album_id=2100366952&api_key=655bdb5fc1e0d21a53fce2cb8e1ba0ae&api_sig=5e3c4afa9502c75e2312d089c242a3a0&app_v=5060200&call_id=1469101908.179363&ch=201200&device_id=A35A17BF-BF6D-4846-AE1B-846C63226062&lg=1&method=album.music-detail&network=1&os_v=9.3.2&platform_id=2&proxy=0&resolution=640%2A1136&utdid=V4iplO48ajcDAMduOXnBVa9y&v=5.0"
 
 
 
