@@ -23,8 +23,9 @@
     [array addObject:[UIImage imageNamed:@"444"]];
     
     [[MSGuideViewManager sharedInstance]showGuideViewWithImages:array andButtonTitle:@"立即体验" andButtonTitleColor:[UIColor redColor] andButtonBGColor:[UIColor greenColor] andButtonBorderColor:[UIColor blackColor]];
-    
+//
     [self getFollowInfo];
+    
 }
 - (void)getFollowInfo {
     AVQuery *followQ = [AVQuery queryWithClassName:@"Follow"];

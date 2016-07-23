@@ -76,7 +76,7 @@
             SWLog(@"succeeded = %d",succeeded);
             
             // 默认关注 -- 小助手
-            SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57902fb28ac247005ffb4ccf"};
+            SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57907dfd6be3ff0066e748ed"};
             AVObject *fO = [AVObject objectWithClassName:@"Follow"];
             [fO setObject:user forKey:@"from"];
             [fO setObject:swUser forKey:@"to"];

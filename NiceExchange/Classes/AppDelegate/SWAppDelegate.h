@@ -11,6 +11,7 @@
 @interface SWAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *swWindow;
+@property (strong, nonatomic)BMKMapManager *mapManager;//百度地图管理器
 
 + (instancetype)shareSWAppDelegate;
 

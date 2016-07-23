@@ -11,6 +11,8 @@
 #import "SWMessViewController.h"
 #import "SWLayoutTextView.h"
 
+#import "SWBaiduAPIViewController.h"
+@class SWAppDelegate;
 @interface SWCreationViewController ()
 <
 UITextFieldDelegate,
@@ -29,10 +31,12 @@ UINavigationControllerDelegate
 @property (strong, nonatomic) UIView *Viewaddimage;
 @property (strong, nonatomic) UIView *tageView;
 @property (strong, nonatomic) UIButton *addtageButton;
-
+@property (nonatomic,strong)UIWindow *window;
 @end
 
 @implementation SWCreationViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,7 +90,7 @@ UINavigationControllerDelegate
     addlabBtn.frame = CGRectMake(150,180 , 120, 30);
     addlabBtn.layer.masksToBounds = YES;
     addlabBtn.layer.cornerRadius = addlabBtn.bounds.size.height/4;
-    [addlabBtn setTitle:@"➕添加标签" forState:UIControlStateNormal];
+    [addlabBtn setTitle:@"娱乐" forState:UIControlStateNormal];
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
@@ -188,9 +192,13 @@ UINavigationControllerDelegate
     }
     
 }
+//存草稿
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     SWLog(@"嘿嘿");
-    [self.navigationController pushViewController:[[SWMessViewController alloc] init] animated:YES];
+   
+    SWBaiduAPIViewController *baidu = [[SWBaiduAPIViewController alloc]init];
+    [self.navigationController pushViewController:baidu animated:YES];
+
 }
 //button
 -(void)uploadAction:(UIButton *)sender{
@@ -269,8 +277,9 @@ UINavigationControllerDelegate
     [self.view addSubview:tagsview];
     self.tageView = tagsview;
     NSArray *array = @[@[@"娱乐",@"文艺",@"乐活",@"旅行"],@[@"吃喝",@"时尚",@"美容",@"情感"]];
-    for (int j = 0; j < 2; j++) {
-        for (int i = 0; i < 4; i++) {
+    for (int j = 0; j < array.count; j++) {
+        NSArray *arr = array[j];
+        for (int i = 0; i < arr.count; i++) {
             UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame = CGRectMake(20+i*80, 10 +j*50, 60, 40);
             btn.backgroundColor = [UIColor orangeColor];

@@ -11,7 +11,7 @@
 #import "MSGuideView.h"
 @interface MSGuideViewManager()<UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic,strong)UIWindow *window;
 @property (nonatomic, strong) UICollectionView *view;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) UIPageControl *pageControl;
@@ -82,13 +82,13 @@
             andButtonTitleColor:(UIColor *)titleColor
                andButtonBGColor:(UIColor *)bgColor
            andButtonBorderColor:(UIColor *)borderColor {
-   // NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-   // NSString *version = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *version = [[NSBundle mainBundle].infoDictionary objectForKey:@"CFBundleShortVersionString"];
     
     //根据版本号来判断是否需要显示引导页，一般来说每更新一个版本引导页都会有相应的修改
-    //BOOL show = [userDefaults boolForKey:[NSString //stringWithFormat:@"version_%@", version]];
+    BOOL show = [userDefaults boolForKey:[NSString stringWithFormat:@"version_%@", version]];
     
-   // if (!show && nil == self.window) {
+    if (!show && nil == self.window) {
         self.images = images;
         self.buttonBorderColor = borderColor;
         self.buttonBgColor = bgColor;
@@ -99,9 +99,9 @@
         [self.window addSubview:self.view];
         [self.window addSubview:self.pageControl];
         
-       // [userDefaults setBool:YES forKey:[NSString stringWithFormat:@"version_%@", version]];
-       // [userDefaults synchronize];
-   // }
+        [userDefaults setBool:YES forKey:[NSString stringWithFormat:@"version_%@", version]];
+        [userDefaults synchronize];
+    }
 }
 
 #pragma mark - UICollectionViewDelegate & UICollectionViewDataSource

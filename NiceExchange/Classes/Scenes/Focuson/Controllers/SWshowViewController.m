@@ -23,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *collectionScrollView;
 
 @property (strong, nonatomic) IBOutlet UIView *stView;
-
+@property (nonatomic, strong) UIButton *joinBtn;
 @property (nonatomic,assign) NSInteger touch;
 @property (nonatomic,strong) UISegmentedControl *segmented;
 @property (nonatomic,strong) UIButton *btn;
@@ -39,7 +39,33 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[XYSpriteHelper sharedInstance]startTimer];
+   
+    //[self add];
     
+}
+
+-(void)add {
+    
+    SWActivityList *activity = [SWActivityList object];
+    activity.title = @"招黑体质霉霉又撕逼了，这次是因为歧视女性？ "; // 标题
+    activity.content = @"泰勒又火了，这次是和侃爷因为新歌的歌词开战，还附带把卡戴珊、水果姐等风云人物卷了进来。这股火直接从欧美圈一路烧到了中国，来势汹汹、气势惊人。 事情的导火索，是侃爷的新歌——《famous》，这首歌里的一句rap写到了霉霉：“I feel like me and Taylor might still have sex , Why I made that bitch famous god damn . I made that bitch famou”翻译过来就是：“我觉得泰勒应该在床上满足我，她可是老子捧红的，我的老天爷，她可是沾了我的光才红起来的”（我选了一个比较温和的翻译版本，毕竟我们都还是宝宝），在后来公布的新歌MV里，霉霉的蜡像赤身裸体躺在侃爷身边，其实MV里共出现了12个女人的裸体蜡像，包括他老婆卡戴珊的果体。 你怎么看待霉霉和侃爷撕逼这件事？卡戴珊不经霉霉允许就私自录像，但如果没有录像，大家也看不到事情的全貌 霉霉说侃爷这首歌是歧视女性，你怎么看？（"; // 内容
+    activity.subhead = @"请自行搜索《famous》）道理我都懂，但我真正关心的是，我森怎么想?"; // 副标题
+    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"tl.jpg"], 0.5);
+    AVFile *file = [AVFile fileWithName:@"title.jpg" data:data]; // 图片
+    [activity setObject:file forKey:@"titleImage"];
+    activity.rule = @"一起聊聊"; // 规则
+    activity.label = @"娱乐"; // 标签
+    activity.point = [AVGeoPoint geoPointWithLatitude:39.57 longitude:116]; // 坐标
+    
+    activity.markC = @0; // 收藏数累计，默认0
+    [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog(@" ---- error %@",error);
+        if (succeeded) {
+            SWLog(@" ----- succeeded %d",succeeded);
+        }
+    }];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -120,8 +146,8 @@
     _switchVC.rightTableView.dataSource = self;
     _switchVC.leftTableView.backgroundColor = [UIColor whiteColor];
     [_switchVC.leftTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"commentCell"];
-// 
-      [_switchVC.rightTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"RcommentCell"];
+//// 
+     [_switchVC.rightTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"RcommentCell"];
     
     _switchVC.scrollView.contentSize =  CGSizeMake(800 , 0);
     ////////////////////////////  XYSpriteView ////////////////////////////
@@ -152,9 +178,10 @@
     
 }
 
+
 -(void)chageClick:(UISegmentedControl *)sender {
     
-    _switchVC.scrollView.contentOffset = CGPointMake(_segmented.selectedSegmentIndex * _switchVC.scrollView.frame.size.width, 0);
+    _switchVC.scrollView.contentOffset = CGPointMake(_segmented.selectedSegmentIndex * _switchVC.scrollView.frame.size.width , 0);
     
 }
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -163,7 +190,7 @@
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 8;
+    return 100;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
@@ -172,28 +199,49 @@
     
  
     if ( tableView == _switchVC.rightTableView) {
-      
+    
+//        NSString *CellIdentifier = [NSString stringWithFormat:@"RcommentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+//        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+//        
+//        if (cell == nil) {
+//            cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
-        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
+                SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
         cell.selectionStyle = UITableViewCellEditingStyleNone;
         return cell;
-    }
     
+        
+        }
+    
+
+    
+//
+//    NSString *CellIdentifier = [NSString stringWithFormat:@"commentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+//    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+//    if (cell == nil) {
+//        cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+   
+
     SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
-     cell.selectionStyle = UITableViewCellEditingStyleNone;
-    return cell;
+    cell.selectionStyle = UITableViewCellEditingStyleNone;
+   return cell;
   
 }
 
-
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewDidScroll---->%f",self.scrollView.contentOffset.y);
+  
     if (self.collectionScrollView.contentOffset.y >= 650) {
         self.collectionView.hidden = NO;
+#warning 2424
+        self.rootVC.swTabBar.hidden  = YES;
+        
+        self.contL.hidden = YES;
+        
     }else {
         
         self.collectionView.hidden = YES;
-        self.rootVC.swTabBar.hidden = NO;
+        self.rootVC.swTabBar.hidden = YES;
+          self.contL.hidden = NO;
     }
     
 }
@@ -208,12 +256,12 @@
 
 -(void)addtopicviews {
     
-    UIButton *view = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 49, self.view.frame.size.width, 49)];
-    [view addTarget:self action:@selector(commentAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    view.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:view];
-    view.userInteractionEnabled = YES;
-    UIImageView *imageVC = [[UIImageView alloc]initWithFrame:CGRectMake(5, view.frame.origin.y + 5, 40, 40)];
+    self.joinBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 49, self.view.frame.size.width, 49)];
+    [ self.joinBtn addTarget:self action:@selector(commentAction:) forControlEvents:(UIControlEventTouchUpInside)];
+     self.joinBtn.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview: self.joinBtn];
+     self.joinBtn.userInteractionEnabled = YES;
+    UIImageView *imageVC = [[UIImageView alloc]initWithFrame:CGRectMake(5,  self.joinBtn.frame.origin.y + 5, 40, 40)];
     imageVC.layer.cornerRadius = imageVC.frame.size.width /2;
     imageVC.layer.masksToBounds = YES;
     imageVC.image = [UIImage imageNamed:@"我要参加.png"];
@@ -228,13 +276,13 @@
     [self.view addSubview:lable];
     
     self.btn = [UIButton buttonWithType:0];
-    self.btn.frame = CGRectMake(CGRectGetMaxX(view.frame) - 49, view.frame.origin.y +4.5
+    self.btn.frame = CGRectMake(CGRectGetMaxX( self.joinBtn.frame) - 49,  self.joinBtn.frame.origin.y +4.5
                                 , 40, 40);
     
     [  self.btn addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [  self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
     [self.view addSubview:  self.btn];
-    self.scrollView .contentSize = CGSizeMake(0 ,self.view.frame.size.height * 7);
+
 }
 //跳转到评论界面
 -(void)commentAction:(UIButton *)sender {
