@@ -26,6 +26,7 @@
 		CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70831D438ECE00F0909F /* SWCreationViewController.m */; };
 		CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70851D438ECE00F0909F /* SWMessViewController.m */; };
 		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
+		CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56436A1D44E596005CEEB4 /* SWComment.m */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
 		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
 		CC592B6A1D3F16CB002CD37D /* 444.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B671D3F16CB002CD37D /* 444.png */; };
@@ -418,6 +419,8 @@
 		CC3F70851D438ECE00F0909F /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.m; sourceTree = SOURCE_ROOT; };
 		CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.m; sourceTree = SOURCE_ROOT; };
+		CC5643691D44E596005CEEB4 /* SWComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWComment.h; sourceTree = "<group>"; };
+		CC56436A1D44E596005CEEB4 /* SWComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWComment.m; sourceTree = "<group>"; };
 		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
 		CC592B661D3F16CB002CD37D /* 333.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 333.png; sourceTree = "<group>"; };
 		CC592B671D3F16CB002CD37D /* 444.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 444.png; sourceTree = "<group>"; };
@@ -1672,6 +1675,8 @@
 		CC9BFC2E1D40C3B500F40EF6 /* LCModel */ = {
 			isa = PBXGroup;
 			children = (
+				CC5643691D44E596005CEEB4 /* SWComment.h */,
+				CC56436A1D44E596005CEEB4 /* SWComment.m */,
 				CC9BFC2F1D40C3B500F40EF6 /* SWActivityList.h */,
 				CC9BFC301D40C3B500F40EF6 /* SWActivityList.m */,
 				CC9BFC311D40C3B500F40EF6 /* SWBaseLCModel.h */,
@@ -2312,6 +2317,7 @@
 				CC26E1EE1D3DDA82007FDAEE /* OneScrollViewController.m in Sources */,
 				CC26E1ED1D3DDA82007FDAEE /* FourViewController.m in Sources */,
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
+				CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */,
 				D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
 				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,

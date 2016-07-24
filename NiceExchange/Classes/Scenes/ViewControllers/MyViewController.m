@@ -28,6 +28,19 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
     [self.userTableView reloadData];
     // tabbar的显示与隐藏
     self.rootVC.swTabBar.hidden = NO;
+    
+    
+    // 保存count表关联 ---- 累。。。
+    if (![SWLcAvUSer currentUser].count && [SWLcAvUSer currentUser]) {
+        AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+        [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+        [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            SWCount * c = objects[0];
+//            SWLog(@"cccc cccccccc ccc %@",c);
+            [[SWLcAvUSer currentUser] setObject:c forKey:@"count"];
+            [[SWLcAvUSer currentUser] saveInBackground];
+        }];
+    }
 }
 
 - (void)viewDidLoad {
@@ -38,10 +51,6 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
     self.dataArray = @[@"d", @"sgf", @"sg"].mutableCopy;
     [self createTableView];
     
-    // 个人信息设置
-//    SWLcAvUSer * user = [SWLcAvUSer currentUser];
-//    user.displayName = @"mmm";
-//    [user saveInBackground];
     
 //    SWActivityList *activity = [SWActivityList object];
 //    activity.title = @"25岁，从来没谈过恋爱是不是很奇葩"; // 标题
@@ -96,6 +105,15 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
     }else {
         SWRegisterViewController *rVC = [[SWRegisterViewController alloc] init];
         [self.navigationController pushViewController:rVC animated:YES];
+        
+//        // 回传count并保存
+//        rVC.rCount = ^(SWCount *count){
+//            [[SWLcAvUSer currentUser] setObject:count forKey:@"count"];
+//            [[SWLcAvUSer currentUser] saveInBackground];
+//        };
+        
+        
+        
     }
     
 }
@@ -266,9 +284,11 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
     if (!self.currentUser) {
         SWLoginViewController *lVC = [SWLoginViewController new];
         [self.navigationController pushViewController:lVC animated:YES];
+        
     }else {
         SWAboutMeViewController *amVC = [SWAboutMeViewController new];
         [self.navigationController pushViewController:amVC animated:YES];
+        
     }
     
 }

@@ -75,28 +75,9 @@
             // 注册成功
             SWLog(@"succeeded = %d",succeeded);
             
-            // 默认关注 -- 小助手
-            SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57907dfd6be3ff0066e748ed"};
-            AVObject *fO = [AVObject objectWithClassName:@"Follow"];
-            [fO setObject:user forKey:@"from"];
-            [fO setObject:swUser forKey:@"to"];
-            [fO setObject:[NSDate date] forKey:@"date"];
-            [fO saveInBackground];
+            // 调用方法
+            [self addUserInfoWithUser:user];
             
-            SWCount *count = [SWCount objectWithClassName:@"Count"];
-            count.activityC = @0;
-            count.followedC = @0;
-            count.markC = @0;
-            count.commentC = @0;
-            count.followC = @1;
-            count.createBy = user;
-            [count saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//                if (succeeded) {
-//                    [user setObject:(SWCount *)count forKey:@"count"];
-//                    [user saveInBackground];
-//                };
-                SWLog(@" error %@",error);
-            }];
         } else {
             
             // 失败的原因可能有多种，常见的是用户名已经存在。
@@ -119,6 +100,34 @@
 //            }
         }
     }];
+}
+- (void)addUserInfoWithUser:(SWLcAvUSer *)user {
+    // 默认关注 -- 小助手
+    SWLcAvUSer *swUser = (SWLcAvUSer *)@{@"__type" : @"Pointer", @"className" : @"_User", @"objectId" : @"57907dfd6be3ff0066e748ed"};
+    AVObject *fO = [AVObject objectWithClassName:@"Follow"];
+    [fO setObject:user forKey:@"from"];
+    [fO setObject:swUser forKey:@"to"];
+    [fO setObject:[NSDate date] forKey:@"date"];
+    [fO saveInBackground];
+    
+    SWCount *count = [SWCount objectWithClassName:@"Count"];
+    count.activityC = @0;
+    count.followedC = @0;
+    count.markC = @0;
+    count.commentC = @0;
+    count.followC = @1;
+    count.createBy = user;
+    [count saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        };
+        SWLog(@" error %@",error);
+    }];
+    
+    
+    
 }
 - (void)numberButtonClicked:(UIButton *)button {
     SWLogFunc;

@@ -91,6 +91,7 @@
 #import "SWCount.h"
 #import "SWMark.h"
 #import "SWFollow.h"
+#import "SWComment.h"
 
 //音乐详情
 #import "MusicDetailViewController.h"

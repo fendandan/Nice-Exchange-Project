@@ -8,6 +8,8 @@
 
 #import "BaseManager.h"
 
+@class SWActivityList;
+
 // 成功回调Block
 typedef void(^SuccessRespon)(AVObject *obj, NSArray *arrays);
 // 失败回调Block
@@ -17,35 +19,45 @@ typedef void(^FailureRespon)(NSError *error);
 
 + (instancetype)shareManager;
 
+#pragma mark ---- LeanCloud数据存储管理
+
+@property (copy, nonatomic) void(^UIFBlock)();
+
 /// 保存实例对象到云端
 - (void)lcSaveObjectWithAVObject:(AVObject *)object;
 
-/// 批量操作 --- 查询云端表中所有实例对象（请求数据）
-- (void)lcSelectObjectsWithClassName:(NSString *)className
-                     successRespon:(SuccessRespon)success
-                     failureRespon:(FailureRespon)failure;
+/// 根据活动关注其发布者
+- (void)lcToFollowOtherUserWithActivityList:(SWActivityList *)activity;
 
-/// 查询云端实例对象（请求数据）
-- (void)lcSelectObjectWithClassName:(NSString *)className
-                         objectId:(NSString *)objectId
-                  successRespon:(SuccessRespon)success
-                  failureRespon:(FailureRespon)failure;
+/// 根据活动取消关注其发布者
+- (void)lcToCancelFollowOtherUserWithActivityList:(SWActivityList *)activity;
 
-/// 云端实例对象查看计数器(调用方法 用以 累计 查看数)
-- (void)lcSetObjectSeeCountWithClassName:(NSString *)className
-                     objectId:(NSString *)objectId;
-/// 删除云端实例对象
-- (void)lcDeleteObjectWithClassName:(NSString *)className
-                   objectId:(NSString *)objectId;
-
-
-/// 增加对象的数组属性（数组容器）
-- (void)lcAddArrayWithClassName:(NSString *)className array:(NSArray *)array;
-
-/// 增加对象的数组属性的数组元素
-- (void)lcAddObjectToArrayWithClassName:(NSString *)className array:(NSArray *)array;
-
-/// 删除对象的数组属性的数组元素
-- (void)lcRemoveObjectForArrayWithClassName:(NSString *)className array:(NSArray *)array;
+///// 批量操作 --- 查询云端表中所有实例对象（请求数据）
+//- (void)lcSelectObjectsWithClassName:(NSString *)className
+//                     successRespon:(SuccessRespon)success
+//                     failureRespon:(FailureRespon)failure;
+//
+///// 查询云端实例对象（请求数据）
+//- (void)lcSelectObjectWithClassName:(NSString *)className
+//                         objectId:(NSString *)objectId
+//                  successRespon:(SuccessRespon)success
+//                  failureRespon:(FailureRespon)failure;
+//
+///// 云端实例对象查看计数器(调用方法 用以 累计 查看数)
+//- (void)lcSetObjectSeeCountWithClassName:(NSString *)className
+//                     objectId:(NSString *)objectId;
+///// 删除云端实例对象
+//- (void)lcDeleteObjectWithClassName:(NSString *)className
+//                   objectId:(NSString *)objectId;
+//
+//
+///// 增加对象的数组属性（数组容器）
+//- (void)lcAddArrayWithClassName:(NSString *)className array:(NSArray *)array;
+//
+///// 增加对象的数组属性的数组元素
+//- (void)lcAddObjectToArrayWithClassName:(NSString *)className array:(NSArray *)array;
+//
+///// 删除对象的数组属性的数组元素
+//- (void)lcRemoveObjectForArrayWithClassName:(NSString *)className array:(NSArray *)array;
 
 @end
