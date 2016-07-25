@@ -81,6 +81,19 @@
 
 
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWshowViewController *SWshowVC = [SWshowViewController new];
+    
+    
+    [self.navigationController pushViewController:SWshowVC animated:YES];
+}
+
+
+
+
+
 - (void)requestData {
     // 查询活动
     AVQuery *aQ = [SWActivityList query];
