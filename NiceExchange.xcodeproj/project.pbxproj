@@ -16,6 +16,13 @@
 		CC11C9281D459F380075FB5F /* ElseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C9251D459F380075FB5F /* ElseViewController.m */; };
 		CC11C92C1D459F660075FB5F /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */; };
 		CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */; };
+		CC11C92F1D4615400075FB5F /* chuimengjuren.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C92E1D4615400075FB5F /* chuimengjuren.jpg */; };
+		CC11C9311D4618270075FB5F /* bijianrensheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9301D4618270075FB5F /* bijianrensheng.jpg */; };
+		CC11C9331D46198D0075FB5F /* riben.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9321D46198D0075FB5F /* riben.jpg */; };
+		CC11C9351D461B480075FB5F /* wutaishan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9341D461B480075FB5F /* wutaishan.jpg */; };
+		CC11C9371D462D970075FB5F /* xiangxi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9361D462D970075FB5F /* xiangxi.jpg */; };
+		CC11C9391D462FA80075FB5F /* xingkong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9381D462FA80075FB5F /* xingkong.jpg */; };
+		CC11C93B1D4633B00075FB5F /* shouhou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C93A1D4633B00075FB5F /* shouhou.jpg */; };
 		CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */; };
 		CC26E1D21D3DD6C7007FDAEE /* ReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */; };
 		CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */; };
@@ -419,6 +426,13 @@
 		CC11C9291D459F660075FB5F /* MovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
 		CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
 		CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
+		CC11C92E1D4615400075FB5F /* chuimengjuren.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chuimengjuren.jpg; sourceTree = "<group>"; };
+		CC11C9301D4618270075FB5F /* bijianrensheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bijianrensheng.jpg; sourceTree = "<group>"; };
+		CC11C9321D46198D0075FB5F /* riben.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = riben.jpg; sourceTree = "<group>"; };
+		CC11C9341D461B480075FB5F /* wutaishan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wutaishan.jpg; sourceTree = "<group>"; };
+		CC11C9361D462D970075FB5F /* xiangxi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xiangxi.jpg; sourceTree = "<group>"; };
+		CC11C9381D462FA80075FB5F /* xingkong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xingkong.jpg; sourceTree = "<group>"; };
+		CC11C93A1D4633B00075FB5F /* shouhou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shouhou.jpg; sourceTree = "<group>"; };
 		CC26E1CC1D3DD6C7007FDAEE /* ReadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadTableViewCell.h; sourceTree = "<group>"; };
 		CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadTableViewCell.m; sourceTree = "<group>"; };
 		CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadTableViewCell.xib; sourceTree = "<group>"; };
@@ -1091,6 +1105,13 @@
 				CC26E1F61D3DDD21007FDAEE /* 3.png */,
 				CC26E1F71D3DDD21007FDAEE /* 4.png */,
 				CC26E1F81D3DDD21007FDAEE /* 5.png */,
+				CC11C92E1D4615400075FB5F /* chuimengjuren.jpg */,
+				CC11C9301D4618270075FB5F /* bijianrensheng.jpg */,
+				CC11C9321D46198D0075FB5F /* riben.jpg */,
+				CC11C9341D461B480075FB5F /* wutaishan.jpg */,
+				CC11C9361D462D970075FB5F /* xiangxi.jpg */,
+				CC11C9381D462FA80075FB5F /* xingkong.jpg */,
+				CC11C93A1D4633B00075FB5F /* shouhou.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -2077,6 +2098,8 @@
 				CC5A3D8E1D40C5D200984F1F /* p31b0169.png in Resources */,
 				CC5A3D0E1D40C5D200984F1F /* p31b0041.png in Resources */,
 				CC5A3D8F1D40C5D200984F1F /* p31b0170.png in Resources */,
+				CC11C9331D46198D0075FB5F /* riben.jpg in Resources */,
+				CC11C9351D461B480075FB5F /* wutaishan.jpg in Resources */,
 				CCA3B7FE1D3A7C95003361CC /* SWpratTableViewCell.xib in Resources */,
 				CC5A3D521D40C5D200984F1F /* p31b0109.png in Resources */,
 				CC5A3D7D1D40C5D200984F1F /* p31b0152.png in Resources */,
@@ -2134,6 +2157,7 @@
 				CC5A3D9A1D40C5D200984F1F /* p3_b_0.png in Resources */,
 				CC5A3D651D40C5D200984F1F /* p31b0128.png in Resources */,
 				CC5A3D951D40C5D200984F1F /* p31b0176.png in Resources */,
+				CC11C9391D462FA80075FB5F /* xingkong.jpg in Resources */,
 				CC592B681D3F16CB002CD37D /* 222.png in Resources */,
 				CCA3B7F31D3A7C95003361CC /* xinxian.png in Resources */,
 				CC5A3CEE1D40C5D200984F1F /* p31b0009.png in Resources */,
@@ -2146,6 +2170,7 @@
 				CC5A3DA61D40C5D200984F1F /* p3_b_2.png in Resources */,
 				CC5A3DA71D40C5D200984F1F /* p3_b_20.png in Resources */,
 				CC5A3D991D40C5D200984F1F /* p31b0180.png in Resources */,
+				CC11C9311D4618270075FB5F /* bijianrensheng.jpg in Resources */,
 				CC704E0E1D3CF5CC00D5A269 /* ios-social-sdk-socialbar.html in Resources */,
 				CC5A3CFD1D40C5D200984F1F /* p31b0024.png in Resources */,
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
@@ -2153,6 +2178,7 @@
 				CC5A3D881D40C5D200984F1F /* p31b0163.png in Resources */,
 				CC5A3D641D40C5D200984F1F /* p31b0127.png in Resources */,
 				CC5A3D2C1D40C5D200984F1F /* p31b0071.png in Resources */,
+				CC11C9371D462D970075FB5F /* xiangxi.jpg in Resources */,
 				CC5A3DE11D4103F200984F1F /* 评论.png in Resources */,
 				CC704DF81D3CF5CC00D5A269 /* UMSnsAccountViewController.xib in Resources */,
 				CC5A3D251D40C5D200984F1F /* p31b0064.png in Resources */,
@@ -2175,6 +2201,7 @@
 				CC5A3D5B1D40C5D200984F1F /* p31b0118.png in Resources */,
 				CC5A3D261D40C5D200984F1F /* p31b0065.png in Resources */,
 				CC704E0F1D3CF5CC00D5A269 /* markdown.css in Resources */,
+				CC11C92F1D4615400075FB5F /* chuimengjuren.jpg in Resources */,
 				CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */,
 				CC5A3CF91D40C5D200984F1F /* p31b0020.png in Resources */,
 				CC5A3D191D40C5D200984F1F /* p31b0052.png in Resources */,
@@ -2328,6 +2355,7 @@
 				CC5A3D6E1D40C5D200984F1F /* p31b0137.png in Resources */,
 				CC5A3CFB1D40C5D200984F1F /* p31b0022.png in Resources */,
 				CC5A3D3B1D40C5D200984F1F /* p31b0086.png in Resources */,
+				CC11C93B1D4633B00075FB5F /* shouhou.jpg in Resources */,
 				CC5A3D821D40C5D200984F1F /* p31b0157.png in Resources */,
 				CCA3B7FC1D3A7C95003361CC /* SWJoinTableViewCell.xib in Resources */,
 				D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */,

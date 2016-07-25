@@ -77,7 +77,7 @@
 
 #warning -----
     //请求数据
-    //[self MusicRequestData];
+    [self MusicRequestData];
     
     
     self.musicBtn.selected = YES;
@@ -220,6 +220,8 @@
         }
         
         self.dataArray = @[self.oneArray,self.twoArray,self.threeArray,self.fourArray];
+        
+        NSLog(@"%@",self.musicArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionview reloadData];
