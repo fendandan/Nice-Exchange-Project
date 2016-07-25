@@ -14,7 +14,7 @@
 #import <AddressBook/ABMultiValue.h>
 #import <AddressBook/ABRecord.h>
 #import "TKAddressBook.h"
-
+#import "SWCommentsTableViewCell.h"
 #import <MessageUI/MessageUI.h>
 
 @interface SWTableViewController ()<MFMessageComposeViewControllerDelegate,UINavigationControllerDelegate>

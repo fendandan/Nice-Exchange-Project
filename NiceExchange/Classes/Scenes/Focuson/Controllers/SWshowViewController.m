@@ -15,11 +15,13 @@
 #import "XYSpriteHelper.h"
 #import "BaseSwitchViewController.h"
 #import "SWCommentsTableViewCell.h"
+#import "SWcommentsViewController.h"
+
 #define kFirstSegmentedIndex 0
 
 #define kSecondSegmentedIndex 1
 
-@interface SWshowViewController ()<UMSocialUIDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface SWshowViewController ()<UMSocialUIDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,CommentDelegate>
 @property (strong, nonatomic) IBOutlet UIScrollView *collectionScrollView;
 
 @property (strong, nonatomic) IBOutlet UIView *stView;
@@ -208,6 +210,7 @@
         
                 SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
         cell.selectionStyle = UITableViewCellEditingStyleNone;
+        cell.commentDelegate = self;
         return cell;
     
         
@@ -224,8 +227,21 @@
 
     SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
     cell.selectionStyle = UITableViewCellEditingStyleNone;
+    cell.commentDelegate = self;
    return cell;
   
+}
+
+- (void)onAction {
+
+    
+    SWcommentsViewController *commentVC = [SWcommentsViewController new];
+    
+    [self.navigationController pushViewController:commentVC animated:YES];
+    
+    
+    
+
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{

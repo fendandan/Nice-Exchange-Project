@@ -35,7 +35,7 @@
             <connections>
                 <outlet property="iconImg" destination="3oM-fx-Hvj" id="Qep-HW-8ge"/>
             </connections>
-            <point key="canvasLocation" x="112" y="251.5"/>
+            <point key="canvasLocation" x="341" y="243.5"/>
         </tableViewCell>
     </objects>
     <resources>
