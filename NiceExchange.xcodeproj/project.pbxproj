@@ -381,6 +381,7 @@
 		CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FB01D37B5F600AEF415 /* SWCertificationView.m */; };
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
 		CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */; };
+		CCD8362A1D460479004CC453 /* SWMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD836291D460479004CC453 /* SWMessage.m */; };
 		CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */; };
 		CCF61FC61D3896190071EC51 /* MusicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */; };
 		CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */; };
@@ -880,6 +881,8 @@
 		CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLoginViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		CCB33FC41D37CD7000AEF415 /* SWRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRegisterViewController.h; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.h; sourceTree = SOURCE_ROOT; };
 		CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRegisterViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.m; sourceTree = SOURCE_ROOT; };
+		CCD836281D460479004CC453 /* SWMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessage.h; sourceTree = "<group>"; };
+		CCD836291D460479004CC453 /* SWMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessage.m; sourceTree = "<group>"; };
 		CCF61FC21D3896190071EC51 /* MusicDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDetailTableViewCell.h; path = ../../../General/Views/Cells/MusicDetailTableViewCell.h; sourceTree = "<group>"; };
 		CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicDetailTableViewCell.m; path = ../../../General/Views/Cells/MusicDetailTableViewCell.m; sourceTree = "<group>"; };
 		CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MusicDetailTableViewCell.xib; path = ../../../General/Views/Cells/MusicDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -972,11 +975,11 @@
 		CC11C9171D459EF60075FB5F /* MoodController */ = {
 			isa = PBXGroup;
 			children = (
+				CC11C91B1D459EF60075FB5F /* MoodViewController.h */,
+				CC11C91C1D459EF60075FB5F /* MoodViewController.m */,
 				CC11C9181D459EF60075FB5F /* MoodTableViewCell.h */,
 				CC11C9191D459EF60075FB5F /* MoodTableViewCell.m */,
 				CC11C91A1D459EF60075FB5F /* MoodTableViewCell.xib */,
-				CC11C91B1D459EF60075FB5F /* MoodViewController.h */,
-				CC11C91C1D459EF60075FB5F /* MoodViewController.m */,
 			);
 			path = MoodController;
 			sourceTree = "<group>";
@@ -984,11 +987,11 @@
 		CC11C9201D459F380075FB5F /* ElseController */ = {
 			isa = PBXGroup;
 			children = (
+				CC11C9241D459F380075FB5F /* ElseViewController.h */,
+				CC11C9251D459F380075FB5F /* ElseViewController.m */,
 				CC11C9211D459F380075FB5F /* ElseTableViewCell.h */,
 				CC11C9221D459F380075FB5F /* ElseTableViewCell.m */,
 				CC11C9231D459F380075FB5F /* ElseTableViewCell.xib */,
-				CC11C9241D459F380075FB5F /* ElseViewController.h */,
-				CC11C9251D459F380075FB5F /* ElseViewController.m */,
 			);
 			path = ElseController;
 			sourceTree = "<group>";
@@ -1032,11 +1035,11 @@
 		CC26E1D41D3DD6CF007FDAEE /* MovieController */ = {
 			isa = PBXGroup;
 			children = (
+				CC26E1D51D3DD6CF007FDAEE /* MovieViewController.h */,
+				CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */,
 				CC11C9291D459F660075FB5F /* MovieTableViewCell.h */,
 				CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */,
 				CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */,
-				CC26E1D51D3DD6CF007FDAEE /* MovieViewController.h */,
-				CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */,
 			);
 			path = MovieController;
 			sourceTree = "<group>";
@@ -1758,6 +1761,8 @@
 				CC9BFC381D40C3B500F40EF6 /* SWLcAvUSer.m */,
 				CC9BFC391D40C3B500F40EF6 /* SWMark.h */,
 				CC9BFC3A1D40C3B500F40EF6 /* SWMark.m */,
+				CCD836281D460479004CC453 /* SWMessage.h */,
+				CCD836291D460479004CC453 /* SWMessage.m */,
 			);
 			name = LCModel;
 			path = Models/LCModel;
@@ -2424,6 +2429,7 @@
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
 				CC11C91D1D459EF60075FB5F /* MoodTableViewCell.m in Sources */,
 				CC9BFC401D40C3B500F40EF6 /* SWMark.m in Sources */,
+				CCD8362A1D460479004CC453 /* SWMessage.m in Sources */,
 				CC26E1EF1D3DDA82007FDAEE /* ScrollViewController.m in Sources */,
 				CC11C9281D459F380075FB5F /* ElseViewController.m in Sources */,
 				CC9BFC3B1D40C3B500F40EF6 /* SWActivityList.m in Sources */,

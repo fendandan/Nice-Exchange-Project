@@ -8,9 +8,16 @@
 
 #import "ElseViewController.h"
 #import "ElseTableViewCell.h"
+#import "SWUserDetailViewController.h"
+#import "SWshowViewController.h"
 
-@interface ElseViewController ()<UITableViewDataSource,UITableViewDelegate  >
-@property(nonatomic,strong)UITableView *tableView;
+@interface ElseViewController ()
+<
+  UITableViewDataSource,
+  UITableViewDelegate,
+  ElseTableViewCellDelegate
+>
+@property(nonatomic,strong)NSMutableArray *dataArray;
 
 @end
 
@@ -18,17 +25,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.dataArray = [NSMutableArray array];
     
     
     [self addTableview];
+    [self requestData];
 }
 
 
 //添加 tableview
 - (void)addTableview
 {
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 30, kScreenWidth, kScreenHeight - 114) style:UITableViewStylePlain];
     
     [self.view addSubview:self.tableView];
     
@@ -37,8 +45,6 @@
     self.tableView.dataSource = self;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"ElseTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ElseTableViewCell_Identifiter];
-    
-    
 }
 
 
@@ -56,7 +62,7 @@
     
     ElseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ElseTableViewCell_Identifiter forIndexPath:indexPath];
     
-    
+    cell.delegate = self;
     
     
     return cell;
@@ -70,6 +76,115 @@
     
     
     return 200;
+    
+}
+
+
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SWshowViewController *SWshowVC = [SWshowViewController new];
+    
+    
+    [self.navigationController pushViewController:SWshowVC animated:YES];
+}
+
+
+
+
+
+- (void)requestData {
+    // 查询活动
+    AVQuery *aQ = [SWActivityList query];
+    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
+    aQ.limit = 20;
+    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
+    [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        //        SWActivityList *acc = objects[16];
+        //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
+        for (SWActivityList *a in objects) {
+            SWActivityList *ac = a;
+            [self.dataArray addObject:ac];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
+}
+
+
+
+
+//关注的点击事件
+- (void)elseTableViewCellAttentionBtnClickend:(ElseTableViewCell *)cell
+{
+    
+    NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
+    SWLog(@"indexPath %@",indexPath);
+    // suppose we have a user we want to follow
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    if (cell.attentionBtn.selected == YES) {
+        
+        UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
+        
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
+        
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+            // -------------------------------------------------------------
+            [LCManager lcToCancelFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
+                cell.attentionBtn.selected = NO;
+                [self.rootVC.followedArray removeObject:activity.createBy];
+                [self.tableView reloadData];
+                LCManager.shareManagerB = NO; // 置为可调用状态
+            }];
+            
+        }];
+        
+        [uialert addAction:action1];
+        [uialert addAction:action2];
+        
+        [self presentViewController:uialert animated:YES completion:nil];
+        
+        
+    }else{
+        
+        // -------------------------------------------------------------
+        [LCManager lcToFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
+            
+            cell.attentionBtn.selected = YES;
+            [self.rootVC.followedArray addObject:activity.createBy];
+            [self.tableView reloadData];
+            LCManager.shareManagerB = NO; // 置为可调用状态
+            
+        }];
+        
+        
+    }
+}
+
+
+//用户名的点击事件
+- (void)elseTableViewCellUserNameBtnClikend:(ElseTableViewCell *)cell
+{
+    
+    SWUserDetailViewController *swVC = [SWUserDetailViewController new];
+    
+    [self.navigationController pushViewController:swVC animated:YES];
+    
+}
+
+
+
+//用户头像点击事件
+- (void)elsetableViewCellUserimageViewClikend:(ElseTableViewCell *)cell
+{
+    
+    SWUserDetailViewController *swVC = [SWUserDetailViewController new];
+    
+    [self.navigationController pushViewController:swVC animated:YES];
     
 }
 

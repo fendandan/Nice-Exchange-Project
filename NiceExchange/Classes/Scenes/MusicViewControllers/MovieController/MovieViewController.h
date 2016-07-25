@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovieViewController : UIViewController
+@interface MovieViewController : BaseViewController
+
+@property(nonatomic,strong)UITableView *tableView;
 
 @end

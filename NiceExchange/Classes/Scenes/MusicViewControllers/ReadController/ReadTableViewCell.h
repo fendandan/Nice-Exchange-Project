@@ -20,7 +20,6 @@
 
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell;
 
-
 @end
 
 
@@ -40,16 +39,9 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *participationLabel;
 
-
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
 
-
 @property(nonatomic,assign)id<ReadTableViewCellDelegate>delegate;
-
-
-
-
-
 
 
 @end

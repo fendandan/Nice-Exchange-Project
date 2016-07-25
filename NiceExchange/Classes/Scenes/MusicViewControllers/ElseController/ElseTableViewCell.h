@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 #define ElseTableViewCell_Identifiter @"ElseTableViewCell_Identifiter"
 
+@class ElseTableViewCell;
+
+@protocol ElseTableViewCellDelegate <NSObject>
+
+- (void)elseTableViewCellAttentionBtnClickend:(ElseTableViewCell *)cell;
+
+- (void)elsetableViewCellUserimageViewClikend:(ElseTableViewCell *)cell;
+
+- (void)elseTableViewCellUserNameBtnClikend:(ElseTableViewCell *)cell;
+
+@end
+
+
+
 @interface ElseTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *titleImageView;
@@ -26,6 +40,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *participationLabel;
 
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
+
+
+@property(nonatomic,assign)id<ElseTableViewCellDelegate>delegate;
 
 
 @end
