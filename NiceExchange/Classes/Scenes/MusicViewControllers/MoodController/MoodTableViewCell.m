@@ -10,15 +10,26 @@
 
 @implementation MoodTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+
 
 - (IBAction)userNameBtn:(UIButton *)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(moodTableViewUserNameBtnClikend:)]) {
+        
+        [_delegate moodTableViewUserNameBtnClikend:self];
+    }
+    
+    
 }
 
 
 - (IBAction)attentionBtn:(UIButton *)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(moodTableViewAttentionPlayBtnClikend:)]) {
+        [_delegate moodTableViewAttentionPlayBtnClikend:self];
+    }
+    
+    
 }
 
 
@@ -27,6 +38,25 @@
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
+}
+
+
+- (void)awakeFromNib {
+    self.titleImageView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    
+    [self.titleImageView addGestureRecognizer:tapGesture];
+    
+}
+
+
+//
+- (void)tapGestureAction:(UITapGestureRecognizer *)sender
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(moodTableViewUserNameImageViewPlay:)]) {
+        [_delegate moodTableViewUserNameImageViewPlay:self];
+    }
 }
 
 

@@ -32,15 +32,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
+
     
     self.dataArray = [NSMutableArray array];
     [self requestData];
     [self addTableView];
     
-    
-    self.tableView.delegate = self;
 }
 
 - (void)addTableView
@@ -154,9 +151,6 @@
         
         
     }
-    
-    
-    
     
 }
 

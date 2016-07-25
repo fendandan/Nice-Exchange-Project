@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ElseViewController : UIViewController
+@interface ElseViewController : BaseViewController
+
+@property(nonatomic,strong)UITableView *tableView;
 
 @end

@@ -953,11 +953,11 @@
 		CC11C9171D459EF60075FB5F /* MoodController */ = {
 			isa = PBXGroup;
 			children = (
+				CC11C91B1D459EF60075FB5F /* MoodViewController.h */,
+				CC11C91C1D459EF60075FB5F /* MoodViewController.m */,
 				CC11C9181D459EF60075FB5F /* MoodTableViewCell.h */,
 				CC11C9191D459EF60075FB5F /* MoodTableViewCell.m */,
 				CC11C91A1D459EF60075FB5F /* MoodTableViewCell.xib */,
-				CC11C91B1D459EF60075FB5F /* MoodViewController.h */,
-				CC11C91C1D459EF60075FB5F /* MoodViewController.m */,
 			);
 			path = MoodController;
 			sourceTree = "<group>";
@@ -965,11 +965,11 @@
 		CC11C9201D459F380075FB5F /* ElseController */ = {
 			isa = PBXGroup;
 			children = (
+				CC11C9241D459F380075FB5F /* ElseViewController.h */,
+				CC11C9251D459F380075FB5F /* ElseViewController.m */,
 				CC11C9211D459F380075FB5F /* ElseTableViewCell.h */,
 				CC11C9221D459F380075FB5F /* ElseTableViewCell.m */,
 				CC11C9231D459F380075FB5F /* ElseTableViewCell.xib */,
-				CC11C9241D459F380075FB5F /* ElseViewController.h */,
-				CC11C9251D459F380075FB5F /* ElseViewController.m */,
 			);
 			path = ElseController;
 			sourceTree = "<group>";
@@ -1013,11 +1013,11 @@
 		CC26E1D41D3DD6CF007FDAEE /* MovieController */ = {
 			isa = PBXGroup;
 			children = (
+				CC26E1D51D3DD6CF007FDAEE /* MovieViewController.h */,
+				CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */,
 				CC11C9291D459F660075FB5F /* MovieTableViewCell.h */,
 				CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */,
 				CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */,
-				CC26E1D51D3DD6CF007FDAEE /* MovieViewController.h */,
-				CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */,
 			);
 			path = MovieController;
 			sourceTree = "<group>";
