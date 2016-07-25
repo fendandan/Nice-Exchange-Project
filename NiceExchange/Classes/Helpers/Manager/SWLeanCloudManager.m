@@ -155,12 +155,11 @@ static SWLeanCloudManager *manager = nil;
 }
 
 
-BOOL shareManagerB;
-- (void)lcToFollowOtherUserWithActivityList:(SWActivityList *)activity {
-    if (shareManagerB) {
+- (void)lcToFollowOtherUserWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+    if (_shareManagerB) {
         return;
     }
-    shareManagerB = YES;
+    _shareManagerB = YES;
     SWLog(@"activity %@",activity);
     AVUser *otherUser = activity.createBy;
     SWLog(@"otherUser %@",otherUser);
@@ -184,20 +183,19 @@ BOOL shareManagerB;
                 [count saveInBackground];
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.UIFBlock();  // 刷新操作
-                    shareManagerB = NO;
+                    completion(nil);  // 刷新操作
                 });
             }];
         }
     }];
 }
 
-- (void)lcToCancelFollowOtherUserWithActivityList:(SWActivityList *)activity {
+- (void)lcToCancelFollowOtherUserWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
     
-    if (shareManagerB) {
+    if (_shareManagerB) {
         return;
     }
-    shareManagerB = YES;
+    _shareManagerB = YES;
     SWLog(@"activity %@",activity);
     AVUser *otherUser = activity.createBy;
     SWLog(@"otherUser %@",otherUser);
@@ -225,8 +223,9 @@ BOOL shareManagerB;
                     [count saveInBackground];
                 }];
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.UIFBlock();  // 刷新操作
-                    shareManagerB = NO;
+                    
+                    completion(nil);  // 刷新操作
+                    
                 });
             }
             
@@ -234,4 +233,117 @@ BOOL shareManagerB;
     }];
     
 }
+
+
+- (void)lcToCommentingWithActivityList:(SWActivityList *)activity commentString:(NSString *)commentString completion:(UIFBlock)completion {
+    
+    if (_shareManagerBc) {
+        return;
+    }
+    _shareManagerBc = YES;
+    
+    SWComment *comment = [SWComment object];
+    comment.commentContent = commentString;
+    comment.forActivity = activity;
+    comment.commentCount = @0;
+    comment.goodCount = @0;
+    comment.lowCount = @0;
+    comment.commentBy = [SWLcAvUSer currentUser];
+    
+    [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog( @"%@",error);
+        if (succeeded) {
+            [activity.commentRelation addObject:comment];
+            [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    
+                    completion(nil);  // 刷新操作
+                    
+                }
+            }];
+        }
+    }];
+    
+}
+- (void)lcSelectCommentWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+    
+    if (_shareManagerBc) {
+        return;
+    }
+    _shareManagerBc = YES;
+    
+    // 查
+    // create a relation based on the authors key
+    AVRelation *relation = [activity relationForKey:@"commentRelation"];
+    
+    // generate a query based on that relation
+    AVQuery *query = [relation query];
+    
+    // now execute the query
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSMutableArray *mArray = [NSMutableArray array];
+        for (SWComment *c in objects) {
+            SWLog(@"%@",c);
+            [mArray addObject:c];
+        }
+        
+        completion(mArray); // 传值 刷新
+        
+    }];
+    
+}
+- (void)lcToCommentingWithComment:(SWComment *)fristComment commentString:(NSString *)commentString completion:(UIFBlock)completion {
+    
+    if (_shareManagerBc) {
+        return;
+    }
+    _shareManagerBc = YES;
+    
+    SWComment *comment = [SWComment object];
+    comment.commentContent = commentString;
+    comment.forComment = fristComment;
+//    comment.commentCount = @0;
+//    comment.goodCount = @0;
+//    comment.lowCount = @0;
+    comment.commentBy = [SWLcAvUSer currentUser];
+    
+    [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog( @" error %@",error);
+        if (succeeded) {
+            [fristComment.secondComment addObject:comment];
+            [fristComment incrementKey:@"commentCount"]; // 计数
+            [fristComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                
+                completion(nil); // 刷新
+                
+            }];
+        }
+    }];
+}
+- (void)lcSelectCommentWithComment:(SWComment *)fristComment completion:(UIFBlock)completion {
+    if (_shareManagerBc) {
+        return;
+    }
+    _shareManagerBc = YES;
+    
+    // 查
+    // create a relation based on the authors key
+    AVRelation *relation = [fristComment relationForKey:@"secondComment"];
+    
+    // generate a query based on that relation
+    AVQuery *query = [relation query];
+    
+    // now execute the query
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        NSMutableArray *mArray = [NSMutableArray array];
+        for (SWComment *c in objects) {
+            SWLog(@"%@",c);
+            [mArray addObject:c];
+        }
+        
+        completion(mArray); // 传值 刷新
+    }];
+}
+
 @end

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		8CC3A978B1F363C66BC2CD20 /* libPods-NiceExchange.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */; };
+		CC11C91D1D459EF60075FB5F /* MoodTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C9191D459EF60075FB5F /* MoodTableViewCell.m */; };
+		CC11C91E1D459EF60075FB5F /* MoodTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC11C91A1D459EF60075FB5F /* MoodTableViewCell.xib */; };
+		CC11C91F1D459EF60075FB5F /* MoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C91C1D459EF60075FB5F /* MoodViewController.m */; };
+		CC11C9261D459F380075FB5F /* ElseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C9221D459F380075FB5F /* ElseTableViewCell.m */; };
+		CC11C9271D459F380075FB5F /* ElseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9231D459F380075FB5F /* ElseTableViewCell.xib */; };
+		CC11C9281D459F380075FB5F /* ElseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C9251D459F380075FB5F /* ElseViewController.m */; };
+		CC11C92C1D459F660075FB5F /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */; };
+		CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */; };
 		CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */; };
 		CC26E1D21D3DD6C7007FDAEE /* ReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */; };
 		CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */; };
@@ -397,6 +405,19 @@
 		4BA3F0014B0C9D8B0EA3BB9C /* Pods-NiceExchange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.release.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.release.xcconfig"; sourceTree = "<group>"; };
 		544CBC244C4C86D7C37F29A4 /* libPods-NiceExchange.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NiceExchange.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD10DB9E68C0BCFAD6F7D042 /* Pods-NiceExchange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NiceExchange.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NiceExchange/Pods-NiceExchange.debug.xcconfig"; sourceTree = "<group>"; };
+		CC11C9181D459EF60075FB5F /* MoodTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodTableViewCell.h; sourceTree = "<group>"; };
+		CC11C9191D459EF60075FB5F /* MoodTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodTableViewCell.m; sourceTree = "<group>"; };
+		CC11C91A1D459EF60075FB5F /* MoodTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoodTableViewCell.xib; sourceTree = "<group>"; };
+		CC11C91B1D459EF60075FB5F /* MoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoodViewController.h; sourceTree = "<group>"; };
+		CC11C91C1D459EF60075FB5F /* MoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoodViewController.m; sourceTree = "<group>"; };
+		CC11C9211D459F380075FB5F /* ElseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElseTableViewCell.h; sourceTree = "<group>"; };
+		CC11C9221D459F380075FB5F /* ElseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElseTableViewCell.m; sourceTree = "<group>"; };
+		CC11C9231D459F380075FB5F /* ElseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ElseTableViewCell.xib; sourceTree = "<group>"; };
+		CC11C9241D459F380075FB5F /* ElseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElseViewController.h; sourceTree = "<group>"; };
+		CC11C9251D459F380075FB5F /* ElseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElseViewController.m; sourceTree = "<group>"; };
+		CC11C9291D459F660075FB5F /* MovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
+		CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
+		CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		CC26E1CC1D3DD6C7007FDAEE /* ReadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadTableViewCell.h; sourceTree = "<group>"; };
 		CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadTableViewCell.m; sourceTree = "<group>"; };
 		CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadTableViewCell.xib; sourceTree = "<group>"; };
@@ -948,6 +969,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CC11C9171D459EF60075FB5F /* MoodController */ = {
+			isa = PBXGroup;
+			children = (
+				CC11C9181D459EF60075FB5F /* MoodTableViewCell.h */,
+				CC11C9191D459EF60075FB5F /* MoodTableViewCell.m */,
+				CC11C91A1D459EF60075FB5F /* MoodTableViewCell.xib */,
+				CC11C91B1D459EF60075FB5F /* MoodViewController.h */,
+				CC11C91C1D459EF60075FB5F /* MoodViewController.m */,
+			);
+			path = MoodController;
+			sourceTree = "<group>";
+		};
+		CC11C9201D459F380075FB5F /* ElseController */ = {
+			isa = PBXGroup;
+			children = (
+				CC11C9211D459F380075FB5F /* ElseTableViewCell.h */,
+				CC11C9221D459F380075FB5F /* ElseTableViewCell.m */,
+				CC11C9231D459F380075FB5F /* ElseTableViewCell.xib */,
+				CC11C9241D459F380075FB5F /* ElseViewController.h */,
+				CC11C9251D459F380075FB5F /* ElseViewController.m */,
+			);
+			path = ElseController;
+			sourceTree = "<group>";
+		};
 		CC26E1471D3DD56F007FDAEE /* MusicViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,6 +1000,8 @@
 				CC26E1DB1D3DDA82007FDAEE /* MusicController */,
 				CC26E1CB1D3DD6C7007FDAEE /* ReadController */,
 				CC26E1D41D3DD6CF007FDAEE /* MovieController */,
+				CC11C9171D459EF60075FB5F /* MoodController */,
+				CC11C9201D459F380075FB5F /* ElseController */,
 				CC26E14D1D3DD56F007FDAEE /* MusicRequest */,
 				CC26E1F21D3DDB4E007FDAEE /* Cells */,
 			);
@@ -985,6 +1032,9 @@
 		CC26E1D41D3DD6CF007FDAEE /* MovieController */ = {
 			isa = PBXGroup;
 			children = (
+				CC11C9291D459F660075FB5F /* MovieTableViewCell.h */,
+				CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */,
+				CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */,
 				CC26E1D51D3DD6CF007FDAEE /* MovieViewController.h */,
 				CC26E1D61D3DD6CF007FDAEE /* MovieViewController.m */,
 			);
@@ -1992,6 +2042,7 @@
 				CC5A3D5F1D40C5D200984F1F /* p31b0122.png in Resources */,
 				CC5A3D231D40C5D200984F1F /* p31b0062.png in Resources */,
 				CC5A3D8D1D40C5D200984F1F /* p31b0168.png in Resources */,
+				CC11C91E1D459EF60075FB5F /* MoodTableViewCell.xib in Resources */,
 				CC5A3CEB1D40C5D200984F1F /* p31b0006.png in Resources */,
 				CC5A3D341D40C5D200984F1F /* p31b0079.png in Resources */,
 				CC5A3D781D40C5D200984F1F /* p31b0147.png in Resources */,
@@ -2157,6 +2208,7 @@
 				CC5A3CE71D40C5D200984F1F /* p31b0002.png in Resources */,
 				CC5A3D831D40C5D200984F1F /* p31b0158.png in Resources */,
 				CC5A3D451D40C5D200984F1F /* p31b0096.png in Resources */,
+				CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */,
 				CC5A3D761D40C5D200984F1F /* p31b0145.png in Resources */,
 				CCA3B7F51D3A7C95003361CC /* 呵呵.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
@@ -2206,6 +2258,7 @@
 				CC5A3D3C1D40C5D200984F1F /* p31b0087.png in Resources */,
 				CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */,
 				CC5A3D611D40C5D200984F1F /* p31b0124.png in Resources */,
+				CC11C9271D459F380075FB5F /* ElseTableViewCell.xib in Resources */,
 				CC5A3DAF1D40C5D200984F1F /* p3_b_7.png in Resources */,
 				CC5A3D8A1D40C5D200984F1F /* p31b0165.png in Resources */,
 				CC5A3D9D1D40C5D200984F1F /* p3_b_11.png in Resources */,
@@ -2334,7 +2387,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC11C9261D459F380075FB5F /* ElseTableViewCell.m in Sources */,
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
+				CC11C92C1D459F660075FB5F /* MovieTableViewCell.m in Sources */,
 				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
@@ -2367,9 +2422,12 @@
 				CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */,
 				CC9A95D91D41CF0E00EA23BB /* MusicViewController.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
+				CC11C91D1D459EF60075FB5F /* MoodTableViewCell.m in Sources */,
 				CC9BFC401D40C3B500F40EF6 /* SWMark.m in Sources */,
 				CC26E1EF1D3DDA82007FDAEE /* ScrollViewController.m in Sources */,
+				CC11C9281D459F380075FB5F /* ElseViewController.m in Sources */,
 				CC9BFC3B1D40C3B500F40EF6 /* SWActivityList.m in Sources */,
+				CC11C91F1D459EF60075FB5F /* MoodViewController.m in Sources */,
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */,
 				CC26E1F01D3DDA82007FDAEE /* ThreeViewController.m in Sources */,

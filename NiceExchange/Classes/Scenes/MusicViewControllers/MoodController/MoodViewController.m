@@ -1,28 +1,31 @@
 //
-//  MovieViewController.m
+//  MoodViewController.m
 //  NiceExchange
 //
-//  Created by Spacewalk on 16/7/18.
+//  Created by Spacewalk on 16/7/24.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
-#import "MovieViewController.h"
-#import "MovieTableViewCell.h"
-@interface MovieViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "MoodViewController.h"
+#import "MoodTableViewCell.h"
+
+@interface MoodViewController ()<UITableViewDataSource,UITableViewDelegate>
+
 
 @property(nonatomic,strong)UITableView *tableView;
 
 @end
 
-@implementation MovieViewController
+@implementation MoodViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor blueColor];
     
     [self addTableview];
     
-    
 }
+
 
 
 //添加 tableview
@@ -36,7 +39,7 @@
     
     self.tableView.dataSource = self;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"MovieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MovieTableViewCell_Identifiter];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MoodTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MoodTableViewCell_Identifiter];
     
     
 }
@@ -54,7 +57,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MovieTableViewCell_Identifiter forIndexPath:indexPath];
+    MoodTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MoodTableViewCell_Identifiter forIndexPath:indexPath];
     
     
     

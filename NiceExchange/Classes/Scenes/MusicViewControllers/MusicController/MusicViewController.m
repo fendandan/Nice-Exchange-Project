@@ -10,6 +10,9 @@
 #import "ScrollViewController.h"
 #import "RedaViewController.h"
 #import "MovieViewController.h"
+#import "MoodViewController.h"
+#import "ElseViewController.h"
+
 #import "OneScrollViewController.h"
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
@@ -36,7 +39,9 @@
 
 @property(nonatomic,strong)UIButton *musicBtn;
 @property(nonatomic,strong)UIButton *readBtn;
-@property(nonatomic,strong)UIButton *movieBtn;
+@property(nonatomic,strong)UIButton *lohasBtn;
+@property(nonatomic,strong)UIButton *moodBtn;
+@property(nonatomic,strong)UIButton *elseBtn;
 
 @property(nonatomic,strong)NSTimer *timer;
 
@@ -101,34 +106,41 @@
 
 
 
-
-
-
-
-
 //添加底层scrollView
 - (void)addScrollView
 {
     self.BottomScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     
-    self.BottomScrollView.backgroundColor = [UIColor redColor];
+//    self.BottomScrollView.backgroundColor = [UIColor redColor];
     
     self.BottomScrollView.pagingEnabled = YES;
     
-    self.BottomScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 3, 0);
+    self.BottomScrollView.contentSize = CGSizeMake(self.view.frame.size.width * 5, 0);
     
 
     //添加 view
-        RedaViewController *readVC = [[RedaViewController alloc] init];
-        readVC.view.frame = CGRectMake(kScreenWidth, 80, kScreenWidth, kScreenHeight - 80);
-        [self addChildViewController:readVC];
-        [self.BottomScrollView addSubview:readVC.view];
+    RedaViewController *readVC = [[RedaViewController alloc] init];
+    readVC.view.frame = CGRectMake(kScreenWidth, 80, kScreenWidth, kScreenHeight - 80);
+    [self addChildViewController:readVC];
+    [self.BottomScrollView addSubview:readVC.view];
     
-        MovieViewController *movieVC = [[MovieViewController alloc] init];
-        movieVC.view.frame = CGRectMake(kScreenWidth*2, 80, kScreenWidth, kScreenHeight - 80);
-        [self addChildViewController:movieVC];
-        [self.BottomScrollView addSubview:movieVC.view];
+    MovieViewController *movieVC = [[MovieViewController alloc] init];
+    movieVC.view.frame = CGRectMake(kScreenWidth*2, 80, kScreenWidth, kScreenHeight - 80);
+    [self addChildViewController:movieVC];
+    [self.BottomScrollView addSubview:movieVC.view];
+    
+    
+    MoodViewController *moodVC = [[MoodViewController alloc] init];
+    moodVC.view.frame = CGRectMake(kScreenWidth*3, 80, kScreenWidth, kScreenHeight - 80);
+    [self addChildViewController:moodVC];
+    [self.BottomScrollView addSubview:moodVC.view];
 
+    
+    ElseViewController *elseVC = [[ElseViewController alloc] init];
+    elseVC.view.frame = CGRectMake(kScreenWidth*4, 80, kScreenWidth, kScreenHeight - 80);
+    [self addChildViewController:elseVC];
+    [self.BottomScrollView addSubview:elseVC.view];
+    
     
     self.BottomScrollView.delegate = self;
     
@@ -290,19 +302,40 @@
     _readBtn.frame = CGRectMake(100, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_readBtn];
     
-
     [_readBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
-    
     [_readBtn addTarget:self action:@selector(readBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     
-    _movieBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [_movieBtn setTitle:@"视频" forState:(UIControlStateNormal)];
-    _movieBtn.frame = CGRectMake(180, 0, 50, 50);
-    [self.ScrollViewnNav addSubview:_movieBtn];
+    _lohasBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_lohasBtn setTitle:@"乐活" forState:(UIControlStateNormal)];
+    _lohasBtn.frame = CGRectMake(190, 0, 50, 50);
+    [self.ScrollViewnNav addSubview:_lohasBtn];
     
-    [_movieBtn addTarget:self action:@selector(movieBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [_movieBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_lohasBtn addTarget:self action:@selector(lohasBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_lohasBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    
+    
+    
+    
+    _moodBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_moodBtn setTitle:@"心情" forState:(UIControlStateNormal)];
+    _moodBtn.frame = CGRectMake(280, 0, 50, 50);
+    [self.ScrollViewnNav addSubview:_moodBtn];
+    
+    [_moodBtn addTarget:self action:@selector(moodBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_moodBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    
+    
+    
+    
+    _elseBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [_elseBtn setTitle:@"其他" forState:(UIControlStateNormal)];
+    _elseBtn.frame = CGRectMake(360, 0, 50, 50);
+    [self.ScrollViewnNav addSubview:_elseBtn];
+    
+    [_elseBtn addTarget:self action:@selector(elseBtnBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [_elseBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    
 }
 
 
@@ -314,7 +347,9 @@
 {
     btn.selected = YES;
     self.readBtn.selected = NO;
-    self.movieBtn.selected = NO;
+    self.lohasBtn.selected = NO;
+    self.moodBtn.selected = NO;
+    self.elseBtn.selected = NO;
     self.BottomScrollView.contentOffset = CGPointMake(self.BottomScrollView.frame.size.width/414, 0);
 }
 
@@ -324,22 +359,50 @@
 {
     self.musicBtn.selected = NO;
     btn.selected = YES;
-    self.movieBtn.selected = NO;
+    self.lohasBtn.selected = NO;
+    self.moodBtn.selected = NO;
+    self.elseBtn.selected = NO;
     self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth, 0);
 }
 
 
-//视频点击事件
-- (void)movieBtnAction:(UIButton *)btn
+//乐活点击事件
+- (void)lohasBtnAction:(UIButton *)btn
 {
     self.musicBtn.selected = NO;
     self.readBtn.selected = NO;
     btn.selected = YES;
+    self.moodBtn.selected = NO;
+    self.elseBtn.selected = NO;
     self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 2, 0);
 }
 
 
+//心情点击事件
+- (void)moodBtnAction:(UIButton *)btn
+{
+    self.musicBtn.selected = NO;
+    self.readBtn.selected = NO;
+    self.lohasBtn.selected= NO;
+    btn.selected = YES;
+    self.elseBtn.selected = NO;
+    self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 3, 0);
+    
+    
+}
 
+
+
+//其他点击事件
+- (void)elseBtnBtnAction:(UIButton *)btn
+{
+    self.musicBtn.selected = NO;
+    self.readBtn.selected = NO;
+    self.lohasBtn.selected= NO;
+    self.moodBtn.selected = NO;
+    btn.selected = YES;
+    self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 4, 0);
+}
 
 
 
@@ -465,32 +528,49 @@ int a = 0;
         self.pageControl.currentPage = self.scrollView.contentOffset.x/kScreenWidth;
     }else if (scrollView == self.BottomScrollView)
     {
-        double d = self.BottomScrollView.contentOffset.x/kScreenWidth;
-        int i = (int)d;
+        int i = self.BottomScrollView.contentOffset.x/kScreenWidth;
         if (i == 0) {
             
             self.musicBtn.selected = YES;
             self.readBtn.selected = NO;
-            self.movieBtn.selected = NO;
+            self.lohasBtn.selected = NO;
+            self.moodBtn.selected = NO;
+            self.elseBtn.selected = NO;
             
         }else if (i == 1) {
             
             self.musicBtn.selected = NO;
             self.readBtn.selected = YES;
-            self.movieBtn.selected = NO;
-            
+            self.lohasBtn.selected = NO;
+            self.moodBtn.selected = NO;
+            self.elseBtn.selected = NO;
 
             
         }else if (i == 2) {
 
+            self.musicBtn.selected = NO;
+            self.readBtn.selected = NO;
+            self.lohasBtn.selected = YES;
+            self.moodBtn.selected = NO;
+            self.elseBtn.selected = NO;
+            
+        }else if (i == 3) {
             
             self.musicBtn.selected = NO;
             self.readBtn.selected = NO;
-            self.movieBtn.selected = YES;
+            self.lohasBtn.selected = NO;
+            self.moodBtn.selected = YES;
+            self.elseBtn.selected = NO;
+            
+        }else if (i == 4) {
+            
+            self.musicBtn.selected = NO;
+            self.readBtn.selected = NO;
+            self.lohasBtn.selected = NO;
+            self.moodBtn.selected = NO;
+            self.elseBtn.selected = YES;
+            
         }
-        
-     
-        
     }
 }
 

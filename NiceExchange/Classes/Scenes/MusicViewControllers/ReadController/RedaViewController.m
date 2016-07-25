@@ -127,12 +127,12 @@
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             
 // -------------------------------------------------------------
-            [[SWLeanCloudManager shareManager] lcToCancelFollowOtherUserWithActivityList:activity];
-            [SWLeanCloudManager shareManager].UIFBlock = ^{
+            [LCManager lcToCancelFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
                 cell.attentionBtn.selected = NO;
                 [self.rootVC.followedArray removeObject:activity.createBy];
                 [self.tableView reloadData];
-            };
+                LCManager.shareManagerB = NO; // 置为可调用状态
+            }];
         
         }];
         
@@ -145,12 +145,14 @@
     }else{
         
 // -------------------------------------------------------------
-        [[SWLeanCloudManager shareManager] lcToFollowOtherUserWithActivityList:activity];
-        [SWLeanCloudManager shareManager].UIFBlock = ^{
+        [LCManager lcToFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
+            
             cell.attentionBtn.selected = YES;
             [self.rootVC.followedArray addObject:activity.createBy];
             [self.tableView reloadData];
-        };
+            LCManager.shareManagerB = NO; // 置为可调用状态
+            
+        }];
         
         
     }
