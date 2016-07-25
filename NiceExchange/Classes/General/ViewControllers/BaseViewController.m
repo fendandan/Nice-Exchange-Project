@@ -35,12 +35,13 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     // 根视图控制器（tabBarController）
-//    self.rootVC = (RootViewController *)[[UIApplication sharedApplication].keyWindow rootViewController];
-    UINavigationController *nacV = [[UINavigationController alloc]initWithRootViewController:self.rootVC];
-   
-    RootViewController *rootVC = [[RootViewController alloc]init];
-    
-    self.window.rootViewController = nacV;
+    self.rootVC = (RootViewController *)[[UIApplication sharedApplication].keyWindow rootViewController];
+#warning --------------
+//    UINavigationController *nacV = [[UINavigationController alloc]initWithRootViewController:self.rootVC];
+//   
+//    RootViewController *rootVC = [[RootViewController alloc]init];
+//    
+//    self.window.rootViewController = nacV;
     // 视图控制器view背景色
 //    self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
 }

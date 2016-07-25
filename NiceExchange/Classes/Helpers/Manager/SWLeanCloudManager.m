@@ -155,18 +155,17 @@ static SWLeanCloudManager *manager = nil;
 }
 
 
-BOOL shareManagerB;
-- (void)lcToFollowOtherUserWithActivityList:(SWActivityList *)activity {
-    if (shareManagerB) {
+- (void)lcToFollowOtherUserWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+    if (_shareManagerB) {
         return;
     }
-    shareManagerB = YES;
+    _shareManagerB = YES;
     SWLog(@"activity %@",activity);
     AVUser *otherUser = activity.createBy;
     SWLog(@"otherUser %@",otherUser);
     
     // create an entry in the Follow table
-    AVObject *follow = [AVObject objectWithClassName:@"Follow"];
+    SWFollow *follow = [SWFollow object];
     [follow setObject:[AVUser currentUser]  forKey:@"from"];
     [follow setObject:otherUser forKey:@"to"];
     [follow setObject:[NSDate date] forKey:@"date"];
@@ -176,6 +175,7 @@ BOOL shareManagerB;
             
             // 更新关注计数
             AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+            
             [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
             [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 SWCount *count = objects[0];
@@ -183,21 +183,29 @@ BOOL shareManagerB;
                 count.fetchWhenSave = true;
                 [count saveInBackground];
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.UIFBlock();  // 刷新操作
-                    shareManagerB = NO;
-                });
             }];
+            
+            [cQ whereKey:@"createBy" equalTo:activity.createBy];
+            [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                SWCount *count = objects[0];
+                [count incrementKey:@"followedC"];
+                count.fetchWhenSave = true;
+                [count saveInBackground];
+            }];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil);  // 刷新操作
+            });
         }
     }];
 }
 
-- (void)lcToCancelFollowOtherUserWithActivityList:(SWActivityList *)activity {
+- (void)lcToCancelFollowOtherUserWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
     
-    if (shareManagerB) {
+    if (_shareManagerB) {
         return;
     }
-    shareManagerB = YES;
+    _shareManagerB = YES;
     SWLog(@"activity %@",activity);
     AVUser *otherUser = activity.createBy;
     SWLog(@"otherUser %@",otherUser);
@@ -210,13 +218,15 @@ BOOL shareManagerB;
     AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:fromQuery,toQuery,nil]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
         //
-        AVObject *follow = results[0];
+        SWFollow *follow = results[0];
         [follow deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             SWLog(@" error %@",error);
             
             if (succeeded) {
+                
                 // 更新关注计数
                 AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+                
                 [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
                 [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                     SWCount *count = objects[0];
@@ -224,9 +234,19 @@ BOOL shareManagerB;
                     count.fetchWhenSave = true;
                     [count saveInBackground];
                 }];
+                
+                [cQ whereKey:@"createBy" equalTo:activity.createBy];
+                [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    SWCount *count = objects[0];
+                    [count incrementKey:@"followedC" byAmount:@(-1)];
+                    count.fetchWhenSave = true;
+                    [count saveInBackground];
+                }];
+                
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    self.UIFBlock();  // 刷新操作
-                    shareManagerB = NO;
+                    
+                    completion(nil);  // 刷新操作
+                    
                 });
             }
             
@@ -234,4 +254,203 @@ BOOL shareManagerB;
     }];
     
 }
+
+
+- (void)lcToCommentingWithActivityList:(SWActivityList *)activity commentString:(NSString *)commentString completion:(UIFBlock)completion {
+    
+    
+    SWComment *comment = [SWComment object];
+    comment.commentContent = commentString;
+    comment.forActivity = activity;
+    comment.commentCount = @0;
+    comment.goodCount = @0;
+    comment.lowCount = @0;
+    comment.commentBy = [SWLcAvUSer currentUser];
+    
+    [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog( @"%@",error);
+        if (succeeded) {
+            
+            // 更新评论计数
+            AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+            [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+            [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                SWCount *count = objects[0];
+                [count incrementKey:@"commentC"];
+                count.fetchWhenSave = true;
+                [count saveInBackground];
+            }];
+            
+            [activity.commentRelation addObject:comment];
+            [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    
+                    completion(nil);  // 刷新操作
+                    
+                }
+            }];
+        }
+    }];
+    
+}
+- (void)lcSelectCommentWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+    
+    
+    // 查
+    // create a relation based on the authors key
+    AVRelation *relation = [activity relationForKey:@"commentRelation"];
+    
+    // generate a query based on that relation
+    AVQuery *query = [relation query];
+    
+    // now execute the query
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        NSMutableArray *mArray = [NSMutableArray array];
+        for (SWComment *c in objects) {
+            SWLog(@"%@",c);
+            [mArray addObject:c];
+        }
+        
+        completion(mArray); // 传值 刷新
+        
+    }];
+    
+}
+- (void)lcToCommentingWithComment:(SWComment *)fristComment commentString:(NSString *)commentString completion:(UIFBlock)completion {
+    
+    
+    SWComment *comment = [SWComment object];
+    comment.commentContent = commentString;
+    comment.forComment = fristComment;
+//    comment.commentCount = @0;
+//    comment.goodCount = @0;
+//    comment.lowCount = @0;
+    comment.commentBy = [SWLcAvUSer currentUser];
+    
+    [comment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog( @" error %@",error);
+        if (succeeded) {
+            [fristComment.secondComment addObject:comment];
+            [fristComment incrementKey:@"commentCount"]; // 计数
+            [fristComment saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                
+                completion(nil); // 刷新
+                
+            }];
+        }
+    }];
+}
+- (void)lcSelectCommentWithComment:(SWComment *)fristComment completion:(UIFBlock)completion {
+    
+    
+    // 查
+    // create a relation based on the authors key
+    AVRelation *relation = [fristComment relationForKey:@"secondComment"];
+    
+    // generate a query based on that relation
+    AVQuery *query = [relation query];
+    
+    // now execute the query
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        NSMutableArray *mArray = [NSMutableArray array];
+        for (SWComment *c in objects) {
+            SWLog(@"%@",c);
+            [mArray addObject:c];
+        }
+        
+        completion(mArray); // 传值 刷新
+    }];
+}
+
+// 收藏
+
+- (void)lcToMarkActivityWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+    if (_shareManagerBm) {
+        return;
+    }
+    _shareManagerBm = YES;
+    
+    // create an entry in the Follow table
+    SWMark *mark = [SWMark object];
+    [mark setObject:[AVUser currentUser]  forKey:@"from"];
+    [mark setObject:activity forKey:@"to"];
+    [mark setObject:[NSDate date] forKey:@"date"];
+    [mark saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (succeeded) {
+            
+            // 更新收藏计数
+            AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+            [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+            [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                
+                SWCount *count = objects[0];
+                [count incrementKey:@"markC"];
+                count.fetchWhenSave = true;
+                [count saveInBackground];
+                
+            }];
+            
+            [activity incrementKey:@"markC"];
+            [activity saveInBackground];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completion(nil);  // 刷新操作
+            });
+        }
+    }];
+    
+}
+
+- (void)lcToCancelMarkActivityWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+    if (_shareManagerBm) {
+        return;
+    }
+    _shareManagerBm = YES;
+    
+    SWLog(@"activity %@",activity);
+    AVUser *otherUser = activity.createBy;
+    SWLog(@"otherUser %@",otherUser);
+    
+    // create an entry in the Follow table
+    AVQuery *fromQuery = [AVQuery queryWithClassName:@"Mark"];
+    [fromQuery whereKey:@"from" equalTo:[AVUser currentUser]];
+    AVQuery *toQuery = [AVQuery queryWithClassName:@"Mark"];
+    [toQuery whereKey:@"to" equalTo:activity];
+    AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:fromQuery,toQuery,nil]];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        //
+        SWMark *mark = results[0];
+        [mark deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            SWLog(@" error %@",error);
+            
+            if (succeeded) {
+                
+                // 更新收藏计数
+                AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
+                [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+                [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                    SWCount *count = objects[0];
+                    [count incrementKey:@"markC" byAmount:@(-1)];
+                    count.fetchWhenSave = true;
+                    [count saveInBackground];
+                }];
+                
+                [activity incrementKey:@"markC" byAmount:@(-1)];
+                [activity saveInBackground];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    completion(nil);  // 刷新操作
+                    
+                });
+            }
+            
+        }];
+    }];
+    
+}
+
 @end

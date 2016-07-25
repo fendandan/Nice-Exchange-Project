@@ -35,7 +35,8 @@
 
 #define SWLogFunc SWLog(@"%s",__func__)
 
-
+// 工具类单例调用宏
+#define LCManager [SWLeanCloudManager shareManager]
 
 /*
  第三方引入头文件

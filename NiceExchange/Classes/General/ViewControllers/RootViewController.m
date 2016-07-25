@@ -24,30 +24,49 @@
     
     [[MSGuideViewManager sharedInstance]showGuideViewWithImages:array andButtonTitle:@"立即体验" andButtonTitleColor:[UIColor redColor] andButtonBGColor:[UIColor greenColor] andButtonBorderColor:[UIColor blackColor]];
 //
-    [self getFollowInfo];
+    [self getFollowInfo]; // 获取用户关注信息
     
 }
 - (void)getFollowInfo {
     AVQuery *followQ = [AVQuery queryWithClassName:@"Follow"];
     if ([SWLcAvUSer currentUser]) {
-        self.followArray = [NSMutableArray array];
+        
         
         __weak typeof(self) weakself = self;
         
         [followQ whereKey:@"from" equalTo:[SWLcAvUSer currentUser]];
         [followQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            for (SWFollow *follow in objects) {
-                [weakself.followArray addObject:follow];
+            
+            SWLog(@"%@",error);
+            if (error) {
+                [weakself getFollowInfo];
+            }else {
+                weakself.followArray = [NSMutableArray array];
+                for (SWFollow *follow in objects) {
+                    [weakself.followArray addObject:follow.to];
+                    
+                }
             }
         }];
         
-        self.followedArray = [NSMutableArray array];
+        
         [followQ whereKey:@"to" equalTo:[SWLcAvUSer currentUser]];
         [followQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            for (SWFollow *follow in objects) {
-                [weakself.followedArray addObject:follow];
+            
+            SWLog(@"%@",error);
+            if (error) {
+                [weakself getFollowInfo];
+            }else {
+                weakself.followedArray = [NSMutableArray array];
+                for (SWFollow *follow in objects) {
+                    [weakself.followedArray addObject:follow.from];
+                }
             }
         }];
+        
+        //        if (weakself.followArray && weakself.followedArray) {
+        //            [[NSNotificationCenter defaultCenter] postNotificationName:@"huahua" object:nil userInfo:nil];
+        //        }
         
     }
     

@@ -43,11 +43,11 @@
 #warning  message ----- 直接把今天要写的主控制器界面替换到navigationController的根视图控制器（这要就可以直接看到效果了）如下面的第四个navigationController控制器的根视图是MyViewController。
    
     
-    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
-    sNC.navigationBarHidden = YES;
-    sNC.navigationController.navigationBarHidden = YES;
-    sNC.navigationBar.hidden = YES;
-    [self.swWindow setRootViewController:sNC];
+//    UINavigationController *sNC = [[UINavigationController alloc] initWithRootViewController:rootVC];
+//    sNC.navigationBarHidden = YES;
+//    sNC.navigationController.navigationBarHidden = YES;
+//    sNC.navigationBar.hidden = YES;
+    [self.swWindow setRootViewController:rootVC];
     
     
 #warning 设置你的友盟Appkey，在 AppDelegate文件内设置你的AppKey：
