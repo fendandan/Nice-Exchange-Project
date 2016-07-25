@@ -29,6 +29,8 @@
 }
 - (void)getFollowInfo {
     AVQuery *followQ = [AVQuery queryWithClassName:@"Follow"];
+    
+    SWLog(@" ----- -- -- -- - %@", [SWLcAvUSer currentUser]);
     if ([SWLcAvUSer currentUser]) {
         
         
