@@ -41,11 +41,22 @@
 
 
 }
+-(void)getdataArray {
+    
+//    
+//    LCManager lcSelectCommentWithActivityList:<#(SWActivityList *)#> completion:<#^(NSArray *mArray)completion#>
+    
+    
+}
+
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.dataArray = [NSMutableArray new];
     self.dataArray = [NSMutableArray new];
     [self.commentTableView registerNib:[UINib nibWithNibName:@"SWChatTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
 //
