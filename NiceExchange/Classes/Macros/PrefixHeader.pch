@@ -71,7 +71,8 @@
 #import "MyViewController.h"
 #import "SWFocusonViewController.h"
 #import "MusicViewController.h" // 音乐
-#import "SWCreationViewController.h"
+#import "SWCreationViewController.h"//发布
+#import "SWMessViewController.h" //消息
 
 // 登录注册控制器
 #import "SWLoginViewController.h"

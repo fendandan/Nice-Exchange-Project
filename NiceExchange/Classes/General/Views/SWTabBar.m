@@ -17,6 +17,17 @@
         self.backgroundColor = [UIColor whiteColor];
         
         for (int i = 0; i < items.count; i ++) {
+            if (i == 2) {
+                UIButton *button = (UIButton *)items[i];
+                CGFloat width = kSelfWidth / items.count;
+                button.frame = CGRectMake(i * width +6, 4, 80, 40);
+                // button.backgroundColor = [UIColor cyanColor];
+                button.layer.masksToBounds = YES;
+                button.layer.cornerRadius = button.frame.size.height/3;
+                [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                [self addSubview:button];
+                continue;
+            }
             UIButton *button = (UIButton *)items[i];
             CGFloat width = kSelfWidth / items.count;
             button.frame = CGRectMake(i * width + 30, 0, 32, 32);
