@@ -15,6 +15,8 @@
 @end
 
 @interface SWFridenSharOnTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *GZlABLE;
+@property (strong, nonatomic) IBOutlet UILabel *BJLable;
 @property (strong, nonatomic) IBOutlet UIButton *Friendicon;
 @property (strong, nonatomic) IBOutlet UILabel *FriendName;
 @property (strong, nonatomic) IBOutlet UIImageView *detailImv;

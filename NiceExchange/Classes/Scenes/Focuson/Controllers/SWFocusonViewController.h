@@ -10,4 +10,7 @@
 
 @interface SWFocusonViewController : BaseViewController
 
+@property (nonatomic,strong) SWActivityList *activity;
+
+
 @end

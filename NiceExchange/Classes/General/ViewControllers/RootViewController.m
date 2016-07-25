@@ -24,7 +24,7 @@
     
     [[MSGuideViewManager sharedInstance]showGuideViewWithImages:array andButtonTitle:@"立即体验" andButtonTitleColor:[UIColor redColor] andButtonBGColor:[UIColor greenColor] andButtonBorderColor:[UIColor blackColor]];
 //
-    [self getFollowInfo]; // 获取用户关注信息
+
     
 }
 - (void)getFollowInfo {
@@ -37,11 +37,13 @@
         __weak typeof(self) weakself = self;
         
         [followQ whereKey:@"from" equalTo:[SWLcAvUSer currentUser]];
+        [followQ selectKeys:@[@"to"]];
+        [followQ includeKey:@"to"];
         [followQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             
-            SWLog(@"%@",error);
+            SWLog(@" followArray error %@",error);
             if (error) {
-                [weakself getFollowInfo];
+//                [weakself getFollowInfo];
             }else {
                 weakself.followArray = [NSMutableArray array];
                 for (SWFollow *follow in objects) {
@@ -53,11 +55,13 @@
         
         
         [followQ whereKey:@"to" equalTo:[SWLcAvUSer currentUser]];
+        [followQ selectKeys:@[@"from"]];
+        [followQ includeKey:@"from"];
         [followQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             
-            SWLog(@"%@",error);
+            SWLog(@" followedArray error %@",error);
             if (error) {
-                [weakself getFollowInfo];
+//                [weakself getFollowInfo];
             }else {
                 weakself.followedArray = [NSMutableArray array];
                 for (SWFollow *follow in objects) {
@@ -85,6 +89,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
+    
+        [self getFollowInfo]; // 获取用户关注信息
+    
     NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"User" title:@"我的"]];
     
   self.swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];

@@ -15,9 +15,11 @@
 #import "SWTableViewController.h"
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource,FriendiconDelegate,JoinDelegate>
 
-
-
+@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic,strong) UITableView *ztableView;
+@property (nonatomic,strong)UIImageView *imageV;
 @end
+
 
 @implementation SWFocusonViewController
 
@@ -25,29 +27,82 @@
     
     
     self.rootVC.swTabBar.hidden = NO;
+    SWLog(@" 00 0000 000 000  %@",self.rootVC.followArray);
+    if (self.rootVC.followArray != NULL) {
+        [self requestData];
+    }else {
+        [self performSelector:@selector(requestData) withObject:nil afterDelay:3];
+    }
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"关注";
-    
-    UITableView *tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 46, self.view.frame.size.width, self.view.frame.size.height - 49) style:(UITableViewStylePlain)];
-    tableview.delegate = self;
-    tableview.dataSource = self;
+    self.dataArray = [NSMutableArray array];
+    self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 58, 58)];
+   self.ztableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 46, self.view.frame.size.width, self.view.frame.size.height - 49) style:(UITableViewStylePlain)];
+    self.ztableView.delegate = self;
+    self.ztableView.dataSource = self;
     //    [tableview registerClass:[SWFridenSharOnTableViewCell class] forCellReuseIdentifier:@"FocusCell"];
-    [tableview registerNib:[UINib nibWithNibName:@"SWFridenSharOnTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FridenSharOnCell"];
+    [self.ztableView registerNib:[UINib nibWithNibName:@"SWFridenSharOnTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FridenSharOnCell"];
     
-    [tableview registerNib:[UINib nibWithNibName:@"SWJoinTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"JoinCell"];
+    [self.ztableView registerNib:[UINib nibWithNibName:@"SWJoinTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"JoinCell"];
     
-    [self.view addSubview:tableview];
+    [self.view addSubview:self.ztableView];
     
     //右上方添加好友按钮
     [self addRightButtonItem];
     
     //去除出分割线
-    tableview.separatorStyle = UITableViewCellSelectionStyleNone;
+    self.ztableView.separatorStyle = UITableViewCellSelectionStyleNone;
+    
+
+
+     
+}
+#warning 请求数据
+-(void)requestData {
+    
+    // 查询活动
+    AVQuery *aQ = [SWActivityList query];
+    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
+    aQ.limit = 20;
+    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
+    
+//    SWLog(@"22222222222222222%@",self.rootVC.followArray);
+    if (self.rootVC.followArray.count == 0) {
+        [self performSelector:@selector(requestData) withObject:nil afterDelay:.3];
+    }
+    for ( SWLcAvUSer *user in  self.rootVC.followArray ) {
+      
+        
+        [aQ whereKey:@"createBy" equalTo:user];
+        [aQ includeKey:@"createBy"];
+        
+        [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            //        SWActivityList *acc = objects[16];
+            //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
+            for (SWActivityList *a in objects) {
+                SWActivityList *ac = a;
+                [self.dataArray addObject:ac];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+//                SWLog(@"-----------++++ ---- %@",self.dataArray);
+                
+                [self.ztableView reloadData];
+            });
+        }];
+        
+        
+    }
+    
+
+    
+
     
 }
+
 -(void)onJoinClick {
     
     SWUserDetailViewController *usrVC = [[SWUserDetailViewController alloc]init];
@@ -80,36 +135,63 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 3;
+    return self.dataArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
-        
-        
-        SWFridenSharOnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FridenSharOnCell"];
-        cell.friendDelegate = self;
-        return cell;
-    }else if (indexPath.row == 1){
-        
-        
-        
-        SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-        cell.joinDelegate = self;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        cell.UdetailL.hidden = YES;
-        
-        return cell;
+//    if (indexPath.row == 0) {
+//        
+//        
+//        SWFridenSharOnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FridenSharOnCell"];
+//        cell.friendDelegate = self;
+//        return cell;
+//    }else if (indexPath.row == 1){
+//        
+//        
+//        
+//        SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
+//        cell.joinDelegate = self;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        
+//        cell.UdetailL.hidden = YES;
+//        
+//        return cell;
+//    }
+//    
+//    SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
+//    
+//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//    cell.joinDelegate = self;
+//    cell.detailImage.hidden = YES;
+//    
+//    return cell;
+    
+
+    
+    
+    SWFridenSharOnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FridenSharOnCell"];
+    cell.friendDelegate = self;
+    
+    SWActivityList *list = self.dataArray[indexPath.row];
+    
+    if (list.createBy.displayName) {
+        cell.FriendName.text =list.createBy.displayName;
+    }else {
+        cell.FriendName.text =list.createBy.username;
     }
-    
-    SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.joinDelegate = self;
-    cell.detailImage.hidden = YES;
-    
+    cell.title.text = list.title;
+    [cell.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
+//    cell.collectNum.text = @"";
+//    cell.joinNum.text = @"";
+     cell.BJLable.text =  list.label;
+    cell.GZlABLE.text = list.rule;
+    [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
+    SWLog(@"iii iiii iiii ii%@", list.createBy.userImage.url);
+    AVFile *ff = [AVFile fileWithURL:list.createBy.userImage.url];
+    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+        [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
+    }];
     return cell;
     
 }

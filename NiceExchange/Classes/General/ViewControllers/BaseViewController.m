@@ -18,7 +18,7 @@
     [super viewWillAppear:animated];
     
     // 登录状态（当前用户，不登出会一直在）
-    self.currentUser = [AVUser currentUser];
+    self.currentUser = [SWLcAvUSer currentUser];
     if (self.currentUser) {
         // 跳转到首页
         SWLog(@"用户 = %@",self.currentUser);

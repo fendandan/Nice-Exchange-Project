@@ -41,11 +41,22 @@
 
 
 }
+-(void)getdataArray {
+    
+//    
+//    LCManager lcSelectCommentWithActivityList:<#(SWActivityList *)#> completion:<#^(NSArray *mArray)completion#>
+    
+    
+}
+
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.dataArray = [NSMutableArray new];
     self.dataArray = [NSMutableArray new];
     [self.commentTableView registerNib:[UINib nibWithNibName:@"SWChatTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
 //
@@ -63,7 +74,7 @@ self.commentTableView.rowHeight=UITableViewAutomaticDimension;//这句表示cell
 ////    [self.dataArray addObject:d];
     
    // NSLog(@"%lu",(unsigned long)self.dataArray.count);
-    
+    self.commentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 
@@ -86,7 +97,7 @@ self.commentTableView.rowHeight=UITableViewAutomaticDimension;//这句表示cell
     SWChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.message
     .text = self.dataArray[indexPath.row];
-    
+   
 
     return cell;
     
