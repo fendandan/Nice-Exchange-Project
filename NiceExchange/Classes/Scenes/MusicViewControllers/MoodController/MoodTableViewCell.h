@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #define MoodTableViewCell_Identifiter @"MoodTableViewCell_Identifiter"
+
+@class MoodTableViewCell;
+
+@protocol MoodTableViewCellDelegate <NSObject>
+
+- (void)moodTableViewAttentionPlayBtnClikend:(MoodTableViewCell *)cell;
+
+- (void)moodTableViewUserNameImageViewPlay:(MoodTableViewCell *)cell;
+
+- (void)moodTableViewUserNameBtnClikend:(MoodTableViewCell *)cell;
+
+
+@end
+
+
 @interface MoodTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *titleImageView;
@@ -25,5 +40,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *participationLabel;
 
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
+
+
+@property(nonatomic,assign)id<MoodTableViewCellDelegate>delegate;
+
 
 @end

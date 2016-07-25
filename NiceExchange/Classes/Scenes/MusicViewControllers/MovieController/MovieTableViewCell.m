@@ -10,25 +10,62 @@
 
 @implementation MovieTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+
+
 
 
 - (IBAction)userNameBtn:(UIButton *)sender {
     
+    if (_delegate && [_delegate respondsToSelector:@selector(movieTableViewUserNameBtnClickend:)]) {
+        [_delegate movieTableViewUserNameBtnClickend:self];
+    }
 }
 
+
 - (IBAction)attentionBtn:(UIButton *)sender {
+    
+    if (_delegate &&[_delegate respondsToSelector:@selector(movieTableViewplayBtnClickend:)]) {
+        
+        [_delegate movieTableViewplayBtnClickend:self];
+    }
 }
 
 
 - (IBAction)collectBtn:(UIButton *)sender {
+    
+    
+    
+    
 }
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
 }
+
+
+
+- (void)awakeFromNib {
+    
+    self.ImageView.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+    
+    [self.ImageView addGestureRecognizer:tap];
+}
+
+
+
+- (void)tapAction:(UITapGestureRecognizer *)sender
+{
+    
+    if (_delegate &&[_delegate respondsToSelector:@selector(movieTableViewUserImageViewClickend:)]) {
+        
+        [_delegate movieTableViewUserImageViewClickend:self];
+        
+    }
+}
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

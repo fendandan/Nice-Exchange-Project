@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoodViewController : UIViewController
+@interface MoodViewController : BaseViewController
+
+
+@property(nonatomic,strong)UITableView *tableView;
 
 @end

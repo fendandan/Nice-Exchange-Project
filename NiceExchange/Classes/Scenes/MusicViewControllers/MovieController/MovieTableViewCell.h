@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 #define MovieTableViewCell_Identifiter @"MovieTableViewCell_Identifiter"
+
+@class MovieTableViewCell;
+
+@protocol movieTableViewCellDelegate <NSObject>
+
+- (void)movieTableViewplayBtnClickend:(MovieTableViewCell *)cell;
+
+- (void)movieTableViewUserImageViewClickend:(MovieTableViewCell *)cell;
+
+- (void)movieTableViewUserNameBtnClickend:(MovieTableViewCell *)cell;
+
+@end
+
+
 @interface MovieTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *ImageView;
@@ -26,6 +40,6 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
 
-
+@property(nonatomic,assign)id<movieTableViewCellDelegate>delegate;
 
 @end
