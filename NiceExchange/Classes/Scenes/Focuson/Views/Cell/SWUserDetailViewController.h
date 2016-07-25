@@ -15,7 +15,6 @@
 //被收藏数
 @property (strong, nonatomic) IBOutlet UILabel *bepraisel;
 //被推荐数
-@property (strong, nonatomic) IBOutlet UILabel *berecommendL;
 @property (strong, nonatomic) IBOutlet UILabel *focusL;
 @property (strong, nonatomic) IBOutlet UILabel *befocus;
 

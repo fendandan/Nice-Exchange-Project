@@ -34,18 +34,121 @@
 @property (nonatomic,strong)UILabel *lable;
 @property (nonatomic,strong)UILabel *lable1;
 @property (nonatomic,strong)BaseSwitchViewController *switchVC;
+
 @end
 
 @implementation SWshowViewController
+
+-  (void)viewWillAppear:(BOOL)animated {
+    
+    NSURL *url = [NSURL URLWithString:_activity.titleImage.url];
+    
+    self.imagedddddd.image = self.dataImage;
+    
+    
+    
+    
+}
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[XYSpriteHelper sharedInstance]startTimer];
    
     //[self add];
+    self.userName.text = self.string;
+    AVFile *ff = [AVFile fileWithURL:self.titlestring];
+    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+        [self.icon  setImage:image forState:(UIControlStateNormal)];
+    }];
     
-}
+    self.contL.text = self.activity.content;
+    self.titleL.text = self.activity.title;
+    self.biaoQL.text = self.activity.label;
+    self.detail.text = self.activity.subhead;
+    self.xzLable.text = self.activity.rule;
 
+}
+//- (void)setString:(NSString *)string {
+//    
+//    
+//    /**
+//     *  头像
+//     */
+// self.icon = @"";
+//    
+//    /**
+//     *  内容
+//     */
+//    self.contL.text = string;
+//    /**
+//     *  标签
+//     */
+//   self.biaoQL.text = string;
+//    /**
+//     *  标题
+//     */
+//   self.titleL.text = string;
+//    
+//    /**
+//     *  副标题
+//     */
+//   self.detail.text = string;
+//    /**
+//     *  详情图片
+//     */
+//  self.imageV = @"";
+//    /**
+//     *  一起聊聊
+//     */
+//  self.xzLable.text = string;
+//    
+//    self.userName.text = string;
+//}
+//
+- (void)setActivity:(SWActivityList *)activity {
+    if (_activity != activity) {
+        _activity = nil;
+        _activity = activity;
+        
+          
+        
+   
+        
+        /**
+         *  内容
+         */
+        self.contL;
+        /**
+         *  标签
+         */
+        self.biaoQL;
+        /**
+         *  标题
+         */
+        self.titleL;
+        
+        /**
+         *  副标题
+         */
+        self.detail;
+        /**
+         *  详情图片
+         */
+    
+        /**
+         *  一起聊聊
+         */
+//        @property (strong, nonatomic) IBOutlet UILabel *xzLable;
+//        self.string =  cell.FriendName.text;
+//        [self.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
+//        //    cell.collectNum.text = @"";
+//        //    cell.joinNum.text = @"";
+//        self.BJLable.text =  list.label;
+//        self.GZlABLE.text = list.rule;
+//        [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
+        
+    }
+}
 -(void)add {
     
     SWActivityList *activity = [SWActivityList object];

@@ -57,7 +57,7 @@
     //去除出分割线
     self.ztableView.separatorStyle = UITableViewCellSelectionStyleNone;
     
-
+   
 
      
 }
@@ -186,13 +186,14 @@
 //    cell.joinNum.text = @"";
      cell.BJLable.text =  list.label;
     cell.GZlABLE.text = list.rule;
-    [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
-    SWLog(@"iii iiii iiii ii%@", list.createBy.userImage.url);
+//    [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
+//    SWLog(@"iii iiii iiii ii%@", list.createBy.userImage.url);
     AVFile *ff = [AVFile fileWithURL:list.createBy.userImage.url];
     [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
         [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
     }];
     return cell;
+    
     
 }
 
@@ -205,8 +206,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+       SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
     SWshowViewController *showVC = [[SWshowViewController alloc]init];
     
+    
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    showVC.activity =  activity ;
+    
+    if (activity.createBy.displayName) {
+       showVC.string = activity.createBy.displayName;
+    }else {
+        showVC.string = activity.createBy.username;
+    }
+    showVC.titlestring = activity.createBy.userImage.url;
+    showVC.dataImage = cell.detailImv.image;
+
+
     [self.navigationController  pushViewController:showVC animated:YES];
     self.rootVC.swTabBar.hidden = YES;
     
