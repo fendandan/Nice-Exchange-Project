@@ -121,27 +121,25 @@
 {
     
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
-    
+    SWLog(@"indexPath %@",indexPath);
     // suppose we have a user we want to follow
     SWActivityList *activity = self.dataArray[indexPath.row];
     
     if (cell.attentionBtn.selected == YES) {
         
-        UIAlertController *uialert = [UIAlertController alertControllerWithTitle:nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
+        UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
         
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
-        
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             
             // -------------------------------------------------------------
-            [[SWLeanCloudManager shareManager] lcToCancelFollowOtherUserWithActivityList:activity];
-            [SWLeanCloudManager shareManager].UIFBlock = ^{
+            [LCManager lcToCancelFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
                 cell.attentionBtn.selected = NO;
                 [self.rootVC.followedArray removeObject:activity.createBy];
                 [self.tableView reloadData];
-            };
-            
+                LCManager.shareManagerB = NO; // 置为可调用状态
+            }];
             
         }];
         
@@ -150,15 +148,19 @@
         
         [self presentViewController:uialert animated:YES completion:nil];
         
+        
     }else{
         
         // -------------------------------------------------------------
-        [[SWLeanCloudManager shareManager] lcToFollowOtherUserWithActivityList:activity];
-        [SWLeanCloudManager shareManager].UIFBlock = ^{
+        [LCManager lcToFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
+            
             cell.attentionBtn.selected = YES;
             [self.rootVC.followedArray addObject:activity.createBy];
             [self.tableView reloadData];
-        };
+            LCManager.shareManagerB = NO; // 置为可调用状态
+            
+        }];
+        
         
     }
 }
