@@ -38,7 +38,7 @@ typedef void(^UIFBlock)(NSArray *mArray);
 /// 控制方法可执行状态的bool
 @property (assign, nonatomic) BOOL shareManagerB;
 /// 控制方法可执行状态的bool，c
-@property (assign, nonatomic) BOOL shareManagerBc;
+@property (assign, nonatomic) BOOL shareManagerBm;
 
 /// 添加文字评论方法（一级评论）（block参数为空）
 - (void)lcToCommentingWithActivityList:(SWActivityList *)activity commentString:(NSString *)commentString completion:(UIFBlock)completion;
