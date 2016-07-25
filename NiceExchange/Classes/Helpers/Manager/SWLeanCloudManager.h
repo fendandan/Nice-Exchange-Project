@@ -30,9 +30,9 @@ typedef void(^UIFBlock)(NSArray *mArray);
 /// 保存实例对象到云端
 - (void)lcSaveObjectWithAVObject:(AVObject *)object;
 
-/// （根据活动）关注其发布者
+/// （根据活动）关注其发布者（block参数为空）
 - (void)lcToFollowOtherUserWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion;
-/// （根据活动）取消关注其发布者
+/// （根据活动）取消关注其发布者（block参数为空）
 - (void)lcToCancelFollowOtherUserWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion;
 
 /// 控制方法可执行状态的bool
@@ -40,13 +40,13 @@ typedef void(^UIFBlock)(NSArray *mArray);
 /// 控制方法可执行状态的bool，c
 @property (assign, nonatomic) BOOL shareManagerBc;
 
-/// 添加文字评论方法（一级评论）
+/// 添加文字评论方法（一级评论）（block参数为空）
 - (void)lcToCommentingWithActivityList:(SWActivityList *)activity commentString:(NSString *)commentString completion:(UIFBlock)completion;
-/// 查询评论方法（一级评论）
+/// 查询评论方法（一级评论）（block参数为查询结果-可变数组）
 - (void)lcSelectCommentWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion;
-/// 添加文字评论方法（二级评论）
+/// 添加文字评论方法（二级评论）（block参数为空）
 - (void)lcToCommentingWithComment:(SWComment *)fristComment commentString:(NSString *)commentString completion:(UIFBlock)completion;
-/// 查询评论方法（二级评论）
+/// 查询评论方法（二级评论）（block参数为查询结果-可变数组）
 - (void)lcSelectCommentWithComment:(SWComment *)fristComment completion:(UIFBlock)completion;
 
 ///// 批量操作 --- 查询云端表中所有实例对象（请求数据）
