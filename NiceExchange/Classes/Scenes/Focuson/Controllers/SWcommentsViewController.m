@@ -63,7 +63,7 @@ self.commentTableView.rowHeight=UITableViewAutomaticDimension;//这句表示cell
 ////    [self.dataArray addObject:d];
     
    // NSLog(@"%lu",(unsigned long)self.dataArray.count);
-    
+    self.commentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 
@@ -86,7 +86,7 @@ self.commentTableView.rowHeight=UITableViewAutomaticDimension;//这句表示cell
     SWChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.message
     .text = self.dataArray[indexPath.row];
-    
+   
 
     return cell;
     
