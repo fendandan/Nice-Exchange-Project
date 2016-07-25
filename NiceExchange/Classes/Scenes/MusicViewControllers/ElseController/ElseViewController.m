@@ -1,27 +1,27 @@
 //
-//  MovieViewController.m
+//  ElseViewController.m
 //  NiceExchange
 //
-//  Created by Spacewalk on 16/7/18.
+//  Created by Spacewalk on 16/7/24.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
-#import "MovieViewController.h"
-#import "MovieTableViewCell.h"
-@interface MovieViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import "ElseViewController.h"
+#import "ElseTableViewCell.h"
 
+@interface ElseViewController ()<UITableViewDataSource,UITableViewDelegate  >
 @property(nonatomic,strong)UITableView *tableView;
 
 @end
 
-@implementation MovieViewController
+@implementation ElseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor orangeColor];
+    
     
     [self addTableview];
-    
-    
 }
 
 
@@ -36,7 +36,7 @@
     
     self.tableView.dataSource = self;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"MovieTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:MovieTableViewCell_Identifiter];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ElseTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:ElseTableViewCell_Identifiter];
     
     
 }
@@ -54,7 +54,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MovieTableViewCell_Identifiter forIndexPath:indexPath];
+    ElseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ElseTableViewCell_Identifiter forIndexPath:indexPath];
     
     
     
