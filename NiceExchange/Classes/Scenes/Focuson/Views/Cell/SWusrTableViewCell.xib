@@ -37,7 +37,7 @@
                 <outlet property="iconImg" destination="pjx-VH-Pi9" id="1ma-Ty-Fns"/>
                 <outlet property="initiateL" destination="N2s-Bl-VQo" id="Jzf-Sx-hvn"/>
             </connections>
-            <point key="canvasLocation" x="376.5" y="344.5"/>
+            <point key="canvasLocation" x="304.5" y="333.5"/>
         </tableViewCell>
     </objects>
     <resources>

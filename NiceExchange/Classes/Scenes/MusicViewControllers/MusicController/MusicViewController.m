@@ -70,9 +70,9 @@
 //    //分区头视图
     [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
 
-    
+#warning -----
     //请求数据
-    [self MusicRequestData];
+    //[self MusicRequestData];
     
     
     self.musicBtn.selected = YES;

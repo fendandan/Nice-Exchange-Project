@@ -23,6 +23,14 @@
 		CC26E1FB1D3DDD21007FDAEE /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F61D3DDD21007FDAEE /* 3.png */; };
 		CC26E1FC1D3DDD21007FDAEE /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F71D3DDD21007FDAEE /* 4.png */; };
 		CC26E1FD1D3DDD21007FDAEE /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1F81D3DDD21007FDAEE /* 5.png */; };
+		CC3293321D459E990035C32F /* SWcommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3293301D459E990035C32F /* SWcommentsViewController.m */; };
+		CC3293331D459E990035C32F /* SWcommentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3293311D459E990035C32F /* SWcommentsViewController.xib */; };
+		CC3293371D45A3360035C32F /* SWChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3293351D45A3360035C32F /* SWChatTableViewCell.m */; };
+		CC3293381D45A3360035C32F /* SWChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC3293361D45A3360035C32F /* SWChatTableViewCell.xib */; };
+		CC32933A1D45B7C80035C32F /* 评.png in Resources */ = {isa = PBXBuildFile; fileRef = CC3293391D45B7C80035C32F /* 评.png */; };
+		CC32933E1D45BC470035C32F /* SWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC32933C1D45BC470035C32F /* SWViewController.m */; };
+		CC32933F1D45BC470035C32F /* SWViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC32933D1D45BC470035C32F /* SWViewController.xib */; };
+		CC3293411D45BDC00035C32F /* 发送纸飞机.png in Resources */ = {isa = PBXBuildFile; fileRef = CC3293401D45BDC00035C32F /* 发送纸飞机.png */; };
 		CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70831D438ECE00F0909F /* SWCreationViewController.m */; };
 		CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70851D438ECE00F0909F /* SWMessViewController.m */; };
 		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
@@ -413,6 +421,17 @@
 		CC26E1F61D3DDD21007FDAEE /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		CC26E1F71D3DDD21007FDAEE /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
 		CC26E1F81D3DDD21007FDAEE /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		CC32932F1D459E990035C32F /* SWcommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentsViewController.h; sourceTree = "<group>"; };
+		CC3293301D459E990035C32F /* SWcommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcommentsViewController.m; sourceTree = "<group>"; };
+		CC3293311D459E990035C32F /* SWcommentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcommentsViewController.xib; sourceTree = "<group>"; };
+		CC3293341D45A3360035C32F /* SWChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWChatTableViewCell.h; sourceTree = "<group>"; };
+		CC3293351D45A3360035C32F /* SWChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWChatTableViewCell.m; sourceTree = "<group>"; };
+		CC3293361D45A3360035C32F /* SWChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWChatTableViewCell.xib; sourceTree = "<group>"; };
+		CC3293391D45B7C80035C32F /* 评.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评.png"; sourceTree = "<group>"; };
+		CC32933B1D45BC470035C32F /* SWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWViewController.h; sourceTree = "<group>"; };
+		CC32933C1D45BC470035C32F /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
+		CC32933D1D45BC470035C32F /* SWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWViewController.xib; sourceTree = "<group>"; };
+		CC3293401D45BDC00035C32F /* 发送纸飞机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发送纸飞机.png"; sourceTree = "<group>"; };
 		CC3F70821D438ECE00F0909F /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCreationViewController.h; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70831D438ECE00F0909F /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCreationViewController.m; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.m; sourceTree = SOURCE_ROOT; };
 		CC3F70841D438ECE00F0909F /* SWMessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWMessViewController.h; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.h; sourceTree = SOURCE_ROOT; };
@@ -1717,6 +1736,9 @@
 				CCA3B7BD1D3A7C95003361CC /* SWshowViewController.xib */,
 				CC7E0CF01D3D080700313F32 /* SWTableViewController.h */,
 				CC7E0CF11D3D080700313F32 /* SWTableViewController.m */,
+				CC32932F1D459E990035C32F /* SWcommentsViewController.h */,
+				CC3293301D459E990035C32F /* SWcommentsViewController.m */,
+				CC3293311D459E990035C32F /* SWcommentsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1724,7 +1746,9 @@
 		CCA3B7BE1D3A7C95003361CC /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				CC3293401D45BDC00035C32F /* 发送纸飞机.png */,
 				CCA3B7BF1D3A7C95003361CC /* 11.jpg */,
+				CC3293391D45B7C80035C32F /* 评.png */,
 				CCA3B7C01D3A7C95003361CC /* fImage */,
 				CCA3B7C81D3A7C95003361CC /* icon.jpg */,
 				CCA3B7C91D3A7C95003361CC /* ii.jpg */,
@@ -1784,6 +1808,12 @@
 				CC5A3DB51D40EECA00984F1F /* SWCommentsTableViewCell.h */,
 				CC5A3DB61D40EECA00984F1F /* SWCommentsTableViewCell.m */,
 				CC5A3DB71D40EECA00984F1F /* SWCommentsTableViewCell.xib */,
+				CC3293341D45A3360035C32F /* SWChatTableViewCell.h */,
+				CC3293351D45A3360035C32F /* SWChatTableViewCell.m */,
+				CC3293361D45A3360035C32F /* SWChatTableViewCell.xib */,
+				CC32933B1D45BC470035C32F /* SWViewController.h */,
+				CC32933C1D45BC470035C32F /* SWViewController.m */,
+				CC32933D1D45BC470035C32F /* SWViewController.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2016,6 +2046,7 @@
 				CC5A3D361D40C5D200984F1F /* p31b0081.png in Resources */,
 				CC704DF41D3CF5CC00D5A269 /* UMSCommentInputControlleriPad.xib in Resources */,
 				CC5A3DA11D40C5D200984F1F /* p3_b_15.png in Resources */,
+				CC32933A1D45B7C80035C32F /* 评.png in Resources */,
 				CC704E081D3CF5CC00D5A269 /* ios-social-sdk-like.html in Resources */,
 				CC5A3D371D40C5D200984F1F /* p31b0082.png in Resources */,
 				CCA3B7E71D3A7C95003361CC /* SWshowViewController.xib in Resources */,
@@ -2117,6 +2148,7 @@
 				CC5A3DA41D40C5D200984F1F /* p3_b_18.png in Resources */,
 				CC5A3DB01D40C5D200984F1F /* p3_b_8.png in Resources */,
 				CC5A3D121D40C5D200984F1F /* p31b0045.png in Resources */,
+				CC3293411D45BDC00035C32F /* 发送纸飞机.png in Resources */,
 				CC5A3CF21D40C5D200984F1F /* p31b0013.png in Resources */,
 				CC5A3D7F1D40C5D200984F1F /* p31b0154.png in Resources */,
 				CC5A3D081D40C5D200984F1F /* p31b0035.png in Resources */,
@@ -2143,6 +2175,7 @@
 				CC5A3D301D40C5D200984F1F /* p31b0075.png in Resources */,
 				CC5A3CF41D40C5D200984F1F /* p31b0015.png in Resources */,
 				CC5A3D3A1D40C5D200984F1F /* p31b0085.png in Resources */,
+				CC32933F1D45BC470035C32F /* SWViewController.xib in Resources */,
 				CC5A3CE81D40C5D200984F1F /* p31b0003.png in Resources */,
 				CC5A3CF61D40C5D200984F1F /* p31b0017.png in Resources */,
 				CC6EF9041D368561000A9B44 /* Picture.png in Resources */,
@@ -2188,6 +2221,7 @@
 				CC704E0B1D3CF5CC00D5A269 /* ios-social-sdk-shake.html in Resources */,
 				CC592B691D3F16CB002CD37D /* 333.png in Resources */,
 				CC5A3D141D40C5D200984F1F /* p31b0047.png in Resources */,
+				CC3293381D45A3360035C32F /* SWChatTableViewCell.xib in Resources */,
 				CCA3B7EF1D3A7C95003361CC /* 返回.png in Resources */,
 				CC5A3DAD1D40C5D200984F1F /* p3_b_5.png in Resources */,
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
@@ -2214,6 +2248,7 @@
 				CC704E001D3CF5CC00D5A269 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				CC5A3D291D40C5D200984F1F /* p31b0068.png in Resources */,
 				CC704DF71D3CF5CC00D5A269 /* UMSLoginViewController.xib in Resources */,
+				CC3293331D459E990035C32F /* SWcommentsViewController.xib in Resources */,
 				CC5A3D9F1D40C5D200984F1F /* p3_b_13.png in Resources */,
 				CC5A3DAE1D40C5D200984F1F /* p3_b_6.png in Resources */,
 				CC5A3CE91D40C5D200984F1F /* p31b0004.png in Resources */,
@@ -2319,6 +2354,7 @@
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
 				CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */,
 				D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */,
+				CC32933E1D45BC470035C32F /* SWViewController.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
 				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,
 				CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */,
@@ -2359,6 +2395,7 @@
 				CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */,
 				CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */,
 				CCA3B7F91D3A7C95003361CC /* SWFridenSharOnTableViewCell.m in Sources */,
+				CC3293321D459E990035C32F /* SWcommentsViewController.m in Sources */,
 				CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */,
 				CCAC398A1D3BA65300CCE229 /* BaseManager.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
@@ -2367,6 +2404,7 @@
 				CC9BFC3D1D40C3B500F40EF6 /* SWCount.m in Sources */,
 				CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */,
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
+				CC3293371D45A3360035C32F /* SWChatTableViewCell.m in Sources */,
 				CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */,
 				CCA3B7E61D3A7C95003361CC /* SWshowViewController.m in Sources */,
 				CC5A674C1D35F71B008AE01A /* main.m in Sources */,

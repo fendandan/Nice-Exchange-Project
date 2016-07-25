@@ -88,6 +88,10 @@
 - (IBAction)commentsLClick:(id)sender {
     
     
+    
+    [self.commentsL addTarget:self action:@selector(touchAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    
     if (self.touch == 0) {
         [self.commentsL setTitleColor:[UIColor cyanColor] forState:0];
         self.commentsL.tintColor = [UIColor cyanColor];
@@ -109,6 +113,18 @@
     
     
 }
+
+-(void) touchAction:(UIButton *)sender {
+    
+    
+    if ([self.commentDelegate respondsToSelector:@selector(onAction)]) {
+        
+        [self.commentDelegate onAction];
+    }
+    
+    
+}
+
 
 - (IBAction)focusChage:(UIButton *)sender {
     
