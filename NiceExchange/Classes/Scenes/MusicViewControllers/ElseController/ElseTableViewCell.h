@@ -21,6 +21,8 @@
 
 - (void)elseTableViewCollectBtnClikend:(ElseTableViewCell *)cell;
 
+- (void)elseTableViewparticipationBtnClikend:(ElseTableViewCell *)cell;
+
 @end
 
 

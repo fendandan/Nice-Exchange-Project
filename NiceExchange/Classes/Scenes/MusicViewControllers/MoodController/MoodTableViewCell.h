@@ -21,6 +21,7 @@
 
 - (void)moodTableViewCollectBtnClikend:(MoodTableViewCell *)cell;
 
+- (void)moodTableViewparticipationBtnClikend:(MoodTableViewCell *)cell;
 
 @end
 

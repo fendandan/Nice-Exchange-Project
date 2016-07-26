@@ -75,26 +75,24 @@
     cell.delegate = self;
     
 
+    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
+        cell.attentionBtn.selected = YES;
+    }
     
     
-//    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
-//        cell.attentionBtn.selected = YES;
-//    }
-//    
-//    
-//    SWActivityList *activity = self.dataArray[indexPath.row];
-//    
-//    cell.titleLabel.text = activity.title;
-//    [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
-//    
-//    [cell.ImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
-//    
-//    if (activity.createBy.displayName) {
-//        [cell.UserNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
-//    }else {
-//        
-//        [cell.UserNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
-//    }
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    cell.titleLabel.text = activity.title;
+    [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
+    
+    [cell.ImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
+    
+    if (activity.createBy.displayName) {
+        [cell.UserNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+    }else {
+        
+        [cell.UserNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+    }
     
     
     return cell;
@@ -220,6 +218,13 @@
 }
 
 
+//点击参与
+- (void)readTableViewparticipationBtnClikend:(ReadTableViewCell *)cell
+{
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    
+    [self.navigationController pushViewController:showVC animated:YES];
+}
 
 
 //cell 的点击事件

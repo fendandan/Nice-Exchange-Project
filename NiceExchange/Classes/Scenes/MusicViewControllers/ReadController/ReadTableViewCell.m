@@ -43,6 +43,16 @@
 }
 
 
+//参与按钮
+- (IBAction)participationBtn:(UIButton *)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(readTableViewparticipationBtnClikend:)]) {
+        
+        [_delegate readTableViewparticipationBtnClikend:self];
+    }
+    
+    
+}
 
 
 

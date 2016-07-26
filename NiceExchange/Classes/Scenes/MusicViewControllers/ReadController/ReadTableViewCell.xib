@@ -61,6 +61,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhU-Ei-cSP">
                                 <rect key="frame" x="309" y="114" width="45" height="20"/>
                                 <state key="normal" title="参与"/>
+                                <connections>
+                                    <action selector="participationBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CF5-ha-UXq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>

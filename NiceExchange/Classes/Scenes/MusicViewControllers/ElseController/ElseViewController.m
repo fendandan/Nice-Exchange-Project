@@ -197,6 +197,13 @@
 }
 
 
+//参与的点击事件
+- (void)elseTableViewparticipationBtnClikend:(ElseTableViewCell *)cell
+{
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    
+    [self.navigationController pushViewController:showVC animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

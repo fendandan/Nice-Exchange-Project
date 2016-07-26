@@ -21,6 +21,8 @@
 
 - (void)movieTableViewCollectBtnClickend:(MovieTableViewCell *)cell;
 
+- (void)movieTableViewparticipationBtnClikend:(MovieTableViewCell *)cell;
+
 @end
 
 

@@ -44,6 +44,11 @@
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(moodTableViewparticipationBtnClikend:)]) {
+        [_delegate moodTableViewparticipationBtnClikend:self];
+    }
+
 }
 
 

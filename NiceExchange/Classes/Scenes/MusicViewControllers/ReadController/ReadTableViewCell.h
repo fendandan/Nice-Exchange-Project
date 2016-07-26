@@ -14,13 +14,20 @@
 
 @protocol ReadTableViewCellDelegate<NSObject>
 
+//关注
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell;
 
+//用户头像
 - (void)readTableViewPlayImageViewClickend:(ReadTableViewCell *)cell;
 
+//用户名
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell;
 
+//收藏
 - (void)readTableViewCollectBtnClikend:(ReadTableViewCell *)cell;
+
+//参与
+- (void)readTableViewparticipationBtnClikend:(ReadTableViewCell *)cell;
 
 @end
 

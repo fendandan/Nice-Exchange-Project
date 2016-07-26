@@ -44,6 +44,12 @@
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(movieTableViewparticipationBtnClikend:)]) {
+        
+        [_delegate movieTableViewparticipationBtnClikend:self];
+        
+    } 
 }
 
 
