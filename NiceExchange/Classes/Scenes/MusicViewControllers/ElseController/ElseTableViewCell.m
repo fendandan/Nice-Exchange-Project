@@ -34,6 +34,10 @@
 
 - (IBAction)collectBtn:(UIButton *)sender {
     
+    if (_delegate && [_delegate respondsToSelector:@selector(elseTableViewCollectBtnClikend:)]) {
+        
+        [_delegate elseTableViewCollectBtnClikend:self];
+    }
     
 }
 

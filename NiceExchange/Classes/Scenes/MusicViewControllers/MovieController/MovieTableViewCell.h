@@ -19,12 +19,16 @@
 
 - (void)movieTableViewUserNameBtnClickend:(MovieTableViewCell *)cell;
 
+- (void)movieTableViewCollectBtnClickend:(MovieTableViewCell *)cell;
+
 @end
 
 
 @interface MovieTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *ImageView;
+
+@property (strong, nonatomic) IBOutlet UIButton *userNameBtn;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 

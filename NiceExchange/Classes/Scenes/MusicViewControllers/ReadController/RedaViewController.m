@@ -10,6 +10,7 @@
 #import "ReadTableViewCell.h"
 #import "SWUserDetailViewController.h"
 #import "SWshowViewController.h"
+#import "SWFridenSharOnTableViewCell.h"
 
 @interface RedaViewController ()
 <
@@ -76,24 +77,24 @@
 
     
     
-    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
-        cell.attentionBtn.selected = YES;
-    }
-    
-    
-    SWActivityList *activity = self.dataArray[indexPath.row];
-    
-    cell.titleLabel.text = activity.title;
-    [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
-    
-    [cell.ImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
-    
-    if (activity.createBy.displayName) {
-        [cell.UserNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
-    }else {
-        
-        [cell.UserNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
-    }
+//    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
+//        cell.attentionBtn.selected = YES;
+//    }
+//    
+//    
+//    SWActivityList *activity = self.dataArray[indexPath.row];
+//    
+//    cell.titleLabel.text = activity.title;
+//    [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
+//    
+//    [cell.ImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
+//    
+//    if (activity.createBy.displayName) {
+//        [cell.UserNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+//    }else {
+//        
+//        [cell.UserNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+//    }
     
     
     return cell;
@@ -124,6 +125,8 @@
         });
     }];
 }
+
+
 
 #pragma mark --- ReadTableViewCellDelegate
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell
@@ -207,15 +210,43 @@
 
 
 
+//点击收藏
+- (void)readTableViewCollectBtnClikend:(ReadTableViewCell *)cell
+{
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    
+    [self.navigationController pushViewController:showVC animated:YES];
+    
+}
+
+
+
 
 //cell 的点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SWshowViewController *swshowVC = [SWshowViewController new];
+    SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_tableView cellForRowAtIndexPath:indexPath];
     
+    SWshowViewController *swshowVC = [[SWshowViewController alloc] init];
+    
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    swshowVC.activity = activity;
+    
+    if (activity.createBy.displayName) {
+        swshowVC.string = activity.createBy.displayName;
+    }else {
+        swshowVC.string = activity.createBy.username;
+    }
+    swshowVC.titlestring = activity.createBy.userImage.url;
+//    swshowVC.dataImage = cell.detailImv.image;
     
     [self.navigationController pushViewController:swshowVC animated:YES];
+    self.rootVC.swTabBar.hidden = YES;
 }
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

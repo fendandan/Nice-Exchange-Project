@@ -33,7 +33,11 @@
 
 - (IBAction)collectBtn:(UIButton *)sender {
     
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(movieTableViewCollectBtnClickend:)]) {
+        
+        [_delegate movieTableViewCollectBtnClickend:self];
+        
+    }
     
     
 }

@@ -14,48 +14,54 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="192"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-1N-pGx">
-                        <rect key="frame" x="332" y="11" width="60" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXq-pR-AUG">
+                        <rect key="frame" x="332" y="7" width="60" height="30"/>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <state key="normal" title="关注"/>
                         <state key="selected" title="已关注"/>
                         <connections>
-                            <action selector="attentionBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="www-ME-ylZ"/>
+                            <action selector="attentionBtnAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DN3-GB-5QY"/>
                         </connections>
                     </button>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gy-fi-3af">
-                        <rect key="frame" x="22" y="49" width="370" height="142"/>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kRp-Q1-lCc">
+                        <rect key="frame" x="22" y="47" width="370" height="142"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="3zf-Y6-PC5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="93u-s4-lMg">
                                 <rect key="frame" x="0.0" y="0.0" width="370" height="142"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfO-3S-2ST">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ok-oQ-sV4">
                                 <rect key="frame" x="0.0" y="0.0" width="370" height="1"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8z4-YD-VzN">
-                                <rect key="frame" x="309" y="114" width="45" height="20"/>
-                                <state key="normal" title="参与"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdc-Oj-nVb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EV7-5f-veF">
                                 <rect key="frame" x="294" y="114" width="13" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1P-Qo-O12">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNe-LV-FrL">
                                 <rect key="frame" x="248" y="113" width="45" height="20"/>
                                 <state key="normal" title="收藏"/>
                                 <connections>
-                                    <action selector="collectBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ir7-SZ-7TV"/>
+                                    <action selector="collectBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bzA-wb-dzu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyT-tT-qed">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiE-em-roC">
                                 <rect key="frame" x="351" y="114" width="11" height="19"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSU-Jt-1Q7">
+                                <rect key="frame" x="8" y="29" width="354" height="68"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhU-Ei-cSP">
+                                <rect key="frame" x="309" y="114" width="45" height="20"/>
+                                <state key="normal" title="参与"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
@@ -65,8 +71,8 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2.png" translatesAutoresizingMaskIntoConstraints="NO" id="lgs-pd-c4q">
-                        <rect key="frame" x="22" y="8" width="38" height="38"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2.png" translatesAutoresizingMaskIntoConstraints="NO" id="xtH-Ac-xzg">
+                        <rect key="frame" x="22" y="4" width="38" height="38"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -75,32 +81,33 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="york 发起了沙龙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMV-Wa-QlN">
-                        <rect key="frame" x="127" y="14" width="139" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="york 发起了沙龙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLj-Vf-3H8">
+                        <rect key="frame" x="127" y="10" width="139" height="24"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRJ-ZF-3dN">
-                        <rect key="frame" x="68" y="14" width="45" height="23"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWn-Zb-GI3">
+                        <rect key="frame" x="68" y="10" width="45" height="23"/>
                         <state key="normal" title="用户名"/>
                         <connections>
-                            <action selector="userNameBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="9Sd-Ya-psY"/>
+                            <action selector="userNameBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="04w-Kw-O0n"/>
                         </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="BackGroundImageView" destination="3zf-Y6-PC5" id="GA2-kq-LXq"/>
-                <outlet property="ImageView" destination="lgs-pd-c4q" id="PRd-ZU-mgF"/>
-                <outlet property="UserNameBtn" destination="gRJ-ZF-3dN" id="ALX-Z7-sDL"/>
-                <outlet property="attentionBtn" destination="yBb-1N-pGx" id="quv-x9-VGc"/>
-                <outlet property="collectBtn" destination="d1P-Qo-O12" id="JP6-tA-Ue7"/>
-                <outlet property="collectLabel" destination="cdc-Oj-nVb" id="T0Z-UJ-Mxo"/>
-                <outlet property="participationBtn" destination="8z4-YD-VzN" id="cOy-dq-U21"/>
-                <outlet property="participationLabel" destination="UyT-tT-qed" id="Nyo-0j-hhZ"/>
-                <outlet property="titleLabel" destination="VMV-Wa-QlN" id="hii-gW-TFu"/>
+                <outlet property="BackGroundImageView" destination="93u-s4-lMg" id="YIX-GF-gPg"/>
+                <outlet property="ImageView" destination="xtH-Ac-xzg" id="fh4-Kg-y0P"/>
+                <outlet property="UserNameBtn" destination="bWn-Zb-GI3" id="cdG-hB-N4f"/>
+                <outlet property="attentionBtn" destination="HXq-pR-AUG" id="jtB-3o-eCB"/>
+                <outlet property="collectBtn" destination="bNe-LV-FrL" id="910-K3-F9v"/>
+                <outlet property="collectLabel" destination="EV7-5f-veF" id="Y54-6K-bA7"/>
+                <outlet property="participationBtn" destination="YhU-Ei-cSP" id="27L-wP-iwv"/>
+                <outlet property="participationLabel" destination="eiE-em-roC" id="98H-BB-UnV"/>
+                <outlet property="subheadingLabel" destination="iSU-Jt-1Q7" id="AzO-bF-wTs"/>
+                <outlet property="titleLabel" destination="ZLj-Vf-3H8" id="Hph-is-AcP"/>
             </connections>
             <point key="canvasLocation" x="273" y="207.5"/>
         </tableViewCell>

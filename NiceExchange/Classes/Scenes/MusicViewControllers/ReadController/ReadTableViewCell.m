@@ -7,7 +7,7 @@
 //
 
 #import "ReadTableViewCell.h"
-
+#import "SWshowViewController.h"
 
 @implementation ReadTableViewCell
 
@@ -17,10 +17,7 @@
         
         [_delegate readTableViewPlayBtnClickend:self];
         
-        
     }
-    
-    
 }
 
 
@@ -38,10 +35,11 @@
 //收藏按钮
 - (IBAction)collectBtn:(UIButton *)sender {
     
-    
-    
-    
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(readTableViewCollectBtnClikend:)]) {
+        
+        [_delegate readTableViewCollectBtnClikend:self];
+        
+    }
 }
 
 
