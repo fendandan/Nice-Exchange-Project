@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface SWLoginViewController : BaseViewController
-
+@property (nonatomic,assign)BOOL isMod;
 @end

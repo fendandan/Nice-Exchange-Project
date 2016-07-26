@@ -21,8 +21,22 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self createRegisterView];
+    if (self.isMod) {
+        UIView *headview = [[UIView alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, 60)];
+        headview.backgroundColor = [UIColor cyanColor];
+        [self.view addSubview:headview];
+        UIButton *button = [UIButton buttonWithType:(UIButtonTypeCustom)];
+        button.frame = CGRectMake(10, 30, 60, 40);
+        [button setTitle:@"返回" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(buttonClicak:) forControlEvents:(UIControlEventTouchUpInside)];
+        [self.view addSubview:button];
+        
+    }
 }
-
+- (void)buttonClicak:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)createRegisterView{
     self.lrView = [[SWCertificationView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight * 2 / 3)];
     [self.view addSubview:self.lrView];
