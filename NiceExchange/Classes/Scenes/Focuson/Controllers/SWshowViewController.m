@@ -107,10 +107,7 @@
     
   self.view.backgroundColor = [UIColor colorWithRed:78/256.0 green:78/256.0 blue:78/256.0 alpha:1.0];
     
-  
-    
-    
-    
+
     
     //**
     self.collectionScrollView.delegate = self;
