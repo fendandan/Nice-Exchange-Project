@@ -30,7 +30,10 @@
     self.SecondBlock(self.textViewL.text);
     [self.navigationController popViewControllerAnimated:YES];
   
-    
+
+//    
+//    LCManager lcToCommentingWithComment:<#(SWComment *)#> commentString:<#(NSString *)#> completion:<#^(NSArray *mArray)completion#>];
+ 
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

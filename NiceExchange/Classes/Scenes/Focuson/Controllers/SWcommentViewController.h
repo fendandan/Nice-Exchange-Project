@@ -26,4 +26,14 @@
 @property (nonatomic,strong) NSString *bqL;
 
 @property (nonatomic,strong)NSString * aaa;
+
+
+#warning  Blokc传值 第一步:声明Block
+
+@property (nonatomic,copy) void(^SecondBlock)(SWComment *string);
+
+
+@property (nonatomic,strong) SWActivityList *swActivityList;
+
+
 @end

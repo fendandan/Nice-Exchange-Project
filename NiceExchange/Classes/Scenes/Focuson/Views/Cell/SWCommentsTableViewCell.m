@@ -144,6 +144,40 @@
 
     
 }
+#warning -------------
+- (void)setComment:(SWComment *)comment {
+    
+    if (_comment !=comment) {
+        _comment = nil;
+        _comment = comment;
+        
+        self.commentLLL.text = comment.commentContent;
+        NSLog(@"----------- %@", comment.commentBy.objectId);
+        AVQuery *aQ = [AVQuery queryWithClassName:@"_User"];
+        //        [aQ includeKey:@"userImage"];
+        [aQ whereKey:@"objectId" equalTo:comment.commentBy.objectId];
+        [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            SWLcAvUSer *user = (SWLcAvUSer *)objects[0];
+            
+            
+            AVFile *ff = [AVFile fileWithURL:user.userImage.url];
+            
+           
+            self.userNL.text = user.username;
+            NSLog(@"++++++++ %@ %@", user.username, self.userNL);
+            [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+                [self.iconimv  setImage:image forState:(UIControlStateNormal)];
+            
+            }];
+        }];
+
+        
+        
+    }
+    
+    
+    
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

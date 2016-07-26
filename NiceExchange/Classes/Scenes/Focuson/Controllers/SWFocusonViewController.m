@@ -182,11 +182,16 @@
     cell.friendDelegate = self;
     
     SWActivityList *list = self.dataArray[indexPath.row];
-    
+    /**
+     *  //////////////////////
+     */
     if (list.createBy.displayName) {
         cell.FriendName.text =list.createBy.displayName;
+       
     }else {
         cell.FriendName.text =list.createBy.username;
+        
+         NSLog(@"3434454565667788990876543    BGVC HNYDSXJUKHJYCV JKL,V L  %@",list.createBy.username);
     }
     cell.title.text = list.title;
     [cell.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];

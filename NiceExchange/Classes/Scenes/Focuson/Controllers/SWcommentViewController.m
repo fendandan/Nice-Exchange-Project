@@ -7,9 +7,11 @@
 //
 
 #import "SWcommentViewController.h"
-
-@interface SWcommentViewController ()<UITextViewDelegate>
-
+#import "SWshowViewController.h"
+@interface SWcommentViewController ()<UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+///
+@property (nonatomic,strong)UIImagePickerController *ImagePickerController;
+@property(nonatomic,strong)NSTextAttachment *NSTextAttachment;
 @end
 
 @implementation SWcommentViewController
@@ -30,6 +32,9 @@
     self.titleL.text = self.detailll;
     self.detailL.text = self.aaa;
     self.bqLLLLL.text= self.bqL;
+    self.ImagePickerController = [[UIImagePickerController alloc]init];
+    self.ImagePickerController.delegate = self;
+    
 }
 
 -(void)tollBar {
@@ -69,7 +74,10 @@
 }
 //添加图片
 -(void)addPhoto {
-    
+    _ImagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+  
+    [self  presentViewController:_ImagePickerController animated:YES completion:^{
+    }];
     
 }
 - (void)textViewDidBeginEditing:(UITextView *)textView {
@@ -101,17 +109,90 @@
 -(void)publishedAction:(UIBarButtonItem *)sender {
 
     //评论
-    NSLog(@"发表评论");
+#warning Blokc传值 第二步:返回要传递的内容
+
+#warning ------------
+
+    
+     [LCManager lcToCommentingWithActivityList:self.swActivityList commentString:self.textView.text completion:^(NSArray *mArray) {
+         SWComment *comment = [SWComment object];
+         
+         comment.commentBy = [SWLcAvUSer currentUser];
+         comment.commentContent = self.textView.text;
+         self.SecondBlock(comment);
+       
+         [self.navigationController popViewControllerAnimated:YES];
+         NSLog(@"发表评论");
+         
+         
+     }];
+}
+
+ 
+
+
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSLog(@"%@", info);
+    UIImageView  *imageView = (UIImageView *)[self.view viewWithTag:101];
+    // UIImagePickerControllerOriginalImage 原始图片
+    // UIImagePickerControllerEditedImage 编辑后图片
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //
+
+    // textview add image
+  
+    
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithAttributedString:self.textView.attributedText];
+    
+   self.NSTextAttachment = [[NSTextAttachment alloc] initWithData:nil ofType:nil] ;
+    UIImage *image1  = image;
+   [self scaleToSize:image1 size:CGSizeMake(10, 10)];
+    _NSTextAttachment.image = image1;
+    
+    NSAttributedString *textAttachmentString = [NSAttributedString attributedStringWithAttachment: _NSTextAttachment] ;
+    
+    [string insertAttributedString:textAttachmentString atIndex:0];//index为用户指定要插入图片的位置
+    
+    self.textView.attributedText = string;
+  
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+- (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)size{
+    
+    // 创建一个bitmap的context
+    
+    // 并把它设置成为当前正在使用的context
+    
+    UIGraphicsBeginImageContext(size);
+    
+    // 绘制改变大小的图片
+    
+    [img drawInRect:CGRectMake(0,0, 1, 1)];
+    
+    // 从当前context中创建一个改变大小后的图片
+    
+    UIImage* scaledImage =UIGraphicsGetImageFromCurrentImageContext();
+    // 使当前的context出堆栈
+    
+    UIGraphicsEndImageContext();
+    
+    //返回新的改变大小后的图片
+    
+    return scaledImage;
+    
 }
 
 
 
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
+
 
 /*
 #pragma mark - Navigation
