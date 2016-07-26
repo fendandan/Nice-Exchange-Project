@@ -181,12 +181,20 @@ UINavigationControllerDelegate
         SWActivityList *activity = [SWActivityList object];
         activity.title = self.titleTF.text;
         activity.content = self.textView.textView.text;
+        activity.subhead = @"副标题"; // 副标题
         NSData *data = UIImageJPEGRepresentation(self.photoimageView.image, 0.5);
         AVFile *file = [AVFile fileWithName:@"title.jpg" data:data];
         [activity setObject:file forKey:@"titleImage"];
+        activity.rule = self.addrule.string; // 规则
+        activity.label = self.addtageButton.titleLabel.text; // 标签
+        activity.point = [AVGeoPoint geoPointWithLatitude:39.6 longitude:40]; // 坐标
+        activity.markC = @0; // 收藏数累计，默认0
+        [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
         [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 SWLog(@"%d",succeeded);
+                self.titleTF.text = nil;
+                self.textView.textView.text = nil;
             }
         }];
     }

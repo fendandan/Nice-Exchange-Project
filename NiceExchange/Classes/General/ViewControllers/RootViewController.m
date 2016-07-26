@@ -91,8 +91,7 @@
     //
     
         [self getFollowInfo]; // 获取用户关注信息
-    
-    NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"User" title:@"我的"]];
+     NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"Release" title:nil],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"User" title:@"我的"]];
     
   self.swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];
   self.swTabBar.swDelegete = self; // 代理
@@ -105,11 +104,13 @@
     
   
     SWNavigationViewController *swNVCfir = [[SWNavigationViewController alloc] initWithRootViewController:[MusicViewController new]];
-    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[SWCreationViewController new]];
+    SWNavigationViewController *swNVCsec = [[SWNavigationViewController alloc] initWithRootViewController:[SWMessViewController new]];
     SWNavigationViewController *swNVCThr = [[SWNavigationViewController alloc] initWithRootViewController:[SWFocusonViewController new]];
     SWNavigationViewController *swNVCFou = [[SWNavigationViewController alloc] initWithRootViewController:[MyViewController new]];
+    SWNavigationViewController *swNVCFive = [[SWNavigationViewController alloc] initWithRootViewController:[SWCreationViewController new]];
+    
+    self.viewControllers = @[swNVCfir,swNVCThr,swNVCFive,swNVCsec,swNVCFou];
 
-    self.viewControllers = @[swNVCfir,swNVCsec,swNVCThr,swNVCFou];
 }
 
 // 创建button

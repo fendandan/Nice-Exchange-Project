@@ -8,11 +8,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SWshowViewController">
             <connections>
+                <outlet property="biaoQL" destination="KE1-SQ-5B9" id="EFV-zd-p4M"/>
                 <outlet property="collectionScrollView" destination="Kxr-8S-W46" id="gm3-e6-tJZ"/>
                 <outlet property="contL" destination="ebr-0c-LMb" id="tCf-UQ-kqw"/>
+                <outlet property="detail" destination="0P0-ad-YqP" id="vCr-tA-wgs"/>
                 <outlet property="icon" destination="mps-MK-DwU" id="7cm-Ee-LuS"/>
+                <outlet property="imageV" destination="75S-k7-hkk" id="yig-f5-NPc"/>
+                <outlet property="imagedddddd" destination="V20-4E-OVz" id="Qqq-Ty-gi1"/>
                 <outlet property="stView" destination="okT-bR-jD1" id="YHW-cH-T0m"/>
+                <outlet property="titleL" destination="ri5-8J-YPl" id="LP8-h4-5Cc"/>
+                <outlet property="userName" destination="jEt-YJ-UnZ" id="3Wi-Gn-lUo"/>
                 <outlet property="view" destination="kXp-v4-lkT" id="usP-3Y-ZdC"/>
+                <outlet property="xzLable" destination="1yz-bT-8bg" id="rZ1-qQ-DjK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -103,19 +110,13 @@
                                     <color key="backgroundColor" red="1" green="0.0" blue="0.092125669189999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="248" text="一起聊聊" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yz-bT-8bg">
-                                    <rect key="frame" x="167" y="406" width="66" height="30"/>
+                                    <rect key="frame" x="167" y="410" width="66" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="所以今天再跟大家讨论有关自己的小物的话题，带来了我的黄铜花盆和黄铜笔架。 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoI-Bf-J32">
-                                    <rect key="frame" x="8" y="444" width="398" height="14"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image.png" translatesAutoresizingMaskIntoConstraints="NO" id="75S-k7-hkk">
-                                    <rect key="frame" x="1" y="466" width="413" height="267"/>
+                                    <rect key="frame" x="1" y="446" width="413" height="267"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="乐活" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE1-SQ-5B9">
                                     <rect key="frame" x="179" y="93" width="42" height="24"/>
@@ -124,8 +125,8 @@
                                     <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-0c-LMb">
-                                    <rect key="frame" x="3" y="741" width="411" height="18"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebr-0c-LMb">
+                                    <rect key="frame" x="3" y="721" width="411" height="350"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="411" id="pfU-oB-ROo"/>
                                     </constraints>
@@ -152,12 +153,10 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="nZC-8T-EbR" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" constant="142" id="0Rw-Kf-Xpj"/>
-                                <constraint firstItem="1yz-bT-8bg" firstAttribute="top" secondItem="Obl-cu-hZv" secondAttribute="bottom" constant="8" id="1Z5-8g-uxG"/>
                                 <constraint firstItem="V20-4E-OVz" firstAttribute="leading" secondItem="Vk1-FL-Zle" secondAttribute="leading" id="43B-di-twQ"/>
                                 <constraint firstItem="ebr-0c-LMb" firstAttribute="top" secondItem="75S-k7-hkk" secondAttribute="bottom" constant="8" id="5O2-J8-uqN"/>
-                                <constraint firstAttribute="trailing" secondItem="SoI-Bf-J32" secondAttribute="trailing" constant="8" id="788-Rb-GNb"/>
-                                <constraint firstItem="75S-k7-hkk" firstAttribute="top" secondItem="SoI-Bf-J32" secondAttribute="bottom" constant="8" id="7bs-5f-s1N"/>
                                 <constraint firstItem="nZC-8T-EbR" firstAttribute="top" secondItem="0P0-ad-YqP" secondAttribute="bottom" constant="138" id="84r-qs-whO"/>
+                                <constraint firstItem="75S-k7-hkk" firstAttribute="top" secondItem="1yz-bT-8bg" secondAttribute="bottom" constant="18" id="8a6-1T-QdT"/>
                                 <constraint firstItem="Vk1-FL-Zle" firstAttribute="top" secondItem="V20-4E-OVz" secondAttribute="bottom" constant="40" id="9WL-FD-4dj"/>
                                 <constraint firstItem="75S-k7-hkk" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" constant="1" id="9mI-dQ-90R"/>
                                 <constraint firstAttribute="trailing" secondItem="Obl-cu-hZv" secondAttribute="trailing" constant="193" id="B7i-C0-rTf"/>
@@ -169,10 +168,8 @@
                                 <constraint firstItem="ri5-8J-YPl" firstAttribute="top" secondItem="okT-bR-jD1" secondAttribute="top" constant="125" id="Jow-QT-Xzm"/>
                                 <constraint firstItem="ebr-0c-LMb" firstAttribute="top" secondItem="75S-k7-hkk" secondAttribute="bottom" constant="8" id="KDI-j1-jgl"/>
                                 <constraint firstItem="ri5-8J-YPl" firstAttribute="top" secondItem="KE1-SQ-5B9" secondAttribute="bottom" constant="8" symbolic="YES" id="LI2-x6-W5n"/>
-                                <constraint firstItem="SoI-Bf-J32" firstAttribute="top" secondItem="1yz-bT-8bg" secondAttribute="bottom" constant="8" id="N2m-E9-eLQ"/>
                                 <constraint firstItem="KE1-SQ-5B9" firstAttribute="leading" secondItem="Obl-cu-hZv" secondAttribute="leading" id="PcH-RH-l6z"/>
                                 <constraint firstItem="ebr-0c-LMb" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" constant="3" id="QZW-Uh-73Z"/>
-                                <constraint firstItem="75S-k7-hkk" firstAttribute="top" secondItem="SoI-Bf-J32" secondAttribute="bottom" constant="8" id="RCe-66-Kd1"/>
                                 <constraint firstItem="arb-zz-CCM" firstAttribute="top" secondItem="ri5-8J-YPl" secondAttribute="bottom" constant="17" id="RDB-og-5YN"/>
                                 <constraint firstItem="0P0-ad-YqP" firstAttribute="top" secondItem="V20-4E-OVz" secondAttribute="bottom" id="RZp-27-jqr"/>
                                 <constraint firstItem="arb-zz-CCM" firstAttribute="leading" secondItem="cgT-cB-jW2" secondAttribute="trailing" constant="52" id="Rw4-TI-872"/>
@@ -184,7 +181,6 @@
                                 <constraint firstAttribute="trailing" secondItem="jEt-YJ-UnZ" secondAttribute="trailing" constant="185" id="cfn-KK-BF6"/>
                                 <constraint firstItem="V20-4E-OVz" firstAttribute="leading" secondItem="0P0-ad-YqP" secondAttribute="leading" id="dcM-lv-yNI"/>
                                 <constraint firstItem="KE1-SQ-5B9" firstAttribute="top" secondItem="okT-bR-jD1" secondAttribute="top" constant="93" id="djG-hV-DKd"/>
-                                <constraint firstItem="SoI-Bf-J32" firstAttribute="top" secondItem="cyM-hG-86n" secondAttribute="bottom" constant="8" id="g04-V9-EV1"/>
                                 <constraint firstAttribute="trailing" secondItem="cyM-hG-86n" secondAttribute="trailing" constant="155" id="gfw-ag-bpk"/>
                                 <constraint firstItem="0P0-ad-YqP" firstAttribute="top" secondItem="arb-zz-CCM" secondAttribute="bottom" constant="18" id="h3c-y7-FHa"/>
                                 <constraint firstItem="V20-4E-OVz" firstAttribute="top" secondItem="okT-bR-jD1" secondAttribute="top" constant="19" id="i7S-0b-hz1"/>
@@ -193,13 +189,11 @@
                                 <constraint firstItem="arb-zz-CCM" firstAttribute="baseline" secondItem="cgT-cB-jW2" secondAttribute="baseline" id="jTO-yY-174"/>
                                 <constraint firstItem="1yz-bT-8bg" firstAttribute="top" secondItem="Obl-cu-hZv" secondAttribute="bottom" constant="8" id="jYU-3g-iSu"/>
                                 <constraint firstItem="ri5-8J-YPl" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" constant="66" id="pCm-Tj-HAu"/>
+                                <constraint firstItem="1yz-bT-8bg" firstAttribute="top" secondItem="Obl-cu-hZv" secondAttribute="bottom" constant="12" id="pFS-io-e2W"/>
                                 <constraint firstItem="cyM-hG-86n" firstAttribute="leading" secondItem="1yz-bT-8bg" secondAttribute="trailing" constant="1" id="qSs-dj-HEt"/>
                                 <constraint firstItem="V20-4E-OVz" firstAttribute="centerX" secondItem="ri5-8J-YPl" secondAttribute="centerX" id="rXb-Us-d4N"/>
                                 <constraint firstAttribute="trailing" secondItem="0P0-ad-YqP" secondAttribute="trailing" id="rZp-2A-KWE"/>
-                                <constraint firstItem="SoI-Bf-J32" firstAttribute="top" secondItem="1yz-bT-8bg" secondAttribute="bottom" constant="8" id="t17-eZ-bZO"/>
                                 <constraint firstItem="Obl-cu-hZv" firstAttribute="top" secondItem="jEt-YJ-UnZ" secondAttribute="bottom" constant="20" id="t5q-gO-uda"/>
-                                <constraint firstItem="SoI-Bf-J32" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" constant="8" id="u0y-EA-7Nu"/>
-                                <constraint firstItem="SoI-Bf-J32" firstAttribute="top" secondItem="nZC-8T-EbR" secondAttribute="bottom" constant="8" id="ufX-rz-erU"/>
                                 <constraint firstItem="0P0-ad-YqP" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" id="v2g-Ct-wwC"/>
                                 <constraint firstAttribute="trailing" secondItem="75S-k7-hkk" secondAttribute="trailing" id="vnW-06-AN0"/>
                                 <constraint firstAttribute="bottom" secondItem="Vk1-FL-Zle" secondAttribute="bottom" constant="1231" id="w8z-bZ-YuI"/>
@@ -209,6 +203,11 @@
                                 <constraint firstItem="mps-MK-DwU" firstAttribute="leading" secondItem="okT-bR-jD1" secondAttribute="leading" constant="175" id="z8F-Vg-nkV"/>
                                 <constraint firstItem="1yz-bT-8bg" firstAttribute="leading" secondItem="nZC-8T-EbR" secondAttribute="trailing" id="zl3-qJ-iqe"/>
                             </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="jYU-3g-iSu"/>
+                                </mask>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>

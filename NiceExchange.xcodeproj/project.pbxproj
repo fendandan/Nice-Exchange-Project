@@ -406,6 +406,8 @@
 		D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D821D3A85190018794B /* practise_b_s_day.png */; };
 		D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D831D3A85190018794B /* practise_c_n_day.png */; };
 		D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D841D3A85190018794B /* practise_c_s_day.png */; };
+		D67172331D465D65003857D4 /* Release.png in Resources */ = {isa = PBXBuildFile; fileRef = D67172311D465D65003857D4 /* Release.png */; };
+		D67172381D466076003857D4 /* Release_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D67172371D466076003857D4 /* Release_Selected.png */; };
 		D6F554A11D3DD62A00CB1B3D /* SWLayoutTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */; };
 /* End PBXBuildFile section */
 
@@ -922,6 +924,8 @@
 		D6616D821D3A85190018794B /* practise_b_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_b_s_day.png; sourceTree = "<group>"; };
 		D6616D831D3A85190018794B /* practise_c_n_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_n_day.png; sourceTree = "<group>"; };
 		D6616D841D3A85190018794B /* practise_c_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_s_day.png; sourceTree = "<group>"; };
+		D67172311D465D65003857D4 /* Release.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Release.png; sourceTree = "<group>"; };
+		D67172371D466076003857D4 /* Release_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Release_Selected.png; sourceTree = "<group>"; };
 		D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWLayoutTextView.h; path = ../SWLayoutTextView.h; sourceTree = "<group>"; };
 		D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLayoutTextView.m; path = ../SWLayoutTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1593,6 +1597,8 @@
 		CC6EF8E01D364018000A9B44 /* tabBarImages */ = {
 			isa = PBXGroup;
 			children = (
+				D67172311D465D65003857D4 /* Release.png */,
+				D67172371D466076003857D4 /* Release_Selected.png */,
 				CC6EF8E11D364018000A9B44 /* Book.png */,
 				CC6EF8E21D364018000A9B44 /* Book_Selected.png */,
 				CC6EF8E31D364018000A9B44 /* Fireworks.png */,
@@ -2296,6 +2302,7 @@
 				CC5A3D9D1D40C5D200984F1F /* p3_b_11.png in Resources */,
 				CC5A3D971D40C5D200984F1F /* p31b0178.png in Resources */,
 				CC5A3D151D40C5D200984F1F /* p31b0048.png in Resources */,
+				D67172331D465D65003857D4 /* Release.png in Resources */,
 				CC5A3D131D40C5D200984F1F /* p31b0046.png in Resources */,
 				CC5A3D7A1D40C5D200984F1F /* p31b0149.png in Resources */,
 				CC704DF21D3CF5CC00D5A269 /* UMSCommentDetailController.xib in Resources */,
@@ -2307,6 +2314,7 @@
 				CC592B691D3F16CB002CD37D /* 333.png in Resources */,
 				CC5A3D141D40C5D200984F1F /* p31b0047.png in Resources */,
 				CC3293381D45A3360035C32F /* SWChatTableViewCell.xib in Resources */,
+				D67172381D466076003857D4 /* Release_Selected.png in Resources */,
 				CCA3B7EF1D3A7C95003361CC /* 返回.png in Resources */,
 				CC5A3DAD1D40C5D200984F1F /* p3_b_5.png in Resources */,
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
