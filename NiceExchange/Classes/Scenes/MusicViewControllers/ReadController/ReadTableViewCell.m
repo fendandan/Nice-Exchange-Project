@@ -7,7 +7,7 @@
 //
 
 #import "ReadTableViewCell.h"
-
+#import "SWshowViewController.h"
 
 @implementation ReadTableViewCell
 
@@ -17,10 +17,7 @@
         
         [_delegate readTableViewPlayBtnClickend:self];
         
-        
     }
-    
-    
 }
 
 
@@ -37,14 +34,35 @@
 
 //收藏按钮
 - (IBAction)collectBtn:(UIButton *)sender {
+//    SWActivityList *activity = [SWActivityList object];
+//    if (sender.selected == YES) {
+//        
+//        [LCManager lcToCancelMarkActivityWithActivityList:activity completion:^(NSArray *mArray) {
+//            
+//            LCManager.shareManagerBm = NO;
+//            
+//        }];
+//        
+//    }else if (sender.selected == NO) {
+//        
+//        [LCManager lcToMarkActivityWithActivityList:activity completion:^(NSArray *mArray) {
+//           
+//            LCManager.shareManagerBm = NO;
+//            
+//        }];
+//    }
     
+   
+}
+
+
+//参与按钮
+- (IBAction)participationBtn:(UIButton *)sender {
     
     
     
     
 }
-
-
 
 
 

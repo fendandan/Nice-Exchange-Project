@@ -34,11 +34,16 @@
 
 - (IBAction)collectBtn:(UIButton *)sender {
     
+   
     
 }
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
+    
+    
+    
+    
 }
 
 

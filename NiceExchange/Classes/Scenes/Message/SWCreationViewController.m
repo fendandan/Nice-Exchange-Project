@@ -278,29 +278,35 @@ UINavigationControllerDelegate
 -(void)addTags
 {
     //
-    UIView *tagsview = [[UIView alloc]initWithFrame:CGRectMake(30, 240, 340, 110)];
-    tagsview.backgroundColor = [UIColor whiteColor];
-    tagsview.layer.masksToBounds = YES;
-    tagsview.layer.cornerRadius = tagsview.frame.size.height/4;
-    [self.view addSubview:tagsview];
-    self.tageView = tagsview;
-    NSArray *array = @[@[@"娱乐",@"文艺",@"乐活",@"旅行"],@[@"吃喝",@"时尚",@"美容",@"情感"]];
-    for (int j = 0; j < array.count; j++) {
-        NSArray *arr = array[j];
-        for (int i = 0; i < arr.count; i++) {
-            UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-            btn.frame = CGRectMake(20+i*80, 10 +j*50, 60, 40);
-            btn.backgroundColor = [UIColor orangeColor];
-            [tagsview addSubview:btn];
-            btn.layer.masksToBounds = YES;
-            btn.layer.cornerRadius = btn.frame.size.height/4;
-            [btn addTarget:self action:@selector(tagsAssignment:) forControlEvents:(UIControlEventTouchUpInside)];
-            [btn setTitle:[NSString stringWithFormat:@"%@",array[j][i]] forState:UIControlStateNormal];
-        }
+    [self.view addSubview:self.tageView];
+    
+}
+-(UIView *)tageView
+{
+    if (!_tageView) {
+        _tageView = [[UIView alloc]initWithFrame:CGRectMake(30, 240, 340, 110)];
+        _tageView.backgroundColor = [UIColor whiteColor];
+        _tageView.layer.masksToBounds = YES;
+        _tageView.layer.cornerRadius = _tageView.frame.size.height/4;
         
+        NSArray *array = @[@[@"娱乐",@"文艺",@"乐活",@"旅行"],@[@"吃喝",@"时尚",@"美容",@"情感"]];
+        for (int j = 0; j < array.count; j++) {
+            NSArray *arr = array[j];
+            for (int i = 0; i < arr.count; i++) {
+                UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+                btn.frame = CGRectMake(20+i*80, 10 +j*50, 60, 40);
+                btn.backgroundColor = [UIColor orangeColor];
+                [_tageView addSubview:btn];
+                btn.layer.masksToBounds = YES;
+                btn.layer.cornerRadius = btn.frame.size.height/4;
+                [btn addTarget:self action:@selector(tagsAssignment:) forControlEvents:(UIControlEventTouchUpInside)];
+                [btn setTitle:[NSString stringWithFormat:@"%@",array[j][i]] forState:UIControlStateNormal];
+            }
+            
+        }
     }
     
-    
+    return _tageView;
 }
 //tagsAssignment赋值
 -(void)tagsAssignment:(UIButton *)sender
@@ -310,9 +316,9 @@ UINavigationControllerDelegate
     
     [self.tageView removeFromSuperview];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-
-    }];
+//    [self dismissViewControllerAnimated:YES completion:^{
+//
+//    }];
     
 }
 

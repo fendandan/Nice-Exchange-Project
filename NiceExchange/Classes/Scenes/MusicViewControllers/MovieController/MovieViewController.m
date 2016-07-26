@@ -188,6 +188,24 @@
 
 
 
+//收藏的点击事件
+- (void)movieTableViewCollectBtnClickend:(MovieTableViewCell *)cell
+{
+    
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    
+    [self.navigationController pushViewController:showVC animated:YES];
+}
+
+
+//参与的点击事件
+- (void)movieTableViewparticipationBtnClikend:(MovieTableViewCell *)cell
+{
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    
+    [self.navigationController pushViewController:showVC animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

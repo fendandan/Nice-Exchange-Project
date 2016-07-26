@@ -20,12 +20,17 @@
 - (void)moodTableViewUserNameBtnClikend:(MoodTableViewCell *)cell;
 
 
+
 @end
 
 
 @interface MoodTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *titleImageView;
+
+
+@property (strong, nonatomic) IBOutlet UIButton *userNameBtn;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 

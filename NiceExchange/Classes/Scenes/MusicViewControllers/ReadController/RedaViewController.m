@@ -10,6 +10,7 @@
 #import "ReadTableViewCell.h"
 #import "SWUserDetailViewController.h"
 #import "SWshowViewController.h"
+#import "SWFridenSharOnTableViewCell.h"
 
 @interface RedaViewController ()
 <
@@ -74,8 +75,6 @@
     cell.delegate = self;
     
 
-    
-    
     if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
         cell.attentionBtn.selected = YES;
     }
@@ -125,6 +124,8 @@
     }];
 }
 
+
+
 #pragma mark --- ReadTableViewCellDelegate
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell
 {
@@ -168,10 +169,7 @@
             LCManager.shareManagerB = NO; // 置为可调用状态
             
         }];
-        
-        
     }
-    
 }
 
 
@@ -180,12 +178,9 @@
 //点击title
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell
 {
-    
     SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
     
     [self.navigationController pushViewController:usweVC animated:YES];
-    
-    
 }
 
 
@@ -198,9 +193,7 @@
 {
     
     cell.ImageView.userInteractionEnabled = YES;
-    
     SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
-    
     [self.navigationController pushViewController:usweVC animated:YES];
     
 }
@@ -208,14 +201,36 @@
 
 
 
+
+
+
+
+
 //cell 的点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SWshowViewController *swshowVC = [SWshowViewController new];
+    SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_tableView cellForRowAtIndexPath:indexPath];
     
+    SWshowViewController *swshowVC = [[SWshowViewController alloc] init];
+    
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    swshowVC.activity = activity;
+    
+    if (activity.createBy.displayName) {
+        swshowVC.string = activity.createBy.displayName;
+    }else {
+        swshowVC.string = activity.createBy.username;
+    }
+    swshowVC.titlestring = activity.createBy.userImage.url;
+//    swshowVC.dataImage = cell.detailImv.image;
     
     [self.navigationController pushViewController:swshowVC animated:YES];
+    self.rootVC.swTabBar.hidden = YES;
 }
+
+
+
 
 
 - (void)didReceiveMemoryWarning {

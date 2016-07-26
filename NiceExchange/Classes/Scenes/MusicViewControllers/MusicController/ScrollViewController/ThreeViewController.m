@@ -30,7 +30,6 @@
     
     [self addTableView];
     
-    
     [self threeMusicRequest];
     
 }
