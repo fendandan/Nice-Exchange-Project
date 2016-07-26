@@ -33,6 +33,7 @@
                 <color key="backgroundColor" red="0.86847303149999999" green="0.87602904640000001" blue="0.88909113220000002" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
             <connections>
+                <outlet property="collectionCount" destination="fav-oN-U8Q" id="FQp-xb-QME"/>
                 <outlet property="iconImg" destination="3oM-fx-Hvj" id="Qep-HW-8ge"/>
             </connections>
             <point key="canvasLocation" x="341" y="243.5"/>

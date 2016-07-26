@@ -44,10 +44,7 @@
     NSURL *url = [NSURL URLWithString:_activity.titleImage.url];
     
     self.imagedddddd.image = self.dataImage;
-    
-    
-    
-    
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -68,109 +65,12 @@
     self.xzLable.text = self.activity.rule;
 
 }
-//- (void)setString:(NSString *)string {
-//    
-//    
-//    /**
-//     *  头像
-//     */
-// self.icon = @"";
-//    
-//    /**
-//     *  内容
-//     */
-//    self.contL.text = string;
-//    /**
-//     *  标签
-//     */
-//   self.biaoQL.text = string;
-//    /**
-//     *  标题
-//     */
-//   self.titleL.text = string;
-//    
-//    /**
-//     *  副标题
-//     */
-//   self.detail.text = string;
-//    /**
-//     *  详情图片
-//     */
-//  self.imageV = @"";
-//    /**
-//     *  一起聊聊
-//     */
-//  self.xzLable.text = string;
-//    
-//    self.userName.text = string;
-//}
-//
 - (void)setActivity:(SWActivityList *)activity {
     if (_activity != activity) {
         _activity = nil;
         _activity = activity;
         
-          
-        
-   
-        
-        /**
-         *  内容
-         */
-        self.contL;
-        /**
-         *  标签
-         */
-        self.biaoQL;
-        /**
-         *  标题
-         */
-        self.titleL;
-        
-        /**
-         *  副标题
-         */
-        self.detail;
-        /**
-         *  详情图片
-         */
-    
-        /**
-         *  一起聊聊
-         */
-//        @property (strong, nonatomic) IBOutlet UILabel *xzLable;
-//        self.string =  cell.FriendName.text;
-//        [self.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
-//        //    cell.collectNum.text = @"";
-//        //    cell.joinNum.text = @"";
-//        self.BJLable.text =  list.label;
-//        self.GZlABLE.text = list.rule;
-//        [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
-        
-    }
-}
--(void)add {
-    
-    SWActivityList *activity = [SWActivityList object];
-    activity.title = @"招黑体质霉霉又撕逼了，这次是因为歧视女性？ "; // 标题
-    activity.content = @"泰勒又火了，这次是和侃爷因为新歌的歌词开战，还附带把卡戴珊、水果姐等风云人物卷了进来。这股火直接从欧美圈一路烧到了中国，来势汹汹、气势惊人。 事情的导火索，是侃爷的新歌——《famous》，这首歌里的一句rap写到了霉霉：“I feel like me and Taylor might still have sex , Why I made that bitch famous god damn . I made that bitch famou”翻译过来就是：“我觉得泰勒应该在床上满足我，她可是老子捧红的，我的老天爷，她可是沾了我的光才红起来的”（我选了一个比较温和的翻译版本，毕竟我们都还是宝宝），在后来公布的新歌MV里，霉霉的蜡像赤身裸体躺在侃爷身边，其实MV里共出现了12个女人的裸体蜡像，包括他老婆卡戴珊的果体。 你怎么看待霉霉和侃爷撕逼这件事？卡戴珊不经霉霉允许就私自录像，但如果没有录像，大家也看不到事情的全貌 霉霉说侃爷这首歌是歧视女性，你怎么看？（"; // 内容
-    activity.subhead = @"请自行搜索《famous》）道理我都懂，但我真正关心的是，我森怎么想?"; // 副标题
-    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"tl.jpg"], 0.5);
-    AVFile *file = [AVFile fileWithName:@"title.jpg" data:data]; // 图片
-    [activity setObject:file forKey:@"titleImage"];
-    activity.rule = @"一起聊聊"; // 规则
-    activity.label = @"娱乐"; // 标签
-    activity.point = [AVGeoPoint geoPointWithLatitude:39.57 longitude:116]; // 坐标
-    
-    activity.markC = @0; // 收藏数累计，默认0
-    [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
-    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        SWLog(@" ---- error %@",error);
-        if (succeeded) {
-            SWLog(@" ----- succeeded %d",succeeded);
-        }
-    }];
-
+       }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -188,9 +88,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-      self.touch =0;
+    self.touch =0;
     //左上方返回按钮
     [self backButtonItem];
     self.title = @"参与沙龙";
@@ -340,6 +238,8 @@
     
     SWcommentsViewController *commentVC = [SWcommentsViewController new];
     
+    commentVC.userString = self.activity.createBy.objectId;
+    
     [self.navigationController pushViewController:commentVC animated:YES];
     
     
@@ -353,6 +253,7 @@
         self.collectionView.hidden = NO;
 #warning 2424
         self.rootVC.swTabBar.hidden  = YES;
+        SWActivityList *list = [SWActivityList new];
         
         self.contL.hidden = YES;
         
@@ -369,6 +270,9 @@
 
 -(void)PushAction:(UIButton *)sender {
     SWUserDetailViewController *usrVC = [[SWUserDetailViewController alloc]init];
+
+    usrVC.userString = self.activity.createBy.objectId;
+    
     
     [self.navigationController pushViewController:usrVC animated:YES];
 }
@@ -408,6 +312,11 @@
     
     SWcommentViewController *commentVC = [[SWcommentViewController alloc]init];
     
+    commentVC.detail = self.titleL.text;
+    commentVC.detailll = self.detail.text;
+    commentVC.aaa = self.contL.text;
+    commentVC.bqL = self.biaoQL.text;
+#warning -==-=-=---==--=-=-=-=-==-=-=-=-=-=-=-=-==-
     [self.navigationController pushViewController:commentVC animated:YES];
     
 }
@@ -521,6 +430,69 @@
     return 282;
 }
 
+-(void)add {
+    
+    SWActivityList *activity = [SWActivityList object];
+    activity.title = @"招黑体质霉霉又撕逼了，这次是因为歧视女性？ "; // 标题
+    activity.content = @"泰勒又火了，这次是和侃爷因为新歌的歌词开战，还附带把卡戴珊、水果姐等风云人物卷了进来。这股火直接从欧美圈一路烧到了中国，来势汹汹、气势惊人。 事情的导火索，是侃爷的新歌——《famous》，这首歌里的一句rap写到了霉霉：“I feel like me and Taylor might still have sex , Why I made that bitch famous god damn . I made that bitch famou”翻译过来就是：“我觉得泰勒应该在床上满足我，她可是老子捧红的，我的老天爷，她可是沾了我的光才红起来的”（我选了一个比较温和的翻译版本，毕竟我们都还是宝宝），在后来公布的新歌MV里，霉霉的蜡像赤身裸体躺在侃爷身边，其实MV里共出现了12个女人的裸体蜡像，包括他老婆卡戴珊的果体。 你怎么看待霉霉和侃爷撕逼这件事？卡戴珊不经霉霉允许就私自录像，但如果没有录像，大家也看不到事情的全貌 霉霉说侃爷这首歌是歧视女性，你怎么看？（"; // 内容
+    activity.subhead = @"请自行搜索《famous》）道理我都懂，但我真正关心的是，我森怎么想?"; // 副标题
+    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"tl.jpg"], 0.5);
+    AVFile *file = [AVFile fileWithName:@"title.jpg" data:data]; // 图片
+    [activity setObject:file forKey:@"titleImage"];
+    activity.rule = @"一起聊聊"; // 规则
+    activity.label = @"娱乐"; // 标签
+    activity.point = [AVGeoPoint geoPointWithLatitude:39.57 longitude:116]; // 坐标
+    
+    activity.markC = @0; // 收藏数累计，默认0
+    [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog(@" ---- error %@",error);
+        if (succeeded) {
+            SWLog(@" ----- succeeded %d",succeeded);
+        }
+    }];
+    
+    
+    
+    //- (void)setString:(NSString *)string {
+    //
+    //
+    //    /**
+    //     *  头像
+    //     */
+    // self.icon = @"";
+    //
+    //    /**
+    //     *  内容
+    //     */
+    //    self.contL.text = string;
+    //    /**
+    //     *  标签
+    //     */
+    //   self.biaoQL.text = string;
+    //    /**
+    //     *  标题
+    //     */
+    //   self.titleL.text = string;
+    //
+    //    /**
+    //     *  副标题
+    //     */
+    //   self.detail.text = string;
+    //    /**
+    //     *  详情图片
+    //     */
+    //  self.imageV = @"";
+    //    /**
+    //     *  一起聊聊
+    //     */
+    //  self.xzLable.text = string;
+    //
+    //    self.userName.text = string;
+    //}
+    //
+    
+}
 
 
 - (void)didReceiveMemoryWarning {
