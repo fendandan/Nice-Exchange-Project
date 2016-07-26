@@ -97,11 +97,7 @@
     self.foursectionArr = @[MusicFourSectionRequest_Url1,MusicFourSectionRequest_Url2,MusicFourSectionRequest_Url3,MusicFourSectionRequest_Url4,MusicFourSectionRequest_Url5,MusicFourSectionRequest_Url6];
     
     self.urlArray = @[self.onesectionArr,self.twosectionArr,self.threesectionArr,self.foursectionArr];
-    
-    
-    
-    
-    
+
 }
 
 

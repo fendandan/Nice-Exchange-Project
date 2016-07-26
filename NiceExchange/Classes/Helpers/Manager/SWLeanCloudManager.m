@@ -364,7 +364,6 @@ static SWLeanCloudManager *manager = nil;
 }
 
 // 收藏
-
 - (void)lcToMarkActivityWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
     if (_shareManagerBm) {
         return;
