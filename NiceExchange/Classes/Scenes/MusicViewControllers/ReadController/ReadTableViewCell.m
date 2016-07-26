@@ -35,6 +35,19 @@
 }
 
 
+//收藏按钮
+- (IBAction)collectBtn:(UIButton *)sender {
+    
+    
+    
+    
+    
+}
+
+
+
+
+
 - (void)awakeFromNib {
 
     self.ImageView.userInteractionEnabled = YES;
