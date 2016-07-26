@@ -97,11 +97,7 @@
     self.foursectionArr = @[MusicFourSectionRequest_Url1,MusicFourSectionRequest_Url2,MusicFourSectionRequest_Url3,MusicFourSectionRequest_Url4,MusicFourSectionRequest_Url5,MusicFourSectionRequest_Url6];
     
     self.urlArray = @[self.onesectionArr,self.twosectionArr,self.threesectionArr,self.foursectionArr];
-    
-    
-    
-    
-    
+
 }
 
 
@@ -290,7 +286,7 @@
     _musicBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_musicBtn setTitle:@"音乐" forState:(UIControlStateNormal)];
     _musicBtn.frame = CGRectMake(10, 0, 50, 50);
-    
+    _musicBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [self.ScrollViewnNav addSubview:_musicBtn];
     
     [_musicBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
@@ -299,11 +295,12 @@
     
     
     
+    
     _readBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_readBtn setTitle:@"阅读" forState:(UIControlStateNormal)];
     _readBtn.frame = CGRectMake(100, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_readBtn];
-    
+    _readBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_readBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
     [_readBtn addTarget:self action:@selector(readBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
@@ -312,7 +309,7 @@
     [_lohasBtn setTitle:@"乐活" forState:(UIControlStateNormal)];
     _lohasBtn.frame = CGRectMake(190, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_lohasBtn];
-    
+    _lohasBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_lohasBtn addTarget:self action:@selector(lohasBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [_lohasBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
     
@@ -323,18 +320,17 @@
     [_moodBtn setTitle:@"心情" forState:(UIControlStateNormal)];
     _moodBtn.frame = CGRectMake(280, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_moodBtn];
-    
+    _moodBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_moodBtn addTarget:self action:@selector(moodBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [_moodBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
     
     
-    
-    
+
     _elseBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_elseBtn setTitle:@"其他" forState:(UIControlStateNormal)];
     _elseBtn.frame = CGRectMake(360, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_elseBtn];
-    
+    _elseBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_elseBtn addTarget:self action:@selector(elseBtnBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [_elseBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
     

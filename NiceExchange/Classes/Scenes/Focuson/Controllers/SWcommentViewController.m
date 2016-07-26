@@ -26,7 +26,10 @@
     self.title = @"参与沙龙";
     [self tollBar];
     self.view.backgroundColor = [UIColor whiteColor];
-  
+    self.tttttt.text =  self.detail;
+    self.titleL.text = self.detailll;
+    self.detailL.text = self.aaa;
+    self.bqLLLLL.text= self.bqL;
 }
 
 -(void)tollBar {

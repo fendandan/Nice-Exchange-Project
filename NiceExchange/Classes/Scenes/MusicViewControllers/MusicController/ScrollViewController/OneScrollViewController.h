@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OneScrollViewController : UIViewController
+@interface OneScrollViewController : BaseViewController
 
 @end

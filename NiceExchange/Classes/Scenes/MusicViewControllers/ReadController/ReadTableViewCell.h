@@ -14,11 +14,16 @@
 
 @protocol ReadTableViewCellDelegate<NSObject>
 
+//关注
 - (void)readTableViewPlayBtnClickend:(ReadTableViewCell *)cell;
 
+//用户头像
 - (void)readTableViewPlayImageViewClickend:(ReadTableViewCell *)cell;
 
+//用户名
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell;
+
+
 
 @end
 
@@ -26,6 +31,8 @@
 @interface ReadTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *ImageView;
+
+@property (strong, nonatomic) IBOutlet UIButton *UserNameBtn;
 
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
@@ -40,6 +47,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *participationLabel;
 
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
+
+@property (strong, nonatomic) IBOutlet UILabel *subheadingLabel;
 
 @property(nonatomic,assign)id<ReadTableViewCellDelegate>delegate;
 

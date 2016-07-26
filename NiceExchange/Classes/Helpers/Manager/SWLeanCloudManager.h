@@ -48,6 +48,10 @@ typedef void(^UIFBlock)(NSArray *mArray);
 - (void)lcToCommentingWithComment:(SWComment *)fristComment commentString:(NSString *)commentString completion:(UIFBlock)completion;
 /// 查询评论方法（二级评论）（block参数为查询结果-可变数组）
 - (void)lcSelectCommentWithComment:(SWComment *)fristComment completion:(UIFBlock)completion;
+/// 收藏活动的方法（block参数为空）
+- (void)lcToMarkActivityWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion;
+/// 取消收藏活动的方法（block参数为空）
+- (void)lcToCancelMarkActivityWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion;
 
 ///// 批量操作 --- 查询云端表中所有实例对象（请求数据）
 //- (void)lcSelectObjectsWithClassName:(NSString *)className
