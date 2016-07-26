@@ -35,19 +35,13 @@
 
 - (IBAction)collectBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(moodTableViewCollectBtnClikend:)]) {
-        
-        [_delegate moodTableViewCollectBtnClikend:self];
-        
-    }
+   
 }
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(moodTableViewparticipationBtnClikend:)]) {
-        [_delegate moodTableViewparticipationBtnClikend:self];
-    }
+    
 
 }
 

@@ -23,11 +23,7 @@
 //用户名
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell;
 
-//收藏
-- (void)readTableViewCollectBtnClikend:(ReadTableViewCell *)cell;
 
-//参与
-- (void)readTableViewparticipationBtnClikend:(ReadTableViewCell *)cell;
 
 @end
 

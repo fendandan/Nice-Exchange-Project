@@ -19,10 +19,6 @@
 
 - (void)elseTableViewCellUserNameBtnClikend:(ElseTableViewCell *)cell;
 
-- (void)elseTableViewCollectBtnClikend:(ElseTableViewCell *)cell;
-
-- (void)elseTableViewparticipationBtnClikend:(ElseTableViewCell *)cell;
-
 @end
 
 

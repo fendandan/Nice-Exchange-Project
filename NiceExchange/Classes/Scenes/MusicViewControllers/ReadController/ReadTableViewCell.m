@@ -35,21 +35,14 @@
 //收藏按钮
 - (IBAction)collectBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(readTableViewCollectBtnClikend:)]) {
-        
-        [_delegate readTableViewCollectBtnClikend:self];
-        
-    }
+   
 }
 
 
 //参与按钮
 - (IBAction)participationBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(readTableViewparticipationBtnClikend:)]) {
-        
-        [_delegate readTableViewparticipationBtnClikend:self];
-    }
+    
     
     
 }

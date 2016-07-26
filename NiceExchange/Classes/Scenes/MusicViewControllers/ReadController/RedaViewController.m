@@ -169,10 +169,7 @@
             LCManager.shareManagerB = NO; // 置为可调用状态
             
         }];
-        
-        
     }
-    
 }
 
 
@@ -181,12 +178,9 @@
 //点击title
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell
 {
-    
     SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
     
     [self.navigationController pushViewController:usweVC animated:YES];
-    
-    
 }
 
 
@@ -199,32 +193,17 @@
 {
     
     cell.ImageView.userInteractionEnabled = YES;
-    
     SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
-    
     [self.navigationController pushViewController:usweVC animated:YES];
     
 }
 
 
 
-//点击收藏
-- (void)readTableViewCollectBtnClikend:(ReadTableViewCell *)cell
-{
-    SWshowViewController *showVC = [[SWshowViewController alloc] init];
-    
-    [self.navigationController pushViewController:showVC animated:YES];
-    
-}
 
 
-//点击参与
-- (void)readTableViewparticipationBtnClikend:(ReadTableViewCell *)cell
-{
-    SWshowViewController *showVC = [[SWshowViewController alloc] init];
-    
-    [self.navigationController pushViewController:showVC animated:YES];
-}
+
+
 
 
 //cell 的点击事件

@@ -34,20 +34,14 @@
 
 - (IBAction)collectBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(elseTableViewCollectBtnClikend:)]) {
-        
-        [_delegate elseTableViewCollectBtnClikend:self];
-    }
+   
     
 }
 
 
 - (IBAction)participationBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(elseTableViewparticipationBtnClikend:)]) {
-        
-        [_delegate elseTableViewparticipationBtnClikend:self];
-    }
+    
     
     
 }

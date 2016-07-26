@@ -19,9 +19,6 @@
 
 - (void)movieTableViewUserNameBtnClickend:(MovieTableViewCell *)cell;
 
-- (void)movieTableViewCollectBtnClickend:(MovieTableViewCell *)cell;
-
-- (void)movieTableViewparticipationBtnClikend:(MovieTableViewCell *)cell;
 
 @end
 

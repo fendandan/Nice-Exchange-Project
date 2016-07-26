@@ -382,6 +382,7 @@
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
 		CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */; };
 		CCD8362A1D460479004CC453 /* SWMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD836291D460479004CC453 /* SWMessage.m */; };
+		CCEACCD81D47507E0026996C /* 微软雅黑.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCEACCD71D47507E0026996C /* 微软雅黑.ttf */; };
 		CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */; };
 		CCF61FC61D3896190071EC51 /* MusicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */; };
 		CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */; };
@@ -885,6 +886,7 @@
 		CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRegisterViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		CCD836281D460479004CC453 /* SWMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessage.h; sourceTree = "<group>"; };
 		CCD836291D460479004CC453 /* SWMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessage.m; sourceTree = "<group>"; };
+		CCEACCD71D47507E0026996C /* 微软雅黑.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微软雅黑.ttf"; sourceTree = "<group>"; };
 		CCF61FC21D3896190071EC51 /* MusicDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDetailTableViewCell.h; path = ../../../General/Views/Cells/MusicDetailTableViewCell.h; sourceTree = "<group>"; };
 		CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicDetailTableViewCell.m; path = ../../../General/Views/Cells/MusicDetailTableViewCell.m; sourceTree = "<group>"; };
 		CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MusicDetailTableViewCell.xib; path = ../../../General/Views/Cells/MusicDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -1400,6 +1402,7 @@
 		CC5A674A1D35F71B008AE01A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCEACCD71D47507E0026996C /* 微软雅黑.ttf */,
 				CC5A67561D35F71B008AE01A /* Assets.xcassets */,
 				CC5A67581D35F71B008AE01A /* LaunchScreen.storyboard */,
 				CC5A675B1D35F71B008AE01A /* Info.plist */,
@@ -2134,6 +2137,7 @@
 				D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */,
 				CC5A3D561D40C5D200984F1F /* p31b0113.png in Resources */,
 				CC5A3D741D40C5D200984F1F /* p31b0143.png in Resources */,
+				CCEACCD81D47507E0026996C /* 微软雅黑.ttf in Resources */,
 				CCA3B7F21D3A7C95003361CC /* image.png in Resources */,
 				CC5A3D4A1D40C5D200984F1F /* p31b0101.png in Resources */,
 				CC5A3D5D1D40C5D200984F1F /* p31b0120.png in Resources */,

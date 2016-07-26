@@ -33,11 +33,7 @@
 
 - (IBAction)collectBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(movieTableViewCollectBtnClickend:)]) {
-        
-        [_delegate movieTableViewCollectBtnClickend:self];
-        
-    }
+    
     
     
 }
@@ -45,11 +41,7 @@
 
 - (IBAction)participationBtn:(UIButton *)sender {
     
-    if (_delegate && [_delegate respondsToSelector:@selector(movieTableViewparticipationBtnClikend:)]) {
-        
-        [_delegate movieTableViewparticipationBtnClikend:self];
-        
-    } 
+     
 }
 
 
