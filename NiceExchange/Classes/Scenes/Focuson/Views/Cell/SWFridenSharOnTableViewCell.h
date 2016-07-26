@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class SWFridenSharOnTableViewCell;
 @protocol FriendiconDelegate <NSObject>
 
--(void)onClick;
+-(void)onClick:(SWFridenSharOnTableViewCell *)cell;
 
 @end
 
@@ -27,5 +27,9 @@
 
 
 @property(nonatomic,weak)id<FriendiconDelegate>friendDelegate;
+
+
+
+
 
 @end

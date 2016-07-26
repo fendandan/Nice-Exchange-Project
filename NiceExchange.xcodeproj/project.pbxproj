@@ -454,7 +454,7 @@
 		CC3293391D45B7C80035C32F /* 评.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评.png"; sourceTree = "<group>"; };
 		CC32933B1D45BC470035C32F /* SWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWViewController.h; sourceTree = "<group>"; };
 		CC32933C1D45BC470035C32F /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
-		CC32933D1D45BC470035C32F /* SWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWViewController.xib; sourceTree = "<group>"; };
+		CC32933D1D45BC470035C32F /* SWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWViewController.xib; path = NiceExchange/Classes/Scenes/Focuson/Views/Cell/SWViewController.xib; sourceTree = "<group>"; };
 		CC3293401D45BDC00035C32F /* 发送纸飞机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发送纸飞机.png"; sourceTree = "<group>"; };
 		CC3F70821D438ECE00F0909F /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCreationViewController.h; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70831D438ECE00F0909F /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCreationViewController.m; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.m; sourceTree = SOURCE_ROOT; };
@@ -1372,6 +1372,7 @@
 			children = (
 				CC5A67491D35F71B008AE01A /* NiceExchange */,
 				CC5A67481D35F71B008AE01A /* Products */,
+				CC32933D1D45BC470035C32F /* SWViewController.xib */,
 				7E5BCBF515F530F89BF9A651 /* Pods */,
 				79C9667793D08D28649D7C38 /* Frameworks */,
 			);
@@ -1874,7 +1875,6 @@
 				CC3293361D45A3360035C32F /* SWChatTableViewCell.xib */,
 				CC32933B1D45BC470035C32F /* SWViewController.h */,
 				CC32933C1D45BC470035C32F /* SWViewController.m */,
-				CC32933D1D45BC470035C32F /* SWViewController.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
