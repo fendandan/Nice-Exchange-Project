@@ -35,6 +35,7 @@
 @property (nonatomic,strong)UILabel *lable1;
 @property (nonatomic,strong)BaseSwitchViewController *switchVC;
 @property(nonatomic,strong) NSMutableArray *dataArray;
+@property(nonatomic,strong) NSMutableArray *leftArray;
 @end
 
 @implementation SWshowViewController
@@ -90,7 +91,7 @@
     [super viewDidLoad];
   
     self.dataArray = [NSMutableArray array];
-    
+    self.leftArray = [NSMutableArray array];
     self.touch =0;
     //左上方返回按钮
     [self backButtonItem];
@@ -139,7 +140,7 @@
     
     UIImageView *imageview = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"收藏"]];
     
-    imageview.frame = CGRectMake(0,0 , self.view.frame.size.width, 20) ;
+    imageview.frame = CGRectMake(0,0 , self.view.frame.size.width, 20);
     imageview.backgroundColor = [UIColor redColor];
     [_switchVC.scrollView  addSubview:imageview];
     _switchVC.scrollView.scrollEnabled = YES;
@@ -193,17 +194,36 @@
     _segmented.selectedSegmentIndex = _switchVC.scrollView.contentOffset.x / _switchVC.scrollView.frame.size.width;
 }
 
-- (void)onAction {
+- (void)onAction:(UITableViewCell *)cell {
 
-    
     SWcommentsViewController *commentVC = [SWcommentsViewController new];
+    SWLog(@"99999999999 %@", [[cell superview] superview]);
     
-    commentVC.userString = self.activity.createBy.objectId;
+    
+    
+    if (_switchVC.leftTableView == [[cell superview] superview]) {
+        
+#warning 11111111111111111111111111111111111
+        NSIndexPath *indexPath = [_switchVC.leftTableView indexPathForCell:cell];
+        
+        SWComment *comment = self.leftArray[indexPath.row];
+        
+        commentVC.swcomment = comment;
+       
+        
+    }else  {
+        
+        NSIndexPath *indexPath = [_switchVC.rightTableView indexPathForCell:cell];
+        
+        SWComment *comment = self.dataArray[indexPath.row];
+        
+        commentVC.swcomment = comment;
+        
+        
+    }
+    
     
     [self.navigationController pushViewController:commentVC animated:YES];
-    
-    
-    
 
 }
 
@@ -264,6 +284,7 @@
     [  self.btn addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
     [  self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
     [self.view addSubview:  self.btn];
+    //[self.view bringSubviewToFront:self.btn];
 
 }
 //跳转到评论界面
@@ -284,7 +305,7 @@
     commentVC.SecondBlock = ^(SWComment *string){
 #warning -----------------------------
         [self.dataArray  addObject:string];
-        
+        [self.leftArray insertObject:string atIndex:0];
         SWLog(@"11111%@",string);
         SWLog(@"%2222222ld",self.dataArray.count);
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -301,18 +322,21 @@
 -(void)requestcommentdata {
     
     
-    [LCManager lcSelectCommentWithActivityList:self.activity completion:^(NSArray *mArray) {
+    [LCManager lcSelectCommentWithActivityList:self.activity conditions:@"createdAt" completion:^(NSArray *mArray) {
+        
+        [self.leftArray addObjectsFromArray:mArray ];
+        NSLog(@"13++++++++++++++++89-%@",self.leftArray);
+        [_switchVC.leftTableView reloadData];
+    }];
+    
+    [LCManager lcSelectCommentWithActivityList:self.activity conditions:@"commentCount" completion:^(NSArray *mArray) {
         
         [self.dataArray addObjectsFromArray:mArray ];
-        NSLog(@"1321324364587089-%@",self.dataArray);
-        [_switchVC.leftTableView reloadData];
+        NSLog(@"1-------------------89-%@",self.dataArray);
         [_switchVC.rightTableView reloadData];
     }];
     
-    
-    
 }
-
 
 
 
@@ -422,6 +446,10 @@
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if (tableView == _switchVC.leftTableView) {
+        return   self.leftArray.count;
+    }
     return self.dataArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -441,6 +469,7 @@
         cell.commentDelegate = self;
         SWComment *comment = self.dataArray[indexPath.row];
         
+    #warning RightTavleView---------
         cell.comment  = comment;
         
         return cell;
@@ -462,10 +491,11 @@
     SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
     cell.selectionStyle = UITableViewCellEditingStyleNone;
     cell.commentDelegate = self;
-    SWComment *comment = self.dataArray[indexPath.row];
+    SWComment *comment = self.leftArray[indexPath.row];
+        
 //    cell.commentLLL.text = comment.commentContent;
 //    cell.userNL .text = comment.commentBy.username;
-    
+#warning LefttavleView-----------
     cell.comment = comment;
     
 //    AVFile *ff = [AVFile fileWithURL:self.titlestring];

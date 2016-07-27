@@ -293,7 +293,7 @@ static SWLeanCloudManager *manager = nil;
     }];
     
 }
-- (void)lcSelectCommentWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion {
+- (void)lcSelectCommentWithActivityList:(SWActivityList *)activity conditions:(NSString *)conditions completion:(UIFBlock)completion {
     
     
     // 查
@@ -302,6 +302,10 @@ static SWLeanCloudManager *manager = nil;
     
     // generate a query based on that relation
     AVQuery *query = [relation query];
+    
+    if (conditions) {
+        [query addDescendingOrder:conditions]; // 排序
+    }
     
     // now execute the query
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -349,7 +353,7 @@ static SWLeanCloudManager *manager = nil;
     
     // generate a query based on that relation
     AVQuery *query = [relation query];
-    
+    [query includeKey:@"commentBy"];
     // now execute the query
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         

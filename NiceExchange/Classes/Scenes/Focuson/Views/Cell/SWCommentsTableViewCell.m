@@ -12,11 +12,13 @@
 
 - (void)awakeFromNib {
    
+    //头像切圆角
+    self.iconimv.layer.cornerRadius = self.iconimv.frame.size.width / 2;
+    self.iconimv.layer.borderWidth = 1.0;
+    self.iconimv.layer.borderColor =[UIColor clearColor].CGColor;
+    self.iconimv.clipsToBounds = TRUE;//去除边界
     self.touch = 0;
-    
-
-    
-    
+  
 #warning ---- %d",0]  这里面传入值 例如  %d",0 + self.title.text];
     
     
@@ -29,7 +31,7 @@
 
 
     [self.commentsL setTitle:[NSString stringWithFormat:@"评论  %d",0] forState:0];
-    [self.commentsL setImage:[UIImage imageNamed:@"评论"] forState:0];
+[self.commentsL setImage:[UIImage imageNamed:@"评论轮.png"] forState:0];
 
 
 
@@ -50,7 +52,7 @@
     }else if( self.touch == 1) {
         
     [self.praiseB setTitle:[NSString stringWithFormat:@"赞  %d",0]forState:0];
-        [self.praiseB setImage:[UIImage imageNamed:@"赞"] forState:0];
+        [self.praiseB setImage:[UIImage imageNamed:@"心"] forState:0];
     
         [self.praiseB setTitleColor:[UIColor groupTableViewBackgroundColor] forState:0];
         self.praiseB.tintColor = [UIColor groupTableViewBackgroundColor];
@@ -102,7 +104,7 @@
     }else if( self.touch == 1) {
         
         [self.commentsL setTitle:[NSString stringWithFormat:@"评论 %d",0]forState:0];
-        [self.commentsL setImage:[UIImage imageNamed:@"评论"] forState:0];
+        [self.commentsL setImage:[UIImage imageNamed:@"评论轮.png"] forState:0];
         
         [self.commentsL setTitleColor:[UIColor groupTableViewBackgroundColor] forState:0];
         self.commentsL.tintColor = [UIColor groupTableViewBackgroundColor];
@@ -117,9 +119,9 @@
 -(void) touchAction:(UIButton *)sender {
     
     
-    if ([self.commentDelegate respondsToSelector:@selector(onAction)]) {
+    if ([self.commentDelegate respondsToSelector:@selector(onAction:)]) {
         
-        [self.commentDelegate onAction];
+        [self.commentDelegate onAction:self];
     }
     
     
@@ -137,7 +139,7 @@
         self.touch = 1;
     }else if( self.touch == 1) {
         
-         [self.FocusB setTitle:@"已关注 " forState:0];
+         [self.FocusB setTitle:@"已关注" forState:0];
         
         self.touch = 0;
     }
@@ -162,12 +164,12 @@
             
             AVFile *ff = [AVFile fileWithURL:user.userImage.url];
             
-           
+            
             self.userNL.text = user.username;
             NSLog(@"++++++++ %@ %@", user.username, self.userNL);
             [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
                 [self.iconimv  setImage:image forState:(UIControlStateNormal)];
-            
+                
             }];
         }];
 

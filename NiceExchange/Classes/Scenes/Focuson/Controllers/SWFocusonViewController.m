@@ -26,9 +26,9 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     
-    self.rootVC.swTabBar.hidden = NO;
+       self.rootVC.swTabBar.hidden = NO;
     SWLog(@" 00 0000 000 000  %@",self.rootVC.followArray);
-    if (self.rootVC.followArray != NULL) {
+    if (self.rootVC.followArray.count == 0) {
         [self requestData];
     }else {
         [self performSelector:@selector(requestData) withObject:nil afterDelay:3];
@@ -66,10 +66,10 @@
     
     // 查询活动
     AVQuery *aQ = [SWActivityList query];
-    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
+   
     aQ.limit = 20;
     //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
-    
+    [aQ addDescendingOrder:@"createdAt"]; // 排序
 //    SWLog(@"22222222222222222%@",self.rootVC.followArray);
     if (self.rootVC.followArray.count == 0) {
         [self performSelector:@selector(requestData) withObject:nil afterDelay:.3];
@@ -205,7 +205,7 @@
     [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
         [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
         
-        
+        self.ztableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 //        AVQuery *avq =  [AVQuery queryWithClassName:@"_User"];
 //        
 //        [avq whereKey:@"objectId" equalTo:self.userString];
