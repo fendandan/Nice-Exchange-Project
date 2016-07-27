@@ -147,6 +147,7 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
             cell.userInfoView.hidden = YES;
             [cell.loginButton setTitle:@"点击登录" forState:UIControlStateNormal];
             cell.portraitView.image = nil;  // // // // // // // // //
+            cell.portraitView.backgroundColor = [UIColor magentaColor];
             cell.portraitView.center = CGPointMake(kScreenWidth / 2, kScreenWidth / 6);
             cell.loginButton.center = CGPointMake(kScreenWidth / 2, CGRectGetMaxY(cell.portraitView.frame) + 20);
         }else {
