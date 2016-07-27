@@ -17,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
+    
     // Do any additional setup after loading the view from its nib.
     self.title = @"写评论";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"发送纸飞机.png"] style:(UIBarButtonItemStylePlain) target:self action:@selector(valueofAction:)];

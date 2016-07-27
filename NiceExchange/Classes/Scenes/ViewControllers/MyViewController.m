@@ -7,7 +7,7 @@
 //
 
 #import "MyViewController.h"
-
+#import "SWFocusonViewController.h"
 @interface MyViewController ()<UITableViewDataSource, UITableViewDelegate, UserIfonCellDelegate>
 
 @property (strong, nonatomic) UITableView *userTableView;
@@ -47,6 +47,17 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.userTableView registerNib:[UINib nibWithNibName:@"SWusrTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SWusrTableViewCell"];
+    
+    [self.userTableView registerNib:[UINib nibWithNibName:@"SWpratTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SWpratTableViewCell"];
+    
+    [self.userTableView registerNib:[UINib nibWithNibName:@"SWcollectionTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SWcollectionTableViewCell"];
+
+    
+    
+    
+    
     //
     self.title = @"我的";
     
@@ -167,19 +178,21 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
         
         switch (indexPath.row) {
             case 0:
-                cell.titlelabel.text = @"我的";
+                cell.titlelabel.text = @"我发起的";
                 break;
             case 1:
-                cell.titlelabel.text = @"我的活动";
+                cell.titlelabel.text = @"我参与的";
                 break;
             case 2:
-                cell.titlelabel.text = @"我的收藏";
+                cell.titlelabel.text = @"我收藏的";
                 break;
                 
             default:
                 break;
         }
         cell.numberlabel.text = @"x";
+        
+        
         if ([SWLcAvUSer currentUser]) {
             // 查询计数数量
             AVQuery *countQ = [AVQuery queryWithClassName:@"Count"];
@@ -224,62 +237,43 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if (indexPath.section == 0) {
-    
+        
+       
     }else if (indexPath.section == 1) {
-//        UIImage *i = [UIImage imageNamed:@"Book"];
-//        NSData *imageData = UIImagePNGRepresentation(i);
-//        AVObject *todoFolder = [[AVObject alloc] initWithClassName:@"ActivityList"];// 构建对象
-//        [todoFolder setObject:@"工作+" forKey:@"name"];// 设置名称
-//        [todoFolder setObject:@1 forKey:@"priority"];// 设置优先级
-////        [todoFolder setObject:imageData forKey:@"image"];
-//        [todoFolder saveInBackground];// 保存到云端
         
-//        AVObject *todoFolder = [[AVObject alloc] initWithClassName:@"game"];// 构建对象
-//        [todoFolder setObject:@"工作" forKey:@"name"];// 设置名称
-//        [todoFolder setObject:@1 forKey:@"priority"];// 设置优先级
-//        [[SWLeanCloudManager shareManager] lcSaveObjectWithAVObject:todoFolder];
-        
-        // 保存
-//        AVObject *game= [AVObject objectWithClassName:@"Game"];
-//        [game setObject:@"5656" forKey:@"P"];
-//        [game setObject:[AVUser currentUser] forKey:@"createdBy"];
-//        [game incrementKey:@"df"];
-//        [[SWLeanCloudManager shareManager] lcSaveObjectWithAVObject:game];
-//        SWLog(@"%@", [AVUser currentUser]);
-        
+        switch (indexPath.row) {
+            case 0:
+            {
+                SWFocusonViewController *swFocusonVC = [[SWFocusonViewController  alloc]init];
+                swFocusonVC.RequestData = RequestDataInitiateRequest;
+                [self.navigationController pushViewController:swFocusonVC animated:YES];
+            }
+                
+               // NSLog(@"0");
+                break;
+             
+                case 1:
+                
+                   // NSLog(@"1");
+                break;
+                
+                case 2:
+                    //NSLog(@"2");
+                 break;
+                
+            default:
+                break;
+        }
+
     }else {
-//        // 根据Id查询实例对象的数据
-////        AVQuery *query = [AVQuery queryWithClassName:@"ActivityList"];
-////        [query getObjectInBackgroundWithId:@"5788ab127db2a2005ce0edc6" block:^(AVObject *object, NSError *error) {
-////            // object 就是 id 为 558e20cbe4b060308e3eb36c 的 Todo 对象实例
-////            UIImage *i = [UIImage imageWithData:object[@"image"]];
-////            SWLog(@"%@",i);
-////            SWLog(@"%@",error);
-////        }];
-//        
-//        // 批量(初体验-- 慢，错)
-//        [[SWLeanCloudManager shareManager] selectObjectsWithClassName:@"ActivityList" successRespon:^(AVObject *obj, NSArray *arrays) {
-//            SWLog(@"%@",arrays[0]);
-//        } failureRespon:^(NSError *error) {
-//            SWLog(@"%@",error);
-//        }];
-        
-//        [[SWLeanCloudManager shareManager] lcSelectObjectsWithClassName:@"_User" successRespon:^(AVObject *obj, NSArray *arrays) {
-//            SWLog(@"%@",arrays);
-//        } failureRespon:^(NSError *error) {
-//            SWLog(@"%@",error);
-//        }];
-        
-        // 请求
-//        AVQuery *gameQuery = [AVQuery queryWithClassName:@"Game"];
-////        [gameQuery whereKey:@"createdBy" equalTo:[AVUser currentUser]];
-//        [gameQuery whereKey:@"P" equalTo:@"566"];
-//        [gameQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//            SWLog(@"%@",objects);
-//        }];
+
     }
     
 }
+
+
+
+
 
 #pragma  mark --- UserIfonCellDelegate
 - (void)userIfonTableViewLoginButtonClicked:(SWUserInfoCell *)cell {
