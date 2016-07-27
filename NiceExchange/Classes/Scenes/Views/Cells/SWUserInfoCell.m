@@ -24,15 +24,21 @@
         
         
         
+        if (avUser.userImage.url) {
+            [self.portraitView setImageWithURL:[NSURL URLWithString:avUser.userImage.url]];
+        }else {
+            [self.portraitView setImageWithURL:[NSURL URLWithString:@"http://ac-8nI1eCRt.clouddn.com/XJT3FKPr096iVDIpDUfVJtA.jpg"]];
+        }
         
-        [self.portraitView setImageWithURL:[NSURL URLWithString:@"http://ac-8nI1eCRt.clouddn.com/XJT3FKPr096iVDIpDUfVJtA.jpg"]];
         if (avUser.displayName) {
             self.userNameLabel.text = avUser.displayName;
         }else {
             self.userNameLabel.text = avUser.username;
         }
         
-        //        self.userInfoView
+        self.userInfoView.goodLabel.text = @"goodL";
+        self.userInfoView.markLabel.text = @"markL";
+        self.userInfoView.recommendationLabel.text = @"recommendationL";
         
     }
 }
@@ -49,7 +55,7 @@
         _portraitView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, kSelfWidth / 3, kSelfWidth / 3)];
         _portraitView.layer.cornerRadius = kSelfWidth / 6;
         _portraitView.layer.masksToBounds = YES;
-        _portraitView.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+//        _portraitView.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
     }
     return _portraitView;
 }
@@ -57,7 +63,7 @@
     if (!_userNameLabel) {
         _userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.portraitView.frame) + 30, self.portraitView.center.y - 25, kSelfWidth / 6, 15)];
         _userNameLabel.font = [UIFont systemFontOfSize:12];
-        _userNameLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+//        _userNameLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
     }
     return _userNameLabel;
 }
@@ -66,7 +72,7 @@
         
         _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _loginButton.frame = CGRectMake(CGRectGetMaxX(self.portraitView.frame) + 30, self.portraitView.center.y + 10, kSelfWidth / 3, 15);
-        _loginButton.backgroundColor = [UIColor grayColor];
+        
         //    [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         //    [button setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_Selected",imageName]] forState:UIControlStateSelected];
         [_loginButton addTarget:self action:@selector(loginButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,8 +83,8 @@
         [_loginButton setTitle:@"点击登录" forState:UIControlStateNormal];
         _loginButton.titleLabel.font = [UIFont systemFontOfSize:12];
         _loginButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [_loginButton setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
-        [_loginButton setTitleColor:[UIColor colorWithRed:38.0/255 green:217.0/255 blue:165.0/255 alpha:1] forState:UIControlStateSelected];
+        [_loginButton setTitleColor:[UIColor colorWithRed:38.0/255 green:217.0/255 blue:165.0/255 alpha:1] forState:UIControlStateNormal];
+        [_loginButton setTitleColor:[UIColor magentaColor] forState:UIControlStateHighlighted];
     }
     
     return _loginButton;

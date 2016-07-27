@@ -32,28 +32,30 @@
 
 - (UILabel *)goodLabel {
     if (!_goodLabel) {
-        _goodLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSelfWidth / 5, kSelfHeight / 2 - 18, kSelfWidth / 5, 12)];
-        _goodLabel.font = [UIFont systemFontOfSize:12];
-        _goodLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
-        
+        _goodLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSelfWidth / 5, kSelfHeight / 2 - 18, kSelfWidth / 5, 15)];
+//        _goodLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+        _goodLabel.font = [UIFont systemFontOfSize:15.0];
+        _goodLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _goodLabel;
 }
 
 - (UILabel *)markLabel {
     if (!_markLabel) {
-        _markLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSelfWidth * 2 / 5, kSelfHeight / 2 - 18, kSelfWidth / 5, 12)];
-        _markLabel.font = [UIFont systemFontOfSize:12];
-        _markLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+        _markLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSelfWidth * 2 / 5, kSelfHeight / 2 - 18, kSelfWidth / 5, 15)];
+//        _markLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+        _markLabel.font = [UIFont systemFontOfSize:15.0];
+        _markLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _markLabel;
 }
 
 - (UILabel *)recommendationLabel {
     if (!_recommendationLabel) {
-        _recommendationLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSelfWidth * 3 / 5, kSelfHeight / 2 - 18, kSelfWidth / 5, 12)];
-        _recommendationLabel.font = [UIFont systemFontOfSize:12];
-        _recommendationLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+        _recommendationLabel = [[UILabel alloc] initWithFrame:CGRectMake(kSelfWidth * 3 / 5, kSelfHeight / 2 - 18, kSelfWidth / 5, 15)];
+//        _recommendationLabel.backgroundColor = [UIColor colorWithRed:kColor green:kColor blue:kColor alpha:1.0];
+        _recommendationLabel.font = [UIFont systemFontOfSize:15.0];
+        _recommendationLabel.textAlignment = NSTextAlignmentCenter;
     }
     return _recommendationLabel;
 }

@@ -46,7 +46,12 @@ static NSString *const systemCell_Identifiter = @"systemCell_Identifiter";
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if (indexPath.row == 3) { // ??  && [SWLcAvUSer currentUser]
+        SWRSPViewController *rspVC = [[SWRSPViewController alloc] init];
+        [self presentViewController:rspVC animated:YES completion:^{
+            
+        }];
+    }
 }
 - (void)addButton {
     UIButton *rButton = [UIButton buttonWithType:UIButtonTypeCustom];

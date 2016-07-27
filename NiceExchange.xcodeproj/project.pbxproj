@@ -346,6 +346,7 @@
 		CC9BFC3E1D40C3B500F40EF6 /* SWFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9BFC361D40C3B500F40EF6 /* SWFollow.m */; };
 		CC9BFC3F1D40C3B500F40EF6 /* SWLcAvUSer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9BFC381D40C3B500F40EF6 /* SWLcAvUSer.m */; };
 		CC9BFC401D40C3B500F40EF6 /* SWMark.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9BFC3A1D40C3B500F40EF6 /* SWMark.m */; };
+		CC9CF4261D470C6400E58069 /* SWRSPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9CF4251D470C6400E58069 /* SWRSPViewController.m */; };
 		CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */; };
 		CCA3B7E41D3A7C95003361CC /* SWcommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */; };
 		CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7BA1D3A7C95003361CC /* SWFocusonViewController.m */; };
@@ -837,6 +838,8 @@
 		CC9BFC381D40C3B500F40EF6 /* SWLcAvUSer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLcAvUSer.m; sourceTree = "<group>"; };
 		CC9BFC391D40C3B500F40EF6 /* SWMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMark.h; sourceTree = "<group>"; };
 		CC9BFC3A1D40C3B500F40EF6 /* SWMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMark.m; sourceTree = "<group>"; };
+		CC9CF4241D470C6400E58069 /* SWRSPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRSPViewController.h; sourceTree = "<group>"; };
+		CC9CF4251D470C6400E58069 /* SWRSPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRSPViewController.m; sourceTree = "<group>"; };
 		CCA3B7B61D3A7C95003361CC /* SWcommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentViewController.h; sourceTree = "<group>"; };
 		CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcommentViewController.m; sourceTree = "<group>"; };
 		CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcommentViewController.xib; sourceTree = "<group>"; };
@@ -1565,6 +1568,7 @@
 			children = (
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
+				CC9CF4231D470C0400E58069 /* ReSetPassword */,
 				CCAC39811D3BA47B00CCE229 /* SettingsViewController */,
 				CCB33FA91D37B53900AEF415 /* RegisterViewController */,
 				CCB33FAC1D37B53900AEF415 /* LoginViewController */,
@@ -1793,6 +1797,15 @@
 			);
 			name = LCModel;
 			path = Models/LCModel;
+			sourceTree = "<group>";
+		};
+		CC9CF4231D470C0400E58069 /* ReSetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				CC9CF4241D470C6400E58069 /* SWRSPViewController.h */,
+				CC9CF4251D470C6400E58069 /* SWRSPViewController.m */,
+			);
+			name = ReSetPassword;
 			sourceTree = "<group>";
 		};
 		CCA3B7B41D3A7C95003361CC /* Focuson */ = {
@@ -2475,6 +2488,7 @@
 				CC26E1F01D3DDA82007FDAEE /* ThreeViewController.m in Sources */,
 				CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */,
 				CC9BFC3F1D40C3B500F40EF6 /* SWLcAvUSer.m in Sources */,
+				CC9CF4261D470C6400E58069 /* SWRSPViewController.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
 				CC592B721D3F1701002CD37D /* MSGuideViewManager.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,
