@@ -25,7 +25,7 @@
     
     
     self.rootVC.swTabBar.hidden = NO;
-    [self requestData];
+
 
 }
 
@@ -82,6 +82,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        [self requestData];
 self.title = @"个人资料";
     self.headerView.layer.masksToBounds = YES;
     self.headerView.layer.cornerRadius = 20;

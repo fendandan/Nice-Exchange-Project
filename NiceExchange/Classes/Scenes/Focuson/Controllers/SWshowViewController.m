@@ -34,14 +34,14 @@
 @property (nonatomic,strong)UILabel *lable;
 @property (nonatomic,strong)UILabel *lable1;
 @property (nonatomic,strong)BaseSwitchViewController *switchVC;
-
+@property(nonatomic,strong) NSMutableArray *dataArray;
 @end
 
 @implementation SWshowViewController
 
 -  (void)viewWillAppear:(BOOL)animated {
     
-    NSURL *url = [NSURL URLWithString:_activity.titleImage.url];
+  
     
     self.imagedddddd.image = self.dataImage;
   
@@ -50,7 +50,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[XYSpriteHelper sharedInstance]startTimer];
-   
+    
     //[self add];
     self.userName.text = self.string;
     AVFile *ff = [AVFile fileWithURL:self.titlestring];
@@ -88,6 +88,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+    self.dataArray = [NSMutableArray array];
+    
     self.touch =0;
     //左上方返回按钮
     [self backButtonItem];
@@ -175,7 +178,8 @@
     _segmented.frame = CGRectMake(self.collectionView.frame.size.width /2 - 80, 57, 160, 40) ;
     [_segmented addTarget:self action:@selector(chageClick:) forControlEvents:(UIControlEventValueChanged)];
     [self.collectionView addSubview:_segmented];
-    
+#warning --- 评论数据
+      [self requestcommentdata];
 }
 
 
@@ -187,47 +191,6 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     
     _segmented.selectedSegmentIndex = _switchVC.scrollView.contentOffset.x / _switchVC.scrollView.frame.size.width;
-}
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 100;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
- 
-    if ( tableView == _switchVC.rightTableView) {
-    
-//        NSString *CellIdentifier = [NSString stringWithFormat:@"RcommentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
-//        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
-//        
-//        if (cell == nil) {
-//            cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-                SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
-        cell.selectionStyle = UITableViewCellEditingStyleNone;
-        cell.commentDelegate = self;
-        return cell;
-    
-        
-        }
-    
-
-    
-//
-//    NSString *CellIdentifier = [NSString stringWithFormat:@"commentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
-//    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
-//    if (cell == nil) {
-//        cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-   
-
-    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
-    cell.selectionStyle = UITableViewCellEditingStyleNone;
-    cell.commentDelegate = self;
-   return cell;
-  
 }
 
 - (void)onAction {
@@ -250,7 +213,6 @@
         self.collectionView.hidden = NO;
 #warning 2424
         self.rootVC.swTabBar.hidden  = YES;
-        SWActivityList *list = [SWActivityList new];
         
         self.contL.hidden = YES;
         
@@ -308,15 +270,53 @@
 -(void)commentAction:(UIButton *)sender {
     
     SWcommentViewController *commentVC = [[SWcommentViewController alloc]init];
-    
+    commentVC.swActivityList = self.activity;
     commentVC.detail = self.titleL.text;
     commentVC.detailll = self.detail.text;
     commentVC.aaa = self.contL.text;
     commentVC.bqL = self.biaoQL.text;
 #warning -==-=-=---==--=-=-=-=-==-=-=-=-=-=-=-=-==-
+    
+#warning Blokc传值 第三步:实现Block的内容(接收传递过来的内容)
+    
+    //通过__block __weak修饰变量,来解决Block的循环引用,ARC模式下使用__weak
+    __weak typeof(self) weakSelf = self;
+    commentVC.SecondBlock = ^(SWComment *string){
+#warning -----------------------------
+        [self.dataArray  addObject:string];
+        
+        SWLog(@"11111%@",string);
+        SWLog(@"%2222222ld",self.dataArray.count);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_switchVC.leftTableView reloadData];
+            [_switchVC.rightTableView reloadData];
+            
+        });
+    };
     [self.navigationController pushViewController:commentVC animated:YES];
     
 }
+
+
+-(void)requestcommentdata {
+    
+    
+    [LCManager lcSelectCommentWithActivityList:self.activity completion:^(NSArray *mArray) {
+        
+        [self.dataArray addObjectsFromArray:mArray ];
+        NSLog(@"1321324364587089-%@",self.dataArray);
+        [_switchVC.leftTableView reloadData];
+        [_switchVC.rightTableView reloadData];
+    }];
+    
+    
+    
+}
+
+
+
+
+
 
 //收藏按钮
 -(void)collectionAction:(UIButton *)sender {
@@ -421,7 +421,61 @@
 
     
 }
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    if ( tableView == _switchVC.rightTableView) {
+        
+        //        NSString *CellIdentifier = [NSString stringWithFormat:@"RcommentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+        //        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+        //
+        //        if (cell == nil) {
+        //            cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
+        cell.selectionStyle = UITableViewCellEditingStyleNone;
+        cell.commentDelegate = self;
+        SWComment *comment = self.dataArray[indexPath.row];
+        
+        cell.comment  = comment;
+        
+        return cell;
+        //查询一级评论
+        // LCManager lcSelectCommentWithActivityList:<#(SWActivityList *)#> completion:<#^(NSArray *mArray)completion#>
+        
+        
+    }else {
+    
+    
+    
+    //
+    //    NSString *CellIdentifier = [NSString stringWithFormat:@"commentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+    //    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+    //    if (cell == nil) {
+    //        cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    
+    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    cell.selectionStyle = UITableViewCellEditingStyleNone;
+    cell.commentDelegate = self;
+    SWComment *comment = self.dataArray[indexPath.row];
+//    cell.commentLLL.text = comment.commentContent;
+//    cell.userNL .text = comment.commentBy.username;
+    
+    cell.comment = comment;
+    
+//    AVFile *ff = [AVFile fileWithURL:self.titlestring];
+//    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+//        [cell.iconimv  setImage:image forState:(UIControlStateNormal)];
+//    }];
+    return cell;
+    }
+    
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 282;

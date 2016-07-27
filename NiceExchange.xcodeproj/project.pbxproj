@@ -339,6 +339,7 @@
 		CC9BFC3E1D40C3B500F40EF6 /* SWFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9BFC361D40C3B500F40EF6 /* SWFollow.m */; };
 		CC9BFC3F1D40C3B500F40EF6 /* SWLcAvUSer.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9BFC381D40C3B500F40EF6 /* SWLcAvUSer.m */; };
 		CC9BFC401D40C3B500F40EF6 /* SWMark.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9BFC3A1D40C3B500F40EF6 /* SWMark.m */; };
+		CC9CF4261D470C6400E58069 /* SWRSPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9CF4251D470C6400E58069 /* SWRSPViewController.m */; };
 		CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */; };
 		CCA3B7E41D3A7C95003361CC /* SWcommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */; };
 		CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA3B7BA1D3A7C95003361CC /* SWFocusonViewController.m */; };
@@ -408,6 +409,12 @@
 		D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D841D3A85190018794B /* practise_c_s_day.png */; };
 		D67172331D465D65003857D4 /* Release.png in Resources */ = {isa = PBXBuildFile; fileRef = D67172311D465D65003857D4 /* Release.png */; };
 		D67172381D466076003857D4 /* Release_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D67172371D466076003857D4 /* Release_Selected.png */; };
+		D6B5CEE51D4765BC0065C581 /* SWNotLoggedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B5CEE41D4765BC0065C581 /* SWNotLoggedViewController.m */; };
+		D6B5CEEB1D4766200065C581 /* 关注和拉黑.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE61D4766200065C581 /* 关注和拉黑.png */; };
+		D6B5CEEC1D4766200065C581 /* 沙龙动态.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE71D4766200065C581 /* 沙龙动态.png */; };
+		D6B5CEED1D4766200065C581 /* 赞.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE81D4766200065C581 /* 赞.png */; };
+		D6B5CEEE1D4766200065C581 /* 评论.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE91D4766200065C581 /* 评论.png */; };
+		D6B5CEEF1D4766200065C581 /* 官方通知.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEEA1D4766200065C581 /* 官方通知.png */; };
 		D6F554A11D3DD62A00CB1B3D /* SWLayoutTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */; };
 /* End PBXBuildFile section */
 
@@ -830,6 +837,8 @@
 		CC9BFC381D40C3B500F40EF6 /* SWLcAvUSer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWLcAvUSer.m; sourceTree = "<group>"; };
 		CC9BFC391D40C3B500F40EF6 /* SWMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMark.h; sourceTree = "<group>"; };
 		CC9BFC3A1D40C3B500F40EF6 /* SWMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMark.m; sourceTree = "<group>"; };
+		CC9CF4241D470C6400E58069 /* SWRSPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRSPViewController.h; sourceTree = "<group>"; };
+		CC9CF4251D470C6400E58069 /* SWRSPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRSPViewController.m; sourceTree = "<group>"; };
 		CCA3B7B61D3A7C95003361CC /* SWcommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWcommentViewController.h; sourceTree = "<group>"; };
 		CCA3B7B71D3A7C95003361CC /* SWcommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWcommentViewController.m; sourceTree = "<group>"; };
 		CCA3B7B81D3A7C95003361CC /* SWcommentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWcommentViewController.xib; sourceTree = "<group>"; };
@@ -932,6 +941,13 @@
 		D6616D841D3A85190018794B /* practise_c_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_s_day.png; sourceTree = "<group>"; };
 		D67172311D465D65003857D4 /* Release.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Release.png; sourceTree = "<group>"; };
 		D67172371D466076003857D4 /* Release_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Release_Selected.png; sourceTree = "<group>"; };
+		D6B5CEE31D4765BC0065C581 /* SWNotLoggedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNotLoggedViewController.h; sourceTree = "<group>"; };
+		D6B5CEE41D4765BC0065C581 /* SWNotLoggedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNotLoggedViewController.m; sourceTree = "<group>"; };
+		D6B5CEE61D4766200065C581 /* 关注和拉黑.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关注和拉黑.png"; sourceTree = "<group>"; };
+		D6B5CEE71D4766200065C581 /* 沙龙动态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "沙龙动态.png"; sourceTree = "<group>"; };
+		D6B5CEE81D4766200065C581 /* 赞.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞.png"; sourceTree = "<group>"; };
+		D6B5CEE91D4766200065C581 /* 评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论.png"; sourceTree = "<group>"; };
+		D6B5CEEA1D4766200065C581 /* 官方通知.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "官方通知.png"; sourceTree = "<group>"; };
 		D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWLayoutTextView.h; path = ../SWLayoutTextView.h; sourceTree = "<group>"; };
 		D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLayoutTextView.m; path = ../SWLayoutTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1568,6 +1584,7 @@
 			children = (
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
+				CC9CF4231D470C0400E58069 /* ReSetPassword */,
 				CCAC39811D3BA47B00CCE229 /* SettingsViewController */,
 				CCB33FA91D37B53900AEF415 /* RegisterViewController */,
 				CCB33FAC1D37B53900AEF415 /* LoginViewController */,
@@ -1798,6 +1815,15 @@
 			path = Models/LCModel;
 			sourceTree = "<group>";
 		};
+		CC9CF4231D470C0400E58069 /* ReSetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				CC9CF4241D470C6400E58069 /* SWRSPViewController.h */,
+				CC9CF4251D470C6400E58069 /* SWRSPViewController.m */,
+			);
+			name = ReSetPassword;
+			sourceTree = "<group>";
+		};
 		CCA3B7B41D3A7C95003361CC /* Focuson */ = {
 			isa = PBXGroup;
 			children = (
@@ -1978,6 +2004,8 @@
 				CC3F70851D438ECE00F0909F /* SWMessViewController.m */,
 				CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */,
 				CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */,
+				D6B5CEE31D4765BC0065C581 /* SWNotLoggedViewController.h */,
+				D6B5CEE41D4765BC0065C581 /* SWNotLoggedViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2023,6 +2051,11 @@
 				D6616D821D3A85190018794B /* practise_b_s_day.png */,
 				D6616D831D3A85190018794B /* practise_c_n_day.png */,
 				D6616D841D3A85190018794B /* practise_c_s_day.png */,
+				D6B5CEE61D4766200065C581 /* 关注和拉黑.png */,
+				D6B5CEE71D4766200065C581 /* 沙龙动态.png */,
+				D6B5CEE81D4766200065C581 /* 赞.png */,
+				D6B5CEE91D4766200065C581 /* 评论.png */,
+				D6B5CEEA1D4766200065C581 /* 官方通知.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -2151,6 +2184,7 @@
 				CC704DF41D3CF5CC00D5A269 /* UMSCommentInputControlleriPad.xib in Resources */,
 				CC5A3DA11D40C5D200984F1F /* p3_b_15.png in Resources */,
 				CC32933A1D45B7C80035C32F /* 评.png in Resources */,
+				D6B5CEED1D4766200065C581 /* 赞.png in Resources */,
 				CC704E081D3CF5CC00D5A269 /* ios-social-sdk-like.html in Resources */,
 				CC5A3D371D40C5D200984F1F /* p31b0082.png in Resources */,
 				CCA3B7E71D3A7C95003361CC /* SWshowViewController.xib in Resources */,
@@ -2182,6 +2216,7 @@
 				CC5A3D5D1D40C5D200984F1F /* p31b0120.png in Resources */,
 				CC5A3D9A1D40C5D200984F1F /* p3_b_0.png in Resources */,
 				CC5A3D651D40C5D200984F1F /* p31b0128.png in Resources */,
+				D6B5CEEE1D4766200065C581 /* 评论.png in Resources */,
 				CC5A3D951D40C5D200984F1F /* p31b0176.png in Resources */,
 				CC592B681D3F16CB002CD37D /* 222.png in Resources */,
 				CCA3B7F31D3A7C95003361CC /* xinxian.png in Resources */,
@@ -2219,6 +2254,7 @@
 				CC5A3D6D1D40C5D200984F1F /* p31b0136.png in Resources */,
 				CC5A3D621D40C5D200984F1F /* p31b0125.png in Resources */,
 				CC704E051D3CF5CC00D5A269 /* iOS-social-releasenote.html in Resources */,
+				D6B5CEEC1D4766200065C581 /* 沙龙动态.png in Resources */,
 				CC5A3D541D40C5D200984F1F /* p31b0111.png in Resources */,
 				CC5A3DB91D40EECA00984F1F /* SWCommentsTableViewCell.xib in Resources */,
 				CC5A3D5B1D40C5D200984F1F /* p31b0118.png in Resources */,
@@ -2263,6 +2299,7 @@
 				CC5A3D831D40C5D200984F1F /* p31b0158.png in Resources */,
 				CC5A3D451D40C5D200984F1F /* p31b0096.png in Resources */,
 				CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */,
+				D6B5CEEF1D4766200065C581 /* 官方通知.png in Resources */,
 				CC5A3D761D40C5D200984F1F /* p31b0145.png in Resources */,
 				CCA3B7F51D3A7C95003361CC /* 呵呵.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
@@ -2383,6 +2420,7 @@
 				CCA3B7FC1D3A7C95003361CC /* SWJoinTableViewCell.xib in Resources */,
 				D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */,
 				CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */,
+				D6B5CEEB1D4766200065C581 /* 关注和拉黑.png in Resources */,
 				CC5A3D3E1D40C5D200984F1F /* p31b0089.png in Resources */,
 				CC5A3CEF1D40C5D200984F1F /* p31b0010.png in Resources */,
 			);
@@ -2491,8 +2529,10 @@
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */,
 				CC26E1F01D3DDA82007FDAEE /* ThreeViewController.m in Sources */,
+				D6B5CEE51D4765BC0065C581 /* SWNotLoggedViewController.m in Sources */,
 				CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */,
 				CC9BFC3F1D40C3B500F40EF6 /* SWLcAvUSer.m in Sources */,
+				CC9CF4261D470C6400E58069 /* SWRSPViewController.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
 				CC592B721D3F1701002CD37D /* MSGuideViewManager.m in Sources */,
 				CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */,

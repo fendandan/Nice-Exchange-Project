@@ -218,8 +218,8 @@
     cell.selectionStyle = UITableViewCellAccessoryNone;
     
     UIButton  *invitation = [UIButton buttonWithType:UIButtonTypeCustom];
-    invitation.backgroundColor = [UIColor cyanColor];
-    invitation.frame = CGRectMake(300 , 10, 60, 40);
+    //invitation.backgroundColor = [UIColor cyanColor];
+    invitation.frame = CGRectMake(345 , 10, 60, 40);
     [invitation setImage:[UIImage imageNamed:@"已收藏.png"] forState:(UIControlStateNormal)];
     [invitation addTarget:self action:@selector(photographButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     invitation.tag = indexPath.row;

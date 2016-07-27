@@ -35,10 +35,12 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
         AVQuery *cQ = [AVQuery queryWithClassName:@"Count"];
         [cQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
         [cQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            SWCount * c = objects[0];
+            if (objects.count != 0) {
+                SWCount * c = objects[0];
 //            SWLog(@"cccc cccccccc ccc %@",c);
-            [[SWLcAvUSer currentUser] setObject:c forKey:@"count"];
-            [[SWLcAvUSer currentUser] saveInBackground];
+                [[SWLcAvUSer currentUser] setObject:c forKey:@"count"];
+                [[SWLcAvUSer currentUser] saveInBackground];
+            }
         }];
     }
 }

@@ -8,12 +8,13 @@
 
 #import "SWAboutMeViewController.h"
 
-@interface SWAboutMeViewController ()
+@interface SWAboutMeViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) UIImageView *imgView;
 @property (strong, nonatomic) UITextField *displayNameTF;
 @property (strong, nonatomic) UITextField *genderTF;
 @property (strong, nonatomic) UITextField *infoTF;
+@property (strong, nonatomic) UITextField *textF;
 
 @end
 
@@ -23,8 +24,16 @@
     [super viewDidLoad];
     //
     
-    
     [self addView];
+    
+    self.displayNameTF.delegate = self;
+    self.displayNameTF.returnKeyType = UIReturnKeyNext;
+    self.genderTF.delegate = self;
+    self.genderTF.returnKeyType = UIReturnKeyNext;
+    self.infoTF.delegate = self;
+    
+    self.textF.delegate = self;
+    
 #warning --------- 修改self.currentUser
     if ([SWLcAvUSer currentUser].displayName) {
         self.displayNameTF.text = [SWLcAvUSer currentUser].displayName;
@@ -90,10 +99,8 @@
     
 }
 - (void)saveAction:(UIBarButtonItem *)barButtonItem {
+    SWLogFunc;
     
-}
-// 头像点击方法
-- (void)topInfoLabel:(UITapGestureRecognizer *)tapGestureRecongnizer {
     // 个人信息设置
     SWLcAvUSer * user = [SWLcAvUSer currentUser];
     user.displayName = self.displayNameTF.text;
@@ -102,10 +109,59 @@
     AVFile *imageFile = [AVFile fileWithName:@"userImage" data:data];
     user.userImage = imageFile;
     
-    
     [user saveInBackground];
 }
-
+// 头像点击方法
+- (void)topInfoLabel:(UITapGestureRecognizer *)tapGestureRecongnizer {
+    
+    
+    
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (self.view.frame.origin.y == 0.0f) {
+        NSTimeInterval animationDuration = 0.30f;
+        [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        
+        self.view.frame = CGRectMake(0.0f, -252.0f, self.view.frame.size.width, self.view.frame.size.height);
+        [UIView commitAnimations];
+    }
+    
+    
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    if (textField == self.textF) {
+        NSTimeInterval animationDuration = 0.03f;
+        [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        
+        self.view.frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
+        [UIView commitAnimations];
+    }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.displayNameTF) {
+        [self.genderTF becomeFirstResponder];
+    }else if (textField == self.genderTF)  {
+        [self.infoTF becomeFirstResponder];
+    }else if(textField == self.infoTF) {
+        [textField resignFirstResponder];
+        
+        NSTimeInterval animationDuration = 0.30f;
+        [UIView beginAnimations:@"ResizeForKeyboard" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        
+        self.view.frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width, self.view.frame.size.height);
+        [UIView commitAnimations];
+        
+    }
+    return YES;
+}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self.displayNameTF resignFirstResponder];
+//    [self.genderTF resignFirstResponder];
+//    [self.infoTF resignFirstResponder];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

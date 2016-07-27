@@ -10,11 +10,13 @@
 
 #import "SWTableViewCell.h"
 #import "SWNotifcationSettingViewController.h"
+#import "SWNotLoggedViewController.h"
 #define TableviewCell @"TableviewCell"
 @interface SWMessViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
 @property (nonatomic, strong) NSMutableArray *mutableArray;
+@property (nonatomic,strong)NSMutableArray *imagearray;//消息图标
 @end
 
 @implementation SWMessViewController
@@ -23,9 +25,8 @@
     [super viewDidLoad];
    
     //初始化可变数组
-    self.mutableArray = [NSMutableArray arrayWithObjects:@"1",@"2",@"4",@"6",@"5",@"7",@"8",@"0"
-, nil];
-   
+    self.mutableArray = [NSMutableArray arrayWithObjects:@"关注和拉黑",@"沙龙动态",@"评论",@"赞",@"收藏",@"官方通知", nil];
+    self.imagearray = [NSMutableArray arrayWithObjects:@"关注和拉黑",@"沙龙动态",@"评论",@"赞",@"收藏",@"官方通知", nil];
   self.tableview = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height-64-49) style:UITableViewStylePlain];
     [self.view addSubview:self.tableview];
     
@@ -50,6 +51,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点我,我就走了");
+    SWNotLoggedViewController *notlogged = [[SWNotLoggedViewController alloc]init];
+    [self.navigationController pushViewController:notlogged animated:YES];
 }
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -63,10 +66,11 @@
      //隐藏cell分割线
     tableView.separatorStyle = NO;
     SWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SWTableViewCell_Cell forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:@""];
+    cell.iconimage.image = [UIImage imageNamed:self.imagearray[indexPath.row]];
     cell.titlelabel.text = self.mutableArray[indexPath.row];
-    cell.numberlabel.text = @"数据";
+    cell.numberlabel.text = @"";
     return cell;
+
     
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
