@@ -90,11 +90,9 @@ UINavigationControllerDelegate
     self.imageview.layer.masksToBounds = YES;
     self.imageview.layer.cornerRadius = self.imageview.bounds.size.width/2;
     self.imageview.image = [UIImage imageNamed:@"2.png"];
-    //self.imageview.backgroundColor = [UIColor grayColor];
     [self.scrollview addSubview:self.imageview];
     UIButton *uploadbtn = [UIButton buttonWithType:UIButtonTypeCustom];
     uploadbtn.frame = CGRectMake(self.view.bounds.size.width - 130, self.view.bounds.size.height/20, 130, 20);
-    // uploadbtn.backgroundColor = [UIColor orangeColor];
     [uploadbtn setTitle:@"上传封面图片"forState:UIControlStateNormal];
     [uploadbtn addTarget:self action:@selector(uploadAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.scrollview addSubview:uploadbtn];
@@ -141,12 +139,21 @@ UINavigationControllerDelegate
 }
 
 
+//-(void)changeLayoutView
+//{
+//    self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
+//    if (self.addrule.frame.origin.y + self.addrule.frame.size.height >= kScreenHeight) {
+//        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height) ;
+//        self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - kScreenHeight);
+//    }
+//}
 -(void)changeLayoutView
 {
-    self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
-    if (self.addrule.frame.origin.y + self.addrule.frame.size.height >= kScreenHeight ) {
-        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height) ;
-        self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - kScreenHeight);
+  self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
+    if (self.addrule.frame.origin.y + self.addrule.frame.size.height > self.scrollview.frame.origin.y) {
+        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height+30) ;
+               self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - self.scrollview.frame.size.height);
+        
     }
 }
 
