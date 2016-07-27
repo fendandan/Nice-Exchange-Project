@@ -11,6 +11,6 @@
 @interface SWcommentsViewController : BaseViewController
 @property (nonatomic ,strong)NSMutableArray *dataArray;
 @property (nonatomic ,strong)NSMutableArray *messageArray;
-
+@property (nonatomic,strong)NSString *userString;
 
 @end

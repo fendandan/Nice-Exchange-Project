@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MusicDetailViewController : UIViewController
+@interface MusicDetailViewController : BaseViewController
 //传 url
 @property(nonatomic,strong)NSString *urlString;
 

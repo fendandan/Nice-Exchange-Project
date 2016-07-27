@@ -181,13 +181,29 @@
 //用户头像点击事件
 - (void)elsetableViewCellUserimageViewClikend:(ElseTableViewCell *)cell
 {
-    
     SWUserDetailViewController *swVC = [SWUserDetailViewController new];
     
     [self.navigationController pushViewController:swVC animated:YES];
     
 }
 
+
+
+//收藏点击事件
+- (void)elseTableViewCollectBtnClikend:(ElseTableViewCell *)cell
+{
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    [self.navigationController pushViewController:showVC animated:YES];
+}
+
+
+//参与的点击事件
+- (void)elseTableViewparticipationBtnClikend:(ElseTableViewCell *)cell
+{
+    SWshowViewController *showVC = [[SWshowViewController alloc] init];
+    
+    [self.navigationController pushViewController:showVC animated:YES];
+}
 
 
 - (void)didReceiveMemoryWarning {

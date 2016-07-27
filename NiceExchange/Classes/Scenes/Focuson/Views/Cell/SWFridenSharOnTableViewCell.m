@@ -28,8 +28,8 @@
 
 -(void)clickAction {
     
-    if ([self.friendDelegate respondsToSelector:@selector(onClick)]) {
-        [self.friendDelegate onClick];
+    if ([self.friendDelegate respondsToSelector:@selector(onClick:)]) {
+        [self.friendDelegate onClick:self];
     }
     
 }

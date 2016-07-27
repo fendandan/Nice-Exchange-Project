@@ -34,26 +34,23 @@
 @property (nonatomic,strong)UILabel *lable;
 @property (nonatomic,strong)UILabel *lable1;
 @property (nonatomic,strong)BaseSwitchViewController *switchVC;
-
+@property(nonatomic,strong) NSMutableArray *dataArray;
 @end
 
 @implementation SWshowViewController
 
 -  (void)viewWillAppear:(BOOL)animated {
     
-    NSURL *url = [NSURL URLWithString:_activity.titleImage.url];
+  
     
     self.imagedddddd.image = self.dataImage;
-    
-    
-    
-    
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [[XYSpriteHelper sharedInstance]startTimer];
-   
+    
     //[self add];
     self.userName.text = self.string;
     AVFile *ff = [AVFile fileWithURL:self.titlestring];
@@ -68,109 +65,12 @@
     self.xzLable.text = self.activity.rule;
 
 }
-//- (void)setString:(NSString *)string {
-//    
-//    
-//    /**
-//     *  头像
-//     */
-// self.icon = @"";
-//    
-//    /**
-//     *  内容
-//     */
-//    self.contL.text = string;
-//    /**
-//     *  标签
-//     */
-//   self.biaoQL.text = string;
-//    /**
-//     *  标题
-//     */
-//   self.titleL.text = string;
-//    
-//    /**
-//     *  副标题
-//     */
-//   self.detail.text = string;
-//    /**
-//     *  详情图片
-//     */
-//  self.imageV = @"";
-//    /**
-//     *  一起聊聊
-//     */
-//  self.xzLable.text = string;
-//    
-//    self.userName.text = string;
-//}
-//
 - (void)setActivity:(SWActivityList *)activity {
     if (_activity != activity) {
         _activity = nil;
         _activity = activity;
         
-          
-        
-   
-        
-        /**
-         *  内容
-         */
-        self.contL;
-        /**
-         *  标签
-         */
-        self.biaoQL;
-        /**
-         *  标题
-         */
-        self.titleL;
-        
-        /**
-         *  副标题
-         */
-        self.detail;
-        /**
-         *  详情图片
-         */
-    
-        /**
-         *  一起聊聊
-         */
-//        @property (strong, nonatomic) IBOutlet UILabel *xzLable;
-//        self.string =  cell.FriendName.text;
-//        [self.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
-//        //    cell.collectNum.text = @"";
-//        //    cell.joinNum.text = @"";
-//        self.BJLable.text =  list.label;
-//        self.GZlABLE.text = list.rule;
-//        [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
-        
-    }
-}
--(void)add {
-    
-    SWActivityList *activity = [SWActivityList object];
-    activity.title = @"招黑体质霉霉又撕逼了，这次是因为歧视女性？ "; // 标题
-    activity.content = @"泰勒又火了，这次是和侃爷因为新歌的歌词开战，还附带把卡戴珊、水果姐等风云人物卷了进来。这股火直接从欧美圈一路烧到了中国，来势汹汹、气势惊人。 事情的导火索，是侃爷的新歌——《famous》，这首歌里的一句rap写到了霉霉：“I feel like me and Taylor might still have sex , Why I made that bitch famous god damn . I made that bitch famou”翻译过来就是：“我觉得泰勒应该在床上满足我，她可是老子捧红的，我的老天爷，她可是沾了我的光才红起来的”（我选了一个比较温和的翻译版本，毕竟我们都还是宝宝），在后来公布的新歌MV里，霉霉的蜡像赤身裸体躺在侃爷身边，其实MV里共出现了12个女人的裸体蜡像，包括他老婆卡戴珊的果体。 你怎么看待霉霉和侃爷撕逼这件事？卡戴珊不经霉霉允许就私自录像，但如果没有录像，大家也看不到事情的全貌 霉霉说侃爷这首歌是歧视女性，你怎么看？（"; // 内容
-    activity.subhead = @"请自行搜索《famous》）道理我都懂，但我真正关心的是，我森怎么想?"; // 副标题
-    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"tl.jpg"], 0.5);
-    AVFile *file = [AVFile fileWithName:@"title.jpg" data:data]; // 图片
-    [activity setObject:file forKey:@"titleImage"];
-    activity.rule = @"一起聊聊"; // 规则
-    activity.label = @"娱乐"; // 标签
-    activity.point = [AVGeoPoint geoPointWithLatitude:39.57 longitude:116]; // 坐标
-    
-    activity.markC = @0; // 收藏数累计，默认0
-    [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
-    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        SWLog(@" ---- error %@",error);
-        if (succeeded) {
-            SWLog(@" ----- succeeded %d",succeeded);
-        }
-    }];
-
+       }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -188,9 +88,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+    self.dataArray = [NSMutableArray array];
     
-    
-      self.touch =0;
+    self.touch =0;
     //左上方返回按钮
     [self backButtonItem];
     self.title = @"参与沙龙";
@@ -277,7 +178,8 @@
     _segmented.frame = CGRectMake(self.collectionView.frame.size.width /2 - 80, 57, 160, 40) ;
     [_segmented addTarget:self action:@selector(chageClick:) forControlEvents:(UIControlEventValueChanged)];
     [self.collectionView addSubview:_segmented];
-    
+#warning --- 评论数据
+      [self requestcommentdata];
 }
 
 
@@ -290,52 +192,13 @@
     
     _segmented.selectedSegmentIndex = _switchVC.scrollView.contentOffset.x / _switchVC.scrollView.frame.size.width;
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 100;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
- 
-    if ( tableView == _switchVC.rightTableView) {
-    
-//        NSString *CellIdentifier = [NSString stringWithFormat:@"RcommentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
-//        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
-//        
-//        if (cell == nil) {
-//            cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        
-                SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
-        cell.selectionStyle = UITableViewCellEditingStyleNone;
-        cell.commentDelegate = self;
-        return cell;
-    
-        
-        }
-    
-
-    
-//
-//    NSString *CellIdentifier = [NSString stringWithFormat:@"commentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
-//    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
-//    if (cell == nil) {
-//        cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-   
-
-    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
-    cell.selectionStyle = UITableViewCellEditingStyleNone;
-    cell.commentDelegate = self;
-   return cell;
-  
-}
 
 - (void)onAction {
 
     
     SWcommentsViewController *commentVC = [SWcommentsViewController new];
+    
+    commentVC.userString = self.activity.createBy.objectId;
     
     [self.navigationController pushViewController:commentVC animated:YES];
     
@@ -366,6 +229,9 @@
 
 -(void)PushAction:(UIButton *)sender {
     SWUserDetailViewController *usrVC = [[SWUserDetailViewController alloc]init];
+
+    usrVC.userString = self.activity.createBy.objectId;
+    
     
     [self.navigationController pushViewController:usrVC animated:YES];
 }
@@ -404,10 +270,53 @@
 -(void)commentAction:(UIButton *)sender {
     
     SWcommentViewController *commentVC = [[SWcommentViewController alloc]init];
+    commentVC.swActivityList = self.activity;
+    commentVC.detail = self.titleL.text;
+    commentVC.detailll = self.detail.text;
+    commentVC.aaa = self.contL.text;
+    commentVC.bqL = self.biaoQL.text;
+#warning -==-=-=---==--=-=-=-=-==-=-=-=-=-=-=-=-==-
     
+#warning Blokc传值 第三步:实现Block的内容(接收传递过来的内容)
+    
+    //通过__block __weak修饰变量,来解决Block的循环引用,ARC模式下使用__weak
+    __weak typeof(self) weakSelf = self;
+    commentVC.SecondBlock = ^(SWComment *string){
+#warning -----------------------------
+        [self.dataArray  addObject:string];
+        
+        SWLog(@"11111%@",string);
+        SWLog(@"%2222222ld",self.dataArray.count);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_switchVC.leftTableView reloadData];
+            [_switchVC.rightTableView reloadData];
+            
+        });
+    };
     [self.navigationController pushViewController:commentVC animated:YES];
     
 }
+
+
+-(void)requestcommentdata {
+    
+    
+    [LCManager lcSelectCommentWithActivityList:self.activity completion:^(NSArray *mArray) {
+        
+        [self.dataArray addObjectsFromArray:mArray ];
+        NSLog(@"1321324364587089-%@",self.dataArray);
+        [_switchVC.leftTableView reloadData];
+        [_switchVC.rightTableView reloadData];
+    }];
+    
+    
+    
+}
+
+
+
+
+
 
 //收藏按钮
 -(void)collectionAction:(UIButton *)sender {
@@ -512,12 +421,129 @@
 
     
 }
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    if ( tableView == _switchVC.rightTableView) {
+        
+        //        NSString *CellIdentifier = [NSString stringWithFormat:@"RcommentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+        //        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+        //
+        //        if (cell == nil) {
+        //            cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RcommentCell"];
+        cell.selectionStyle = UITableViewCellEditingStyleNone;
+        cell.commentDelegate = self;
+        SWComment *comment = self.dataArray[indexPath.row];
+        
+        cell.comment  = comment;
+        
+        return cell;
+        //查询一级评论
+        // LCManager lcSelectCommentWithActivityList:<#(SWActivityList *)#> completion:<#^(NSArray *mArray)completion#>
+        
+        
+    }else {
+    
+    
+    
+    //
+    //    NSString *CellIdentifier = [NSString stringWithFormat:@"commentCell%ld%ld", (long)[indexPath section], (long)[indexPath row]];//以indexPath来唯一确定cell
+    //    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier]; //出列可重用的cell
+    //    if (cell == nil) {
+    //        cell = [[SWCommentsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    
+    
+    SWCommentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"commentCell"];
+    cell.selectionStyle = UITableViewCellEditingStyleNone;
+    cell.commentDelegate = self;
+    SWComment *comment = self.dataArray[indexPath.row];
+//    cell.commentLLL.text = comment.commentContent;
+//    cell.userNL .text = comment.commentBy.username;
+    
+    cell.comment = comment;
+    
+//    AVFile *ff = [AVFile fileWithURL:self.titlestring];
+//    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+//        [cell.iconimv  setImage:image forState:(UIControlStateNormal)];
+//    }];
+    return cell;
+    }
+    
+}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 282;
 }
 
+-(void)add {
+    
+    SWActivityList *activity = [SWActivityList object];
+    activity.title = @"招黑体质霉霉又撕逼了，这次是因为歧视女性？ "; // 标题
+    activity.content = @"泰勒又火了，这次是和侃爷因为新歌的歌词开战，还附带把卡戴珊、水果姐等风云人物卷了进来。这股火直接从欧美圈一路烧到了中国，来势汹汹、气势惊人。 事情的导火索，是侃爷的新歌——《famous》，这首歌里的一句rap写到了霉霉：“I feel like me and Taylor might still have sex , Why I made that bitch famous god damn . I made that bitch famou”翻译过来就是：“我觉得泰勒应该在床上满足我，她可是老子捧红的，我的老天爷，她可是沾了我的光才红起来的”（我选了一个比较温和的翻译版本，毕竟我们都还是宝宝），在后来公布的新歌MV里，霉霉的蜡像赤身裸体躺在侃爷身边，其实MV里共出现了12个女人的裸体蜡像，包括他老婆卡戴珊的果体。 你怎么看待霉霉和侃爷撕逼这件事？卡戴珊不经霉霉允许就私自录像，但如果没有录像，大家也看不到事情的全貌 霉霉说侃爷这首歌是歧视女性，你怎么看？（"; // 内容
+    activity.subhead = @"请自行搜索《famous》）道理我都懂，但我真正关心的是，我森怎么想?"; // 副标题
+    NSData *data = UIImageJPEGRepresentation([UIImage imageNamed:@"tl.jpg"], 0.5);
+    AVFile *file = [AVFile fileWithName:@"title.jpg" data:data]; // 图片
+    [activity setObject:file forKey:@"titleImage"];
+    activity.rule = @"一起聊聊"; // 规则
+    activity.label = @"娱乐"; // 标签
+    activity.point = [AVGeoPoint geoPointWithLatitude:39.57 longitude:116]; // 坐标
+    
+    activity.markC = @0; // 收藏数累计，默认0
+    [activity setObject:[SWLcAvUSer currentUser] forKey:@"createBy"]; // 发布者
+    [activity saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        SWLog(@" ---- error %@",error);
+        if (succeeded) {
+            SWLog(@" ----- succeeded %d",succeeded);
+        }
+    }];
+    
+    
+    
+    //- (void)setString:(NSString *)string {
+    //
+    //
+    //    /**
+    //     *  头像
+    //     */
+    // self.icon = @"";
+    //
+    //    /**
+    //     *  内容
+    //     */
+    //    self.contL.text = string;
+    //    /**
+    //     *  标签
+    //     */
+    //   self.biaoQL.text = string;
+    //    /**
+    //     *  标题
+    //     */
+    //   self.titleL.text = string;
+    //
+    //    /**
+    //     *  副标题
+    //     */
+    //   self.detail.text = string;
+    //    /**
+    //     *  详情图片
+    //     */
+    //  self.imageV = @"";
+    //    /**
+    //     *  一起聊聊
+    //     */
+    //  self.xzLable.text = string;
+    //
+    //    self.userName.text = string;
+    //}
+    //
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

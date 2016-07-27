@@ -12,6 +12,6 @@
 
 @interface SWRegisterViewController : BaseViewController
 
-
+@property (nonatomic,assign)BOOL isMod;
 
 @end

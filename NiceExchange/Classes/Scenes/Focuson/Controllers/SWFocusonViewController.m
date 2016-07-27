@@ -109,11 +109,19 @@
     
     [self.navigationController pushViewController:usrVC animated:YES];
 }
--(void)onClick {
+- (void)onClick:(SWFridenSharOnTableViewCell *)cell {
+    
     
     SWUserDetailViewController *usrVC = [[SWUserDetailViewController alloc]init];
+    NSIndexPath *indexPath =  [self.ztableView indexPathForCell:cell];
+    
+           SWActivityList *act  =  self.dataArray[indexPath.row];
+    
+           usrVC.userString = act.createBy.objectId;
+    
     
     [self.navigationController pushViewController:usrVC animated:YES];
+    
     
     NSLog(@"11");
 }
@@ -174,11 +182,16 @@
     cell.friendDelegate = self;
     
     SWActivityList *list = self.dataArray[indexPath.row];
-    
+    /**
+     *  //////////////////////
+     */
     if (list.createBy.displayName) {
         cell.FriendName.text =list.createBy.displayName;
+       
     }else {
         cell.FriendName.text =list.createBy.username;
+        
+         NSLog(@"3434454565667788990876543    BGVC HNYDSXJUKHJYCV JKL,V L  %@",list.createBy.username);
     }
     cell.title.text = list.title;
     [cell.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
@@ -191,6 +204,11 @@
     AVFile *ff = [AVFile fileWithURL:list.createBy.userImage.url];
     [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
         [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
+        
+        
+//        AVQuery *avq =  [AVQuery queryWithClassName:@"_User"];
+//        
+//        [avq whereKey:@"objectId" equalTo:self.userString];
     }];
     return cell;
     

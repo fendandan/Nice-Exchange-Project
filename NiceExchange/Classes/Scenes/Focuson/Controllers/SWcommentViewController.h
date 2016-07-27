@@ -9,8 +9,31 @@
 #import "BaseViewController.h"
 
 @interface SWcommentViewController : BaseViewController
+@property (strong, nonatomic) IBOutlet UILabel *tttttt;
+
 @property (strong, nonatomic) IBOutlet UILabel *titleL;
 @property (strong, nonatomic) IBOutlet UILabel *detailL;
 @property (strong, nonatomic) IBOutlet UITextView *textView;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *bqLLLLL;
+
+
+@property (nonatomic,strong)NSString *detail;
+
+@property (nonatomic,strong) NSString *detailll;
+
+@property (nonatomic,strong) NSString *bqL;
+
+@property (nonatomic,strong)NSString * aaa;
+
+
+#warning  Blokc传值 第一步:声明Block
+
+@property (nonatomic,copy) void(^SecondBlock)(SWComment *string);
+
+
+@property (nonatomic,strong) SWActivityList *swActivityList;
+
 
 @end

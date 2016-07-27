@@ -10,9 +10,13 @@
 #import "SWusrTableViewCell.h"
 #import "SWpratTableViewCell.h"
 #import "SWcollectionTableViewCell.h"
+@class SWUserDetailViewController;
+@class SWcollectionTableViewCell;
 @interface SWUserDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *focusTableview;
-
+@property (nonatomic ,strong)NSString  *collectionString;
+@property (nonatomic,strong) NSString *activityString;
+@property (nonatomic, strong)NSString *commentCString;
 @end
 
 @implementation SWUserDetailViewController
@@ -21,11 +25,64 @@
     
     
     self.rootVC.swTabBar.hidden = NO;
+
+
 }
+
+- (void) requestData {
+{
+    
+    AVQuery *avq =  [AVQuery queryWithClassName:@"_User"];
+    
+    [avq whereKey:@"objectId" equalTo:self.userString];
+    
+    [avq includeKey:@"count"];
+    
+    [avq findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+       
+        SWLcAvUSer *user = objects[0];
+        
+        self.nameL.text = user.username;
+        [self.iconI  setImageWithURL:[NSURL URLWithString:user.userImage.url]];
+     
+    
+        _collectionString = user.count.markC.stringValue;
+              NSLog(@"-----%@", _collectionString);
+  
+         //发起
+        _activityString = user.count.activityC.stringValue;
+        //参与
+        _commentCString =     user.count.commentC.stringValue;
+        //关注
+        self.focusL.text =         user.count.followC.stringValue;
+        //被关注
+        self.befocus.text =       user.count.followedC.stringValue;
+        NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>%@",user);
+ 
+        
+        [self.focusTableview reloadData];
+        
+    }];
+    
+    
+    
+}
+    
+    
+    
+    
+    
+}
+
+
+
+
+
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        [self requestData];
 self.title = @"个人资料";
     self.headerView.layer.masksToBounds = YES;
     self.headerView.layer.cornerRadius = 20;
@@ -82,21 +139,21 @@ self.title = @"个人资料";
         
           SWusrTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SWusrTableViewCell"];
     
-    cell.initiateL.text = @"111";
+    cell.initiateL.text = _activityString;
     
     return cell;
         
     }else if (indexPath.row == 1){
         SWpratTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SWpratTableViewCell"];
         
-        cell.participateL.text = @"222";
+        cell.participateL.text = _commentCString;
         return cell;
         
     }
         SWcollectionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SWcollectionTableViewCell"];
         
-        cell.collectionCount.text = @"333";
-   
+        cell.collectionCount.text = _collectionString;
+    
     
     return cell;
  

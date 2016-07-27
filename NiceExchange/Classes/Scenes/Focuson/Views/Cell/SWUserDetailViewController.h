@@ -22,6 +22,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameL;
 @property (strong, nonatomic) IBOutlet UILabel *genderL;
 
-
+@property (nonatomic,strong) NSString *userString;
 
 @end

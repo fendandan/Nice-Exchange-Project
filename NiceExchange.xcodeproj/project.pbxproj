@@ -16,13 +16,6 @@
 		CC11C9281D459F380075FB5F /* ElseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C9251D459F380075FB5F /* ElseViewController.m */; };
 		CC11C92C1D459F660075FB5F /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */; };
 		CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */; };
-		CC11C92F1D4615400075FB5F /* chuimengjuren.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C92E1D4615400075FB5F /* chuimengjuren.jpg */; };
-		CC11C9311D4618270075FB5F /* bijianrensheng.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9301D4618270075FB5F /* bijianrensheng.jpg */; };
-		CC11C9331D46198D0075FB5F /* riben.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9321D46198D0075FB5F /* riben.jpg */; };
-		CC11C9351D461B480075FB5F /* wutaishan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9341D461B480075FB5F /* wutaishan.jpg */; };
-		CC11C9371D462D970075FB5F /* xiangxi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9361D462D970075FB5F /* xiangxi.jpg */; };
-		CC11C9391D462FA80075FB5F /* xingkong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C9381D462FA80075FB5F /* xingkong.jpg */; };
-		CC11C93B1D4633B00075FB5F /* shouhou.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC11C93A1D4633B00075FB5F /* shouhou.jpg */; };
 		CC26E1D11D3DD6C7007FDAEE /* ReadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */; };
 		CC26E1D21D3DD6C7007FDAEE /* ReadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */; };
 		CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC26E1D01D3DD6C7007FDAEE /* RedaViewController.m */; };
@@ -390,6 +383,7 @@
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
 		CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */; };
 		CCD8362A1D460479004CC453 /* SWMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD836291D460479004CC453 /* SWMessage.m */; };
+		CCEACCD81D47507E0026996C /* 微软雅黑.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCEACCD71D47507E0026996C /* 微软雅黑.ttf */; };
 		CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */; };
 		CCF61FC61D3896190071EC51 /* MusicDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */; };
 		CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC81D38C7F60071EC51 /* MusicDetailModel.m */; };
@@ -409,6 +403,12 @@
 		D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */ = {isa = PBXBuildFile; fileRef = D6616D841D3A85190018794B /* practise_c_s_day.png */; };
 		D67172331D465D65003857D4 /* Release.png in Resources */ = {isa = PBXBuildFile; fileRef = D67172311D465D65003857D4 /* Release.png */; };
 		D67172381D466076003857D4 /* Release_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = D67172371D466076003857D4 /* Release_Selected.png */; };
+		D6B5CEE51D4765BC0065C581 /* SWNotLoggedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6B5CEE41D4765BC0065C581 /* SWNotLoggedViewController.m */; };
+		D6B5CEEB1D4766200065C581 /* 关注和拉黑.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE61D4766200065C581 /* 关注和拉黑.png */; };
+		D6B5CEEC1D4766200065C581 /* 沙龙动态.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE71D4766200065C581 /* 沙龙动态.png */; };
+		D6B5CEED1D4766200065C581 /* 赞.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE81D4766200065C581 /* 赞.png */; };
+		D6B5CEEE1D4766200065C581 /* 评论.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEE91D4766200065C581 /* 评论.png */; };
+		D6B5CEEF1D4766200065C581 /* 官方通知.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B5CEEA1D4766200065C581 /* 官方通知.png */; };
 		D6F554A11D3DD62A00CB1B3D /* SWLayoutTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */; };
 /* End PBXBuildFile section */
 
@@ -429,13 +429,6 @@
 		CC11C9291D459F660075FB5F /* MovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
 		CC11C92A1D459F660075FB5F /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
 		CC11C92B1D459F660075FB5F /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
-		CC11C92E1D4615400075FB5F /* chuimengjuren.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chuimengjuren.jpg; sourceTree = "<group>"; };
-		CC11C9301D4618270075FB5F /* bijianrensheng.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bijianrensheng.jpg; sourceTree = "<group>"; };
-		CC11C9321D46198D0075FB5F /* riben.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = riben.jpg; sourceTree = "<group>"; };
-		CC11C9341D461B480075FB5F /* wutaishan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wutaishan.jpg; sourceTree = "<group>"; };
-		CC11C9361D462D970075FB5F /* xiangxi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xiangxi.jpg; sourceTree = "<group>"; };
-		CC11C9381D462FA80075FB5F /* xingkong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = xingkong.jpg; sourceTree = "<group>"; };
-		CC11C93A1D4633B00075FB5F /* shouhou.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shouhou.jpg; sourceTree = "<group>"; };
 		CC26E1CC1D3DD6C7007FDAEE /* ReadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadTableViewCell.h; sourceTree = "<group>"; };
 		CC26E1CD1D3DD6C7007FDAEE /* ReadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadTableViewCell.m; sourceTree = "<group>"; };
 		CC26E1CE1D3DD6C7007FDAEE /* ReadTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReadTableViewCell.xib; sourceTree = "<group>"; };
@@ -469,7 +462,7 @@
 		CC3293391D45B7C80035C32F /* 评.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评.png"; sourceTree = "<group>"; };
 		CC32933B1D45BC470035C32F /* SWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWViewController.h; sourceTree = "<group>"; };
 		CC32933C1D45BC470035C32F /* SWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWViewController.m; sourceTree = "<group>"; };
-		CC32933D1D45BC470035C32F /* SWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWViewController.xib; sourceTree = "<group>"; };
+		CC32933D1D45BC470035C32F /* SWViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SWViewController.xib; path = NiceExchange/Classes/Scenes/Focuson/Views/Cell/SWViewController.xib; sourceTree = "<group>"; };
 		CC3293401D45BDC00035C32F /* 发送纸飞机.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发送纸飞机.png"; sourceTree = "<group>"; };
 		CC3F70821D438ECE00F0909F /* SWCreationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWCreationViewController.h; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70831D438ECE00F0909F /* SWCreationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWCreationViewController.m; path = NiceExchange/Classes/Scenes/Message/SWCreationViewController.m; sourceTree = SOURCE_ROOT; };
@@ -902,6 +895,7 @@
 		CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRegisterViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		CCD836281D460479004CC453 /* SWMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessage.h; sourceTree = "<group>"; };
 		CCD836291D460479004CC453 /* SWMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessage.m; sourceTree = "<group>"; };
+		CCEACCD71D47507E0026996C /* 微软雅黑.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微软雅黑.ttf"; sourceTree = "<group>"; };
 		CCF61FC21D3896190071EC51 /* MusicDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDetailTableViewCell.h; path = ../../../General/Views/Cells/MusicDetailTableViewCell.h; sourceTree = "<group>"; };
 		CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MusicDetailTableViewCell.m; path = ../../../General/Views/Cells/MusicDetailTableViewCell.m; sourceTree = "<group>"; };
 		CCF61FC41D3896190071EC51 /* MusicDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MusicDetailTableViewCell.xib; path = ../../../General/Views/Cells/MusicDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -929,6 +923,13 @@
 		D6616D841D3A85190018794B /* practise_c_s_day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = practise_c_s_day.png; sourceTree = "<group>"; };
 		D67172311D465D65003857D4 /* Release.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Release.png; sourceTree = "<group>"; };
 		D67172371D466076003857D4 /* Release_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Release_Selected.png; sourceTree = "<group>"; };
+		D6B5CEE31D4765BC0065C581 /* SWNotLoggedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWNotLoggedViewController.h; sourceTree = "<group>"; };
+		D6B5CEE41D4765BC0065C581 /* SWNotLoggedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWNotLoggedViewController.m; sourceTree = "<group>"; };
+		D6B5CEE61D4766200065C581 /* 关注和拉黑.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关注和拉黑.png"; sourceTree = "<group>"; };
+		D6B5CEE71D4766200065C581 /* 沙龙动态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "沙龙动态.png"; sourceTree = "<group>"; };
+		D6B5CEE81D4766200065C581 /* 赞.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞.png"; sourceTree = "<group>"; };
+		D6B5CEE91D4766200065C581 /* 评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论.png"; sourceTree = "<group>"; };
+		D6B5CEEA1D4766200065C581 /* 官方通知.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "官方通知.png"; sourceTree = "<group>"; };
 		D6F5549F1D3DD62A00CB1B3D /* SWLayoutTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWLayoutTextView.h; path = ../SWLayoutTextView.h; sourceTree = "<group>"; };
 		D6F554A01D3DD62A00CB1B3D /* SWLayoutTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWLayoutTextView.m; path = ../SWLayoutTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1112,13 +1113,6 @@
 				CC26E1F61D3DDD21007FDAEE /* 3.png */,
 				CC26E1F71D3DDD21007FDAEE /* 4.png */,
 				CC26E1F81D3DDD21007FDAEE /* 5.png */,
-				CC11C92E1D4615400075FB5F /* chuimengjuren.jpg */,
-				CC11C9301D4618270075FB5F /* bijianrensheng.jpg */,
-				CC11C9321D46198D0075FB5F /* riben.jpg */,
-				CC11C9341D461B480075FB5F /* wutaishan.jpg */,
-				CC11C9361D462D970075FB5F /* xiangxi.jpg */,
-				CC11C9381D462FA80075FB5F /* xingkong.jpg */,
-				CC11C93A1D4633B00075FB5F /* shouhou.jpg */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -1396,6 +1390,7 @@
 			children = (
 				CC5A67491D35F71B008AE01A /* NiceExchange */,
 				CC5A67481D35F71B008AE01A /* Products */,
+				CC32933D1D45BC470035C32F /* SWViewController.xib */,
 				7E5BCBF515F530F89BF9A651 /* Pods */,
 				79C9667793D08D28649D7C38 /* Frameworks */,
 			);
@@ -1423,6 +1418,7 @@
 		CC5A674A1D35F71B008AE01A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CCEACCD71D47507E0026996C /* 微软雅黑.ttf */,
 				CC5A67561D35F71B008AE01A /* Assets.xcassets */,
 				CC5A67581D35F71B008AE01A /* LaunchScreen.storyboard */,
 				CC5A675B1D35F71B008AE01A /* Info.plist */,
@@ -1908,7 +1904,6 @@
 				CC3293361D45A3360035C32F /* SWChatTableViewCell.xib */,
 				CC32933B1D45BC470035C32F /* SWViewController.h */,
 				CC32933C1D45BC470035C32F /* SWViewController.m */,
-				CC32933D1D45BC470035C32F /* SWViewController.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1971,6 +1966,8 @@
 				CC3F70851D438ECE00F0909F /* SWMessViewController.m */,
 				CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */,
 				CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */,
+				D6B5CEE31D4765BC0065C581 /* SWNotLoggedViewController.h */,
+				D6B5CEE41D4765BC0065C581 /* SWNotLoggedViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -2015,6 +2012,11 @@
 				D6616D821D3A85190018794B /* practise_b_s_day.png */,
 				D6616D831D3A85190018794B /* practise_c_n_day.png */,
 				D6616D841D3A85190018794B /* practise_c_s_day.png */,
+				D6B5CEE61D4766200065C581 /* 关注和拉黑.png */,
+				D6B5CEE71D4766200065C581 /* 沙龙动态.png */,
+				D6B5CEE81D4766200065C581 /* 赞.png */,
+				D6B5CEE91D4766200065C581 /* 评论.png */,
+				D6B5CEEA1D4766200065C581 /* 官方通知.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -2117,8 +2119,6 @@
 				CC5A3D8E1D40C5D200984F1F /* p31b0169.png in Resources */,
 				CC5A3D0E1D40C5D200984F1F /* p31b0041.png in Resources */,
 				CC5A3D8F1D40C5D200984F1F /* p31b0170.png in Resources */,
-				CC11C9331D46198D0075FB5F /* riben.jpg in Resources */,
-				CC11C9351D461B480075FB5F /* wutaishan.jpg in Resources */,
 				CCA3B7FE1D3A7C95003361CC /* SWpratTableViewCell.xib in Resources */,
 				CC5A3D521D40C5D200984F1F /* p31b0109.png in Resources */,
 				CC5A3D7D1D40C5D200984F1F /* p31b0152.png in Resources */,
@@ -2145,6 +2145,7 @@
 				CC704DF41D3CF5CC00D5A269 /* UMSCommentInputControlleriPad.xib in Resources */,
 				CC5A3DA11D40C5D200984F1F /* p3_b_15.png in Resources */,
 				CC32933A1D45B7C80035C32F /* 评.png in Resources */,
+				D6B5CEED1D4766200065C581 /* 赞.png in Resources */,
 				CC704E081D3CF5CC00D5A269 /* ios-social-sdk-like.html in Resources */,
 				CC5A3D371D40C5D200984F1F /* p31b0082.png in Resources */,
 				CCA3B7E71D3A7C95003361CC /* SWshowViewController.xib in Resources */,
@@ -2170,13 +2171,14 @@
 				D6616D8B1D3A85190018794B /* practise_c_n_day.png in Resources */,
 				CC5A3D561D40C5D200984F1F /* p31b0113.png in Resources */,
 				CC5A3D741D40C5D200984F1F /* p31b0143.png in Resources */,
+				CCEACCD81D47507E0026996C /* 微软雅黑.ttf in Resources */,
 				CCA3B7F21D3A7C95003361CC /* image.png in Resources */,
 				CC5A3D4A1D40C5D200984F1F /* p31b0101.png in Resources */,
 				CC5A3D5D1D40C5D200984F1F /* p31b0120.png in Resources */,
 				CC5A3D9A1D40C5D200984F1F /* p3_b_0.png in Resources */,
 				CC5A3D651D40C5D200984F1F /* p31b0128.png in Resources */,
+				D6B5CEEE1D4766200065C581 /* 评论.png in Resources */,
 				CC5A3D951D40C5D200984F1F /* p31b0176.png in Resources */,
-				CC11C9391D462FA80075FB5F /* xingkong.jpg in Resources */,
 				CC592B681D3F16CB002CD37D /* 222.png in Resources */,
 				CCA3B7F31D3A7C95003361CC /* xinxian.png in Resources */,
 				CC5A3CEE1D40C5D200984F1F /* p31b0009.png in Resources */,
@@ -2189,7 +2191,6 @@
 				CC5A3DA61D40C5D200984F1F /* p3_b_2.png in Resources */,
 				CC5A3DA71D40C5D200984F1F /* p3_b_20.png in Resources */,
 				CC5A3D991D40C5D200984F1F /* p31b0180.png in Resources */,
-				CC11C9311D4618270075FB5F /* bijianrensheng.jpg in Resources */,
 				CC704E0E1D3CF5CC00D5A269 /* ios-social-sdk-socialbar.html in Resources */,
 				CC5A3CFD1D40C5D200984F1F /* p31b0024.png in Resources */,
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
@@ -2197,7 +2198,6 @@
 				CC5A3D881D40C5D200984F1F /* p31b0163.png in Resources */,
 				CC5A3D641D40C5D200984F1F /* p31b0127.png in Resources */,
 				CC5A3D2C1D40C5D200984F1F /* p31b0071.png in Resources */,
-				CC11C9371D462D970075FB5F /* xiangxi.jpg in Resources */,
 				CC5A3DE11D4103F200984F1F /* 评论.png in Resources */,
 				CC704DF81D3CF5CC00D5A269 /* UMSnsAccountViewController.xib in Resources */,
 				CC5A3D251D40C5D200984F1F /* p31b0064.png in Resources */,
@@ -2215,12 +2215,12 @@
 				CC5A3D6D1D40C5D200984F1F /* p31b0136.png in Resources */,
 				CC5A3D621D40C5D200984F1F /* p31b0125.png in Resources */,
 				CC704E051D3CF5CC00D5A269 /* iOS-social-releasenote.html in Resources */,
+				D6B5CEEC1D4766200065C581 /* 沙龙动态.png in Resources */,
 				CC5A3D541D40C5D200984F1F /* p31b0111.png in Resources */,
 				CC5A3DB91D40EECA00984F1F /* SWCommentsTableViewCell.xib in Resources */,
 				CC5A3D5B1D40C5D200984F1F /* p31b0118.png in Resources */,
 				CC5A3D261D40C5D200984F1F /* p31b0065.png in Resources */,
 				CC704E0F1D3CF5CC00D5A269 /* markdown.css in Resources */,
-				CC11C92F1D4615400075FB5F /* chuimengjuren.jpg in Resources */,
 				CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */,
 				CC5A3CF91D40C5D200984F1F /* p31b0020.png in Resources */,
 				CC5A3D191D40C5D200984F1F /* p31b0052.png in Resources */,
@@ -2260,6 +2260,7 @@
 				CC5A3D831D40C5D200984F1F /* p31b0158.png in Resources */,
 				CC5A3D451D40C5D200984F1F /* p31b0096.png in Resources */,
 				CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */,
+				D6B5CEEF1D4766200065C581 /* 官方通知.png in Resources */,
 				CC5A3D761D40C5D200984F1F /* p31b0145.png in Resources */,
 				CCA3B7F51D3A7C95003361CC /* 呵呵.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
@@ -2376,11 +2377,11 @@
 				CC5A3D6E1D40C5D200984F1F /* p31b0137.png in Resources */,
 				CC5A3CFB1D40C5D200984F1F /* p31b0022.png in Resources */,
 				CC5A3D3B1D40C5D200984F1F /* p31b0086.png in Resources */,
-				CC11C93B1D4633B00075FB5F /* shouhou.jpg in Resources */,
 				CC5A3D821D40C5D200984F1F /* p31b0157.png in Resources */,
 				CCA3B7FC1D3A7C95003361CC /* SWJoinTableViewCell.xib in Resources */,
 				D6616D8A1D3A85190018794B /* practise_b_s_day.png in Resources */,
 				CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */,
+				D6B5CEEB1D4766200065C581 /* 关注和拉黑.png in Resources */,
 				CC5A3D3E1D40C5D200984F1F /* p31b0089.png in Resources */,
 				CC5A3CEF1D40C5D200984F1F /* p31b0010.png in Resources */,
 			);
@@ -2486,6 +2487,7 @@
 				CC5A677B1D35F758008AE01A /* SWAppDelegate.m in Sources */,
 				CC26E1D31D3DD6C7007FDAEE /* RedaViewController.m in Sources */,
 				CC26E1F01D3DDA82007FDAEE /* ThreeViewController.m in Sources */,
+				D6B5CEE51D4765BC0065C581 /* SWNotLoggedViewController.m in Sources */,
 				CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */,
 				CC9BFC3F1D40C3B500F40EF6 /* SWLcAvUSer.m in Sources */,
 				CC9CF4261D470C6400E58069 /* SWRSPViewController.m in Sources */,
