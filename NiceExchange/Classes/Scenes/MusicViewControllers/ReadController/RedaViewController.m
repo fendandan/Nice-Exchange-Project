@@ -194,6 +194,17 @@
     
     cell.ImageView.userInteractionEnabled = YES;
     SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
+    
+    //根据 cell 获得 indexPatch
+    NSIndexPath *indexPatch = [self.tableView indexPathForCell:cell];
+    
+    SWActivityList *act = self.dataArray[indexPatch.row];
+    
+    usweVC.userString = act.createBy.objectId;
+    
+    
+    NSLog(@"usweVC%@",usweVC.userString);
+    
     [self.navigationController pushViewController:usweVC animated:YES];
     
 }

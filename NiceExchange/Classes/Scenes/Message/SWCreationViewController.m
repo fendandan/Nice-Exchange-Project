@@ -10,6 +10,7 @@
 #import "SWAddRule.h"
 #import "SWMessViewController.h"
 #import "SWLayoutTextView.h"
+#import "FMDB.h"
 
 #import "SWBaiduAPIViewController.h"
 @class SWAppDelegate;
@@ -32,6 +33,9 @@ UINavigationControllerDelegate
 @property (strong, nonatomic) UIView *tageView;
 @property (strong, nonatomic) UIButton *addtageButton;
 @property (nonatomic,strong)UIWindow *window;
+
+@property(nonatomic,strong)FMDatabase *database;
+
 @end
 
 @implementation SWCreationViewController
@@ -202,12 +206,42 @@ UINavigationControllerDelegate
 }
 //存草稿
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
-    SWLog(@"嘿嘿");
+    
    
-    SWBaiduAPIViewController *baidu = [[SWBaiduAPIViewController alloc]init];
-    [self.navigationController pushViewController:baidu animated:YES];
+//    SWBaiduAPIViewController *baidu = [[SWBaiduAPIViewController alloc]init];
+//    [self.navigationController pushViewController:baidu animated:YES]
+//    ;
 
+    NSString *doc = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    
+    
+    NSLog(@"%@",doc);
+    
+    NSString *fileName = [doc stringByAppendingPathComponent:@"linkman.sqlite"];
+    
+    
+    //打开数据库
+    self.database = [FMDatabase databaseWithPath:fileName];
+    if ([self.database open]) {
+        
+        BOOL result = [self.database executeUpdate:@"create table if not exists linkman (id integer PRIMARY KEY AUTOINCREMENT,title text NOT NULL,content text NOT NULL,titleImage text Not NULL,markC integer NOT NULL,createBy text NOT NULL,commentRelation text NOT NULL,label text NOT NULL,rule text NOT NULL,point text NOT NULL,subhead text NOT NULL)"];
+        
+        if (result) {
+            
+            SWActivityList *activity = [SWActivityList object];
+            activity.title = self.titleTF.text;
+            activity.content = self.textView.textView.text;
+
+        }else{
+            NSLog(@"建表失败");
+        }
+    
+    }
 }
+
+
+
+
 //button
 -(void)uploadAction:(UIButton *)sender{
    // NSLog(@"上传图片");
