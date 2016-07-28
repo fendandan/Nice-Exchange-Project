@@ -241,20 +241,24 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
        
     }else if (indexPath.section == 1) {
         
+        SWFocusonViewController *swFocusonVC = [[SWFocusonViewController  alloc]init];
+        
         switch (indexPath.row) {
             case 0:
-            {
-                SWFocusonViewController *swFocusonVC = [[SWFocusonViewController  alloc]init];
+  
                 swFocusonVC.RequestData = RequestDataInitiateRequest;
-                [self.navigationController pushViewController:swFocusonVC animated:YES];
-            }
-                
+             
                // NSLog(@"0");
                 break;
              
                 case 1:
+                 {
+                        // NSLog(@"1");
+                      
+            swFocusonVC.RequestData  =    RequestDataParticipate;
+                     
+                    }
                 
-                   // NSLog(@"1");
                 break;
                 
                 case 2:
@@ -264,10 +268,17 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
             default:
                 break;
         }
+        
+        [self.navigationController pushViewController:swFocusonVC animated:YES];
 
     }else {
+        
 
-    }
+   
+    
+       }
+    
+    
     
 }
 

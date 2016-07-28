@@ -188,6 +188,7 @@
                 <outlet property="ioinCountL" destination="Ijq-Rg-ngl" id="pi6-lb-vRc"/>
                 <outlet property="jionImg" destination="cw9-hU-xqd" id="cfJ-Ud-qsY"/>
                 <outlet property="unView" destination="xAe-29-h5d" id="1gt-Bb-PCC"/>
+                <outlet property="userName" destination="Ss7-Ne-0He" id="L7l-RC-GCs"/>
             </connections>
             <point key="canvasLocation" x="433" y="395.5"/>
         </tableViewCell>
