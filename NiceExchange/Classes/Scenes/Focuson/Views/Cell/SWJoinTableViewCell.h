@@ -17,7 +17,10 @@
  *  用户名
  */
 @property (strong, nonatomic) IBOutlet UILabel *userName;
+
+
 @property (strong, nonatomic) IBOutlet UIView *unView;
+
 /**
  *  头像
  */
@@ -34,6 +37,7 @@
  *  内容
  */
 @property (strong, nonatomic) IBOutlet UILabel *detailL;
+
 @property (strong, nonatomic) IBOutlet UIImageView *detailImage;
 /**
  * 评论内容

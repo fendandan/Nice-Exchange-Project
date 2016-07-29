@@ -87,6 +87,8 @@
          */
        self.badPL.text = comment.lowCount.stringValue;
         
+        [self.detailImage setImageWithURL:[NSURL URLWithString:comment.forActivity.titleImage.url]];
+        
 
     }
     
