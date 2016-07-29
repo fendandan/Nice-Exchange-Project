@@ -47,8 +47,9 @@ UINavigationControllerDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self addmodule];//导航栏
+   
     [self releaseAction];
+     [self addmodule];//导航栏
     //[self.view addSubview:self.backgrandHeaderView];
     self.imagepicker = [[UIImagePickerController alloc]init];
     self.imagepicker.delegate = self;
@@ -71,11 +72,31 @@ UINavigationControllerDelegate
 //导航栏
 -(void)addmodule
 {
-    self.navigationItem.title = @"发布";
-    //navgation 点击事件
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(itemRightAction:)];
-    UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"存草稿" style:UIBarButtonItemStyleDone target:self action:@selector(itemRightsAction:)];
-    self.navigationItem.rightBarButtonItems = @[item1,item2];
+    UIView *navigation = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
+    [self.view addSubview:navigation];
+    navigation.backgroundColor= [UIColor whiteColor];
+    UIButton *re = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [re setTitle:@"存草稿" forState:(UIControlStateNormal)];
+    [re addTarget:self action:@selector(itemRightAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    re.frame = CGRectMake(self.view.bounds.size.width -140, 20, 60, 40);
+     [re setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
+    [navigation addSubview:re];
+    UIButton *re1 = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [re1 setTitle:@"发布" forState:(UIControlStateNormal)];
+    [re1 addTarget:self action:@selector(itemRightsAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    re1.frame = CGRectMake(self.view.bounds.size.width -80, 20, 60, 40);
+    [re1 setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
+    [navigation addSubview:re1];
+    UIButton *re2 = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [re2 setTitle:@"返回" forState:(UIControlStateNormal)];
+    [re2 addTarget:self action:@selector(returnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    re2.frame = CGRectMake(20 , 20, 60, 40);
+    [re2 setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
+    [navigation addSubview:re2];
+//    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(itemRightAction:)];
+//    UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"存草稿" style:UIBarButtonItemStyleDone target:self action:@selector(itemRightsAction:)];
+
+
     
     
 }
@@ -84,26 +105,26 @@ UINavigationControllerDelegate
 {
         //
     //UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height -64-49)];
+    UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0,64, self.view.bounds.size.width, self.view.bounds.size.height-64)];
     [self.view addSubview:scroll];
     self.scrollview = scroll;
     UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1.jpeg"]];
     image.backgroundColor = [UIColor grayColor];
     [self.scrollview addSubview:image];
     //上传图片
-    self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 150, self.view.bounds.size.height/20, 20, 20)];
+    self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 150, self.view.bounds.size.height/10, 20, 20)];
     self.imageview.layer.masksToBounds = YES;
     self.imageview.layer.cornerRadius = self.imageview.bounds.size.width/2;
     self.imageview.image = [UIImage imageNamed:@"2.png"];
     [self.scrollview addSubview:self.imageview];
     UIButton *uploadbtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    uploadbtn.frame = CGRectMake(self.view.bounds.size.width - 130, self.view.bounds.size.height/20, 130, 20);
+    uploadbtn.frame = CGRectMake(self.view.bounds.size.width - 130, self.view.bounds.size.height/10, 130, 20);
     [uploadbtn setTitle:@"上传封面图片"forState:UIControlStateNormal];
     [uploadbtn addTarget:self action:@selector(uploadAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.scrollview addSubview:uploadbtn];
     //添加标签
     UIButton *addlabBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addlabBtn.frame = CGRectMake(self.view.bounds.size.width/3,self.view.bounds.size.height/6 , 120, 30);
+    addlabBtn.frame = CGRectMake(self.view.bounds.size.width/3,self.view.bounds.size.height/4 , 120, 30);
     addlabBtn.layer.masksToBounds = YES;
     addlabBtn.layer.cornerRadius = addlabBtn.bounds.size.height/4;
     [addlabBtn setTitle:@"娱乐" forState:UIControlStateNormal];
@@ -206,7 +227,10 @@ UINavigationControllerDelegate
         
     } ];
 }
-
+-(void)returnAction:(UIButton *)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 //navgation
 -(void)itemRightAction:(UIBarButtonItem *)sender{

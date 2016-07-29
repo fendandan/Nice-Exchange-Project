@@ -125,7 +125,7 @@
         }
           dispatch_async(dispatch_get_main_queue(), ^{
               [self.ztableView reloadData];
-              SWLog(@"++++++++++++++++++++++rfdegdeg er==== =  =x x %@",self.dataArray);
+             
           });
         
     }];
@@ -261,7 +261,7 @@
             cell.comment = comment;
             
             
-            cell.detailImage.hidden = YES;
+           // cell.detailImage.hidden = YES;
             return cell;
 
         }
@@ -340,14 +340,56 @@
         showVC.dataImage = cell.detailImv.image;
         
         
+        
         [self.navigationController  pushViewController:showVC animated:YES];
         self.rootVC.swTabBar.hidden = YES;
+        
     }else {
+        
+       #warning-----------------------------
+        
+        SWJoinTableViewCell *cell = (SWJoinTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
         SWshowViewController *showVC = [[SWshowViewController alloc]init];
+       
+        SWComment *comment = self.dataArray[indexPath.row];
+        showVC.activity =  comment.forActivity;
+        
+        
+        AVQuery *Q = [SWLcAvUSer query];
+        
+        [Q whereKey:@"objectId" equalTo:showVC.activity.createBy.objectId];
+        [Q includeKey:@"userImage"];
+        [Q selectKeys:@[@"displayName", @"username", @"userImage"]];
+        
+        [Q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            
+            SWLcAvUSer *user  = objects[0];
+            
+            if (user.displayName) {
+                showVC.string = user.displayName;
+            }else {
+                showVC.string = user.username;
+            }
+            showVC.titlestring = user.userImage.url;
+            
+            
+            SWLog(@" --- ---- --- %@", showVC.string);
+            SWLog(@" --- ---- --- %@", showVC.titlestring);
+            
+        }];
+        
+        
+        
+        
+        showVC.dataImage = cell.detailImage.image;
 
+        
         [self.navigationController  pushViewController:showVC animated:YES];
         self.rootVC.swTabBar.hidden = YES;
-    }
+        
+        
+        
+           }
     
     
 }

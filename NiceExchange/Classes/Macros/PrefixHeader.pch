@@ -81,6 +81,8 @@
 #import "SWSettingsViewController.h"
 #import "SWAboutMeViewController.h"
 #import "SWRSPViewController.h"
+#import "SWNotifcationSettingViewController.h"//通知设置
+#import "SWNotLoggedViewController.h"//未登录跳转
 
 // 自定义视图
 #import "SWCertificationView.h"
