@@ -21,15 +21,22 @@
 @implementation SWcommentsViewController
 - (IBAction)pushAction:(UIButton *)sender {
     SWViewController *swVC = [SWViewController new];
+    
+    swVC.comment   =  self.swcomment;
+    //NSLog(@"%@",self.swcomment);
     [self.navigationController pushViewController:swVC animated:YES];
+    
+    
+    
+    
     
 #warning Blokc传值 第三步:实现Block的内容(接收传递过来的内容)
     
     //通过__block __weak修饰变量,来解决Block的循环引用,ARC模式下使用__weak
     __weak typeof(self) weakSelf = self;
-    swVC.SecondBlock = ^(NSString *string){
+    swVC.SecondBlock = ^(SWComment *comment){
       
-        [self.dataArray  addObject:string];
+        [self.dataArray  addObject:comment];
         SWLog(@"%ld",self.dataArray.count);
         dispatch_async(dispatch_get_main_queue(), ^{
              [self.commentTableView reloadData];
@@ -43,16 +50,15 @@
 }
 -(void)getdataArray {
     
-//    
-//    LCManager lcSelectCommentWithActivityList:<#(SWActivityList *)#> completion:<#^(NSArray *mArray)completion#>
+   
+    [LCManager lcSelectCommentWithComment: self.swcomment completion:^(NSArray *mArray) {
+        
+        [self.dataArray addObjectsFromArray:mArray];
+        [self.commentTableView reloadData];
+}];
     
     
 }
-
-
-
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,6 +81,7 @@ self.commentTableView.rowHeight=UITableViewAutomaticDimension;//这句表示cell
     
    // NSLog(@"%lu",(unsigned long)self.dataArray.count);
     self.commentTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self getdataArray];
 }
 
 
@@ -95,10 +102,13 @@ self.commentTableView.rowHeight=UITableViewAutomaticDimension;//这句表示cell
     
     
     SWChatTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.message
-    .text = self.dataArray[indexPath.row];
-   
-
+    SWComment *comment = self.dataArray[indexPath.row];
+    cell.message.text  = comment.commentContent;
+    cell.userName.text = comment.commentBy.username;
+    
+     
+    [cell.iconImv setImageWithURL:[NSURL URLWithString:comment.commentBy.userImage.url]];
+    
     return cell;
     
 }

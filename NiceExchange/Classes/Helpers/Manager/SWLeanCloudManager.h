@@ -43,7 +43,7 @@ typedef void(^UIFBlock)(NSArray *mArray);
 /// 添加文字评论方法（一级评论）（block参数为空）
 - (void)lcToCommentingWithActivityList:(SWActivityList *)activity commentString:(NSString *)commentString completion:(UIFBlock)completion;
 /// 查询评论方法（一级评论）（block参数为查询结果-可变数组）
-- (void)lcSelectCommentWithActivityList:(SWActivityList *)activity completion:(UIFBlock)completion;
+- (void)lcSelectCommentWithActivityList:(SWActivityList *)activity conditions:(NSString *)conditions completion:(UIFBlock)completion;
 /// 添加文字评论方法（二级评论）（block参数为空）
 - (void)lcToCommentingWithComment:(SWComment *)fristComment commentString:(NSString *)commentString completion:(UIFBlock)completion;
 /// 查询评论方法（二级评论）（block参数为查询结果-可变数组）

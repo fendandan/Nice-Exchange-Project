@@ -16,6 +16,12 @@
     self.Friendicon.layer.borderWidth = 1.0;
     self.Friendicon.layer.borderColor =[UIColor clearColor].CGColor;
     self.Friendicon.clipsToBounds = TRUE;//去除边界
+//    //image
+//    self.detailImv.layer.masksToBounds = YES;
+//    self.detailImv.layer.cornerRadius = 20;
+//    self.detailImv.layer.borderWidth = 10.0;
+//    self.detailImv.layer.borderColor = [[UIColor whiteColor] CGColor];
+
     
     //view 切角
     self.unView.layer.masksToBounds = YES;

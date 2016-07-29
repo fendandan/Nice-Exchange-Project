@@ -47,11 +47,13 @@ UINavigationControllerDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addmodule];//导航栏
     [self releaseAction];
     //[self.view addSubview:self.backgrandHeaderView];
     self.imagepicker = [[UIImagePickerController alloc]init];
     self.imagepicker.delegate = self;
     [self addImageview];
+    
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(keyboardHide:)];
     //设置成NO表示当前控件响应后会传播到其他控件上，默认为YES。
     tapGestureRecognizer.cancelsTouchesInView = NO;
@@ -72,7 +74,8 @@ UINavigationControllerDelegate
     [self.textView.textView resignFirstResponder];
     [self.addrule.textfield resignFirstResponder];
 }
--(void)releaseAction
+//导航栏
+-(void)addmodule
 {
     self.navigationItem.title = @"发布";
     //navgation 点击事件
@@ -80,57 +83,61 @@ UINavigationControllerDelegate
     UIBarButtonItem *item2 = [[UIBarButtonItem alloc]initWithTitle:@"存草稿" style:UIBarButtonItemStyleDone target:self action:@selector(itemRightsAction:)];
     self.navigationItem.rightBarButtonItems = @[item1,item2];
     
-    //
-    UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+}
+//功能栏
+-(void)releaseAction
+{
+        //
+    //UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    UIScrollView *scroll = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, self.view.bounds.size.height -64-49)];
     [self.view addSubview:scroll];
     self.scrollview = scroll;
     UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1.jpeg"]];
     image.backgroundColor = [UIColor grayColor];
-    [scroll addSubview:image];
+    [self.scrollview addSubview:image];
     //上传图片
-    self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 150, 100, 20, 20)];
+    self.imageview = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 150, self.view.bounds.size.height/20, 20, 20)];
     self.imageview.layer.masksToBounds = YES;
     self.imageview.layer.cornerRadius = self.imageview.bounds.size.width/2;
     self.imageview.image = [UIImage imageNamed:@"2.png"];
-    self.imageview.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:self.imageview];
+    [self.scrollview addSubview:self.imageview];
     UIButton *uploadbtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    uploadbtn.frame = CGRectMake(self.view.bounds.size.width -130 , 100, 130, 20);
-    // uploadbtn.backgroundColor = [UIColor orangeColor];
+    uploadbtn.frame = CGRectMake(self.view.bounds.size.width - 130, self.view.bounds.size.height/20, 130, 20);
     [uploadbtn setTitle:@"上传封面图片"forState:UIControlStateNormal];
     [uploadbtn addTarget:self action:@selector(uploadAction:) forControlEvents:UIControlEventTouchUpInside];
-    [scroll addSubview:uploadbtn];
+    [self.scrollview addSubview:uploadbtn];
     //添加标签
     UIButton *addlabBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addlabBtn.frame = CGRectMake(150,180 , 120, 30);
+    addlabBtn.frame = CGRectMake(self.view.bounds.size.width/3,self.view.bounds.size.height/6 , 120, 30);
     addlabBtn.layer.masksToBounds = YES;
     addlabBtn.layer.cornerRadius = addlabBtn.bounds.size.height/4;
     [addlabBtn setTitle:@"娱乐" forState:UIControlStateNormal];
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
-    [scroll addSubview:addlabBtn];
+    [self.scrollview addSubview:addlabBtn];
       self.addtageButton = addlabBtn;
     //活动标题
     self.titleTF.delegate = self;
-    self.titleTF = [[UITextField alloc]initWithFrame:CGRectMake(20 , 220,self.view.bounds.size.width -40, 60)];
+    self.titleTF = [[UITextField alloc]initWithFrame:CGRectMake(self.view.bounds.size.width -(self.view.bounds.size.width - 20) ,CGRectGetMaxY(addlabBtn.frame)+20,self.view.bounds.size.width -40, 60)];
     self.titleTF.backgroundColor = [UIColor cyanColor];
     self.titleTF.layer.masksToBounds = YES;
     self.titleTF.layer.cornerRadius = self.titleTF.bounds.size.height/4;
     [self.titleTF setFont:[UIFont fontWithName:@"" size:20]];
     self.titleTF.placeholder = @"来个响亮的名字";
-    [scroll addSubview:self.titleTF];
+    [self.scrollview addSubview:self.titleTF];
     //
     self.Viewaddimage = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.titleTF.frame) , CGRectGetMaxY(self.titleTF.frame)+10,self.titleTF.frame.size.width, 70)];
     self.Viewaddimage.backgroundColor= [UIColor whiteColor];
     self.Viewaddimage.layer.masksToBounds = YES;
     self.Viewaddimage.layer.cornerRadius = self.Viewaddimage.frame.size.height/4;
     self.Viewaddimage.alpha = 0.8;
-    [scroll addSubview:self.Viewaddimage];
+    [self.scrollview addSubview:self.Viewaddimage];
     //
     self.textView = [[SWLayoutTextView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.Viewaddimage.frame) , CGRectGetMaxY(self.Viewaddimage.frame)+10,self.Viewaddimage.frame.size.width, 100)];
     self.textView.placeholder = @"说点啥呢!";
-    [scroll addSubview:self.textView];
+    [self.scrollview addSubview:self.textView];
     self.textView.delegate = self;
     //self.textview.frame = CGRectMake(CGRectGetMinX(self.titleTF.frame), CGRectGetMaxY(self.titleTF.frame)+10, self.titleTF.frame.size.width, self.textview.contentSize.height);
     //添加规则
@@ -138,15 +145,26 @@ UINavigationControllerDelegate
     self.addrule.backgroundColor = [UIColor whiteColor];
     self.addrule.layer.masksToBounds = YES;
     self.addrule.layer.cornerRadius = self.addrule.frame.size.height/6;
-    [scroll addSubview:self.addrule];
+    [self.scrollview addSubview:self.addrule];
     self.addrule.alpha = 0.8;
 }
+
+
+//-(void)changeLayoutView
+//{
+//    self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
+//    if (self.addrule.frame.origin.y + self.addrule.frame.size.height >= kScreenHeight) {
+//        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height) ;
+//        self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - kScreenHeight);
+//    }
+//}
 -(void)changeLayoutView
 {
-    self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
-    if (self.addrule.frame.origin.y + self.addrule.frame.size.height >= kScreenHeight ) {
-        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height) ;
-        self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - kScreenHeight);
+  self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
+    if (self.addrule.frame.origin.y + self.addrule.frame.size.height > self.scrollview.frame.origin.y) {
+        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height+30) ;
+               self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - self.scrollview.frame.size.height);
+        
     }
 }
 

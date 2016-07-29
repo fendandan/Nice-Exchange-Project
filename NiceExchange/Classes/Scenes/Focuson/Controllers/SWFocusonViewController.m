@@ -13,7 +13,10 @@
 #import "SWUserDetailViewController.h"
 #import "SWUserDetailViewController.h"
 #import "SWTableViewController.h"
+
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource,FriendiconDelegate,JoinDelegate>
+
+
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) UITableView *ztableView;
@@ -26,18 +29,116 @@
 -(void)viewWillAppear:(BOOL)animated {
     
     
-    self.rootVC.swTabBar.hidden = NO;
+       self.rootVC.swTabBar.hidden = NO;
     SWLog(@" 00 0000 000 000  %@",self.rootVC.followArray);
-    if (self.rootVC.followArray != NULL) {
-        [self requestData];
-    }else {
-        [self performSelector:@selector(requestData) withObject:nil afterDelay:3];
-    }
+//    if (self.rootVC.followArray.count == 0) {  // 
+//        switch (self.RequestData) {
+//            case RequestDataFoucesRequest:
+//                [self requestData]; //
+//                break;
+//                
+//            case RequestDataInitiateRequest:
+//                [self InitiateRequest]; //
+//                break;
+//                
+//            case RequestDataParticipate:
+//                
+//                break;
+//                
+//            default:
+//                break;
+//        }
+//        
+//    }else {
+    
+        switch (self.RequestData) {
+            case RequestDataFoucesRequest:
+                [self performSelector:@selector(requestData) withObject:nil afterDelay:0.5];
+                break;
+                
+            case RequestDataInitiateRequest:
+                [self InitiateRequest];
+                break;
+                
+            case RequestDataParticipate:
+                [self jionInRequest];
+                break;
+                
+            default:
+                break;
+        }
+//    }
+    
+   
+    
+    
+}
+#warning   --------- 我发起的活动的请求-
+-(void)InitiateRequest {
+    
+  
+    // 查询活动
+    AVQuery *aQ = [SWActivityList query];
+    
+    aQ.limit = 20;
+    [aQ addDescendingOrder:@"createdAt"]; // 排序
+    
+    [aQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+    [aQ includeKey:@"createBy"];
+    
+    [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        SWActivityList *acc = objects[16];
+//        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
+        for (SWActivityList *a in objects) {
+            
+            [self.dataArray addObject:a];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+//                SWLog(@"-----------++++ ---- %@",self.dataArray);
+            
+            [self.ztableView reloadData];
+        });
+    }];
+    
+    
+}
+#warning -=----=-=-=-=-=-=-我参与的活动的请求
+
+-(void)jionInRequest {
+    
+    
+    AVQuery *aqq = [SWComment query];
+    
+    aqq.limit = 20;
+    [aqq addDescendingOrder:@"createdAt"];//排序
+    
+    [aqq whereKey:@"commentBy" equalTo:[SWLcAvUSer currentUser]];
+    
+    [aqq includeKey:@"forActivity"];
+    [aqq includeKey:@"commentBy"];
+    [aqq whereKeyDoesNotExist:@"forComment"];
+    [aqq findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+          SWLog(@"++++++++++++++++++++++rfdegdeg er==== =  =x x %@",objects);
+        for (SWComment *comment in objects) {
+          
+            [self.dataArray addObject:comment];
+        }
+          dispatch_async(dispatch_get_main_queue(), ^{
+              [self.ztableView reloadData];
+              SWLog(@"++++++++++++++++++++++rfdegdeg er==== =  =x x %@",self.dataArray);
+          });
+        
+    }];
+    
     
 }
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"2312312312%lu",self.RequestData);
     self.title = @"关注";
     self.dataArray = [NSMutableArray array];
     self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 58, 58)];
@@ -66,10 +167,10 @@
     
     // 查询活动
     AVQuery *aQ = [SWActivityList query];
-    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
+   
     aQ.limit = 20;
     //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
-    
+    [aQ addDescendingOrder:@"createdAt"]; // 排序
 //    SWLog(@"22222222222222222%@",self.rootVC.followArray);
     if (self.rootVC.followArray.count == 0) {
         [self performSelector:@selector(requestData) withObject:nil afterDelay:.3];
@@ -147,70 +248,69 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (indexPath.row == 0) {
-//        
-//        
-//        SWFridenSharOnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FridenSharOnCell"];
-//        cell.friendDelegate = self;
-//        return cell;
-//    }else if (indexPath.row == 1){
-//        
-//        
-//        
-//        SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-//        cell.joinDelegate = self;
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        
-//        cell.UdetailL.hidden = YES;
-//        
-//        return cell;
-//    }
-//    
-//    SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-//    
-//    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    cell.joinDelegate = self;
-//    cell.detailImage.hidden = YES;
-//    
-//    return cell;
-    
+    switch (self.RequestData) {
+   
+        case RequestDataParticipate:
+        {
+            SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
+            
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.joinDelegate = self;
+            
+            SWComment *comment = self.dataArray[indexPath.row];
+            cell.comment = comment;
+            
+            
+            cell.detailImage.hidden = YES;
+            return cell;
 
-    
-    
-    SWFridenSharOnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FridenSharOnCell"];
-    cell.friendDelegate = self;
-    
-    SWActivityList *list = self.dataArray[indexPath.row];
-    /**
-     *  //////////////////////
-     */
-    if (list.createBy.displayName) {
-        cell.FriendName.text =list.createBy.displayName;
-       
-    }else {
-        cell.FriendName.text =list.createBy.username;
-        
-         NSLog(@"3434454565667788990876543    BGVC HNYDSXJUKHJYCV JKL,V L  %@",list.createBy.username);
+        }
+            break;
+            
+        default:
+
+        {
+            SWFridenSharOnTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FridenSharOnCell"];
+            cell.friendDelegate = self;
+            
+            SWActivityList *list = self.dataArray[indexPath.row];
+            /**
+             *  //////////////////////
+             */
+            if (list.createBy.displayName) {
+                cell.FriendName.text =list.createBy.displayName;
+                
+            }else {
+                cell.FriendName.text =list.createBy.username;
+                
+                NSLog(@"3434454565667788990876543    BGVC HNYDSXJUKHJYCV JKL,V L  %@",list.createBy.username);
+            }
+            cell.title.text = list.title;
+            [cell.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
+            //    cell.collectNum.text = @"";
+            //    cell.joinNum.text = @"";
+            cell.BJLable.text =  list.label;
+            cell.GZlABLE.text = list.rule;
+            //    [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
+            //    SWLog(@"iii iiii iiii ii%@", list.createBy.userImage.url);
+            AVFile *ff = [AVFile fileWithURL:list.createBy.userImage.url];
+            [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+                [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
+                
+                self.ztableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+                //        AVQuery *avq =  [AVQuery queryWithClassName:@"_User"];
+                //
+                //        [avq whereKey:@"objectId" equalTo:self.userString];
+                
+            }];
+            return cell;
+            
+        }
+
+            break;
     }
-    cell.title.text = list.title;
-    [cell.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
-//    cell.collectNum.text = @"";
-//    cell.joinNum.text = @"";
-     cell.BJLable.text =  list.label;
-    cell.GZlABLE.text = list.rule;
-//    [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
-//    SWLog(@"iii iiii iiii ii%@", list.createBy.userImage.url);
-    AVFile *ff = [AVFile fileWithURL:list.createBy.userImage.url];
-    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
-        [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
-        
-        
-//        AVQuery *avq =  [AVQuery queryWithClassName:@"_User"];
-//        
-//        [avq whereKey:@"objectId" equalTo:self.userString];
-    }];
-    return cell;
     
+    return nil;
     
 }
 
@@ -222,25 +322,33 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-       SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
-    SWshowViewController *showVC = [[SWshowViewController alloc]init];
-    
-    
-    SWActivityList *activity = self.dataArray[indexPath.row];
-    showVC.activity =  activity ;
-    
-    if (activity.createBy.displayName) {
-       showVC.string = activity.createBy.displayName;
+    if ([SWFridenSharOnTableViewCell class] == [[self tableView:_ztableView cellForRowAtIndexPath:indexPath] class]) {
+        
+        SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
+        SWshowViewController *showVC = [[SWshowViewController alloc]init];
+        
+        
+        SWActivityList *activity = self.dataArray[indexPath.row];
+        showVC.activity =  activity ;
+        
+        if (activity.createBy.displayName) {
+            showVC.string = activity.createBy.displayName;
+        }else {
+            showVC.string = activity.createBy.username;
+        }
+        showVC.titlestring = activity.createBy.userImage.url;
+        showVC.dataImage = cell.detailImv.image;
+        
+        
+        [self.navigationController  pushViewController:showVC animated:YES];
+        self.rootVC.swTabBar.hidden = YES;
     }else {
-        showVC.string = activity.createBy.username;
+        SWshowViewController *showVC = [[SWshowViewController alloc]init];
+
+        [self.navigationController  pushViewController:showVC animated:YES];
+        self.rootVC.swTabBar.hidden = YES;
     }
-    showVC.titlestring = activity.createBy.userImage.url;
-    showVC.dataImage = cell.detailImv.image;
-
-
-    [self.navigationController  pushViewController:showVC animated:YES];
-    self.rootVC.swTabBar.hidden = YES;
+    
     
 }
 

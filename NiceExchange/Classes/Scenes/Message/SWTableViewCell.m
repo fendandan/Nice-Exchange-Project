@@ -19,7 +19,7 @@
 }
 
 -(void)addAttribite{
-    self.iconimage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 50, 50)];
+    self.iconimage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 20, 30, 30)];
     //self.iconimage.backgroundColor = [UIColor cyanColor];
     [self.contentView addSubview:self.iconimage];
     self.titlelabel = [[UILabel alloc]initWithFrame:CGRectMake(self.iconimage.frame.size.width + 20, self.iconimage.frame.origin.y, 260, 50)];

@@ -8,9 +8,24 @@
 
 #import "BaseViewController.h"
 
+
+typedef NS_ENUM(NSUInteger , RequestData)
+{    ///关注
+    RequestDataFoucesRequest,
+    ///发起
+    RequestDataInitiateRequest,
+    ///参与
+    RequestDataParticipate
+    
+    
+};
 @interface SWFocusonViewController : BaseViewController
 
 @property (nonatomic,strong) SWActivityList *activity;
+
+
+@property (nonatomic , assign) RequestData RequestData;
+
 
 
 @end

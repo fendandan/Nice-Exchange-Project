@@ -13,4 +13,6 @@
 @property (nonatomic ,strong)NSMutableArray *messageArray;
 @property (nonatomic,strong)NSString *userString;
 
+@property (nonatomic ,strong)SWComment *swcomment;
+
 @end

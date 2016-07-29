@@ -10,7 +10,7 @@
 
 @protocol CommentDelegate <NSObject>
 
--(void)onAction;
+-(void)onAction:(UITableViewCell *)cell;
 
 @end
 

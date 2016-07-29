@@ -12,5 +12,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UILabel *message;
 @property(nonatomic,copy)NSString *content;
+@property (strong, nonatomic) IBOutlet UILabel *userName;
 @property (nonatomic, assign) CGFloat cellHeight;
+@property (strong, nonatomic) IBOutlet UIImageView *iconImv;
+
 @end

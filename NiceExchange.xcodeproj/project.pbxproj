@@ -256,7 +256,6 @@
 		CC5A3DB31D40C5D200984F1F /* XYSpriteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A3CE51D40C5D200984F1F /* XYSpriteView.m */; };
 		CC5A3DB81D40EECA00984F1F /* SWCommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A3DB61D40EECA00984F1F /* SWCommentsTableViewCell.m */; };
 		CC5A3DB91D40EECA00984F1F /* SWCommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5A3DB71D40EECA00984F1F /* SWCommentsTableViewCell.xib */; };
-		CC5A3DE11D4103F200984F1F /* 评论.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5A3DE01D4103F200984F1F /* 评论.png */; };
 		CC5A674C1D35F71B008AE01A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A674B1D35F71B008AE01A /* main.m */; };
 		CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67531D35F71B008AE01A /* Main.storyboard */; };
 		CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5A67561D35F71B008AE01A /* Assets.xcassets */; };
@@ -280,7 +279,6 @@
 		CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF8E81D364018000A9B44 /* User_Selected.png */; };
 		CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F31D365AE0000A9B44 /* BaseRequest.m */; };
 		CC6EF8FA1D365E31000A9B44 /* NetWorkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */; };
-		CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */; };
 		CC6EF9011D366409000A9B44 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC6EF9001D366409000A9B44 /* MyViewController.m */; };
 		CC6EF9041D368561000A9B44 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9021D368561000A9B44 /* Picture.png */; };
 		CC6EF9051D368561000A9B44 /* Picture_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6EF9031D368561000A9B44 /* Picture_Selected.png */; };
@@ -326,6 +324,8 @@
 		CC704E1F1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E1E1D3CF63C00D5A269 /* libstdc++.6.0.9.tbd */; };
 		CC704E211D3CF64300D5A269 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */; };
 		CC7257A31D4225B600500D16 /* SWAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */; };
+		CC7BA04F1D484EDC000833A6 /* 评论轮.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7BA04E1D484EDC000833A6 /* 评论轮.png */; };
+		CC7BA0761D48AB39000833A6 /* bb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC7BA0751D48AB39000833A6 /* bb.jpg */; };
 		CC7E0CEA1D3D07DE00313F32 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */; };
 		CC7E0CEC1D3D07E400313F32 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */; };
 		CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */; };
@@ -693,7 +693,6 @@
 		CC5A3DB51D40EECA00984F1F /* SWCommentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCommentsTableViewCell.h; sourceTree = "<group>"; };
 		CC5A3DB61D40EECA00984F1F /* SWCommentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWCommentsTableViewCell.m; sourceTree = "<group>"; };
 		CC5A3DB71D40EECA00984F1F /* SWCommentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SWCommentsTableViewCell.xib; sourceTree = "<group>"; };
-		CC5A3DE01D4103F200984F1F /* 评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论.png"; sourceTree = "<group>"; };
 		CC5A67471D35F71B008AE01A /* NiceExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiceExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5A674B1D35F71B008AE01A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CC5A67541D35F71B008AE01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -733,7 +732,6 @@
 		CC6EF8F81D365E31000A9B44 /* NetWorkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequest.h; sourceTree = "<group>"; };
 		CC6EF8F91D365E31000A9B44 /* NetWorkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequest.m; sourceTree = "<group>"; };
 		CC6EF8FC1D365F84000A9B44 /* RequestUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestUrl.h; sourceTree = "<group>"; };
-		CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		CC6EF8FF1D366409000A9B44 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		CC6EF9001D366409000A9B44 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		CC6EF9021D368561000A9B44 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
@@ -810,6 +808,8 @@
 		CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
 		CC7257A11D4225B600500D16 /* SWAboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAboutMeViewController.h; path = NiceExchange/Classes/Scenes/ViewControllers/SWAboutMeViewController.h; sourceTree = SOURCE_ROOT; };
 		CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAboutMeViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWAboutMeViewController.m; sourceTree = SOURCE_ROOT; };
+		CC7BA04E1D484EDC000833A6 /* 评论轮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论轮.png"; sourceTree = "<group>"; };
+		CC7BA0751D48AB39000833A6 /* bb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bb.jpg; sourceTree = "<group>"; };
 		CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CC7E0CED1D3D07F500313F32 /* TKAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAddressBook.h; sourceTree = "<group>"; };
@@ -1596,7 +1596,6 @@
 		CC6EF8CB1D362F01000A9B44 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
-				CC6EF8FD1D365FCA000A9B44 /* Foundation+Log.m */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -1845,6 +1844,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3293401D45BDC00035C32F /* 发送纸飞机.png */,
+				CC7BA0751D48AB39000833A6 /* bb.jpg */,
 				CCA3B7BF1D3A7C95003361CC /* 11.jpg */,
 				CC3293391D45B7C80035C32F /* 评.png */,
 				CCA3B7C01D3A7C95003361CC /* fImage */,
@@ -1862,7 +1862,7 @@
 		CCA3B7C01D3A7C95003361CC /* fImage */ = {
 			isa = PBXGroup;
 			children = (
-				CC5A3DE01D4103F200984F1F /* 评论.png */,
+				CC7BA04E1D484EDC000833A6 /* 评论轮.png */,
 				CCA3B7C61D3A7C95003361CC /* 收藏.png */,
 				CCA3B7C11D3A7C95003361CC /* 11.png */,
 				CCA3B7C21D3A7C95003361CC /* 分享.png */,
@@ -2204,10 +2204,10 @@
 				CC5A3CFD1D40C5D200984F1F /* p31b0024.png in Resources */,
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
 				CCA3B7F41D3A7C95003361CC /* 双引号-左-01.png in Resources */,
+				CC7BA04F1D484EDC000833A6 /* 评论轮.png in Resources */,
 				CC5A3D881D40C5D200984F1F /* p31b0163.png in Resources */,
 				CC5A3D641D40C5D200984F1F /* p31b0127.png in Resources */,
 				CC5A3D2C1D40C5D200984F1F /* p31b0071.png in Resources */,
-				CC5A3DE11D4103F200984F1F /* 评论.png in Resources */,
 				CC704DF81D3CF5CC00D5A269 /* UMSnsAccountViewController.xib in Resources */,
 				CC5A3D251D40C5D200984F1F /* p31b0064.png in Resources */,
 				CC5A3D7C1D40C5D200984F1F /* p31b0151.png in Resources */,
@@ -2357,6 +2357,7 @@
 				CC5A3CF51D40C5D200984F1F /* p31b0016.png in Resources */,
 				CC592B6A1D3F16CB002CD37D /* 444.png in Resources */,
 				CC5A3CE61D40C5D200984F1F /* p31b0001.png in Resources */,
+				CC7BA0761D48AB39000833A6 /* bb.jpg in Resources */,
 				CC5A3CF71D40C5D200984F1F /* p31b0018.png in Resources */,
 				CC5A3D0C1D40C5D200984F1F /* p31b0039.png in Resources */,
 				CC5A3D5C1D40C5D200984F1F /* p31b0119.png in Resources */,
@@ -2454,7 +2455,6 @@
 				CC11C9261D459F380075FB5F /* ElseTableViewCell.m in Sources */,
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC11C92C1D459F660075FB5F /* MovieTableViewCell.m in Sources */,
-				CC6EF8FE1D365FCA000A9B44 /* Foundation+Log.m in Sources */,
 				CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */,
 				CC5A67821D35F758008AE01A /* BaseModel.m in Sources */,
 				D601676F1D4249CA00CA54BA /* SWAnnotation.m in Sources */,

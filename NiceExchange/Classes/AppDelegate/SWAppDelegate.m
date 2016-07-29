@@ -19,7 +19,7 @@
 @implementation SWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    sleep(5);
     [SWActivityList registerSubclass];
     [SWLcAvUSer registerSubclass];
     [SWCount registerSubclass];
