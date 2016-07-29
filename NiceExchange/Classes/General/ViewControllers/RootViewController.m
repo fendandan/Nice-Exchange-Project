@@ -119,6 +119,7 @@
     [button setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
     [button setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_Selected",imageName]] forState:UIControlStateSelected];
     
+    
 //    [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     [button setTitle:title forState:UIControlStateNormal];
@@ -133,7 +134,19 @@
 
 #pragma mark --- SWTabBarDelegate ---
 - (void)swTabBarItemDidClicked:(SWTabBar *)tabBar {
+    
     self.selectedIndex = self.swTabBar.currentSelected;
+}
+-(void)swMessTabBarItemDidClicked:(SWTabBar *)sender
+{
+    if ([SWLcAvUSer currentUser]) {
+        SWCreationViewController *swcr =[SWCreationViewController new];
+        [self presentViewController:swcr animated:YES completion:nil];
+    }else {
+        SWNotLoggedViewController *notlogged = [[SWNotLoggedViewController alloc]init];
+        [self.navigationController pushViewController:notlogged animated:YES];
+    }
+   
 }
 
 /*

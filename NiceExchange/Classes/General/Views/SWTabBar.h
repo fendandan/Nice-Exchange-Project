@@ -11,7 +11,7 @@
 @protocol SWTabBarDelegate <NSObject>
 
 - (void)swTabBarItemDidClicked:(SWTabBar *)tabBar;
-
+-(void)swMessTabBarItemDidClicked:(SWTabBar *)sender;
 @end
 
 @interface SWTabBar : UITabBar

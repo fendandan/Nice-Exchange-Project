@@ -41,12 +41,14 @@ static NSString *const systemCell_Identifiter = @"systemCell_Identifiter";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:systemCell_Identifiter forIndexPath:indexPath];
     
     cell.textLabel.text = self.dataArray[indexPath.row];
-    cell.backgroundColor = kitColor;
+    //cell.backgroundColor = kitColor;
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 3) { // ??  && [SWLcAvUSer currentUser]
+    if (indexPath.row == 1) {
+      [self.navigationController pushViewController:[[SWNotifcationSettingViewController alloc] init] animated:YES];
+    }else if (indexPath.row == 3) { // ??  && [SWLcAvUSer currentUser]
         SWRSPViewController *rspVC = [[SWRSPViewController alloc] init];
         [self presentViewController:rspVC animated:YES completion:^{
             
