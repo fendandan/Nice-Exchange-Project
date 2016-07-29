@@ -22,11 +22,9 @@
 @end
 
 
-
 @interface ElseTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *titleImageView;
-
 
 @property (strong, nonatomic) IBOutlet UIButton *userNameBtn;
 
@@ -43,6 +41,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *participationLabel;
 
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *subHeadLabel;
+
 
 
 @property(nonatomic,assign)id<ElseTableViewCellDelegate>delegate;

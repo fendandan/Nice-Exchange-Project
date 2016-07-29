@@ -40,9 +40,7 @@
 @implementation SWshowViewController
 
 -  (void)viewWillAppear:(BOOL)animated {
-    
-  
-    
+
     self.imagedddddd.image = self.dataImage;
   
 }
@@ -63,8 +61,8 @@
     self.biaoQL.text = self.activity.label;
     self.detail.text = self.activity.subhead;
     self.xzLable.text = self.activity.rule;
-
 }
+
 - (void)setActivity:(SWActivityList *)activity {
     if (_activity != activity) {
         _activity = nil;

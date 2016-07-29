@@ -10,8 +10,10 @@
 #import "ElseTableViewCell.h"
 #import "SWUserDetailViewController.h"
 #import "SWshowViewController.h"
+#import "SWFridenSharOnTableViewCell.h"
 
 @interface ElseViewController ()
+
 <
   UITableViewDataSource,
   UITableViewDelegate,
@@ -51,7 +53,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return 10;
+    return self.dataArray.count;
     
 }
 
@@ -61,10 +63,33 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     ElseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ElseTableViewCell_Identifiter forIndexPath:indexPath];
-    
     cell.delegate = self;
     
+    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
+        cell.attentionBtn.selected = YES;
+    }
     
+    
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    cell.subHeadLabel.text = activity.subhead;
+    
+    cell.titleLabel.text = activity.title;
+    
+    [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
+    
+    [cell.titleImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
+    
+    
+    if (activity.createBy.displayName) {
+        
+        [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+    }else {
+        
+        [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+    }
+    
+
     return cell;
 }
 
@@ -84,10 +109,25 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SWshowViewController *SWshowVC = [SWshowViewController new];
+    ElseTableViewCell *cell = (ElseTableViewCell *)[self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    
+    SWshowViewController *swshowVC = [[SWshowViewController alloc] init];
+    
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    swshowVC.activity = activity;
+    
+    if (activity.createBy.displayName) {
+        swshowVC.string = activity.createBy.displayName;
+    }else {
+        swshowVC.string = activity.createBy.username;
+    }
+    swshowVC.titlestring = activity.createBy.userImage.url;
+    swshowVC.dataImage = cell.BackGroundImageView.image;
     
     
-    [self.navigationController pushViewController:SWshowVC animated:YES];
+    [self.navigationController pushViewController:swshowVC animated:YES];
+    self.rootVC.swTabBar.hidden = YES;
 }
 
 
@@ -98,6 +138,7 @@
     // 查询活动
     AVQuery *aQ = [SWActivityList query];
     [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
+    [aQ includeKey:@"createBy"];
     aQ.limit = 20;
     //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
     [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -160,8 +201,6 @@
             LCManager.shareManagerB = NO; // 置为可调用状态
             
         }];
-        
-        
     }
 }
 

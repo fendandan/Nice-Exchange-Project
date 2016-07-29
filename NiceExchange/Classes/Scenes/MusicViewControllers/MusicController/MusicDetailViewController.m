@@ -42,16 +42,11 @@
     
     
     //添加头视图
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - 550)];
-    view.backgroundColor = [UIColor yellowColor];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 64, kScreenWidth, kScreenHeight - 550)];
+    
     self.imageV = [[UIImageView alloc] initWithFrame:view.frame];
     [view addSubview:self.imageV];
     self.tableView.tableHeaderView = view;
-    
-    
-    
-
-    
     
     
     //注册
@@ -77,17 +72,13 @@
         
         NSDictionary *dataDic = dic[@"data"];
         
-//        [self.imageV setImageWithURL:[NSURL URLWithString:[dataDic objectForKey:@"album_logo"]]];
-        
     
         NSMutableArray *songsArr = dataDic[@"songs"];
         
         
-        
-        
         for (NSDictionary *dic in songsArr) {
             
-//            [self.imageView setImageWithURL:[NSURL URLWithString:[dic objectForKey:@"album_logo"]]];
+
             
             
             [self.MusicArray addObject:dic];

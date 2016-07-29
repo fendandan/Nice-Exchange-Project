@@ -1,0 +1,235 @@
+//
+//  DataBaseHandle.m
+//  SQLite2
+//
+//  Created by lanou3g on 16/5/24.
+//  Copyright © 2016年 Ly. All rights reserved.
+//
+
+#import "DataBaseHandle.h"
+#import <sqlite3.h>
+
+
+@interface DataBaseHandle ()
+
+//数据库的存储路径
+@property(nonatomic,strong)NSString *dbPath;
+
+@end
+
+
+static DataBaseHandle *dataBase = nil;
+
+
+@implementation DataBaseHandle
+
+//把这个类写成单例,方便外部使用
++(DataBaseHandle *)shareDataBaseHandle
+{
+    if (dataBase == nil) {
+        dataBase = [[DataBaseHandle alloc] init];
+    }
+    return dataBase;
+}
+
+//懒加载 给数据库路径
+-(NSString *)dbPath{
+    if (_dbPath == nil) {
+        
+        NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject];
+        _dbPath = [document stringByAppendingPathComponent:@"linkman.sqlite"];
+    }
+    return _dbPath;
+}
+
+
+//全局变量
+static sqlite3 *db = nil;
+
+
+
+//打开数据库
+- (void)openDB{
+//    第一个参数:代表的是数据库的路径
+//    第二个参数:二级指针,代表的是数据库中的地址
+    int result = sqlite3_open(self.dbPath.UTF8String, &db);
+    if (result == SQLITE_OK) {
+        NSLog(@"数据库打开成功");
+    }else{
+        NSLog(@"打开失败");
+    }
+}
+
+
+
+
+//创建表
+- (void)creatTable{
+
+    
+//    NSString *creatStr = @"create table if not exists linkman (uid integer primary key autoincrement not null, name text, gender text, age integer)";
+    
+    NSString *creatStr = @"create table if not exists linkman (id integer primary key autoincrement,title text, content text ,label text ,rule text ,latitude text ,longitude text ,subhead text )";
+    
+    int result = sqlite3_exec(db, creatStr.UTF8String, NULL, NULL, NULL);
+    if (result == SQLITE_OK) {
+        NSLog(@"建表成功");
+    }else{
+        NSLog(@"建表失败");
+    }
+    NSLog(@"_dbPath = %@",self.dbPath);
+    
+}
+
+
+//关闭数据库
+- (void)closeDB{
+    int result = sqlite3_close(db);
+    if (result == SQLITE_OK) {
+        NSLog(@"数据库关闭成功");
+    }else{
+        NSLog(@"数据库关闭失败");
+    }
+}
+
+//插入数据
+- (void)insertTitle:(NSString *)title
+            content:(NSString *)content
+              label:(NSString *)label
+               rule:(NSString *)rule
+           latitude:(double )latitude
+          longitude:(double )longitude
+            subhead:(NSString *)subhead
+{
+
+    NSString *insertStr = @"insert into linkman(title,content,label,rule,latitude,longitude,subhead)values(?,?,?,?,?,?,?)";
+
+    sqlite3_stmt *stmt = nil;
+
+    int result = sqlite3_prepare(db, insertStr.UTF8String, -1, &stmt, NULL);
+
+    if (result == SQLITE_OK) {
+
+        sqlite3_bind_text(stmt, 1, title.UTF8String, -1, NULL);
+        
+        sqlite3_bind_text(stmt, 2, content.UTF8String, -1, NULL);
+
+        sqlite3_bind_text(stmt, 3, label.UTF8String, -1, NULL);
+       
+        sqlite3_bind_text(stmt, 4, rule.UTF8String, -1, NULL);
+    
+        sqlite3_bind_double(stmt, 5, -1);
+        
+        sqlite3_bind_double(stmt, 6, -1);
+        
+        sqlite3_bind_text(stmt, 7, subhead.UTF8String, -1, NULL);
+       
+        if (sqlite3_step(stmt) == SQLITE_DONE) {
+            NSLog(@"插入成功");
+        }else {
+            NSLog(@"插入失败");
+        }
+        
+    }
+    sqlite3_finalize(stmt);
+}
+
+
+
+
+//通过 uid 去更新数据
+- (void)updateWithUID:(NSInteger)uid{
+    
+//    准备sql语句
+    NSString *updateStr = @"update person set name = '戈壁老王' where uid = ?";
+//    创建伴随指针
+    sqlite3_stmt *stmt = nil;
+//    准备 sql 函数
+    int result = sqlite3_prepare(db, updateStr.UTF8String, -1, &stmt, NULL);
+    
+    if (result == SQLITE_OK) {
+        //绑定:
+        sqlite3_bind_int64(stmt, 1, uid);
+        
+        if (sqlite3_step(stmt) == SQLITE_DONE) {
+            NSLog(@"更新成功");
+        }else{
+            NSLog(@"更新失败");
+        }
+    }
+    sqlite3_finalize(stmt);
+    
+}
+
+
+
+//通过 uid 去删除数据
+- (void)deleteWithUID:(NSInteger)uid{
+    NSString *deleteStr = [NSString stringWithFormat:@"delete from person where uid = %ld",uid];
+    //sql 函数
+    int result =  sqlite3_exec(db, deleteStr.UTF8String, NULL, NULL, NULL);
+    if (result == SQLITE_OK) {
+        NSLog(@"删除成功");
+    }else{
+        NSLog(@"删除失败");
+    }
+}
+
+
+//查找所有数据
+- (void)searchAll{
+    
+    NSString *searchAllStr = @"select * from person";
+    
+    sqlite3_stmt *stmt = NULL;
+    
+    int result = sqlite3_prepare(db, searchAllStr.UTF8String, -1, &stmt, NULL);
+    
+    if (result == SQLITE_OK) {
+        while (sqlite3_step(stmt) == SQLITE_ROW) {
+            //注意这里不是 OK 这里表示还有下一条数据
+            int uid = sqlite3_column_int(stmt, 0);//第二个参数是指位置从0开始
+            NSLog(@"%d",uid);
+            
+            NSString *name = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
+            NSLog(@"%@",name);
+
+            NSString *gender = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 2)];
+            NSLog(@"%@",gender);
+            
+        }
+        sqlite3_finalize(stmt);
+    }
+}
+
+
+//根据名字去查找相关数据
+- (void)searchWithName:(NSString *)name{
+   NSString *searchStr = @"select * from person where name = ?";
+    sqlite3_stmt *stmt = NULL;
+    int result = sqlite3_prepare(db, searchStr.UTF8String, -1, &stmt, NULL);//sql 语句
+    if (result == SQLITE_OK) {
+        sqlite3_bind_text(stmt, 1, name.UTF8String, -1, NULL);//绑定参数
+        while ( sqlite3_step(stmt) == SQLITE_ROW) {
+                    //从伴随指针回去数据第0行
+            int ID = sqlite3_column_int(stmt, 0);
+            NSLog(@"%d",ID);
+            NSString *idStr = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];//转换成 oc 输出
+            NSLog(@"%@",idStr);
+            int age = sqlite3_column_int(stmt, 2);
+            NSLog(@"%d",age);
+          }
+    }else{
+        NSLog(@"语句错误");
+    }
+    
+//    关闭伴随指针
+    sqlite3_finalize(stmt);
+     
+}
+
+
+
+
+
+@end

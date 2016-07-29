@@ -47,6 +47,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *BackGroundImageView;
 
 
+@property (strong, nonatomic) IBOutlet UILabel *subHeadLabel;
+
+
+
 @property(nonatomic,assign)id<MoodTableViewCellDelegate>delegate;
 
 

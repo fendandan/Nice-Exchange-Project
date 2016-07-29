@@ -119,7 +119,6 @@
     
            usrVC.userString = act.createBy.objectId;
     
-    
     [self.navigationController pushViewController:usrVC animated:YES];
     
     

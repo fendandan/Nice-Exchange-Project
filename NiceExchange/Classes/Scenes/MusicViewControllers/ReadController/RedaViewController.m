@@ -60,6 +60,7 @@
 
 
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataArray.count;
@@ -75,12 +76,14 @@
     cell.delegate = self;
     
 
+    //不明白什么意思
     if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
         cell.attentionBtn.selected = YES;
     }
     
-    
     SWActivityList *activity = self.dataArray[indexPath.row];
+    
+    cell.subheadingLabel.text = activity.subhead;
     
     cell.titleLabel.text = activity.title;
     [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
@@ -115,8 +118,8 @@
         //        SWActivityList *acc = objects[16];
         //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
         for (SWActivityList *a in objects) {
-            SWActivityList *ac = a;
-            [self.dataArray addObject:ac];
+            
+            [self.dataArray addObject:a];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -214,13 +217,10 @@
 
 
 
-
-
-
 //cell 的点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_tableView cellForRowAtIndexPath:indexPath];
+    ReadTableViewCell *cell = (ReadTableViewCell *)[self tableView:_tableView cellForRowAtIndexPath:indexPath];
     
     SWshowViewController *swshowVC = [[SWshowViewController alloc] init];
     
@@ -233,8 +233,10 @@
     }else {
         swshowVC.string = activity.createBy.username;
     }
+    
     swshowVC.titlestring = activity.createBy.userImage.url;
-//    swshowVC.dataImage = cell.detailImv.image;
+    swshowVC.dataImage = cell.BackGroundImageView.image;
+    
     
     [self.navigationController pushViewController:swshowVC animated:YES];
     self.rootVC.swTabBar.hidden = YES;

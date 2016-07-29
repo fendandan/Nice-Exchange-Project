@@ -73,7 +73,14 @@
     [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerView"];
     
 //    //分区头视图
-    [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView"];
+    [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView1"];
+    
+    
+    [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView2"];
+    
+    
+    
+    [self.collectionview registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView3"];
 
 #warning -----
     //请求数据
@@ -106,8 +113,6 @@
 - (void)addScrollView
 {
     self.BottomScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    
-//    self.BottomScrollView.backgroundColor = [UIColor redColor];
     
     self.BottomScrollView.pagingEnabled = YES;
     
@@ -176,8 +181,7 @@
                 
                [self.titleArray addObject:[tempDIC objectForKey:@"title"]];
             }
-            
-            NSLog(@"self.titleArray%@",self.titleArray);
+        
             
             for (NSDictionary *DIC in collectionsArray) {
            
@@ -217,7 +221,6 @@
         
         self.dataArray = @[self.oneArray,self.twoArray,self.threeArray,self.fourArray];
         
-        NSLog(@"%@",self.musicArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionview reloadData];
@@ -234,15 +237,22 @@
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return self.titleArray.count;
     
+//    if (self.oneArray) {
+//        return self.titleArray[0];
+//    }
+   
+    
+   
+    
+    return self.titleArray.count;
+   
 }
 
 
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-        return self.oneArray.count;
+        return self.twoArray.count;
 }
 
 
@@ -542,7 +552,6 @@ int a = 0;
             self.lohasBtn.selected = NO;
             self.moodBtn.selected = NO;
             self.elseBtn.selected = NO;
-
             
         }else if (i == 2) {
 
@@ -589,22 +598,21 @@ int a = 0;
         
         //collectionView 分区视图
         self.collectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 275, self.view.frame.size.width, 30)];
-    
+        
         [headerView addSubview:self.collectionHeaderView];
-        
-        
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 10, 200, 20)];
         [self.collectionHeaderView addSubview:titleLabel];
         
         titleLabel.text = self.titleArray[0];
         
+
         return headerView;
         
     }
-    else
+    else if (indexPath.section == 1)
     {
-        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView1" forIndexPath:indexPath];
         
         //collectionView 分区视图
         self.collectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
@@ -614,22 +622,44 @@ int a = 0;
         
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 200, 20)];
         
-        
-        
-        //label 赋值
-            if (indexPath.section == 1) {
-                titleLabel.text = self.titleArray[1];
-            }else if (indexPath.section == 2){
-                titleLabel.text = self.titleArray[2];
-            }else if (indexPath.section == 3){
-                titleLabel.text = self.titleArray[3];
-            }
+        titleLabel.text = self.titleArray[1];
         
         [self.collectionHeaderView addSubview:titleLabel];
         
         return headerView;
-        }
-    
+    }else if (indexPath.section == 2) {
+        
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView2" forIndexPath:indexPath];
+        
+        //collectionView 分区视图
+        self.collectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+        
+        [headerView addSubview:self.collectionHeaderView];
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 200, 20)];
+        
+        titleLabel.text = self.titleArray[2];
+        
+        [self.collectionHeaderView addSubview:titleLabel];
+        
+        return headerView;
+    }else if (indexPath.section == 3) {
+        
+        UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView3" forIndexPath:indexPath];
+        
+        //collectionView 分区视图
+        self.collectionHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 30)];
+        
+        [headerView addSubview:self.collectionHeaderView];
+        
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, 200, 20)];
+        
+        titleLabel.text = self.titleArray[3];
+        
+        [self.collectionHeaderView addSubview:titleLabel];
+        
+        return headerView;
+    }
     return nil;
 }
 
@@ -658,7 +688,6 @@ int a = 0;
 // 选中操作
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-   
     MusicDetailViewController *dteaVC = [MusicDetailViewController new];
     
     dteaVC.urlString = self.urlArray[indexPath.section][indexPath.row];

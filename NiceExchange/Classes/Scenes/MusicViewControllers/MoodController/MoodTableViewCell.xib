@@ -62,7 +62,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXR-Tf-cdQ">
                                 <rect key="frame" x="8" y="38" width="354" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -107,6 +107,7 @@
                 <outlet property="collectLabel" destination="fUo-y5-it9" id="XXe-ps-09S"/>
                 <outlet property="participationBtn" destination="yw3-Aw-OSH" id="38m-o9-wJr"/>
                 <outlet property="participationLabel" destination="igS-QQ-yeM" id="IT5-QQ-cOW"/>
+                <outlet property="subHeadLabel" destination="RXR-Tf-cdQ" id="1Nn-Y2-Hyd"/>
                 <outlet property="titleImageView" destination="6DF-Gi-tdf" id="y8b-R6-e3Q"/>
                 <outlet property="titleLabel" destination="hLo-YD-Afs" id="QFS-XV-S2v"/>
                 <outlet property="userNameBtn" destination="Ic4-JD-AUI" id="020-9l-d4h"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -62,7 +62,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYF-yQ-B0C">
                                 <rect key="frame" x="8" y="38" width="354" height="67"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -107,6 +107,7 @@
                 <outlet property="collectLabel" destination="e1j-9x-3pH" id="UQu-6r-Vqw"/>
                 <outlet property="participationBtn" destination="un2-Bk-iO4" id="k0L-MY-CiG"/>
                 <outlet property="participationLabel" destination="bPO-Fa-o1U" id="FHe-c1-TmI"/>
+                <outlet property="subHeadLabel" destination="bYF-yQ-B0C" id="foF-wZ-Wew"/>
                 <outlet property="titleImageView" destination="9bB-eR-zZs" id="oP5-7w-SID"/>
                 <outlet property="titleLabel" destination="WIe-uv-sjt" id="M8d-ye-iqa"/>
                 <outlet property="userNameBtn" destination="bMb-Jx-3Bt" id="fxg-YQ-QMD"/>

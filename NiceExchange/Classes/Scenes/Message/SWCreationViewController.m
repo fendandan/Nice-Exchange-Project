@@ -10,10 +10,12 @@
 #import "SWAddRule.h"
 #import "SWMessViewController.h"
 #import "SWLayoutTextView.h"
-#import "FMDB.h"
+#import "DataBaseHandle.h"
 
 #import "SWBaiduAPIViewController.h"
 @class SWAppDelegate;
+
+
 @interface SWCreationViewController ()
 <
 UITextFieldDelegate,
@@ -24,22 +26,23 @@ UINavigationControllerDelegate
 >
 @property(nonatomic,strong)UIImageView *imageview;//箭头
 @property (nonatomic,strong)UITextField *titleTF;//标题
-@property (nonatomic, strong)SWAddRule *addrule;
-@property (strong, nonatomic)SWLayoutTextView *textView;
+@property (nonatomic, strong)SWAddRule *addrule;//规则
+@property (strong, nonatomic)SWLayoutTextView *textView;//内容
 @property (nonatomic, strong)UIScrollView *scrollview;
 @property(nonatomic,strong) UIImagePickerController *imagepicker;
-@property (strong ,nonatomic) UIImageView *photoimageView;
+@property (strong ,nonatomic) UIImageView *photoimageView;//图像 imageView
 @property (strong, nonatomic) UIView *Viewaddimage;
 @property (strong, nonatomic) UIView *tageView;
-@property (strong, nonatomic) UIButton *addtageButton;
+@property (strong, nonatomic) UIButton *addtageButton;// 标签 button
 @property (nonatomic,strong)UIWindow *window;
 
-@property(nonatomic,strong)FMDatabase *database;
+@property(nonatomic,strong)NSString *dbPath;
+
+
 
 @end
 
 @implementation SWCreationViewController
-
 
 
 - (void)viewDidLoad {
@@ -54,6 +57,14 @@ UINavigationControllerDelegate
     tapGestureRecognizer.cancelsTouchesInView = NO;
     //将触摸事件添加到当前view
     [self.scrollview addGestureRecognizer:tapGestureRecognizer];
+    
+
+    
+    
+    
+    
+    
+    
     
 }
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
@@ -148,6 +159,7 @@ UINavigationControllerDelegate
     }
     return YES;
 }
+
 //
 -(void)addImageview
 {
@@ -171,9 +183,9 @@ UINavigationControllerDelegate
     } ];
 }
 
+
 //navgation
 -(void)itemRightAction:(UIBarButtonItem *)sender{
-    
     
     SWLog(@"嘿嘿");
     // 发布活动
@@ -204,40 +216,42 @@ UINavigationControllerDelegate
     }
     
 }
+
+
 //存草稿
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     
-   
-//    SWBaiduAPIViewController *baidu = [[SWBaiduAPIViewController alloc]init];
-//    [self.navigationController pushViewController:baidu animated:YES]
-//    ;
+  DataBaseHandle *dataBase = [DataBaseHandle shareDataBaseHandle];
 
-    NSString *doc = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    
-    
-    NSLog(@"%@",doc);
-    
-    NSString *fileName = [doc stringByAppendingPathComponent:@"linkman.sqlite"];
-    
-    
     //打开数据库
-    self.database = [FMDatabase databaseWithPath:fileName];
-    if ([self.database open]) {
-        
-        BOOL result = [self.database executeUpdate:@"create table if not exists linkman (id integer PRIMARY KEY AUTOINCREMENT,title text NOT NULL,content text NOT NULL,titleImage text Not NULL,markC integer NOT NULL,createBy text NOT NULL,commentRelation text NOT NULL,label text NOT NULL,rule text NOT NULL,point text NOT NULL,subhead text NOT NULL)"];
-        
-        if (result) {
-            
-            SWActivityList *activity = [SWActivityList object];
-            activity.title = self.titleTF.text;
-            activity.content = self.textView.textView.text;
-
-        }else{
-            NSLog(@"建表失败");
-        }
+    [dataBase openDB];
     
-    }
+    //创建表
+    [dataBase creatTable];
+    
+    
+    NSLog(@"1%@,2%@,3%@,4%@",self.titleTF.text,self.textView.textView.text,self.addtageButton.titleLabel.text,self.addrule.textFstring);
+    
+    
+    //插入数据
+    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
+    
+    
+    //删除
+    [dataBase deleteWithUID:2];
+    
+    
+    //更新数据
+    [dataBase updateWithUID:3];
+    
+    
+    //
+    
+
+    //关闭数据库
+//    [dataBase closeDb];
 }
+
 
 
 
@@ -281,6 +295,7 @@ UINavigationControllerDelegate
     [alert addAction:action2];
     
 }
+
 #pragma  maek --图片选择器图片的代理方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
