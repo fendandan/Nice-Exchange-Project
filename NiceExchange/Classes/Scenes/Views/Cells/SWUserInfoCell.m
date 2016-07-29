@@ -35,10 +35,20 @@
         }else {
             self.userNameLabel.text = avUser.username;
         }
+        // 查询计数数量
+        AVQuery *countQ = [AVQuery queryWithClassName:@"Count"];
+        [countQ whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+        [countQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (objects.count != 0) {
+                SWCount *count = objects[0];
+                self.userInfoView.markLabel.text = [NSString stringWithFormat:@"关注:%@",count.followC];
+                self.userInfoView.recommendationLabel.text = [NSString stringWithFormat:@"粉丝:%@",count.followedC];
+//                cell.numberlabel.text = [count.followC stringValue];
+                SWLog(@"%@",count);
+            }
+            
+        }];
         
-        self.userInfoView.goodLabel.text = @"goodL";
-        self.userInfoView.markLabel.text = @"markL";
-        self.userInfoView.recommendationLabel.text = @"recommendationL";
         
     }
 }

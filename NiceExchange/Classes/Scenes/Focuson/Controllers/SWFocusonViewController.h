@@ -15,8 +15,9 @@ typedef NS_ENUM(NSUInteger , RequestData)
     ///发起
     RequestDataInitiateRequest,
     ///参与
-    RequestDataParticipate
-    
+    RequestDataParticipate,
+    //收藏
+    RequestDataMark
     
 };
 @interface SWFocusonViewController : BaseViewController

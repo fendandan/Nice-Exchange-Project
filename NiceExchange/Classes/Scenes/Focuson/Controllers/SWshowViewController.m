@@ -69,6 +69,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
     self.dataArray = [NSMutableArray array];
     self.leftArray = [NSMutableArray array];
     self.touch =0;
@@ -161,7 +162,7 @@
     [self.collectionView addSubview:_segmented];
 #warning --- 评论数据
       [self requestcommentdata];
-#warning --传值
+
     
     
 }
@@ -182,6 +183,8 @@
     self.detail.text = self.activity.subhead;
     self.xzLable.text = self.activity.rule;
     self.imagedddddd.image = self.dataImage;
+    self.collectionL.text = [NSString stringWithFormat:@"收藏%@",self.activity.markC];
+   self.JOINl.text  = self.joinStr;
 }
 
 
@@ -282,8 +285,22 @@
     self.btn.frame = CGRectMake(CGRectGetMaxX( self.joinBtn.frame) - 49,  self.joinBtn.frame.origin.y +4.5
                                 , 40, 40);
     
-    [  self.btn addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [  self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
+    [self.btn addTarget:self action:@selector(collectionAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    [self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
+    [self.btn setBackgroundImage:[UIImage imageNamed:@"已收藏.png"] forState:(UIControlStateSelected)];
+    
+    AVQuery *avQ = [SWMark query];
+    [avQ whereKey:@"activity" equalTo:self.activity];
+    [avQ countObjectsInBackgroundWithBlock:^(NSInteger number, NSError *error) {
+        if (number == 1) {
+            self.btn.selected = YES;
+        }else if (number > 1) {
+            SWLog(@"收藏功能出错，重复收藏了！");
+        }
+    }];
+    
+
+    
     [self.view addSubview:  self.btn];
     //[self.view bringSubviewToFront:self.btn];
 
@@ -346,53 +363,30 @@
 //收藏按钮
 -(void)collectionAction:(UIButton *)sender {
     
+        SWActivityList *activity = [SWActivityList object];
+      if (sender.selected == YES) {
+       
+            [LCManager lcToCancelMarkActivityWithActivityList:self.activity completion:^(NSArray *mArray) {
+    
+                LCManager.shareManagerBm = NO;
+     
+                
+            }];
 
+          [self animalCancle];
+          sender.selected = NO;
+    }else if ( sender.selected == NO) {
     
+            [LCManager lcToMarkActivityWithActivityList:self.activity  completion:^(NSArray *mArray) {
     
-    if (self.touch == 1) {
-        [self.btn setBackgroundImage:[UIImage imageNamed:@"收藏.png"] forState:(UIControlStateNormal)];
-        UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 200, 10000, 400, 40)];
-        lable.backgroundColor = [UIColor blackColor];
-        lable.alpha = .5;
-        lable.textColor = [UIColor whiteColor];
-        lable.text = @"已取消收藏";
-        lable.font = [UIFont systemFontOfSize:14];
-        [self.view addSubview:lable];
-        lable.tag = 333;
-        lable.textAlignment = NSTextAlignmentCenter;
-        [UIView animateWithDuration:.2 animations:^{
-            lable.frame = CGRectMake(self.view.frame.size.width / 2 - 60, self.view.frame.size.height - 120, 120, 40);
-            
-        }];
-        
-        UILabel *lableV  = [self.view viewWithTag:123];
-        [lableV removeFromSuperview];
-        
-        self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
-        
-        self.touch = 0;
-    }else if (self.touch == 0) {
+                LCManager.shareManagerBm = NO;
+                
+            }];
+
         
         
-        UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 200, 10000, 400, 40)];
-        lable.tag = 123;
-        lable.backgroundColor = [UIColor blackColor];
-        lable.alpha = .5;
-        lable.textColor = [UIColor whiteColor];
-        lable.text = @"收藏成功,你会在首页看到此沙龙的动态";
-        lable.font = [UIFont systemFontOfSize:14];
-        [self.view addSubview:lable];
-        lable.textAlignment = NSTextAlignmentCenter;
-        [UIView animateWithDuration:.2 animations:^{
-            lable.frame = CGRectMake(self.view.frame.size.width / 2 - 150, self.view.frame.size.height - 120, 300, 40);
-        }];
-        
-        [  self.btn setBackgroundImage:[UIImage imageNamed:@"已收藏.png"] forState:(UIControlStateNormal)];
-        
-        UILabel *lableV  = [self.view viewWithTag:333];
-        [lableV removeFromSuperview];
-        self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
-        self.touch = 1;
+        [self animalAdd];
+        sender.selected = YES;
     }
     
 }
@@ -575,11 +569,54 @@
     //
     
 }
-
-
+- (void)animalCancle {
+    
+    self.btn.selected = NO;
+    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 200, 10000, 400, 40)];
+    lable.backgroundColor = [UIColor blackColor];
+    lable.alpha = .5;
+    lable.textColor = [UIColor whiteColor];
+    lable.text = @"已取消收藏";
+    lable.font = [UIFont systemFontOfSize:14];
+    [self.view addSubview:lable];
+    lable.tag = 333;
+    lable.textAlignment = NSTextAlignmentCenter;
+    [UIView animateWithDuration:.2 animations:^{
+        lable.frame = CGRectMake(self.view.frame.size.width / 2 - 60, self.view.frame.size.height - 120, 120, 40);
+        
+    }];
+    
+    UILabel *lableV  = [self.view viewWithTag:123];
+    [lableV removeFromSuperview];
+    
+    self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
+}
+-(void)animalAdd {
+    
+    
+    
+    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 200, 10000, 400, 40)];
+    lable.tag = 123;
+    lable.backgroundColor = [UIColor blackColor];
+    lable.alpha = .5;
+    lable.textColor = [UIColor whiteColor];
+    lable.text = @"收藏成功,你会在首页看到此沙龙的动态";
+    lable.font = [UIFont systemFontOfSize:14];
+    [self.view addSubview:lable];
+    lable.textAlignment = NSTextAlignmentCenter;
+    [UIView animateWithDuration:.2 animations:^{
+        lable.frame = CGRectMake(self.view.frame.size.width / 2 - 150, self.view.frame.size.height - 120, 300, 40);
+    }];
+    
+    self.btn.selected = YES;
+    
+    UILabel *lableV  = [self.view viewWithTag:333];
+    [lableV removeFromSuperview];
+    self.time = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(disapperAction) userInfo:nil repeats:NO];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // Dispose of any resources tha1t can be recreated.
 }
 
 /*

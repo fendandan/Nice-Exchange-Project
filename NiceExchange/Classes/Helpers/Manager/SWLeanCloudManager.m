@@ -376,8 +376,8 @@ static SWLeanCloudManager *manager = nil;
     
     // create an entry in the Follow table
     SWMark *mark = [SWMark object];
-    [mark setObject:[AVUser currentUser]  forKey:@"from"];
-    [mark setObject:activity forKey:@"to"];
+    [mark setObject:[AVUser currentUser]  forKey:@"markBy"];
+    [mark setObject:activity forKey:@"activity"];
     [mark setObject:[NSDate date] forKey:@"date"];
     [mark saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
@@ -418,9 +418,9 @@ static SWLeanCloudManager *manager = nil;
     
     // create an entry in the Follow table
     AVQuery *fromQuery = [AVQuery queryWithClassName:@"Mark"];
-    [fromQuery whereKey:@"from" equalTo:[AVUser currentUser]];
+    [fromQuery whereKey:@"markBy" equalTo:[AVUser currentUser]];
     AVQuery *toQuery = [AVQuery queryWithClassName:@"Mark"];
-    [toQuery whereKey:@"to" equalTo:activity];
+    [toQuery whereKey:@"activity" equalTo:activity];
     AVQuery *query = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:fromQuery,toQuery,nil]];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
