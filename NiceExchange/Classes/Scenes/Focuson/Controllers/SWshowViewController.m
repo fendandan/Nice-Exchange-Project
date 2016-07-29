@@ -40,28 +40,10 @@
 
 @implementation SWshowViewController
 
--  (void)viewWillAppear:(BOOL)animated {
-
-    self.imagedddddd.image = self.dataImage;
-  
-}
-
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[XYSpriteHelper sharedInstance]startTimer];
-    
-    //[self add];
-    self.userName.text = self.string;
-    AVFile *ff = [AVFile fileWithURL:self.titlestring];
-    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
-        [self.icon  setImage:image forState:(UIControlStateNormal)];
-    }];
-    
-    self.contL.text = self.activity.content;
-    self.titleL.text = self.activity.title;
-    self.biaoQL.text = self.activity.label;
-    self.detail.text = self.activity.subhead;
-    self.xzLable.text = self.activity.rule;
+   [[XYSpriteHelper sharedInstance]startTimer];
+    [self valueOf];
 }
 
 - (void)setActivity:(SWActivityList *)activity {
@@ -87,7 +69,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
     self.dataArray = [NSMutableArray array];
     self.leftArray = [NSMutableArray array];
     self.touch =0;
@@ -147,6 +128,7 @@
     _switchVC.rightTableView.delegate = self;
     _switchVC.rightTableView.dataSource = self;
     _switchVC.leftTableView.backgroundColor = [UIColor whiteColor];
+    _switchVC.rightTableView.backgroundColor = [UIColor whiteColor];
     [_switchVC.leftTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"commentCell"];
 //// 
      [_switchVC.rightTableView registerNib:[UINib nibWithNibName:@"SWCommentsTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"RcommentCell"];
@@ -179,6 +161,27 @@
     [self.collectionView addSubview:_segmented];
 #warning --- 评论数据
       [self requestcommentdata];
+#warning --传值
+    
+    
+}
+
+ -(void) valueOf {
+  
+    //[self add];
+    
+    self.userName.text = self.string;
+    AVFile *ff = [AVFile fileWithURL:self.titlestring];
+    [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
+        [self.icon  setImage:image forState:(UIControlStateNormal)];
+    }];
+    
+    self.contL.text = self.activity.content;
+    self.titleL.text = self.activity.title;
+    self.biaoQL.text = self.activity.label;
+    self.detail.text = self.activity.subhead;
+    self.xzLable.text = self.activity.rule;
+    self.imagedddddd.image = self.dataImage;
 }
 
 
