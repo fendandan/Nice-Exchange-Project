@@ -8,7 +8,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SWshowViewController">
             <connections>
+                <outlet property="JOINl" destination="arb-zz-CCM" id="igx-VA-xYu"/>
                 <outlet property="biaoQL" destination="KE1-SQ-5B9" id="EFV-zd-p4M"/>
+                <outlet property="collectionL" destination="cgT-cB-jW2" id="ZG1-vP-cF7"/>
                 <outlet property="collectionScrollView" destination="Kxr-8S-W46" id="gm3-e6-tJZ"/>
                 <outlet property="contL" destination="ebr-0c-LMb" id="tCf-UQ-kqw"/>
                 <outlet property="detail" destination="0P0-ad-YqP" id="vCr-tA-wgs"/>
@@ -90,6 +92,10 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEt-YJ-UnZ">
                                     <rect key="frame" x="171" y="346" width="58" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="58" id="qjT-6R-gAK"/>
+                                        <constraint firstAttribute="height" constant="18" id="zgu-cV-YKH"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>

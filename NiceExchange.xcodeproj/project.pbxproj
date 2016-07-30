@@ -1914,13 +1914,13 @@
 				CCA3B7E01D3A7C95003361CC /* SWusrTableViewCell.h */,
 				CCA3B7E11D3A7C95003361CC /* SWusrTableViewCell.m */,
 				CCA3B7E21D3A7C95003361CC /* SWusrTableViewCell.xib */,
-				CC5A3DB51D40EECA00984F1F /* SWCommentsTableViewCell.h */,
 				CC5A3DB61D40EECA00984F1F /* SWCommentsTableViewCell.m */,
 				CC5A3DB71D40EECA00984F1F /* SWCommentsTableViewCell.xib */,
 				CC3293341D45A3360035C32F /* SWChatTableViewCell.h */,
 				CC3293351D45A3360035C32F /* SWChatTableViewCell.m */,
 				CC3293361D45A3360035C32F /* SWChatTableViewCell.xib */,
 				CC32933B1D45BC470035C32F /* SWViewController.h */,
+				CC5A3DB51D40EECA00984F1F /* SWCommentsTableViewCell.h */,
 				CC32933C1D45BC470035C32F /* SWViewController.m */,
 			);
 			path = Cell;

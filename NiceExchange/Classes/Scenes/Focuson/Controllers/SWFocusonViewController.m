@@ -51,23 +51,7 @@
 //        
 //    }else {
     
-        switch (self.RequestData) {
-            case RequestDataFoucesRequest:
-                [self performSelector:@selector(requestData) withObject:nil afterDelay:0.5];
-                break;
-                
-            case RequestDataInitiateRequest:
-                [self InitiateRequest];
-                break;
-                
-            case RequestDataParticipate:
-                [self jionInRequest];
-                break;
-                
-            default:
-                break;
-        }
-//    }
+       //    }
     
    
     
@@ -132,11 +116,47 @@
     
     
 }
+#warning 我的收藏请求----------
 
+-(void)makeRequest {
+    
+    // 查询活动
+    AVQuery *aQ = [SWMark  query];
+    
+    aQ.limit = 20;
+    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
+    [aQ addDescendingOrder:@"createdAt"]; // 排序
+    //    SWLog(@"22222222222222222%@",self.rootVC.followArray);
+    [aQ whereKey:@"markBy" equalTo:[SWLcAvUSer currentUser]];
+//    [aQ includeKey:@"markBy"];
+    [aQ includeKey:@"activity"];
+    
+    [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        for (SWMark *a in objects) {
+            
+            [self.dataArray addObject:a.activity];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //                SWLog(@"-----------++++ ---- %@",self.dataArray);
+            
+            [self.ztableView reloadData];
+        });
+        
+    }];
+}
+     
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
+    
+    
     
     NSLog(@"2312312312%lu",self.RequestData);
     self.title = @"关注";
@@ -160,7 +180,35 @@
     
    
 
-     
+    /**
+     *  OOOO
+     */
+    switch (self.RequestData) {
+        case RequestDataFoucesRequest:
+            [self performSelector:@selector(requestData) withObject:nil afterDelay:0.5];
+            break;
+            
+        case RequestDataInitiateRequest:
+            [self InitiateRequest];
+            break;
+            
+        case RequestDataParticipate:
+            [self jionInRequest];
+            break;
+        case  RequestDataMark:
+            
+            [self   makeRequest];
+            
+            break;
+            
+        default:
+            break;
+    }
+ 
+    
+    
+    
+    
 }
 #warning 请求数据
 -(void)requestData {
@@ -287,12 +335,17 @@
             }
             cell.title.text = list.title;
             [cell.detailImv setImageWithURL:[NSURL URLWithString:list.titleImage.url]];
-            //    cell.collectNum.text = @"";
-            //    cell.joinNum.text = @"";
+            cell.collectNum.text = [NSString stringWithFormat:@"收藏 %@",list.markC];
+            
+            
+            AVQuery *avQ = [SWComment query];
+            [avQ whereKey:@"forActivity" equalTo:list];
+            [avQ countObjectsInBackgroundWithBlock:^(NSInteger number, NSError *error) {
+                cell.joinNum.text = [NSString stringWithFormat:@"参与 %ld",number];
+            }];
+            
             cell.BJLable.text =  list.label;
             cell.GZlABLE.text = list.rule;
-            //    [self.imageV setImageWithURL:[NSURL URLWithString:list.createBy.userImage.url]];
-            //    SWLog(@"iii iiii iiii ii%@", list.createBy.userImage.url);
             AVFile *ff = [AVFile fileWithURL:list.createBy.userImage.url];
             [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
                 [cell.Friendicon  setImage:image forState:(UIControlStateNormal)];
@@ -326,6 +379,12 @@
         
         SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
         SWshowViewController *showVC = [[SWshowViewController alloc]init];
+        
+        
+           SWActivityList *list = self.dataArray[indexPath.row];
+        
+        
+        showVC.joinStr = [NSString stringWithFormat:@"参与 %@",list.markC];
         
         
         SWActivityList *activity = self.dataArray[indexPath.row];

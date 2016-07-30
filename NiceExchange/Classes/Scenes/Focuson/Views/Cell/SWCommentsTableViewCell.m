@@ -22,15 +22,15 @@
 #warning ---- %d",0]  这里面传入值 例如  %d",0 + self.title.text];
     
     
-    [self.praiseB setTitle:[NSString stringWithFormat:@"赞  %d",0]forState:0];
+    [self.praiseB setTitle:[NSString stringWithFormat:@"赞  %d",2]forState:0];
     [self.praiseB setImage:[UIImage imageNamed:@"心"] forState:0];
 
-    [self.HaHaL setTitle:[NSString stringWithFormat:@"呵呵  %d",0] forState:0];
+    [self.HaHaL setTitle:[NSString stringWithFormat:@"呵呵  %d",2] forState:0];
     [self.HaHaL setImage:[UIImage imageNamed:@"呵呵"] forState:0];
 
 
 
-    [self.commentsL setTitle:[NSString stringWithFormat:@"评论  %d",0] forState:0];
+    [self.commentsL setTitle:[NSString stringWithFormat:@"评论  %d",2] forState:0];
 [self.commentsL setImage:[UIImage imageNamed:@"评论轮.png"] forState:0];
 
 
@@ -45,7 +45,7 @@
     if (self.touch == 0) {
         [self.praiseB setTitleColor:[UIColor cyanColor] forState:0];
         self.praiseB.tintColor = [UIColor cyanColor];
-        
+
     [self.praiseB setTitle:[NSString stringWithFormat:@"赞  %d",1]forState:0];
         
         self.touch = 1;
@@ -98,14 +98,11 @@
         [self.commentsL setTitleColor:[UIColor cyanColor] forState:0];
         self.commentsL.tintColor = [UIColor cyanColor];
         
-        [self.commentsL setTitle:[NSString stringWithFormat:@"评论 %d",1]forState:0];
-        
-        self.touch = 1;
+               self.touch = 1;
     }else if( self.touch == 1) {
         
-        [self.commentsL setTitle:[NSString stringWithFormat:@"评论 %d",0]forState:0];
-        [self.commentsL setImage:[UIImage imageNamed:@"评论轮.png"] forState:0];
-        
+                [self.commentsL setImage:[UIImage imageNamed:@"评论轮.png"] forState:0];
+           
         [self.commentsL setTitleColor:[UIColor groupTableViewBackgroundColor] forState:0];
         self.commentsL.tintColor = [UIColor groupTableViewBackgroundColor];
         
@@ -154,6 +151,10 @@
         _comment = comment;
         
         self.commentLLL.text = comment.commentContent;
+        
+        [self.commentsL setTitle:comment.commentCount.stringValue forState:(UIControlStateNormal)];
+        [self.praiseB  setTitle:comment.goodCount.stringValue forState:(UIControlStateNormal)];
+        [self.HaHaL setTitle:comment.lowCount.stringValue forState:(UIControlStateNormal)];
         NSLog(@"----------- %@", comment.commentBy.objectId);
         AVQuery *aQ = [AVQuery queryWithClassName:@"_User"];
         //        [aQ includeKey:@"userImage"];

@@ -144,7 +144,7 @@
         [self presentViewController:swcr animated:YES completion:nil];
     }else {
         SWNotLoggedViewController *notlogged = [[SWNotLoggedViewController alloc]init];
-        [self.navigationController pushViewController:notlogged animated:YES];
+        [self presentViewController:notlogged animated:YES completion:nil];
     }
    
 }

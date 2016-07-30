@@ -49,6 +49,8 @@
 
 @property (strong, nonatomic) SWActivityList *activity;
 
-
+@property (strong, nonatomic) IBOutlet UILabel *collectionL;
+@property (strong, nonatomic) IBOutlet UILabel *JOINl;
+@property(nonatomic,strong) NSString *joinStr;
 
 @end

@@ -34,7 +34,7 @@
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
    //设置
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(rightbarbuttonAction:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(rightbarbuttonAction:)];
     
     
 }

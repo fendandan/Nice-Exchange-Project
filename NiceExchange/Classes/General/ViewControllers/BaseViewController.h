@@ -46,6 +46,6 @@
 - (NSString *)getStringWithArray:(NSArray *)array;
 
 /// 创建alertView 并 show  （注意代理方法）
-- (void)aalertViewShowWithMessage:(NSString *)message title:(NSString *)title otherTitle:(NSString *)otherTitle;
+- (void)aalertViewShowWithMessage:(NSString *)message title:(NSString *)title otherTitle:(NSString *)otherTitle tag:(int)tag;
 
 @end
