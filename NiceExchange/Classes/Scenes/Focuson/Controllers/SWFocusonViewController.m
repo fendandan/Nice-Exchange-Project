@@ -384,7 +384,7 @@
            SWActivityList *list = self.dataArray[indexPath.row];
         
         
-        showVC.joinStr = [NSString stringWithFormat:@"收藏 %@",list.markC];
+        showVC.joinStr = [NSString stringWithFormat:@"参与 %@",list.markC];
         
         
         SWActivityList *activity = self.dataArray[indexPath.row];

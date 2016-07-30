@@ -15,6 +15,9 @@
 #import "SWBaiduAPIViewController.h"
 
 #import "SWDraftViewController.h"
+
+
+
 @class SWAppDelegate;
 
 
@@ -40,6 +43,8 @@ UINavigationControllerDelegate
 
 @property(nonatomic,strong)NSString *dbPath;
 
+@property(nonatomic,strong)NSMutableArray *dataArray;
+
 @end
 
 @implementation SWCreationViewController
@@ -61,6 +66,12 @@ UINavigationControllerDelegate
     //将触摸事件添加到当前view
     [self.scrollview addGestureRecognizer:tapGestureRecognizer];
     
+    [[DataBaseHandle shareDataBaseHandle] openDB];
+    self.dataArray = [NSMutableArray array];
+    [self.dataArray addObjectsFromArray:[[DataBaseHandle shareDataBaseHandle] searchAll]];
+    if (self.dataArray.count > 0) {
+        [self addDraftViewWith:[NSString stringWithFormat:@"你有%ld条草稿!",self.dataArray.count]];
+    }
 }
 
 
@@ -133,7 +144,7 @@ UINavigationControllerDelegate
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
     
     
-    addlabBtn.titleLabel.text = self.labelStr;//标签赋值
+ 
     
     [self.scrollview addSubview:addlabBtn];
       self.addtageButton = addlabBtn;
@@ -146,7 +157,7 @@ UINavigationControllerDelegate
     [self.titleTF setFont:[UIFont fontWithName:@"" size:20]];
     self.titleTF.placeholder = @"来个响亮的名字";
     
-    self.titleTF.text = self.titleStr;//标题赋值
+
     
     [self.scrollview addSubview:self.titleTF];
     //
@@ -161,7 +172,7 @@ UINavigationControllerDelegate
     self.textView.placeholder = @"说点啥呢!";
     
     
-    self.textView.textView.text = self.textViewStr;//内容赋值
+
     
     [self.scrollview addSubview:self.textView];
     self.textView.delegate = self;
@@ -171,7 +182,7 @@ UINavigationControllerDelegate
     self.addrule.backgroundColor = [UIColor whiteColor];
     self.addrule.layer.masksToBounds = YES;
     self.addrule.layer.cornerRadius = self.addrule.frame.size.height/6;
-    self.addrule.textFstring = self.ruleStr;//规则赋值
+
     
     [self.scrollview addSubview:self.addrule];
     self.addrule.alpha = 0.8;
@@ -227,14 +238,217 @@ UINavigationControllerDelegate
         
     } ];
 }
+
+
 -(void)returnAction:(UIButton *)sender
 {
+    
+    if (![self.titleTF.text isEqualToString:@""]) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        
+        
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"保存" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            DataBaseHandle *dataBase = [DataBaseHandle shareDataBaseHandle];
+            
+            //    //打开数据库
+            [dataBase openDB];
+            
+            //    //创建表
+            [dataBase creatTable];
+            
+            //    //插入数据
+            [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
+            
+                //删除
+//                [dataBase deleteWithUID:2];
+            
+                //更新数据
+//                [dataBase updateWithUID:3];
+            
+                //查询所有数据
+//                [dataBase searchAll];
+            
+               //根据姓名查找
+//                [dataBase searchWithName:@"戈壁老王"];
+            
+            self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 40)];
+            
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+            [self.draftView addGestureRecognizer:tapGesture];
+            
+            [self.view addSubview:self.draftView];
+            
+            UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 40, 40)];
+            
+            titleLabel.text = @"你的草稿存储成功";
+            
+            titleLabel.userInteractionEnabled = YES;
+            titleLabel.backgroundColor = [UIColor grayColor];
+            
+            [self.draftView addSubview:titleLabel];
+            
+            UIButton *deleteBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+            
+            deleteBtn.frame = CGRectMake(kScreenWidth - 40, 0, 40, 40);
+            
+            [deleteBtn setTitle:@"删除" forState:(UIControlStateNormal)];
+            
+            [deleteBtn addTarget:self action:@selector(deleteBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+            
+            [self.draftView addSubview:deleteBtn];
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+
+            
+        }];
+        
+        
+        UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"不保存" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }];
+        
+        
+        UIAlertAction *action3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        
+        [alert addAction:action1];
+        [alert addAction:action2];
+        [alert addAction:action3];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }else{
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+        
+    }
 }
 
+
+
 //navgation
+
+
 -(void)itemRightAction:(UIBarButtonItem *)sender{
     
+    DataBaseHandle *dataBase = [DataBaseHandle shareDataBaseHandle];
+    
+    //    //打开数据库
+    [dataBase openDB];
+    
+    
+    //    //创建表
+    [dataBase creatTable];
+    
+    
+    //    //插入数据
+    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
+    
+    
+    //    //删除
+    //    [dataBase deleteWithUID:2];
+    
+    //    //更新数据
+    //    [dataBase updateWithUID:3];
+    
+    //查询所有数据
+//        [dataBase searchAll];
+    
+    //根据姓名查找
+    //    [dataBase searchWithName:@"戈壁老王"];
+    
+    //关闭数据库
+    //    [dataBase closeDb];
+    
+    
+
+    [self addDraftViewWith:@"你的草稿存储成功"];
+    
+ 
+}
+
+
+- (void)addDraftViewWith:(NSString *)string {
+    
+    
+    
+    self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 40)];
+    //    self.draftView.backgroundColor = [UIColor cyanColor];
+    
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    [self.draftView addGestureRecognizer:tapGesture];
+    
+    [self.view addSubview:self.draftView];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 40, 40)];
+    
+    titleLabel.text = string;
+    
+    titleLabel.userInteractionEnabled = YES;
+    titleLabel.backgroundColor = [UIColor grayColor];
+    
+    [self.draftView addSubview:titleLabel];
+    
+    
+    UIButton *deleteBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    
+    deleteBtn.frame = CGRectMake(kScreenWidth - 40, 0, 40, 40);
+    
+    [deleteBtn setTitle:@"删除" forState:(UIControlStateNormal)];
+    
+    [deleteBtn addTarget:self action:@selector(deleteBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    [self.draftView addSubview:deleteBtn];
+    
+    
+    
+}
+
+
+//点击View 消失
+- (void)deleteBtnAction:(UIButton *)sender
+{
+    
+    [self.draftView removeFromSuperview];
+    
+}
+
+
+//view 的点击事件
+- (void)tapGestureAction:(UITapGestureRecognizer *)sender
+{
+    
+    SWDraftViewController *swdVC = [SWDraftViewController new];
+    
+    swdVC.titleStr = self.titleTF.text;
+    swdVC.textViewStr = self.textView.textView.text;
+    swdVC.labelStr = self.addtageButton.titleLabel.text;
+    swdVC.ruleStr = self.addrule.textFstring;
+    
+    [self presentViewController:swdVC animated:YES completion:nil];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//存草稿
+-(void)itemRightsAction:(UIBarButtonItem *)sender{
+
     SWLog(@"嘿嘿");
     // 发布活动
     if (self.titleTF.text.length == 0) {
@@ -263,73 +477,7 @@ UINavigationControllerDelegate
         }];
     }
     
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-//存草稿
--(void)itemRightsAction:(UIBarButtonItem *)sender{
     
-  DataBaseHandle *dataBase = [DataBaseHandle shareDataBaseHandle];
-
-    
-//    //打开数据库
-    [dataBase openDB];
-
-    
-//    //创建表
-    [dataBase creatTable];
-
-    
-//    //插入数据
-    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
-  
-    
-//    //删除
-//    [dataBase deleteWithUID:2];
-  
-//    //更新数据
-//    [dataBase updateWithUID:3];
-   
-    //查询所有数据
-//    [dataBase searchAll];
-
-    //根据姓名查找
-//    [dataBase searchWithName:@"戈壁老王"];
-    
-    //关闭数据库
-//    [dataBase closeDb];
-    
-   
-    UIAlertController *uialert = [UIAlertController  alertControllerWithTitle:nil message:@"你草稿箱中有1条沙龙" preferredStyle:(UIAlertControllerStyleActionSheet)];
-    
-    UIAlertAction *action = [UIAlertAction actionWithTitle:@"点击查看" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-        
-        
-        SWDraftViewController *swdVC = [SWDraftViewController new];
-        
-        swdVC.titleStr = self.titleTF.text;
-        swdVC.textViewStr = self.textView.textView.text;
-        swdVC.labelStr = self.addtageButton.titleLabel.text;
-        swdVC.ruleStr = self.addrule.textFstring;
-        
-        [self.navigationController pushViewController:swdVC animated:YES];
-        
-    }];
-    
-    [uialert addAction:action];
-    
-    [self presentViewController:uialert animated:YES completion:nil];
 }
 
 
