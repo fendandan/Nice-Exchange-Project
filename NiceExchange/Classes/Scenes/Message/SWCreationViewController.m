@@ -208,9 +208,9 @@ UINavigationControllerDelegate
     SWLog(@"嘿嘿");
     // 发布活动
     if (self.titleTF.text.length == 0) {
-        [self aalertViewShowWithMessage:@"忘了写标题了？" title:@"哦" otherTitle:nil];
+        [self aalertViewShowWithMessage:@"忘了写标题了？" title:@"哦" otherTitle:nil tag:1000];
     }else if (self.textView.textView.text.length == 0) {
-        [self aalertViewShowWithMessage:@"忘写内容了？" title:@"哦" otherTitle:nil];
+        [self aalertViewShowWithMessage:@"忘写内容了？" title:@"哦" otherTitle:nil tag:1000];
     }else {
         SWActivityList *activity = [SWActivityList object];
         activity.title = self.titleTF.text;

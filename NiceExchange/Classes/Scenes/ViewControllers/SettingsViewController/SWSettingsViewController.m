@@ -39,9 +39,19 @@ static NSString *const systemCell_Identifiter = @"systemCell_Identifiter";
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:systemCell_Identifiter forIndexPath:indexPath];
-    
+    for (UIView *view in cell.contentView.subviews) {
+        if (view) {
+            [view removeFromSuperview];
+        }
+    }
     cell.textLabel.text = self.dataArray[indexPath.row];
-    cell.backgroundColor = kitColor;
+//    cell.backgroundColor = kitColor;
+    if (indexPath.row == 5) {
+        UILabel *sche = [[UILabel alloc] initWithFrame:CGRectMake(cell.contentView.frame.size.width - 100, 5, 90, cell.contentView.frame.size.height - 10)];
+        sche.font = [UIFont systemFontOfSize:20.0];
+        sche.text = [NSString stringWithFormat:@"%0.1fM", self.cacheFileSize];
+        [cell.contentView addSubview:sche];
+    }
     
     return cell;
 }
@@ -51,8 +61,12 @@ static NSString *const systemCell_Identifiter = @"systemCell_Identifiter";
         [self presentViewController:rspVC animated:YES completion:^{
             
         }];
+    }else if (indexPath.row == 5 && self.cacheFileSize) {
+        [self aalertViewShowWithMessage:@"确认清除缓存？" title:@"取消" otherTitle:@"确定" tag:1034];
     }
 }
+
+
 - (void)addButton {
     UIButton *rButton = [UIButton buttonWithType:UIButtonTypeCustom];
     rButton.frame = CGRectMake(0, 0, 60, 15);
@@ -69,17 +83,22 @@ static NSString *const systemCell_Identifiter = @"systemCell_Identifiter";
 }
 // item点击方法
 - (void)SignOutUser:(UIBarButtonItem *)barButtonItem {
-    [self aalertViewShowWithMessage:@"确认退出登录吗？" title:@"确定" otherTitle:@"取消"];
+    [self aalertViewShowWithMessage:@"确认退出登录吗？" title:@"确定" otherTitle:@"取消" tag:1033];
 }
 #pragma mark --- UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
+    if (buttonIndex == 0 && alertView.tag == 1033) {
         // 登出
         [AVUser logOut];  //清除缓存用户对象
         AVUser *currentUser = [AVUser currentUser]; // 现在的currentUser是nil了
         
         // 登录状态为退出登录，未登录
         self.currentUser = [AVUser currentUser];
+        [self.settingsTableView reloadData];
+    }
+    
+    if (buttonIndex == 1 && alertView.tag == 1034) {
+        [self removeCache];
         [self.settingsTableView reloadData];
     }
 }
