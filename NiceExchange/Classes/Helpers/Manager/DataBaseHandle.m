@@ -8,6 +8,7 @@
 
 #import "DataBaseHandle.h"
 #import <sqlite3.h>
+#import "SWDraftModel.h"
 
 
 @interface DataBaseHandle ()
@@ -179,7 +180,7 @@ static sqlite3 *db = nil;
 
 
 //查找所有数据
-- (void)searchAll{
+- (NSMutableArray *)searchAll{
     
     NSString *searchAllStr = @"select * from linkman";
     
@@ -187,40 +188,69 @@ static sqlite3 *db = nil;
     
     int result = sqlite3_prepare(db, searchAllStr.UTF8String, -1, &stmt, NULL);
     
+    
+    NSMutableArray *dataArray = [NSMutableArray array];
+    
+    
     if (result == SQLITE_OK) {
         while (sqlite3_step(stmt) == SQLITE_ROW) {
+            
+            
+            SWDraftModel *model = [SWDraftModel new];
+            
+            
+            
+            
             //注意这里不是 OK 这里表示还有下一条数据
-            int id = sqlite3_column_int(stmt, 0);//第二个参数是指位置从0开始
-            NSLog(@"%d",id);
+            NSInteger id = sqlite3_column_int(stmt, 0);//第二个参数是指位置从0开始
+            NSLog(@"%ld",id);
+            
+            model.ID = id;
             
             NSString *title = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
             NSLog(@"%@",title);
-            
+            model.title = title;
             
             NSString *content = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
             NSLog(@"%@",content);
             
+            model.content = content;
             
             NSString *label = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 3)];
             NSLog(@"%@",label);
             
+            model.label = label;
+            
             NSString *rule = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 4)];
             NSLog(@"%@",rule);
             
-//            NSString *latitude = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 5)];
-//            NSLog(@"%@",latitude);
             
-        
-//            NSString *longitude = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 6)];
-//            NSLog(@"%@",longitude);
+            model.rule = rule;
             
+            double latitude = sqlite3_column_double(stmt, 5);
+            NSLog(@"%f",latitude);
+            
+            model.latitude = latitude;
+            
+            double longitude = sqlite3_column_double(stmt, 6);
+            NSLog(@"%f",longitude);
+            
+            model.longitude = longitude;
             
             NSString *subhead = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 7)];
-            NSLog(@"%@",subhead);
+            NSLog(@" ---- %@",subhead);
+            
+            model.subhead = subhead;
+            
+            SWLog(@" ++++++++++ %@",self.dbPath);
+            
+            [dataArray addObject:model];
             
         }
         sqlite3_finalize(stmt);
+        return dataArray;
     }
+    return nil;
 }
 
 

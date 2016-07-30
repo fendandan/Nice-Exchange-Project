@@ -45,6 +45,7 @@
 		CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70831D438ECE00F0909F /* SWCreationViewController.m */; };
 		CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70851D438ECE00F0909F /* SWMessViewController.m */; };
 		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
+		CC4D9B9B1D4C9C1200FA303F /* SWDraftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */; };
 		CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56436A1D44E596005CEEB4 /* SWComment.m */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
 		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
@@ -480,6 +481,8 @@
 		CC3F70851D438ECE00F0909F /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.m; sourceTree = SOURCE_ROOT; };
 		CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.m; sourceTree = SOURCE_ROOT; };
+		CC4D9B991D4C9C1200FA303F /* SWDraftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDraftModel.h; sourceTree = "<group>"; };
+		CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDraftModel.m; sourceTree = "<group>"; };
 		CC5643691D44E596005CEEB4 /* SWComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWComment.h; sourceTree = "<group>"; };
 		CC56436A1D44E596005CEEB4 /* SWComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWComment.m; sourceTree = "<group>"; };
 		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
@@ -1979,6 +1982,8 @@
 			children = (
 				CC3F70821D438ECE00F0909F /* SWCreationViewController.h */,
 				CC3F70831D438ECE00F0909F /* SWCreationViewController.m */,
+				CC4D9B991D4C9C1200FA303F /* SWDraftModel.h */,
+				CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */,
 				CC3F12141D4B5774006CF2D1 /* SWDraftViewController.h */,
 				CC3F12151D4B5774006CF2D1 /* SWDraftViewController.m */,
 				CC3F12171D4B5B95006CF2D1 /* SWDraftTableViewCell.h */,
@@ -2078,6 +2083,7 @@
 				TargetAttributes = {
 					CC5A67461D35F71B008AE01A = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 65A9B7AQ22;
 					};
 				};
 			};
@@ -2498,6 +2504,7 @@
 				CCA3B7F71D3A7C95003361CC /* SWcollectionTableViewCell.m in Sources */,
 				CCAC39841D3BA47B00CCE229 /* SWSettingsViewController.m in Sources */,
 				CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */,
+				CC4D9B9B1D4C9C1200FA303F /* SWDraftModel.m in Sources */,
 				CCAC39801D3BA32B00CCE229 /* SWUserInfoView.m in Sources */,
 				CC9A95D91D41CF0E00EA23BB /* MusicViewController.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
@@ -2672,6 +2679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NiceExchange/umeng_ios_social_sdk_5.2.1_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -2688,7 +2696,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.icoc.msdyw2.NiceExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2bfa3826-110d-463b-bd9e-bf25e42ce51c";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -2698,6 +2706,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NiceExchange/umeng_ios_social_sdk_5.2.1_arm64_custom/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -2714,7 +2723,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.icoc.msdyw2.NiceExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "2bfa3826-110d-463b-bd9e-bf25e42ce51c";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

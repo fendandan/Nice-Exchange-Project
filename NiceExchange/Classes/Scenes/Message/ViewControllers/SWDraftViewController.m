@@ -12,10 +12,13 @@
 #import "DataBaseHandle.h"
 #import "SWCreationViewController.h"
 
+
 @interface SWDraftViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 
 @property(nonatomic,strong)UITableView *tableView;
+
+@property(nonatomic,strong)NSMutableArray *dataArray;
 
 @end
 
@@ -24,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dataArray = [NSMutableArray array];
     
     [self addTableView];
  
@@ -37,7 +41,7 @@
 
 - (void)addTableView{
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height) style:(UITableViewStylePlain)];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:(UITableViewStylePlain)];
     
     [self.view addSubview:self.tableView];
     
@@ -51,7 +55,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 1;
 }
 
 
@@ -65,13 +69,11 @@
     
     cell.timeLabel.text = self.textViewStr;
     
-    
     return cell;
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     
     return 80;
     
@@ -84,13 +86,8 @@
 {
     SWCreationViewController *swVC = [SWCreationViewController new];
     
-    swVC.titleStr = self.titleStr;
-    swVC.labelStr = self.labelStr;
-    swVC.textViewStr = self.textViewStr;
-    swVC.ruleStr = self.ruleStr;
     
-    [self.navigationController pushViewController:swVC animated:YES];
-    
+    [self dismissViewControllerAnimated:swVC completion:nil];
 }
 
 

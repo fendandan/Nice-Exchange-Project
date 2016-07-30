@@ -40,7 +40,7 @@
 - (void)deleteWithUID:(NSInteger)uid;
 
 //查找所有数据
-- (void)searchAll;
+- (NSMutableArray *)searchAll;
 
 //根据名字去查找相关数据
 - (void)searchWithName:(NSString *)name;

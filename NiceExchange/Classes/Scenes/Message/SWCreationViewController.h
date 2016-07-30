@@ -10,12 +10,9 @@
 
 @interface SWCreationViewController : BaseViewController
 
-@property(nonatomic,strong) NSString *titleStr;
 
-@property(nonatomic,strong)NSString *textViewStr;
 
-@property(nonatomic,strong)NSString *labelStr;
-
-@property(nonatomic,strong)NSString *ruleStr;
+//存草稿弹出 View
+@property(nonatomic,strong)UIView *draftView;
 
 @end
