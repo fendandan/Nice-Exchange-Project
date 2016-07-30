@@ -39,7 +39,7 @@
     [self.contentView addSubview:self.yesButton];
     self.yesLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.yesButton.frame)+20, CGRectGetMinY(self.yesButton.frame), 300, 30)];
     
-    self.yesLabel.backgroundColor = [UIColor greenColor];
+    //self.yesLabel.backgroundColor = [UIColor greenColor];
     [self.contentView addSubview:self.yesLabel];
     self.noButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     self.noButton.frame = CGRectMake(CGRectGetMinX(self.yesButton.frame), CGRectGetMaxY(self.yesButton.frame)+10, self.yesButton.frame.size.width, self.yesButton.frame.size.height);
@@ -47,7 +47,7 @@
     [self.noButton setImage:[UIImage imageNamed:@"practise_b_s_day"] forState:UIControlStateSelected];
     [self.contentView addSubview:self.noButton];
     self.noLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.noButton.frame)+20, CGRectGetMinY(self.noButton.frame), 300, 30)];
-    self.noLabel.backgroundColor = [UIColor greenColor];
+    //self.noLabel.backgroundColor = [UIColor greenColor];
     [self.contentView addSubview:self.noLabel];
     
 }

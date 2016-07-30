@@ -164,6 +164,8 @@
             [resultDic setObject:dic[key] forKey:key];
         }
         [resultDic writeToFile:dicPath atomically:YES];
+        SWLog(@" ------ %@",resultDic);
+        SWLog(@" +++++++ %@", dicPath);
     }
     
 }
