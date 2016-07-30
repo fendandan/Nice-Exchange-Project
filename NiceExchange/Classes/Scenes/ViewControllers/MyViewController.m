@@ -176,21 +176,8 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
         cell.backgroundColor = [UIColor whiteColor];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        switch (indexPath.row) {
-            case 0:
-                cell.titlelabel.text = @"我发起的";
-                break;
-            case 1:
-                cell.titlelabel.text = @"我参与的";
-                break;
-            case 2:
-                cell.titlelabel.text = @"我收藏的";
-                break;
-                
-            default:
-                break;
-        }
-        cell.numberlabel.text = @"x";
+        
+       
         
         
         if ([SWLcAvUSer currentUser]) {
@@ -200,8 +187,26 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
             [countQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 if (objects.count != 0) {
                     SWCount *count = objects[0];
-                    cell.numberlabel.text = [count.followC stringValue];
-                    SWLog(@"%@",count);
+                    
+                    switch (indexPath.row) {
+                        case 0:
+                            cell.titlelabel.text = @"我发起的";
+                            cell.numberlabel.text = count.activityC.stringValue;
+                            break;
+                        case 1:
+                            cell.titlelabel.text = @"我参与的";
+                            cell.numberlabel.text = count.commentC.stringValue;
+                            break;
+                        case 2:
+                            cell.titlelabel.text = @"我收藏的";
+                            cell.numberlabel.text = count.markC.stringValue;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    
+                 
                 }
                 
             }];
@@ -263,6 +268,7 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
                 
                 case 2:
                     //NSLog(@"2");
+                swFocusonVC.RequestData = RequestDataMark;
                  break;
                 
             default:

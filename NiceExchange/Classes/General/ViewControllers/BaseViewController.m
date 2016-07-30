@@ -174,8 +174,9 @@
     return resultDic[key];
 }
 
-- (void)aalertViewShowWithMessage:(NSString *)message title:(NSString *)title otherTitle:(NSString *)otherTitle {
+- (void)aalertViewShowWithMessage:(NSString *)message title:(NSString *)title otherTitle:(NSString *)otherTitle tag:(int)tag {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:self cancelButtonTitle:title otherButtonTitles:otherTitle, nil];
+    alertView.tag = tag;
     [alertView show];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

@@ -13,6 +13,8 @@
 #import "DataBaseHandle.h"
 
 #import "SWBaiduAPIViewController.h"
+
+#import "SWDraftViewController.h"
 @class SWAppDelegate;
 
 
@@ -22,8 +24,8 @@ UITextFieldDelegate,
 SwLayoutTextViewDelegate,
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate
-
 >
+
 @property(nonatomic,strong)UIImageView *imageview;//箭头
 @property (nonatomic,strong)UITextField *titleTF;//标题
 @property (nonatomic, strong)SWAddRule *addrule;//规则
@@ -37,8 +39,6 @@ UINavigationControllerDelegate
 @property (nonatomic,strong)UIWindow *window;
 
 @property(nonatomic,strong)NSString *dbPath;
-
-
 
 @end
 
@@ -61,8 +61,9 @@ UINavigationControllerDelegate
     //将触摸事件添加到当前view
     [self.scrollview addGestureRecognizer:tapGestureRecognizer];
     
-    
 }
+
+
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
     [self.titleTF resignFirstResponder];
     [self.textView.textView resignFirstResponder];
@@ -130,6 +131,10 @@ UINavigationControllerDelegate
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
+    
+    
+    addlabBtn.titleLabel.text = self.labelStr;//标签赋值
+    
     [self.scrollview addSubview:addlabBtn];
       self.addtageButton = addlabBtn;
     //活动标题
@@ -140,6 +145,9 @@ UINavigationControllerDelegate
     self.titleTF.layer.cornerRadius = self.titleTF.bounds.size.height/4;
     [self.titleTF setFont:[UIFont fontWithName:@"" size:20]];
     self.titleTF.placeholder = @"来个响亮的名字";
+    
+    self.titleTF.text = self.titleStr;//标题赋值
+    
     [self.scrollview addSubview:self.titleTF];
     //
     self.Viewaddimage = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.titleTF.frame) , CGRectGetMaxY(self.titleTF.frame)+10,self.titleTF.frame.size.width, 70)];
@@ -151,6 +159,10 @@ UINavigationControllerDelegate
     //
     self.textView = [[SWLayoutTextView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.Viewaddimage.frame) , CGRectGetMaxY(self.Viewaddimage.frame)+10,self.Viewaddimage.frame.size.width, 100)];
     self.textView.placeholder = @"说点啥呢!";
+    
+    
+    self.textView.textView.text = self.textViewStr;//内容赋值
+    
     [self.scrollview addSubview:self.textView];
     self.textView.delegate = self;
     //self.textview.frame = CGRectMake(CGRectGetMinX(self.titleTF.frame), CGRectGetMaxY(self.titleTF.frame)+10, self.titleTF.frame.size.width, self.textview.contentSize.height);
@@ -159,6 +171,8 @@ UINavigationControllerDelegate
     self.addrule.backgroundColor = [UIColor whiteColor];
     self.addrule.layer.masksToBounds = YES;
     self.addrule.layer.cornerRadius = self.addrule.frame.size.height/6;
+    self.addrule.textFstring = self.ruleStr;//规则赋值
+    
     [self.scrollview addSubview:self.addrule];
     self.addrule.alpha = 0.8;
 }
@@ -178,7 +192,6 @@ UINavigationControllerDelegate
     if (self.addrule.frame.origin.y + self.addrule.frame.size.height > self.scrollview.frame.origin.y) {
         self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height+30) ;
                self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - self.scrollview.frame.size.height);
-        
     }
 }
 
@@ -225,9 +238,9 @@ UINavigationControllerDelegate
     SWLog(@"嘿嘿");
     // 发布活动
     if (self.titleTF.text.length == 0) {
-        [self aalertViewShowWithMessage:@"忘了写标题了？" title:@"哦" otherTitle:nil];
+        [self aalertViewShowWithMessage:@"忘了写标题了？" title:@"哦" otherTitle:nil tag:1000];
     }else if (self.textView.textView.text.length == 0) {
-        [self aalertViewShowWithMessage:@"忘写内容了？" title:@"哦" otherTitle:nil];
+        [self aalertViewShowWithMessage:@"忘写内容了？" title:@"哦" otherTitle:nil tag:1000];
     }else {
         SWActivityList *activity = [SWActivityList object];
         activity.title = self.titleTF.text;
@@ -253,38 +266,70 @@ UINavigationControllerDelegate
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 //存草稿
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
     
   DataBaseHandle *dataBase = [DataBaseHandle shareDataBaseHandle];
 
-    //打开数据库
+    
+//    //打开数据库
     [dataBase openDB];
-    
-    //创建表
-    [dataBase creatTable];
-    
-    
-    NSLog(@"1%@,2%@,3%@,4%@",self.titleTF.text,self.textView.textView.text,self.addtageButton.titleLabel.text,self.addrule.textFstring);
-    
-    
-    //插入数据
-    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
-    
-    
-    //删除
-    [dataBase deleteWithUID:2];
-    
-    
-    //更新数据
-    [dataBase updateWithUID:3];
-    
-    
-    //
-    
 
+    
+//    //创建表
+    [dataBase creatTable];
+
+    
+//    //插入数据
+    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
+  
+    
+//    //删除
+//    [dataBase deleteWithUID:2];
+  
+//    //更新数据
+//    [dataBase updateWithUID:3];
+   
+    //查询所有数据
+//    [dataBase searchAll];
+
+    //根据姓名查找
+//    [dataBase searchWithName:@"戈壁老王"];
+    
     //关闭数据库
 //    [dataBase closeDb];
+    
+   
+    UIAlertController *uialert = [UIAlertController  alertControllerWithTitle:nil message:@"你草稿箱中有1条沙龙" preferredStyle:(UIAlertControllerStyleActionSheet)];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"点击查看" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+        SWDraftViewController *swdVC = [SWDraftViewController new];
+        
+        swdVC.titleStr = self.titleTF.text;
+        swdVC.textViewStr = self.textView.textView.text;
+        swdVC.labelStr = self.addtageButton.titleLabel.text;
+        swdVC.ruleStr = self.addrule.textFstring;
+        
+        [self.navigationController pushViewController:swdVC animated:YES];
+        
+    }];
+    
+    [uialert addAction:action];
+    
+    [self presentViewController:uialert animated:YES completion:nil];
 }
 
 
