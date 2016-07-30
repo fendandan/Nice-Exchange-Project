@@ -11,8 +11,8 @@
 @interface SWNotfcTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIImageView *emptyImage;
-@property (nonatomic, strong) UILabel *yesLabel;
-@property (nonatomic, strong) UILabel *noLabel;
+@property (nonatomic, strong) UILabel *yesLabel;//"a"标签
+@property (nonatomic, strong) UILabel *noLabel;//"b"标签
 @property (nonatomic, strong) UIButton *yesButton;//
 @property (nonatomic, strong) UIButton *noButton;
 @end

@@ -23,13 +23,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"1.jpeg"]];
+    UIView *navigation = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 64)];
+    [self.view addSubview:navigation];
+    navigation.backgroundColor= [UIColor whiteColor];
+    UIButton *re2 = [UIButton buttonWithType:(UIButtonTypeCustom)];
+    [re2 setTitle:@"返回" forState:(UIControlStateNormal)];
+    [re2 addTarget:self action:@selector(returnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    re2.frame = CGRectMake(20 , 20, 60, 40);
+    [re2 setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
+    [navigation addSubview:re2];
+
     [self loginClicak];
 }
 
 -(void)loginClicak
 {
     //初始化
-    self.headimage = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/3, self.view.bounds.size.height/9, self.view.bounds.size.width/4, self.view.bounds.size.width/4)];
+    self.headimage = [[UIImageView alloc]initWithFrame:CGRectMake(self.view.bounds.size.width/10*4, self.view.bounds.size.height/9, self.view.bounds.size.width/4, self.view.bounds.size.width/4)];
     self.headimage.image = [UIImage imageNamed:@"1.jpeg"];
     [self.view addSubview:self.headimage];
     self.headimage.layer.masksToBounds = YES;
@@ -61,6 +71,10 @@
     
     
     
+}
+-(void)returnAction:(UIButton *)sender
+{
+   [self dismissViewControllerAnimated:YES completion:nil];  
 }
 //登录
 -(void)loginButtonClicak:(UIButton *)sender

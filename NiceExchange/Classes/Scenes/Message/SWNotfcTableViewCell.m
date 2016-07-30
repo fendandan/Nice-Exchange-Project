@@ -29,20 +29,22 @@
     self.titleblabel.backgroundColor = [UIColor grayColor];
     [self.contentView addSubview:self.titleblabel];
     */
+   
+    
+    
     self.yesButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.yesButton.frame = CGRectMake(10, 10, 30, 30);
-    //self.yesButton.backgroundColor = [UIColor greenColor];
-    //[self.yesButton setTitle:@"①" forState:UIControlStateNormal];
     [self.yesButton setImage:[UIImage imageNamed:@"practise_a_n_day.png"] forState:UIControlStateNormal];
+    [self.yesButton setImage:[UIImage imageNamed:@"practise_a_s_day"] forState:UIControlStateSelected];
     [self.contentView addSubview:self.yesButton];
     self.yesLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.yesButton.frame)+20, CGRectGetMinY(self.yesButton.frame), 300, 30)];
+    
     self.yesLabel.backgroundColor = [UIColor greenColor];
     [self.contentView addSubview:self.yesLabel];
     self.noButton = [UIButton buttonWithType:(UIButtonTypeCustom)];
     self.noButton.frame = CGRectMake(CGRectGetMinX(self.yesButton.frame), CGRectGetMaxY(self.yesButton.frame)+10, self.yesButton.frame.size.width, self.yesButton.frame.size.height);
-    //self.noButton.backgroundColor = [UIColor greenColor];
-    //[self.noButton setTitle:@"②" forState:UIControlStateNormal];
     [self.noButton setImage:[UIImage imageNamed:@"practise_b_n_day.png"] forState:UIControlStateNormal];
+    [self.noButton setImage:[UIImage imageNamed:@"practise_b_s_day"] forState:UIControlStateSelected];
     [self.contentView addSubview:self.noButton];
     self.noLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.noButton.frame)+20, CGRectGetMinY(self.noButton.frame), 300, 30)];
     self.noLabel.backgroundColor = [UIColor greenColor];

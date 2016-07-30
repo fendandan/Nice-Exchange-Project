@@ -43,6 +43,7 @@
     
     [self.tableview registerClass:[SWNotfcTableViewCell class] forCellReuseIdentifier:SWNotfcTableViewCell_cell];
     [self.tableview registerClass:[UITableViewCell class] forCellReuseIdentifier:@"gSWNotfcTableViewCell_cell"];
+    
     self.tableview.delegate = self;
     self.tableview.dataSource = self;
     
@@ -86,8 +87,8 @@
     cell.yesButton.tag = 1;
     cell.noButton.tag = 2;
     //设置按钮的图片样式,也可以改变颜色.
-    [cell.yesButton setImage:[UIImage imageNamed:@"practise_a_n_day"] forState:UIControlStateNormal];
-    [cell.noButton setImage:[UIImage imageNamed:@"practise_b_n_day"] forState:UIControlStateNormal];
+    cell.yesButton.selected = YES;
+    //cell.noButton.selected = NO;
     //将点击cell产生的灰色效果去掉,否则会影响整体美观.
     cell.selectionStyle=UITableViewCellSelectionStyleNone;
     /*根据key值indexPath获取字典中存储的答案,主要的功能就是防止滑动时候内容的掩盖问题*/
@@ -96,11 +97,13 @@
          //如果这个答案存在,说明这个按钮被选择过
         if ([selectResult isEqualToString:@"A"]) {
              //选择的是A按钮,A按钮颜色变成灰色
-           [cell.yesButton setImage:[UIImage imageNamed:@"practise_a_s_day"] forState:UIControlStateNormal];
+            cell.yesButton.selected = YES;
+          // cell.noButton.selected = YES;
         }else
         {
             //选择的是B按钮,B按钮颜色变成灰色
-            [cell.noButton setImage:[UIImage imageNamed:@"practise_b_s_day"] forState:UIControlStateNormal];
+            cell.yesButton.selected = NO;
+            //cell.noButton.selected = NO;
         }
         
     }
@@ -114,12 +117,16 @@
     //如果lastSelectResult的值存在,说明这个cell上以及有按钮被选过了
     if ([lastSelectResult isEqualToString:@"A"]) {
         //改变原有选过的按钮颜色变成初始色
-        UIButton *lastSelectBtnA = [cell viewWithTag:1];
-        [lastSelectBtnA setImage:[UIImage imageNamed:@"practise_a_n_day"] forState:UIControlStateNormal];
+//        UIButton *lastSelectBtnA = [cell viewWithTag:1];
+//        [lastSelectBtnA setImage:[UIImage imageNamed:@"practise_a_n_day"] forState:UIControlStateNormal];
+        sender = [cell viewWithTag:1];
+        sender.selected = YES;
     } else {
         //改变原有选过的按钮颜色变成初始色
-        UIButton *lastSelectBtnB = [cell viewWithTag:2];
-        [lastSelectBtnB setImage:[UIImage imageNamed:@"practise_b_n_day"] forState:UIControlStateNormal];
+//        UIButton *lastSelectBtnB = [cell viewWithTag:2];
+//        [lastSelectBtnB setImage:[UIImage imageNamed:@"practise_b_n_day"] forState:UIControlStateNormal];
+        sender = [cell viewWithTag:2];
+        sender.selected = NO;
     }
     //并且需要移除这个曾经存在过的元素
     [self.selectedSourceDic removeObjectForKey:indextPath];
@@ -129,11 +136,13 @@
     
     //这个就是添加新选中的按钮答案到字典,根据indexPath作为key,并改变选中时的背景图片
     if (sender.tag == 1) {
-        [self.selectedSourceDic setObject:@"A" forKey:indextPath];
-        [sender setImage:[UIImage imageNamed:@"practise_a_s_day"] forState:UIControlStateNormal];
+//        [self.selectedSourceDic setObject:@"A" forKey:indextPath];
+//        [sender setImage:[UIImage imageNamed:@"practise_a_s_day"] forState:UIControlStateNormal];
+        sender.selected = NO;
     } else {
-        [self.selectedSourceDic setObject:@"B" forKey:indextPath];
-        [sender setImage:[UIImage imageNamed:@"practise_b_s_day"] forState:UIControlStateNormal];
+//        [self.selectedSourceDic setObject:@"B" forKey:indextPath];
+//        [sender setImage:[UIImage imageNamed:@"practise_b_s_day"] forState:UIControlStateNormal];
+        sender.selected = YES;
     }
     NSLog(@"%@",self.selectedSourceDic);
 }
