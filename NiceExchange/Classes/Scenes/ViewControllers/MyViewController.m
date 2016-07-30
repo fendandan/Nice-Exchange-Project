@@ -177,7 +177,21 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         
-       
+        switch (indexPath.row) {
+            case 0:
+                cell.titlelabel.text = @"我发起的";
+                break;
+            case 1:
+                cell.titlelabel.text = @"我参与的";
+                break;
+            case 2:
+                cell.titlelabel.text = @"我收藏的";
+                break;
+                
+            default:
+                break;
+        }
+
         
         
         if ([SWLcAvUSer currentUser]) {
@@ -190,15 +204,12 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
                     
                     switch (indexPath.row) {
                         case 0:
-                            cell.titlelabel.text = @"我发起的";
                             cell.numberlabel.text = count.activityC.stringValue;
                             break;
                         case 1:
-                            cell.titlelabel.text = @"我参与的";
                             cell.numberlabel.text = count.commentC.stringValue;
                             break;
                         case 2:
-                            cell.titlelabel.text = @"我收藏的";
                             cell.numberlabel.text = count.markC.stringValue;
                             break;
                             
