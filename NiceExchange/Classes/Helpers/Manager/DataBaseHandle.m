@@ -65,11 +65,8 @@ static sqlite3 *db = nil;
 
 //创建表
 - (void)creatTable{
-
     
-//    NSString *creatStr = @"create table if not exists linkman (uid integer primary key autoincrement not null, name text, gender text, age integer)";
-    
-    NSString *creatStr = @"create table if not exists linkman (id integer primary key autoincrement,title text, content text ,label text ,rule text ,latitude text ,longitude text ,subhead text )";
+    NSString *creatStr = @"create table if not exists linkman (id integer primary key autoincrement,title text, content text ,label text ,rule text ,latitude double ,longitude double ,subhead text )";
     
     int result = sqlite3_exec(db, creatStr.UTF8String, NULL, NULL, NULL);
     if (result == SQLITE_OK) {
@@ -141,7 +138,7 @@ static sqlite3 *db = nil;
 - (void)updateWithUID:(NSInteger)uid{
     
 //    准备sql语句
-    NSString *updateStr = @"update person set name = '戈壁老王' where uid = ?";
+    NSString *updateStr = @"update linkman set title = '戈壁老王' where id = ?";
 //    创建伴随指针
     sqlite3_stmt *stmt = nil;
 //    准备 sql 函数
@@ -163,9 +160,11 @@ static sqlite3 *db = nil;
 
 
 
+
+
 //通过 uid 去删除数据
 - (void)deleteWithUID:(NSInteger)uid{
-    NSString *deleteStr = [NSString stringWithFormat:@"delete from person where uid = %ld",uid];
+    NSString *deleteStr = [NSString stringWithFormat:@"delete from linkman where id = %ld",uid];
     //sql 函数
     int result =  sqlite3_exec(db, deleteStr.UTF8String, NULL, NULL, NULL);
     if (result == SQLITE_OK) {
@@ -176,10 +175,13 @@ static sqlite3 *db = nil;
 }
 
 
+//NSString *creatStr = @"create table if not exists linkman (id integer primary key autoincrement,title text, content text ,label text ,rule text ,latitude text ,longitude text ,c text )";
+
+
 //查找所有数据
 - (void)searchAll{
     
-    NSString *searchAllStr = @"select * from person";
+    NSString *searchAllStr = @"select * from linkman";
     
     sqlite3_stmt *stmt = NULL;
     
@@ -188,14 +190,33 @@ static sqlite3 *db = nil;
     if (result == SQLITE_OK) {
         while (sqlite3_step(stmt) == SQLITE_ROW) {
             //注意这里不是 OK 这里表示还有下一条数据
-            int uid = sqlite3_column_int(stmt, 0);//第二个参数是指位置从0开始
-            NSLog(@"%d",uid);
+            int id = sqlite3_column_int(stmt, 0);//第二个参数是指位置从0开始
+            NSLog(@"%d",id);
             
-            NSString *name = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
-            NSLog(@"%@",name);
-
-            NSString *gender = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 2)];
-            NSLog(@"%@",gender);
+            NSString *title = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
+            NSLog(@"%@",title);
+            
+            
+            NSString *content = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            NSLog(@"%@",content);
+            
+            
+            NSString *label = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 3)];
+            NSLog(@"%@",label);
+            
+            NSString *rule = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 4)];
+            NSLog(@"%@",rule);
+            
+//            NSString *latitude = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 5)];
+//            NSLog(@"%@",latitude);
+            
+        
+//            NSString *longitude = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 6)];
+//            NSLog(@"%@",longitude);
+            
+            
+            NSString *subhead = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 7)];
+            NSLog(@"%@",subhead);
             
         }
         sqlite3_finalize(stmt);
@@ -204,20 +225,38 @@ static sqlite3 *db = nil;
 
 
 //根据名字去查找相关数据
-- (void)searchWithName:(NSString *)name{
-   NSString *searchStr = @"select * from person where name = ?";
+- (void)searchWithTitle:(NSString *)title{
+   NSString *searchStr = @"select * from linkman where title = ?";
     sqlite3_stmt *stmt = NULL;
     int result = sqlite3_prepare(db, searchStr.UTF8String, -1, &stmt, NULL);//sql 语句
     if (result == SQLITE_OK) {
-        sqlite3_bind_text(stmt, 1, name.UTF8String, -1, NULL);//绑定参数
+        sqlite3_bind_text(stmt, 1, title.UTF8String, -1, NULL);//绑定参数
         while ( sqlite3_step(stmt) == SQLITE_ROW) {
                     //从伴随指针回去数据第0行
             int ID = sqlite3_column_int(stmt, 0);
             NSLog(@"%d",ID);
-            NSString *idStr = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];//转换成 oc 输出
-            NSLog(@"%@",idStr);
-            int age = sqlite3_column_int(stmt, 2);
-            NSLog(@"%d",age);
+            NSString *title = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 1)];
+            NSLog(@"%@",title);
+            
+            NSString *content = [NSString stringWithUTF8String:(const char *)sqlite3_column_text(stmt, 2)];
+            NSLog(@"%@",content);
+            
+            NSString *label = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 3)];
+            NSLog(@"%@",label);
+            
+            NSString *rule = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 4)];
+            NSLog(@"%@",rule);
+            
+            //            NSString *latitude = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 5)];
+            //            NSLog(@"%@",latitude);
+            
+            
+            //            NSString *longitude = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 6)];
+            //            NSLog(@"%@",longitude);
+            
+            
+            NSString *subhead = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 7)];
+            NSLog(@"%@",subhead);
           }
     }else{
         NSLog(@"语句错误");

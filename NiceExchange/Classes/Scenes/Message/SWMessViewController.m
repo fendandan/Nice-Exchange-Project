@@ -9,7 +9,7 @@
 #import "SWMessViewController.h"
 
 #import "SWTableViewCell.h"
-#import "SWNotifcationSettingViewController.h"
+
 #import "SWNotLoggedViewController.h"
 #define TableviewCell @"TableviewCell"
 @interface SWMessViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -40,7 +40,7 @@
 }
 -(void)rightbarbuttonAction:(UIBarButtonItem *)sender{
     SWLog(@"设置");
-    [self.navigationController pushViewController:[[SWNotifcationSettingViewController alloc] init] animated:YES];
+    
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -51,8 +51,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"点我,我就走了");
-    SWNotLoggedViewController *notlogged = [[SWNotLoggedViewController alloc]init];
-    [self.navigationController pushViewController:notlogged animated:YES];
+    
 }
 
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

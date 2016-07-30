@@ -1,14 +1,14 @@
 //
-//  SWCreationViewController.h
+//  SWDraftViewController.h
 //  NiceExchange
 //
-//  Created by lanou3g on 16/7/16.
+//  Created by Spacewalk on 16/7/29.
 //  Copyright © 2016年 Spacewalk. All rights reserved.
 //
 
 #import "BaseViewController.h"
 
-@interface SWCreationViewController : BaseViewController
+@interface SWDraftViewController : BaseViewController
 
 @property(nonatomic,strong) NSString *titleStr;
 

@@ -21,10 +21,11 @@
                 UIButton *button = (UIButton *)items[i];
                 CGFloat width = kSelfWidth / items.count;
                 button.frame = CGRectMake(i * width +6, 4, 80, 40);
+                button.tag= 11001;
                 // button.backgroundColor = [UIColor cyanColor];
                 button.layer.masksToBounds = YES;
                 button.layer.cornerRadius = button.frame.size.height/3;
-                [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+                [button addTarget:self action:@selector(messbuttonClicked:) forControlEvents:UIControlEventTouchUpInside];
                 [self addSubview:button];
                 continue;
             }
@@ -42,13 +43,22 @@
     return self;
 }
 
-
+-(void)messbuttonClicked:(UIButton *)sender
+{
+    
+    if (_swDelegete && [_swDelegete respondsToSelector:@selector(swMessTabBarItemDidClicked:)]) {
+        [_swDelegete swMessTabBarItemDidClicked:self];
+    }
+ 
+    
+}
 - (void)buttonClicked:(UIButton *)button {
 
     self.currebtSelectedItem = button;
     for (int i = 0; i < self.allItems.count; i ++) {
         UIButton *tempButton = (UIButton *)self.allItems[i];
-        if (button == tempButton) {
+        
+        if (button == tempButton ) {
             self.currentSelected = i;
             tempButton.selected = YES;
         }else {
