@@ -18,6 +18,7 @@
 @interface SWCommentsTableViewCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *FocusB;
 
+
 @property (strong, nonatomic) IBOutlet UIButton *iconimv;
 @property (strong, nonatomic) IBOutlet UILabel *commentLLL;
 @property (strong, nonatomic) IBOutlet UIButton *praiseB;

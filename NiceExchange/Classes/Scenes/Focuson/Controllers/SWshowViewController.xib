@@ -92,6 +92,10 @@
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ZZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jEt-YJ-UnZ">
                                     <rect key="frame" x="171" y="346" width="58" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="58" id="qjT-6R-gAK"/>
+                                        <constraint firstAttribute="height" constant="18" id="zgu-cV-YKH"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
