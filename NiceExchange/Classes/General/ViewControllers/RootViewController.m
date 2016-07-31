@@ -90,7 +90,7 @@
     [super viewDidLoad];
     //
     
-        [self getFollowInfo]; // 获取用户关注信息
+    [self getFollowInfo]; // 获取用户关注信息
      NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"烟花"],[self buttonWithImageName:@"Picture" title:@"美图"],[self buttonWithImageName:@"Release" title:nil],[self buttonWithImageName:@"Book" title:@"阅读"],[self buttonWithImageName:@"User" title:@"我的"]];
     
   self.swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];

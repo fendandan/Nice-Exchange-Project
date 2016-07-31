@@ -11,6 +11,7 @@
 @interface SWMark : SWBaseLCModel
 
 @property (strong) SWLcAvUSer *markBy;
+@property (strong) SWLcAvUSer *markTo;
 @property (strong) SWActivityList *activity;
 @property (strong) NSDate *date;
 

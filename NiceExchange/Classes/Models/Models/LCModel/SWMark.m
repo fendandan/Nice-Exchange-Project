@@ -11,6 +11,7 @@
 @implementation SWMark
 
 @dynamic markBy;
+@dynamic markTo;
 @dynamic activity;
 @dynamic date;
 

@@ -377,6 +377,7 @@ static SWLeanCloudManager *manager = nil;
     // create an entry in the Follow table
     SWMark *mark = [SWMark object];
     [mark setObject:[AVUser currentUser]  forKey:@"markBy"];
+    [mark setObject:activity.createBy forKey:@"markTo"];
     [mark setObject:activity forKey:@"activity"];
     [mark setObject:[NSDate date] forKey:@"date"];
     [mark saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

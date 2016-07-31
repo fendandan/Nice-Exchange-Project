@@ -74,13 +74,12 @@
     
     cell.delegate = self;
     
-
+    SWActivityList *activity = self.dataArray[indexPath.row];
+    
     //不明白什么意思
-    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
+    if ([self.rootVC.followArray containsObject:activity.createBy]) {
         cell.attentionBtn.selected = YES;
     }
-    
-    SWActivityList *activity = self.dataArray[indexPath.row];
     
     cell.subheadingLabel.text = activity.subhead;
     
@@ -183,7 +182,18 @@
 //点击title
 - (void)readtableviewUserNameBtnClickend:(ReadTableViewCell *)cell
 {
+    cell.ImageView.userInteractionEnabled = YES;
     SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
+    
+    //根据 cell 获得 indexPatch
+    NSIndexPath *indexPatch = [self.tableView indexPathForCell:cell];
+    
+    SWActivityList *act = self.dataArray[indexPatch.row];
+    
+    usweVC.userString = act.createBy.objectId;
+    
+    
+    NSLog(@"usweVC%@",usweVC.userString);
     
     [self.navigationController pushViewController:usweVC animated:YES];
 }

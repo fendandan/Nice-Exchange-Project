@@ -1,0 +1,1 @@
+/Users/lanou3g/Nice-Exchange-Project/Pods/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle
