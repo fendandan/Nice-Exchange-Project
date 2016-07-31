@@ -43,18 +43,18 @@
     
     
     // 发布官方消息
-//    AVObject *ob = [AVObject objectWithClassName:@"OfficialMessage"];
-//    [ob setObject:@"今天开始公测，期待大家的反馈！" forKey:@"message"];
-//    [ob saveInBackground];
+    AVObject *ob = [AVObject objectWithClassName:@"OfficialMessage"];
+    [ob setObject:@"今天开始公测，期待大家的反馈！" forKey:@"message"];
+    [ob saveInBackground];
     
     SWLog(@"=== ===== ==== === === %@", self.documentPath);
     if (![self getMarkWithKey:@"xxoo" marcoPath:@"Message"]) {
         
-        //时区转换，取得系统时区，取得格林威治时间差秒
-        NSTimeInterval  timeZoneOffset=[[NSTimeZone systemTimeZone] secondsFromGMT];
-        NSLog(@"%f",timeZoneOffset/60.0/60.0);
+//        //时区转换，取得系统时区，取得格林威治时间差秒
+//        NSTimeInterval  timeZoneOffset=[[NSTimeZone systemTimeZone] secondsFromGMT];
+//        NSLog(@"%f",timeZoneOffset/60.0/60.0);
         _date = [NSDate date];
-        _date = [_date dateByAddingTimeInterval:timeZoneOffset];
+//        _date = [_date dateByAddingTimeInterval:timeZoneOffset];
         
         NSDictionary *dic = @{@"FocusonMessage":_date, @"ActivityMessage":_date, @"CommentMessage":_date, @"GoodMessage":_date, @"MarkMessage":_date, @"OfficialMessage":_date};
         [self goToSaveK8VWithDicName:@"Message" Dic:dic];
@@ -132,7 +132,6 @@
             self.messageArray[0] = [NSString stringWithFormat:@"%ld", number];
             [self.tableview reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:(UITableViewRowAnimationBottom)];
             }
-            
             
         }
     }];
@@ -212,11 +211,12 @@
 }
 - (void)getMessageOfficial {
     AVQuery *avQ = [AVQuery queryWithClassName:@"OfficialMessage"];
+//    [avQ whereKey:@"createdAt" greaterThanOrEqualTo:[self getMarkWithKey:@"OfficialMessage" marcoPath:@"Message"]];
     [avQ whereKey:@"createdAt" greaterThanOrEqualTo:[self getMarkWithKey:@"OfficialMessage" marcoPath:@"Message"]];
     [avQ countObjectsInBackgroundWithBlock:^(NSInteger number, NSError *error) {
+//        SWLog(@" ====== ======= %ld", number);
         if (number > 0) {
             /////////////
-            SWLog(@" ====== ======= %ld", number);
             if (self.messageArray[5] != [NSString stringWithFormat:@"%ld", number]) {
                 self.messageArray[5] = [NSString stringWithFormat:@"%ld", number];
                 [self.tableview reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:5 inSection:0]] withRowAnimation:(UITableViewRowAnimationBottom)];
