@@ -45,6 +45,7 @@
 		CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70831D438ECE00F0909F /* SWCreationViewController.m */; };
 		CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70851D438ECE00F0909F /* SWMessViewController.m */; };
 		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
+		CC455C1F1D4F081D0019F14C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CC455C1E1D4F081D0019F14C /* icon.png */; };
 		CC4D9B9B1D4C9C1200FA303F /* SWDraftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */; };
 		CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56436A1D44E596005CEEB4 /* SWComment.m */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
@@ -528,6 +529,7 @@
 		CC3F70851D438ECE00F0909F /* SWMessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWMessViewController.m; path = NiceExchange/Classes/Scenes/Message/SWMessViewController.m; sourceTree = SOURCE_ROOT; };
 		CC3F70861D438ECE00F0909F /* SWNotifcationSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWNotifcationSettingViewController.h; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.h; sourceTree = SOURCE_ROOT; };
 		CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWNotifcationSettingViewController.m; path = NiceExchange/Classes/Scenes/Message/SWNotifcationSettingViewController.m; sourceTree = SOURCE_ROOT; };
+		CC455C1E1D4F081D0019F14C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		CC4D9B991D4C9C1200FA303F /* SWDraftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDraftModel.h; sourceTree = "<group>"; };
 		CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDraftModel.m; sourceTree = "<group>"; };
 		CC5643691D44E596005CEEB4 /* SWComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWComment.h; sourceTree = "<group>"; };
@@ -1244,6 +1246,14 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		CC455C1D1D4F081D0019F14C /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				CC455C1E1D4F081D0019F14C /* icon.png */,
+			);
+			path = icon;
+			sourceTree = "<group>";
+		};
 		CC592B641D3F16CB002CD37D /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1677,6 +1687,7 @@
 		CC6EF8C81D362F01000A9B44 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CC455C1D1D4F081D0019F14C /* icon */,
 				CC26E1471D3DD56F007FDAEE /* MusicViewControllers */,
 				D6616D631D3A81830018794B /* Message */,
 				CCA3B7B41D3A7C95003361CC /* Focuson */,
@@ -2454,6 +2465,7 @@
 				CC704E091D3CF5CC00D5A269 /* ios-social-sdk-login-detail.html in Resources */,
 				CC5A3D721D40C5D200984F1F /* p31b0141.png in Resources */,
 				CCE42D611D4DE1AF0036969F /* guoya.png in Resources */,
+				CC455C1F1D4F081D0019F14C /* icon.png in Resources */,
 				CC5A3D801D40C5D200984F1F /* p31b0155.png in Resources */,
 				CC5A3D571D40C5D200984F1F /* p31b0114.png in Resources */,
 				CC5A3CFC1D40C5D200984F1F /* p31b0023.png in Resources */,
