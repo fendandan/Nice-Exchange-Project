@@ -388,6 +388,7 @@
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
 		CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */; };
 		CCD8362A1D460479004CC453 /* SWMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD836291D460479004CC453 /* SWMessage.m */; };
+		CCDC01461D4EDB630077BF30 /* 地图.png in Resources */ = {isa = PBXBuildFile; fileRef = CCDC01451D4EDB630077BF30 /* 地图.png */; };
 		CCE42D151D4DDB100036969F /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D0B1D4DDB100036969F /* AVPlayerManager.m */; };
 		CCE42D161D4DDB100036969F /* LyricInfosHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D0D1D4DDB100036969F /* LyricInfosHandle.m */; };
 		CCE42D171D4DDB100036969F /* MusicInfosHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D0F1D4DDB100036969F /* MusicInfosHandle.m */; };
@@ -956,6 +957,7 @@
 		CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRegisterViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		CCD836281D460479004CC453 /* SWMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessage.h; sourceTree = "<group>"; };
 		CCD836291D460479004CC453 /* SWMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessage.m; sourceTree = "<group>"; };
+		CCDC01451D4EDB630077BF30 /* 地图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地图.png"; sourceTree = "<group>"; };
 		CCE42D0A1D4DDB100036969F /* AVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerManager.h; sourceTree = "<group>"; };
 		CCE42D0B1D4DDB100036969F /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerManager.m; sourceTree = "<group>"; };
 		CCE42D0C1D4DDB100036969F /* LyricInfosHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricInfosHandle.h; sourceTree = "<group>"; };
@@ -1963,6 +1965,7 @@
 			children = (
 				CC3293401D45BDC00035C32F /* 发送纸飞机.png */,
 				CC7BA0751D48AB39000833A6 /* bb.jpg */,
+				CCDC01451D4EDB630077BF30 /* 地图.png */,
 				CCA3B7BF1D3A7C95003361CC /* 11.jpg */,
 				CC3293391D45B7C80035C32F /* 评.png */,
 				CCA3B7C01D3A7C95003361CC /* fImage */,
@@ -2401,6 +2404,7 @@
 				D6616D891D3A85190018794B /* practise_b_n_day.png in Resources */,
 				CC5A3D0A1D40C5D200984F1F /* p31b0037.png in Resources */,
 				CC5A3D391D40C5D200984F1F /* p31b0084.png in Resources */,
+				CCDC01461D4EDB630077BF30 /* 地图.png in Resources */,
 				CC5A3DAC1D40C5D200984F1F /* p3_b_4.png in Resources */,
 				D6616D851D3A85190018794B /* 1.jpeg in Resources */,
 				CC5A3D3D1D40C5D200984F1F /* p31b0088.png in Resources */,

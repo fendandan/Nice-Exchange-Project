@@ -13,7 +13,7 @@
 #import "SWUserDetailViewController.h"
 #import "SWUserDetailViewController.h"
 #import "SWTableViewController.h"
-
+#import "SWBaiduAPIViewController.h"
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource,FriendiconDelegate,JoinDelegate>
 
 
@@ -190,14 +190,20 @@
             
         case RequestDataInitiateRequest:
             [self InitiateRequest];
+            self.title = @"我发起的";
+            [self.navigationItem.rightBarButtonItem setTitle:@""];
             break;
             
         case RequestDataParticipate:
             [self jionInRequest];
+             self.title = @"我参与的";
+             [self.navigationItem.rightBarButtonItem setTitle:@""];
             break;
         case  RequestDataMark:
             
             [self   makeRequest];
+             self.title = @"我收藏的";
+             [self.navigationItem.rightBarButtonItem setTitle:@""];
             
             break;
             
@@ -276,8 +282,17 @@
 //右上方添加好友按钮
 -(void)addRightButtonItem {
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"+找好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFirends:)];
+   UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"+找好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFirends:)];
+    
+    
+    
+    self.navigationItem.rightBarButtonItems = @[item];
+    
+    
 }
+
+
+
 //ButtonItem点击方法
 -(void)addFirends:(UIBarButtonItem *)addFriends {
     
@@ -301,7 +316,7 @@
         case RequestDataParticipate:
         {
             SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-            
+         
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.joinDelegate = self;
             
@@ -383,7 +398,7 @@
         
            SWActivityList *list = self.dataArray[indexPath.row];
         
-        
+        showVC.title = @"";
         showVC.joinStr = [NSString stringWithFormat:@"参与 %@",list.markC];
         
         
