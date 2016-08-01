@@ -190,14 +190,20 @@
             
         case RequestDataInitiateRequest:
             [self InitiateRequest];
+            self.title = @"我发起的";
+            [self.navigationItem.rightBarButtonItem setTitle:@""];
             break;
             
         case RequestDataParticipate:
             [self jionInRequest];
+             self.title = @"我参与的";
+             [self.navigationItem.rightBarButtonItem setTitle:@""];
             break;
         case  RequestDataMark:
             
             [self   makeRequest];
+             self.title = @"我收藏的";
+             [self.navigationItem.rightBarButtonItem setTitle:@""];
             
             break;
             
@@ -310,7 +316,7 @@
         case RequestDataParticipate:
         {
             SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-            
+         
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.joinDelegate = self;
             
@@ -392,7 +398,7 @@
         
            SWActivityList *list = self.dataArray[indexPath.row];
         
-        
+        showVC.title = @"";
         showVC.joinStr = [NSString stringWithFormat:@"参与 %@",list.markC];
         
         
