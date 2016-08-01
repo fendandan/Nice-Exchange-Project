@@ -111,11 +111,14 @@
 - (void)getMessageWithPlist {
     
 //    SWLogFunc;
-    [self getMessageFocuson];
-    [self getMessageActivity];
-    [self getMessageComment];
-    [self getMessageMark];
-    [self getMessageOfficial];
+    if ([SWLcAvUSer currentUser]) {
+        [self getMessageFocuson];
+        [self getMessageActivity];
+        [self getMessageComment];
+        [self getMessageMark];
+        [self getMessageOfficial];
+    }
+    
     
 }
 
