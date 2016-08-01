@@ -133,7 +133,7 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 3;
+    return 2;
 }
 #pragma mark ---- UITableViewDataSource - @required
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -243,8 +243,6 @@ static NSString * const SWTableViewCell_Identifiter = @"SWTableViewCell_Identifi
             return nil;
         case 1:
             return @"我的";
-        case 2:
-            return @"订单";
         default:
             break;
     }

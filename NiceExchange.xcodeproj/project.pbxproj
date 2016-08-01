@@ -47,6 +47,7 @@
 		CC3F708A1D438ECE00F0909F /* SWNotifcationSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3F70871D438ECE00F0909F /* SWNotifcationSettingViewController.m */; };
 		CC455C1F1D4F081D0019F14C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CC455C1E1D4F081D0019F14C /* icon.png */; };
 		CC4D9B9B1D4C9C1200FA303F /* SWDraftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */; };
+		CC53128C1D4EFF780053C126 /* bbBB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC53128B1D4EFF780053C126 /* bbBB.jpg */; };
 		CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56436A1D44E596005CEEB4 /* SWComment.m */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
 		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
@@ -330,7 +331,6 @@
 		CC704E211D3CF64300D5A269 /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CC704E201D3CF64300D5A269 /* libz.1.1.3.tbd */; };
 		CC7257A31D4225B600500D16 /* SWAboutMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */; };
 		CC7BA04F1D484EDC000833A6 /* 评论轮.png in Resources */ = {isa = PBXBuildFile; fileRef = CC7BA04E1D484EDC000833A6 /* 评论轮.png */; };
-		CC7BA0761D48AB39000833A6 /* bb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC7BA0751D48AB39000833A6 /* bb.jpg */; };
 		CC7E0CEA1D3D07DE00313F32 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */; };
 		CC7E0CEC1D3D07E400313F32 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */; };
 		CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E0CEE1D3D07F500313F32 /* TKAddressBook.m */; };
@@ -532,6 +532,7 @@
 		CC455C1E1D4F081D0019F14C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		CC4D9B991D4C9C1200FA303F /* SWDraftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDraftModel.h; sourceTree = "<group>"; };
 		CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDraftModel.m; sourceTree = "<group>"; };
+		CC53128B1D4EFF780053C126 /* bbBB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bbBB.jpg; sourceTree = "<group>"; };
 		CC5643691D44E596005CEEB4 /* SWComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWComment.h; sourceTree = "<group>"; };
 		CC56436A1D44E596005CEEB4 /* SWComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWComment.m; sourceTree = "<group>"; };
 		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
@@ -869,7 +870,6 @@
 		CC7257A11D4225B600500D16 /* SWAboutMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWAboutMeViewController.h; path = NiceExchange/Classes/Scenes/ViewControllers/SWAboutMeViewController.h; sourceTree = SOURCE_ROOT; };
 		CC7257A21D4225B600500D16 /* SWAboutMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWAboutMeViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWAboutMeViewController.m; sourceTree = SOURCE_ROOT; };
 		CC7BA04E1D484EDC000833A6 /* 评论轮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评论轮.png"; sourceTree = "<group>"; };
-		CC7BA0751D48AB39000833A6 /* bb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bb.jpg; sourceTree = "<group>"; };
 		CC7E0CE91D3D07DE00313F32 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		CC7E0CEB1D3D07E400313F32 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		CC7E0CED1D3D07F500313F32 /* TKAddressBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAddressBook.h; sourceTree = "<group>"; };
@@ -1975,10 +1975,10 @@
 			isa = PBXGroup;
 			children = (
 				CC3293401D45BDC00035C32F /* 发送纸飞机.png */,
-				CC7BA0751D48AB39000833A6 /* bb.jpg */,
 				CCDC01451D4EDB630077BF30 /* 地图.png */,
 				CCA3B7BF1D3A7C95003361CC /* 11.jpg */,
 				CC3293391D45B7C80035C32F /* 评.png */,
+				CC53128B1D4EFF780053C126 /* bbBB.jpg */,
 				CCA3B7C01D3A7C95003361CC /* fImage */,
 				CCA3B7C81D3A7C95003361CC /* icon.jpg */,
 				CCA3B7C91D3A7C95003361CC /* ii.jpg */,
@@ -2499,6 +2499,7 @@
 				D6616D881D3A85190018794B /* practise_a_s_day.png in Resources */,
 				CC5A3D6D1D40C5D200984F1F /* p31b0136.png in Resources */,
 				CCE42D7A1D4DE1AF0036969F /* volumelow@2x.png in Resources */,
+				CC53128C1D4EFF780053C126 /* bbBB.jpg in Resources */,
 				CC5A3D621D40C5D200984F1F /* p31b0125.png in Resources */,
 				CC704E051D3CF5CC00D5A269 /* iOS-social-releasenote.html in Resources */,
 				D6B5CEEC1D4766200065C581 /* 沙龙动态.png in Resources */,
@@ -2653,7 +2654,6 @@
 				CC592B6A1D3F16CB002CD37D /* 444.png in Resources */,
 				CC5A3CE61D40C5D200984F1F /* p31b0001.png in Resources */,
 				CCE42D681D4DE1AF0036969F /* pause.png in Resources */,
-				CC7BA0761D48AB39000833A6 /* bb.jpg in Resources */,
 				CC5A3CF71D40C5D200984F1F /* p31b0018.png in Resources */,
 				CC5A3D0C1D40C5D200984F1F /* p31b0039.png in Resources */,
 				CC5A3D5C1D40C5D200984F1F /* p31b0119.png in Resources */,

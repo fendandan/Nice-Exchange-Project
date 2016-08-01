@@ -168,7 +168,7 @@
             
             self.userNL.text = user.username;
         
-            NSLog(@"++++++++ %@ %@", user.username, self.userNL);
+//            NSLog(@"++++++++ %@ %@", user.username, self.userNL);
             [ff getThumbnail:YES width:200 height:200 withBlock:^(UIImage *image, NSError *error) {
                 [self.iconimv  setImage:image forState:(UIControlStateNormal)];
                 

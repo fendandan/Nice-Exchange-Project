@@ -97,6 +97,7 @@
                 SWLog(@"%@", error.userInfo[@"error"]);
             }
             
+            [self aalertViewShowWithMessage:error.userInfo[@"error"] title:@"确定" otherTitle:nil tag:0000];
             // 不匹配
 //            error = {
 //                error : The username and password mismatch.,
