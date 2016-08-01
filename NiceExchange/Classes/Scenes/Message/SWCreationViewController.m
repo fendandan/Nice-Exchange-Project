@@ -333,7 +333,6 @@ UINavigationControllerDelegate
 
 //navgation
 
-
 -(void)itemRightAction:(UIBarButtonItem *)sender{
     
     DataBaseHandle *dataBase = [DataBaseHandle shareDataBaseHandle];
@@ -375,10 +374,8 @@ UINavigationControllerDelegate
 
 - (void)addDraftViewWith:(NSString *)string {
     
-    
-    
-    self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 40)];
-        self.draftView.backgroundColor = [UIColor grayColor];
+    self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 40)];
+        self.draftView.backgroundColor = [UIColor whiteColor];
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
@@ -391,7 +388,7 @@ UINavigationControllerDelegate
     titleLabel.text = string;
     
     titleLabel.userInteractionEnabled = YES;
-    titleLabel.backgroundColor = [UIColor grayColor];
+    titleLabel.backgroundColor = [UIColor whiteColor];
     
     [self.draftView addSubview:titleLabel];
     
@@ -450,8 +447,6 @@ UINavigationControllerDelegate
 
 //存草稿
 -(void)itemRightsAction:(UIBarButtonItem *)sender{
-
-    SWLog(@"嘿嘿");
     // 发布活动
     if (self.titleTF.text.length == 0) {
         [self aalertViewShowWithMessage:@"忘了写标题了？" title:@"哦" otherTitle:nil tag:1000];

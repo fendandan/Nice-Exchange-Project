@@ -67,7 +67,7 @@
     
     cell.titleLabel.text = self.titleStr;
     
-    cell.timeLabel.text = self.textViewStr;
+//    cell.timeLabel.text = self.textViewStr;
     
     return cell;
 }

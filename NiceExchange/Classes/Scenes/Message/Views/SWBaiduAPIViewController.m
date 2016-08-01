@@ -7,7 +7,7 @@
 //
 
 #import "SWBaiduAPIViewController.h"
-#import "SWAnnotation.h"
+
 @interface SWBaiduAPIViewController ()
 <
 BMKMapViewDelegate,
@@ -61,9 +61,9 @@ BMKPoiSearchDelegate
     }
 // 设置地图的中心
     //北京 纬度 = 39.904989 经度 = 116.405285
-    CLLocationCoordinate2D coor2d =CLLocationCoordinate2DMake(39.904989, 116.405285);
+    CLLocationCoordinate2D coor2d = CLLocationCoordinate2DMake(self.latitude,self.longitude );
     [self.mapView setCenterCoordinate:coor2d];//设置地图的显示范围(中心与经纬度跨度)
-    [self.mapView setRegion:BMKCoordinateRegionMake(coor2d, BMKCoordinateSpanMake(0.01,0.01))];
+    [self.mapView setRegion:BMKCoordinateRegionMake(coor2d, BMKCoordinateSpanMake(0.05,0.05))];
     //显示用户的位置
     //self.mapView.showsUserLocation = YES;
     //设置追踪模式
@@ -78,13 +78,13 @@ BMKPoiSearchDelegate
 -(void)addAnnotation
 {
     if (!isOrNO) {
-        SWAnnotation *an = [[SWAnnotation alloc]init];
-        an.title = @"爱好递归";
-        an.subtitle = @"子标题";
-        an.coordinate = CLLocationCoordinate2DMake( 39.904989, 116.405285);
-        an.icon = [UIImage imageNamed:@"1.jpeg"];
-        [self.mapView addAnnotation:an];
-        self.annotation = an;
+        self.an = [[SWAnnotation alloc]init];
+        //an.title = @"爱好递归";
+        self.an.subtitle = self.string;
+        self.an.coordinate = CLLocationCoordinate2DMake(  self.latitude,self.longitude);
+        self.an.icon = [UIImage imageNamed:@"1.jpeg"];
+        [self.mapView addAnnotation:self.an];
+        self.annotation = self.an;
     }else
     {
         isOrNO = NO;
@@ -94,23 +94,23 @@ BMKPoiSearchDelegate
  //发起检索
 -(void)nearbysearchoption
 {
-    _searcher = [[BMKPoiSearch alloc]init];
-    _searcher.delegate = self;
-    //发起检索
-    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
-    option.pageCapacity = 2;
-    option.pageIndex = 1;
-    //option.location = CLLocationCoordinate2D{39.915, 116.404}
-    option.location = CLLocationCoordinate2DMake( 39.915, 116.404);
-    SWLog(@"%f",option.location.latitude);
-    option.keyword = @"哈哈";
-    BOOL flag = [_searcher poiSearchNearBy:option];
-    if (flag) {
-        SWLog(@"周边检索发送成功");
-    } else
-    {
-        SWLog(@"周边检索发送shi失败");
-    }
+//    _searcher = [[BMKPoiSearch alloc]init];
+//    _searcher.delegate = self;
+//    //发起检索
+//    BMKNearbySearchOption *option = [[BMKNearbySearchOption alloc]init];
+//    option.pageCapacity = 2;
+//    option.pageIndex = 1;
+//    //option.location = CLLocationCoordinate2D{39.915, 116.404}
+//    option.location = CLLocationCoordinate2DMake( self.longitude, self.latitude);
+//    SWLog(@"%f",option.location.latitude);
+//    option.keyword = @"哈哈";
+//    BOOL flag = [_searcher poiSearchNearBy:option];
+//    if (flag) {
+//        SWLog(@"周边检索发送成功");
+//    } else
+//    {
+//        SWLog(@"周边检索发送shi失败");
+//    }
 
  
 }

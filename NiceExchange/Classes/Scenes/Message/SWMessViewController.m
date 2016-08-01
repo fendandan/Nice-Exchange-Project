@@ -124,7 +124,7 @@
 - (void)getMessageFocuson {
     AVQuery *avQ = [SWFollow query];
     [avQ whereKey:@"createdAt" greaterThanOrEqualTo:[self getMarkWithKey:@"FocusonMessage" marcoPath:@"Message"]];
-    [avQ whereKey:@"to" equalTo:[SWLcAvUSer currentUser]];
+//    [avQ whereKey:@"to" equalTo:[SWLcAvUSer currentUser]];
     [avQ countObjectsInBackgroundWithBlock:^(NSInteger number, NSError *error) {
         if (number > 0) {
             if (self.messageArray[0] != [NSString stringWithFormat:@"%ld", number]) {
@@ -140,7 +140,7 @@
 - (void)getMessageActivity {
     // 构建内嵌查询
     AVQuery *innerQuery = [SWActivityList query];
-    [innerQuery whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
+//    [innerQuery whereKey:@"createBy" equalTo:[SWLcAvUSer currentUser]];
     
     
     // 将内嵌查询赋予目标查询
