@@ -73,16 +73,21 @@
     cell.titleLabel.text = activity.title;
     [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
     
-    [cell.ImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
     
-    NSLog(@"11%@,00%@",cell.ImageView,activity.createBy.userImage.url);
     
-    if (activity.createBy.displayName) {
-        [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
-    }else {
+    SWLcAvUSer *u = [SWLcAvUSer objectWithClassName:@"_User" objectId:activity.createBy.objectId];
+    [u fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        SWLcAvUSer *user = (SWLcAvUSer *)object;
+        if (user.displayName) {
+            [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+        }else {
+            [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+        }
         
-        [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
-    }
+        [cell.ImageView setImageWithURL:[NSURL URLWithString:user.userImage.url]];
+        
+    }];
+    
     
     return cell;
 }
@@ -130,14 +135,24 @@
 
 - (void)requestData {
     // 查询活动
-    AVQuery *aQ = [SWActivityList query];
-    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
-    [aQ includeKey:@"createBy"];
-    aQ.limit = 20;
-    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
+    AVQuery *Q = [SWActivityList query];
+    [Q addDescendingOrder:@"createdAt"]; // 按时间 新到老
+    [Q includeKey:@"createBy"];
+    Q.limit = 20;
+    
+    AVQuery *q1 = [SWActivityList query];
+    [q1 whereKey:@"label" equalTo:@"乐活"];
+    AVQuery *q2 = [SWActivityList query];
+    [q2 whereKey:@"label" equalTo:@"娱乐"];
+    AVQuery *q3 = [SWActivityList query];
+    [q3 whereKey:@"label" equalTo:@"时尚"];
+    AVQuery *q4 = [SWActivityList query];
+    [q4 whereKey:@"label" equalTo:@"吃喝"];
+    AVQuery *qq = [AVQuery orQueryWithSubqueries:[NSArray arrayWithObjects:q1, q2, q3, q4, nil]];
+    AVQuery *aQ = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:Q, qq,nil]];
     [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        //        SWActivityList *acc = objects[16];
-        //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
+        
+//        SWLog( @" ++++++++ %@",objects);
         for (SWActivityList *a in objects) {
             SWActivityList *ac = a;
             [self.dataArray addObject:ac];

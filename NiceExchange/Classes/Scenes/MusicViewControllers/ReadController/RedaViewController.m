@@ -116,7 +116,7 @@
         //        SWActivityList *acc = objects[16];
         //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
         for (SWActivityList *a in objects) {
-            
+//            SWLog(@"---------------%@", a.createBy.userImage.url);
             [self.dataArray addObject:a];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
