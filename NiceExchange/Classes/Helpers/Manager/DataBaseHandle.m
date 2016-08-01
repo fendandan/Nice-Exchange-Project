@@ -221,11 +221,11 @@ static sqlite3 *db = nil;
             
             model.label = label;
             
-            NSString *rule = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 4)];
-            NSLog(@"%@",rule);
-            
-            
-            model.rule = rule;
+//            NSString *rule = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 4)];
+//            NSLog(@"%@",rule);
+//            
+//            
+//            model.rule = rule;
             
             double latitude = sqlite3_column_double(stmt, 5);
             NSLog(@"%f",latitude);
