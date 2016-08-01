@@ -74,25 +74,27 @@
         cell.attentionBtn.selected = YES;
     }
     
-    
     SWActivityList *activity = self.dataArray[indexPath.row];
     
     cell.subHeadLabel.text = activity.subhead;
     
     cell.titleLabel.text = activity.title;
-    
     [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
     
-    [cell.titleImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
     
     
-    if (activity.createBy.displayName) {
+    SWLcAvUSer *u = [SWLcAvUSer objectWithClassName:@"_User" objectId:activity.createBy.objectId];
+    [u fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        SWLcAvUSer *user = (SWLcAvUSer *)object;
+        if (user.displayName) {
+            [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+        }else {
+            [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+        }
         
-        [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
-    }else {
+        [cell.titleImageView setImageWithURL:[NSURL URLWithString:user.userImage.url]];
         
-        [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
-    }
+    }];
     
     
     
@@ -146,8 +148,16 @@
     [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
     [aQ includeKey:@"createBy"];
     aQ.limit = 20;
-    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
-    [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+    
+    AVQuery *q1 = [SWActivityList query];
+    [q1 whereKey:@"label" equalTo:@"三观"];
+    AVQuery *q2 = [SWActivityList query];
+    [q2 whereKey:@"label" equalTo:@"情感"];
+    AVQuery *q3 = [SWActivityList query];
+    [q3 whereKey:@"label" equalTo:@"心情"];
+    AVQuery *qq = [AVQuery orQueryWithSubqueries:[NSArray arrayWithObjects:q1, q2, q3, nil]];
+    AVQuery *wq = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:aQ, qq, nil]];
+    [wq findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         //        SWActivityList *acc = objects[16];
         //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
         for (SWActivityList *a in objects) {

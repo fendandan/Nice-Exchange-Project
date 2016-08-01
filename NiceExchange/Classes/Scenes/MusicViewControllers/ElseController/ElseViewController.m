@@ -69,25 +69,27 @@
         cell.attentionBtn.selected = YES;
     }
     
-    
     SWActivityList *activity = self.dataArray[indexPath.row];
     
     cell.subHeadLabel.text = activity.subhead;
     
     cell.titleLabel.text = activity.title;
-    
     [cell.BackGroundImageView setImageWithURL:[NSURL URLWithString:activity.titleImage.url]];
     
-    [cell.titleImageView setImageWithURL:[NSURL URLWithString:activity.createBy.userImage.url]];
     
     
-    if (activity.createBy.displayName) {
+    SWLcAvUSer *u = [SWLcAvUSer objectWithClassName:@"_User" objectId:activity.createBy.objectId];
+    [u fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        SWLcAvUSer *user = (SWLcAvUSer *)object;
+        if (user.displayName) {
+            [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+        }else {
+            [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+        }
         
-        [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
-    }else {
+        [cell.titleImageView setImageWithURL:[NSURL URLWithString:user.userImage.url]];
         
-        [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
-    }
+    }];
     
 
     return cell;
@@ -136,17 +138,30 @@
 
 - (void)requestData {
     // 查询活动
-    AVQuery *aQ = [SWActivityList query];
-    [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
-    [aQ includeKey:@"createBy"];
-    aQ.limit = 20;
-    //    [aQ whereKey:@"creatBy" equalTo:[AVUser currentUser]];
+    AVQuery *Q1 = [SWActivityList query];
+    [Q1 addDescendingOrder:@"createdAt"]; // 按时间 新到老
+    AVQuery *Q2 = [SWActivityList query];
+    [Q2 includeKey:@"createBy"];
+    AVQuery *Q3 = [SWActivityList query];
+    Q3.limit = 20;
+    
+    
+    AVQuery *q1 = [SWActivityList query];
+    [q1 whereKey:@"label" equalTo:@"闲聊"];
+    AVQuery *q2 = [SWActivityList query];
+    [q2 whereKey:@"label" equalTo:@"文艺"];
+    AVQuery *q3 = [SWActivityList query];
+    [q3 whereKeyDoesNotExist:@"label"];
+    AVQuery *qq = [AVQuery orQueryWithSubqueries:[NSArray arrayWithObjects:q1, q2, q3, nil]];
+    
+    AVQuery *aQ = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:Q1, Q2, Q3, qq, nil]];
     [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         //        SWActivityList *acc = objects[16];
         //        SWLog( @" acc %@",acc.titleImage.url);  // 测试 图片链接
         for (SWActivityList *a in objects) {
-            SWActivityList *ac = a;
-            [self.dataArray addObject:ac];
+            
+            [self.dataArray addObject:a];
+//            SWLog(@" === ==== == %@",a.createBy.userImage.url);
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
