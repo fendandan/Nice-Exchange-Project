@@ -363,8 +363,7 @@
 //收藏按钮
 -(void)collectionAction:(UIButton *)sender {
     
-        SWActivityList *activity = [SWActivityList object];
-      if (sender.selected == YES) {
+    if (sender.selected == YES) {
        
             [LCManager lcToCancelMarkActivityWithActivityList:self.activity completion:^(NSArray *mArray) {
     
