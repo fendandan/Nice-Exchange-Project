@@ -42,7 +42,7 @@ UITextViewDelegate
         
         self.textView.backgroundColor = [UIColor cyanColor];
         UITextView *textView = [[UITextView alloc] init];
-        textView.delegate   = self;
+        //textView.delegate   = self;
         textView.textColor   = [UIColor grayColor];
         textView.backgroundColor = [UIColor whiteColor];
         textView.font = textViewFont;
@@ -78,7 +78,6 @@ UITextViewDelegate
     
     self.textView.textColor = [UIColor purpleColor];
     }
-
 
 - (void)setPlaceholder:(NSString *)placeholder{
     _placeholder = placeholder;

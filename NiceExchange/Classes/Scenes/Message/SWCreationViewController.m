@@ -26,7 +26,8 @@
 UITextFieldDelegate,
 SwLayoutTextViewDelegate,
 UIImagePickerControllerDelegate,
-UINavigationControllerDelegate
+UINavigationControllerDelegate,
+UITextViewDelegate
 >
 
 @property(nonatomic,strong)UIImageView *imageview;//箭头
@@ -170,8 +171,7 @@ UINavigationControllerDelegate
     //
     self.textView = [[SWLayoutTextView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.Viewaddimage.frame) , CGRectGetMaxY(self.Viewaddimage.frame)+10,self.Viewaddimage.frame.size.width, 100)];
     self.textView.placeholder = @"说点啥呢!";
-    
-    
+    self.textView.textView.delegate = self;
 
     
     [self.scrollview addSubview:self.textView];
@@ -183,7 +183,7 @@ UINavigationControllerDelegate
     self.addrule.layer.masksToBounds = YES;
     self.addrule.layer.cornerRadius = self.addrule.frame.size.height/6;
 
-    
+    self.addrule.textfield.delegate = self;
     [self.scrollview addSubview:self.addrule];
     self.addrule.alpha = 0.8;
 }
@@ -204,6 +204,58 @@ UINavigationControllerDelegate
         self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height+30) ;
                self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - self.scrollview.frame.size.height);
     }
+}
+//textview代理方法
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    //滑动效果（动画）
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@ "ResizeForKeyboard"  context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //将视图的Y坐标向上移动，以使下面腾出地方用于软键盘的显示
+    self.scrollview.frame = CGRectMake(0, - 252.0f, kScreenWidth, kScreenHeight); //64-216
+    
+    [UIView commitAnimations];
+
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    //滑动效果
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@ "ResizeForKeyboard"  context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //恢复屏幕
+    self.scrollview.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight); //64-216
+    
+    [UIView commitAnimations];
+}
+//textFiled的代理
+- (void)textFieldDidBeginEditing:(UITextField *)textField           // {
+{
+    //滑动效果（动画）
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@ "ResizeForKeyboard"  context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //将视图的Y坐标向上移动，以使下面腾出地方用于软键盘的显示
+    self.scrollview.frame = CGRectMake(0, - 252.0f, kScreenWidth, kScreenHeight); //64-216
+    
+    [UIView commitAnimations];
+}
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    //滑动效果
+    NSTimeInterval animationDuration = 0.30f;
+    [UIView beginAnimations:@ "ResizeForKeyboard"  context:nil];
+    [UIView setAnimationDuration:animationDuration];
+    
+    //恢复屏幕
+    self.scrollview.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight); //64-216
+    
+    [UIView commitAnimations];
 }
 
 //textFiled限制长度
@@ -619,10 +671,12 @@ UINavigationControllerDelegate
 {
      [self.titleTF resignFirstResponder];
     [self.textView resignFirstResponder];
+    [self.textView.textView resignFirstResponder];
     return YES;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+
     [self.scrollview resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {

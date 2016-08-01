@@ -15,4 +15,6 @@
 @property (strong, nonatomic) NSMutableArray *followArray;
 @property (strong, nonatomic) NSMutableArray *followedArray;
 
+@property (nonatomic,assign)BOOL state;
+
 @end

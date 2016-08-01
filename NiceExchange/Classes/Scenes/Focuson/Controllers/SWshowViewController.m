@@ -69,7 +69,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    self.switchVC.rightTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.switchVC.leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     self.dataArray = [NSMutableArray array];
     self.leftArray = [NSMutableArray array];
     self.touch =0;
@@ -479,7 +481,7 @@
         cell.selectionStyle = UITableViewCellEditingStyleNone;
         cell.commentDelegate = self;
         SWComment *comment = self.dataArray[indexPath.row];
-        
+      cell.selectionStyle = UITableViewCellSelectionStyleNone;
     #warning RightTavleView---------
         cell.comment  = comment;
         
@@ -503,7 +505,7 @@
     cell.selectionStyle = UITableViewCellEditingStyleNone;
     cell.commentDelegate = self;
     SWComment *comment = self.leftArray[indexPath.row];
-        
+         cell.selectionStyle = UITableViewCellSelectionStyleNone;
 //    cell.commentLLL.text = comment.commentContent;
 //    cell.userNL .text = comment.commentBy.username;
 #warning LefttavleView-----------
