@@ -31,7 +31,8 @@
                rule:(NSString *)rule
            latitude:(double )latitude
           longitude:(double )longitude
-            subhead:(NSString *)subhead;
+            subhead:(NSString *)subhead
+               time:(NSString *)tim;
 
 //通过 uid 去更新数据
 - (void)updateWithUID:(NSInteger)uid;

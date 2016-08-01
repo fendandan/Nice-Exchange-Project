@@ -310,7 +310,14 @@ UITextViewDelegate
             [dataBase creatTable];
             
             //    //插入数据
-            [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
+            NSString *date = [NSString new];
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            
+            [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+            date = [formatter stringFromDate:[NSDate date]];
+            //    //插入数据
+            [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111" time:date];
             
                 //删除
 //                [dataBase deleteWithUID:2];
@@ -397,8 +404,14 @@ UITextViewDelegate
     [dataBase creatTable];
     
     
+    NSString *date = [NSString new];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    date = [formatter stringFromDate:[NSDate date]];
     //    //插入数据
-    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111"];
+    [dataBase insertTitle:self.titleTF.text content:self.textView.textView.text label:self.addtageButton.titleLabel.text rule:self.addrule.textFstring latitude:20 longitude:10 subhead:@"111" time:date];
     
     
     //    //删除
@@ -420,13 +433,19 @@ UITextViewDelegate
 
     [self addDraftViewWith:@"你的草稿存储成功"];
     
+    
+    
+    
+    
+    
  
 }
 
 
+
 - (void)addDraftViewWith:(NSString *)string {
     
-    self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 40)];
+    self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 25)];
         self.draftView.backgroundColor = [UIColor whiteColor];
     
     
@@ -435,7 +454,7 @@ UITextViewDelegate
     
     [self.view addSubview:self.draftView];
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 40, 40)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 40, 25)];
     
     titleLabel.text = string;
     
@@ -447,7 +466,7 @@ UITextViewDelegate
     
     UIButton *deleteBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     
-    deleteBtn.frame = CGRectMake(kScreenWidth - 30, 10, 20, 20);
+    deleteBtn.frame = CGRectMake(kScreenWidth - 30, 2, 20, 20);
     
     deleteBtn.backgroundColor = [UIColor grayColor];
     

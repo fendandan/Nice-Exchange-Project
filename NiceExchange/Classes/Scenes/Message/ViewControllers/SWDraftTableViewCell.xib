@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,38 +14,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-t8-lZy">
-                        <rect key="frame" x="358" y="46" width="48" height="25"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="48" id="rGq-2F-KJ8"/>
-                        </constraints>
-                        <state key="normal" title="删除"/>
-                        <connections>
-                            <action selector="deleteBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tCT-f0-jHt"/>
-                        </connections>
-                    </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFA-br-quQ">
-                        <rect key="frame" x="8" y="19" width="296" height="42"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFA-br-quQ">
+                        <rect key="frame" x="8" y="0.0" width="296" height="36"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbB-8e-46L">
+                        <rect key="frame" x="8" y="44" width="296" height="22"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KDO-9t-nBa">
+                        <rect key="frame" x="0.0" y="79" width="414" height="1"/>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Q9-t8-lZy">
+                        <rect key="frame" x="365" y="24" width="28" height="30"/>
+                        <state key="normal" backgroundImage="delete.png"/>
+                        <connections>
+                            <action selector="deleteBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tCT-f0-jHt"/>
+                        </connections>
+                    </button>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="1Q9-t8-lZy" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3fj-0h-uxw"/>
-                    <constraint firstItem="1Q9-t8-lZy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="38" id="9sG-ES-mUf"/>
-                    <constraint firstItem="rFA-br-quQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Esl-Um-Bgh"/>
-                    <constraint firstItem="rFA-br-quQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="K9B-YA-g0M"/>
-                    <constraint firstItem="1Q9-t8-lZy" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="ijN-jl-5SK"/>
-                    <constraint firstItem="1Q9-t8-lZy" firstAttribute="leading" secondItem="rFA-br-quQ" secondAttribute="trailing" constant="54" id="kCa-jK-NYn"/>
-                    <constraint firstItem="rFA-br-quQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="xrG-Yk-7yk"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="deleteBtn" destination="1Q9-t8-lZy" id="EjY-tp-CXZ"/>
+                <outlet property="timeLabel" destination="XbB-8e-46L" id="HPg-Wp-TO2"/>
                 <outlet property="titleLabel" destination="rFA-br-quQ" id="p5Z-U4-3xZ"/>
             </connections>
-            <point key="canvasLocation" x="478" y="305"/>
+            <point key="canvasLocation" x="604" y="270"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="delete.png" width="32" height="32"/>
+    </resources>
 </document>
