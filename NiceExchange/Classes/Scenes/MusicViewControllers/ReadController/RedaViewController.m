@@ -28,6 +28,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    if (self.rootVC.state == YES) {
+        
+    }
+    
     self.rootVC.swTabBar.hidden = NO;
 }
 
@@ -107,6 +112,8 @@
 
 - (void)requestData {
     // 查询活动
+    [GiFHUD setGifWithImageName:@"pika.gif"];
+    [GiFHUD show];
     AVQuery *aQ = [SWActivityList query];
     [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老
     [aQ includeKey:@"createBy"];
@@ -120,6 +127,7 @@
             [self.dataArray addObject:a];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
+            [GiFHUD dismiss];
             [self.tableView reloadData];
         });
     }];
@@ -147,10 +155,12 @@
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             
 // -------------------------------------------------------------
+            [GiFHUD setGifWithImageName:@"pika.gif"];
+            [GiFHUD show];
             [LCManager lcToCancelFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
                 cell.attentionBtn.selected = NO;
-                [self.rootVC.followedArray removeObject:activity.createBy];
-                [self.tableView reloadData];
+                [self.rootVC.followArray removeObject:activity.createBy];
+                [self dudue];
                 LCManager.shareManagerB = NO; // 置为可调用状态
             }];
         
@@ -165,11 +175,13 @@
     }else{
         
 // -------------------------------------------------------------
+        [GiFHUD setGifWithImageName:@"pika.gif"];
+        [GiFHUD show];
         [LCManager lcToFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
             
             cell.attentionBtn.selected = YES;
-            [self.rootVC.followedArray addObject:activity.createBy];
-            [self.tableView reloadData];
+            [self.rootVC.followArray addObject:activity.createBy];
+            [self dudue];
             LCManager.shareManagerB = NO; // 置为可调用状态
             
         }];
@@ -255,12 +267,14 @@
 }
 
 
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)dudue {
+    
+    if (self.dataArray.count > 0) {
+        [self.dataArray removeAllObjects];
+        [self.tableView reloadData];
+        [self requestData];
+    }
+    
 }
 
 /*

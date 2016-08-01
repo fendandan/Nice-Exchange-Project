@@ -14,6 +14,7 @@
 #import "SWUserDetailViewController.h"
 #import "SWTableViewController.h"
 #import "SWBaiduAPIViewController.h"
+#import "GiFHUD.h"
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource,FriendiconDelegate,JoinDelegate>
 
 
@@ -26,11 +27,11 @@
 
 @implementation SWFocusonViewController
 
+
 -(void)viewWillAppear:(BOOL)animated {
-    
-    
+    [super viewWillAppear:animated];
+    [self requestData];
        self.rootVC.swTabBar.hidden = NO;
-    SWLog(@" 00 0000 000 000  %@",self.rootVC.followArray);
 //    if (self.rootVC.followArray.count == 0) {  // 
 //        switch (self.RequestData) {
 //            case RequestDataFoucesRequest:
@@ -57,6 +58,8 @@
     
     
 }
+
+
 #warning   --------- 我发起的活动的请求-
 -(void)InitiateRequest {
     
@@ -185,6 +188,7 @@
      */
     switch (self.RequestData) {
         case RequestDataFoucesRequest:
+          
             [self performSelector:@selector(requestData) withObject:nil afterDelay:0.5];
             break;
             
@@ -218,7 +222,7 @@
 }
 #warning 请求数据
 -(void)requestData {
-    
+    [self  getGIF];
     // 查询活动
     AVQuery *aQ = [SWActivityList query];
    
@@ -244,7 +248,7 @@
             }
             dispatch_async(dispatch_get_main_queue(), ^{
 //                SWLog(@"-----------++++ ---- %@",self.dataArray);
-                
+                  [GiFHUD dismiss];
                 [self.ztableView reloadData];
             });
         }];
@@ -257,6 +261,14 @@
 
     
 }
+
+-(void)getGIF {
+    [GiFHUD setGifWithImageName:@"pika.gif"];
+    
+    [GiFHUD show];
+
+}
+
 
 -(void)onJoinClick {
     
@@ -316,7 +328,7 @@
         case RequestDataParticipate:
         {
             SWJoinTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"JoinCell"];
-         
+            
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.joinDelegate = self;
             
@@ -394,7 +406,7 @@
         
         SWFridenSharOnTableViewCell *cell = (SWFridenSharOnTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
         SWshowViewController *showVC = [[SWshowViewController alloc]init];
-        
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
            SWActivityList *list = self.dataArray[indexPath.row];
         
@@ -414,7 +426,7 @@
         showVC.dataImage = cell.detailImv.image;
         
         
-        
+         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         [self.navigationController  pushViewController:showVC animated:YES];
         self.rootVC.swTabBar.hidden = YES;
         
@@ -424,7 +436,7 @@
         
         SWJoinTableViewCell *cell = (SWJoinTableViewCell *)[self tableView:_ztableView cellForRowAtIndexPath:indexPath];
         SWshowViewController *showVC = [[SWshowViewController alloc]init];
-       
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         SWComment *comment = self.dataArray[indexPath.row];
         showVC.activity =  comment.forActivity;
         
@@ -472,6 +484,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 /*
  #pragma mark - Navigation
