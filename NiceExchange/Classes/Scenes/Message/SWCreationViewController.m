@@ -101,7 +101,7 @@ UINavigationControllerDelegate
     UIButton *re2 = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [re2 setTitle:@"返回" forState:(UIControlStateNormal)];
     [re2 addTarget:self action:@selector(returnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    re2.frame = CGRectMake(20 , 20, 60, 40);
+    re2.frame = CGRectMake(5 , 20, 60, 40);
     [re2 setTitleColor:[UIColor cyanColor] forState:UIControlStateNormal];
     [navigation addSubview:re2];
 //    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(itemRightAction:)];
@@ -378,7 +378,7 @@ UINavigationControllerDelegate
     
     
     self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 40)];
-    //    self.draftView.backgroundColor = [UIColor cyanColor];
+        self.draftView.backgroundColor = [UIColor grayColor];
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
@@ -398,9 +398,11 @@ UINavigationControllerDelegate
     
     UIButton *deleteBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     
-    deleteBtn.frame = CGRectMake(kScreenWidth - 40, 0, 40, 40);
+    deleteBtn.frame = CGRectMake(kScreenWidth - 30, 10, 20, 20);
     
-    [deleteBtn setTitle:@"删除" forState:(UIControlStateNormal)];
+    deleteBtn.backgroundColor = [UIColor grayColor];
+    
+    [deleteBtn setImage:[UIImage imageNamed:@"Unknown.jpeg"] forState:(UIControlStateNormal)];
     
     [deleteBtn addTarget:self action:@selector(deleteBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     

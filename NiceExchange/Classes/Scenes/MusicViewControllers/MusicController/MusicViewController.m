@@ -584,8 +584,6 @@ int a = 0;
 
 
 
-
-
 ////头部视图
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
