@@ -101,7 +101,7 @@ static NSString *const systemCell_Identifiter = @"systemCell_Identifiter";
     
     if (buttonIndex == 1 && alertView.tag == 1034) {
         [self removeCache];
-        [self.settingsTableView reloadData];
+        [self.settingsTableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:5 inSection:0]] withRowAnimation:(UITableViewRowAnimationBottom)];
     }
 }
 - (BOOL)alertViewShouldEnableFirstOtherButton:(UIAlertView *)alertView {

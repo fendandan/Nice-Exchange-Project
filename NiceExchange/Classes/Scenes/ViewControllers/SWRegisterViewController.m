@@ -97,6 +97,7 @@
             // 失败的原因可能有多种，常见的是用户名已经存在。
             SWLog(@"error = %@", error.userInfo);
             
+            [self aalertViewShowWithMessage:error.userInfo[@"error"] title:@"确定" otherTitle:nil tag:0000];
 // 返回结果
 //            error.userInfo = {
 //                error : 此电子邮箱已经被占用。,

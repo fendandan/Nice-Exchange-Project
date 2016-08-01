@@ -8,13 +8,19 @@
 
 #import "SWAboutMeViewController.h"
 
-@interface SWAboutMeViewController ()<UITextFieldDelegate>
+@interface SWAboutMeViewController ()
+<
+UITextFieldDelegate,
+UIImagePickerControllerDelegate,
+UINavigationControllerDelegate
+>
 
 @property (strong, nonatomic) UIImageView *imgView;
 @property (strong, nonatomic) UITextField *displayNameTF;
 @property (strong, nonatomic) UITextField *genderTF;
 @property (strong, nonatomic) UITextField *infoTF;
 @property (strong, nonatomic) UITextField *textF;
+@property (strong, nonatomic) UIImagePickerController *imagepicker;
 
 @end
 
@@ -114,9 +120,39 @@
 // 头像点击方法
 - (void)topInfoLabel:(UITapGestureRecognizer *)tapGestureRecongnizer {
     
-    
+    [self presentViewController:self.imagepicker animated:YES completion:^{
+        
+    } ];
     
 }
+#pragma  maek --图片选择器图片的代理方法
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
+{
+    //取得图片
+    UIImage *selectimage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    self.imgView.image = selectimage;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+//xitongxiangji
+-(void)CameraImage
+{
+    self.imagepicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    //录制视频时长，默认10s
+    self.imagepicker.videoMaximumDuration = 15;
+    //相机类型(拍照 录像...)字符串需要作出相应的类型转换
+    self.imagepicker.mediaTypes = @[(NSString *)kUTTypeMovie,(NSString *)kUTTypeImage ];
+    //视频上传质量
+    //UIImagePickerControllerQualityTypeHigh高清
+    //UIImagePickerControllerQualityTypeMedium中等质量
+    //UIImagePickerControllerQualityTypeLow低质量
+    //UIImagePickerControllerQualityType640x480
+    self.imagepicker.videoQuality = UIImagePickerControllerQualityTypeHigh;
+    //设置摄像头模式（拍照，录制视频）为录像模式
+    self.imagepicker.cameraCaptureMode =  UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:self.imagepicker animated:YES completion:nil];
+    
+}
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if (self.view.frame.origin.y == 0.0f) {
         NSTimeInterval animationDuration = 0.30f;

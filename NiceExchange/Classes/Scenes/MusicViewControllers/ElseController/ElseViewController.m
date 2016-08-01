@@ -65,11 +65,11 @@
     ElseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ElseTableViewCell_Identifiter forIndexPath:indexPath];
     cell.delegate = self;
     
-    if ([self.rootVC.followArray containsObject:[SWLcAvUSer currentUser]]) {
-        cell.attentionBtn.selected = YES;
-    }
     
     SWActivityList *activity = self.dataArray[indexPath.row];
+    if ([self.rootVC.followArray containsObject:activity.createBy]) {
+        cell.attentionBtn.selected = YES;
+    }
     
     cell.subHeadLabel.text = activity.subhead;
     
@@ -82,9 +82,9 @@
     [u fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
         SWLcAvUSer *user = (SWLcAvUSer *)object;
         if (user.displayName) {
-            [cell.userNameBtn setTitle:activity.createBy.displayName forState:(UIControlStateNormal)];
+            [cell.userNameBtn setTitle:user.displayName forState:(UIControlStateNormal)];
         }else {
-            [cell.userNameBtn setTitle:activity.createBy.username forState:(UIControlStateNormal)];
+            [cell.userNameBtn setTitle:user.username forState:(UIControlStateNormal)];
         }
         
         [cell.titleImageView setImageWithURL:[NSURL URLWithString:user.userImage.url]];
