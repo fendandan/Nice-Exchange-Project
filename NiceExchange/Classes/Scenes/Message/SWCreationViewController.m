@@ -378,7 +378,7 @@ UINavigationControllerDelegate
     
     
     self.draftView = [[UIView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 40)];
-        self.draftView.backgroundColor = [UIColor grayColor];
+        self.draftView.backgroundColor = [UIColor whiteColor];
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
@@ -391,7 +391,7 @@ UINavigationControllerDelegate
     titleLabel.text = string;
     
     titleLabel.userInteractionEnabled = YES;
-    titleLabel.backgroundColor = [UIColor grayColor];
+    titleLabel.backgroundColor = [UIColor whiteColor];
     
     [self.draftView addSubview:titleLabel];
     
