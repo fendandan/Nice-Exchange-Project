@@ -43,9 +43,9 @@
     
     
     // 发布官方消息
-    AVObject *ob = [AVObject objectWithClassName:@"OfficialMessage"];
-    [ob setObject:@"今天开始公测，期待大家的反馈！" forKey:@"message"];
-    [ob saveInBackground];
+//    AVObject *ob = [AVObject objectWithClassName:@"OfficialMessage"];
+//    [ob setObject:@"今天开始公测，期待大家的反馈！" forKey:@"message"];
+//    [ob saveInBackground];
     
     SWLog(@"=== ===== ==== === === %@", self.documentPath);
     if (![self getMarkWithKey:@"xxoo" marcoPath:@"Message"]) {
