@@ -91,7 +91,7 @@
     //
     
     [self getFollowInfo]; // 获取用户关注信息
-     NSArray *buttons = @[[self buttonWithImageName:@"Fireworks" title:@"首页"],[self buttonWithImageName:@"Picture" title:@"关注"],[self buttonWithImageName:@"Release" title:nil],[self buttonWithImageName:@"Book" title:@"消息"],[self buttonWithImageName:@"User" title:@"我的"]];
+     NSArray *buttons = @[[self buttonWithImageName:@"Unknown1" title:@"首页"],[self buttonWithImageName:@"Unknown2" title:@"关注"],[self buttonWithImageName:@"Release" title:nil],[self buttonWithImageName:@"Unknown3" title:@"消息"],[self buttonWithImageName:@"Unknown4" title:@"我的"]];
     
   self.swTabBar = [[SWTabBar alloc] initWithItems:buttons frame:CGRectMake(0, kScreenHeight - 49  , kScreenWidth, 100)];
   self.swTabBar.swDelegete = self; // 代理
@@ -126,7 +126,7 @@
     button.titleLabel.font = [UIFont systemFontOfSize:11];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     [button setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor colorWithRed:38.0/255 green:217.0/255 blue:165.0/255 alpha:1] forState:UIControlStateSelected];
+    [button setTitleColor:[UIColor colorWithRed:234/256.0 green:128/256.0 blue:16/256.0 alpha:1] forState:UIControlStateSelected];
     button.titleEdgeInsets = UIEdgeInsetsMake(46, 0, 0, 0);
     [self.tabBar addSubview:button];
     return button;

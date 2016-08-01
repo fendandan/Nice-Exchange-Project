@@ -20,7 +20,7 @@
             if (i == 2) {
                 UIButton *button = (UIButton *)items[i];
                 CGFloat width = kSelfWidth / items.count;
-                button.frame = CGRectMake(i * width +30, 0, 40, 40);
+                button.frame = CGRectMake(i * width +20, 0, 50, 50);
                 button.tag= 11001;
                 // button.backgroundColor = [UIColor cyanColor];
                 button.layer.masksToBounds = YES;
