@@ -29,7 +29,8 @@ UINavigationControllerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     //
-    
+    self.imagepicker = [[UIImagePickerController alloc]init];
+    self.imagepicker.delegate = self;
     [self addView];
     
     self.displayNameTF.delegate = self;
@@ -120,11 +121,40 @@ UINavigationControllerDelegate
 // 头像点击方法
 - (void)topInfoLabel:(UITapGestureRecognizer *)tapGestureRecongnizer {
     
-    [self presentViewController:self.imagepicker animated:YES completion:^{
-        
-    } ];
-    
+//    [self presentViewController:self.imagepicker animated:YES completion:^{
+//        
+//    } ];
+    [self pusenotice];
 }
+-(void)pusenotice
+{
+    //定义本地通值对象
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"相册和相机" message:@"呵呵" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        SWLog(@"调用系统相册");
+        [self presentViewController:self.imagepicker animated:YES completion:^{
+            
+        } ];
+        
+        
+    }];
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        SWLog(@"调用相机");
+        //[self CameraImage];
+        
+    }];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        SWLog(@"返回");
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [self presentViewController:alert animated:YES completion:nil];
+    //[alert showInView:self.view];
+    [alert addAction:action];
+    
+    [alert addAction:action1];
+    [alert addAction:action2];
+}
+
 #pragma  maek --图片选择器图片的代理方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
