@@ -7,7 +7,10 @@
 //
 
 #import "BaseViewController.h"
-
+#import "SWAnnotation.h"
 @interface SWBaiduAPIViewController : BaseViewController
-
+@property (nonatomic,assign)NSInteger longitude;//经度
+@property (nonatomic,assign)NSInteger latitude;//纬度
+@property (nonatomic,strong)SWAnnotation *an;
+@property (nonatomic,strong)NSString *string;
 @end

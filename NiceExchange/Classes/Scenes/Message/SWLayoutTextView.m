@@ -72,9 +72,12 @@ UITextViewDelegate
 //字体颜色
 -(void)textViewDidBeginEditing:(UITextView *)textView
 {
-    self.textView.text = @"";
+    if ([textView.text  isEqual: self.placeholder]) {
+        self.textView.text = @"";
+    }
+    
     self.textView.textColor = [UIColor purpleColor];
-}
+    }
 
 
 - (void)setPlaceholder:(NSString *)placeholder{
