@@ -16,7 +16,7 @@
 #import "BaseSwitchViewController.h"
 #import "SWCommentsTableViewCell.h"
 #import "SWcommentsViewController.h"
-
+#import "SWBaiduAPIViewController.h"
 #define kFirstSegmentedIndex 0
 
 #define kSecondSegmentedIndex 1
@@ -417,9 +417,23 @@
 //右上方添加好友按钮
 -(void)addRightButtonItem {
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"分享"] style:(UIBarButtonItemStylePlain) target:self action:@selector(shareAction:)];
+   UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"分享"] style:(UIBarButtonItemStylePlain) target:self action:@selector(shareAction:)];
+    
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"地图"] style:(UIBarButtonItemStylePlain) target:self action:@selector(pushMap:)];
+    
+    self.navigationItem.rightBarButtonItems = @[item1,item];
 }
 //ButtonItem点击方法
+
+-(void)pushMap:(UIBarButtonItem *)sender {
+    
+    SWBaiduAPIViewController *baiduMap = [SWBaiduAPIViewController new];
+    
+    
+    [self.navigationController pushViewController:baiduMap animated:YES];
+    
+    
+}
 -(void)shareAction:(UIBarButtonItem *)shared {
     
 #warning 友盟分享、、

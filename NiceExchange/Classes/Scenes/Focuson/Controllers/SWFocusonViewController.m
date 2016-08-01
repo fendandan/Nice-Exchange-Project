@@ -13,7 +13,7 @@
 #import "SWUserDetailViewController.h"
 #import "SWUserDetailViewController.h"
 #import "SWTableViewController.h"
-
+#import "SWBaiduAPIViewController.h"
 @interface SWFocusonViewController ()<UITableViewDelegate,UITableViewDataSource,FriendiconDelegate,JoinDelegate>
 
 
@@ -276,8 +276,17 @@
 //右上方添加好友按钮
 -(void)addRightButtonItem {
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"+找好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFirends:)];
+   UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"+找好友" style:(UIBarButtonItemStylePlain) target:self action:@selector(addFirends:)];
+    
+    
+    
+    self.navigationItem.rightBarButtonItems = @[item];
+    
+    
 }
+
+
+
 //ButtonItem点击方法
 -(void)addFirends:(UIBarButtonItem *)addFriends {
     
