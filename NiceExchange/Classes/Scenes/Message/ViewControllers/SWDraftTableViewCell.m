@@ -10,12 +10,21 @@
 
 @implementation SWDraftTableViewCell
 
-
+-(void)setModel:(SWDraftModel *)model{
+    if (_model != model) {
+        _model = nil;
+        _model = model;
+    }
+    _titleLabel.text = _model.title;
+    _timeLabel.text = _model.time;
+}
 
 - (IBAction)deleteBtn:(UIButton *)sender {
     
-    
-    
+
+    if (_delegate && [_delegate respondsToSelector:@selector(SWDraftTableViewPlayBtnClickend:)]) {
+        [_delegate SWDraftTableViewPlayBtnClickend:self];
+    }
 }
 
 

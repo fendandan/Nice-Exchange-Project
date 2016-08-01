@@ -67,7 +67,7 @@ static sqlite3 *db = nil;
 //创建表
 - (void)creatTable{
     
-    NSString *creatStr = @"create table if not exists linkman (id integer primary key autoincrement,title text, content text ,label text ,rule text ,latitude double ,longitude double ,subhead text )";
+    NSString *creatStr = @"create table if not exists linkman (id integer primary key autoincrement,title text, content text ,label text ,rule text ,latitude double ,longitude double ,subhead text,time text)";
     
     int result = sqlite3_exec(db, creatStr.UTF8String, NULL, NULL, NULL);
     if (result == SQLITE_OK) {
@@ -98,9 +98,10 @@ static sqlite3 *db = nil;
            latitude:(double )latitude
           longitude:(double )longitude
             subhead:(NSString *)subhead
+               time:(NSString *)time
 {
 
-    NSString *insertStr = @"insert into linkman(title,content,label,rule,latitude,longitude,subhead)values(?,?,?,?,?,?,?)";
+    NSString *insertStr = @"insert into linkman(title,content,label,rule,latitude,longitude,subhead,time)values(?,?,?,?,?,?,?,?)";
 
     sqlite3_stmt *stmt = nil;
 
@@ -121,6 +122,8 @@ static sqlite3 *db = nil;
         sqlite3_bind_double(stmt, 6, -1);
         
         sqlite3_bind_text(stmt, 7, subhead.UTF8String, -1, NULL);
+        
+        sqlite3_bind_text(stmt, 8, time.UTF8String, -1, NULL);
        
         if (sqlite3_step(stmt) == SQLITE_DONE) {
             NSLog(@"插入成功");
@@ -188,18 +191,13 @@ static sqlite3 *db = nil;
     
     int result = sqlite3_prepare(db, searchAllStr.UTF8String, -1, &stmt, NULL);
     
-    
     NSMutableArray *dataArray = [NSMutableArray array];
     
     
     if (result == SQLITE_OK) {
         while (sqlite3_step(stmt) == SQLITE_ROW) {
-            
-            
+        
             SWDraftModel *model = [SWDraftModel new];
-            
-            
-            
             
             //注意这里不是 OK 这里表示还有下一条数据
             NSInteger id = sqlite3_column_int(stmt, 0);//第二个参数是指位置从0开始
@@ -243,6 +241,11 @@ static sqlite3 *db = nil;
             model.subhead = subhead;
             
             SWLog(@" ++++++++++ %@",self.dbPath);
+            
+            
+            NSString *time = [NSString stringWithUTF8String:(const char*)sqlite3_column_text(stmt, 8)];
+            
+            model.time = time;
             
             [dataArray addObject:model];
             

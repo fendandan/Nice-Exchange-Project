@@ -287,7 +287,7 @@
 {
     self.ScrollViewnNav = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 50)];
     
-    self.ScrollViewnNav.backgroundColor = [UIColor grayColor];
+    self.ScrollViewnNav.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.ScrollViewnNav];
     
@@ -295,11 +295,12 @@
     //添加导航按钮
     _musicBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_musicBtn setTitle:@"音乐" forState:(UIControlStateNormal)];
+    [_musicBtn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
     _musicBtn.frame = CGRectMake(10, 0, 50, 50);
     _musicBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [self.ScrollViewnNav addSubview:_musicBtn];
     
-    [_musicBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_musicBtn setTitleColor:[UIColor orangeColor] forState:(UIControlStateSelected)];
     [_musicBtn addTarget:self action:@selector(musicBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     
@@ -307,41 +308,45 @@
     
     _readBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_readBtn setTitle:@"文艺" forState:(UIControlStateNormal)];
+    [_readBtn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
     _readBtn.frame = CGRectMake(100, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_readBtn];
     _readBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
-    [_readBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_readBtn setTitleColor:[UIColor orangeColor] forState:(UIControlStateSelected)];
     [_readBtn addTarget:self action:@selector(readBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     
     _lohasBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_lohasBtn setTitle:@"乐活" forState:(UIControlStateNormal)];
+    [_lohasBtn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
     _lohasBtn.frame = CGRectMake(190, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_lohasBtn];
     _lohasBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_lohasBtn addTarget:self action:@selector(lohasBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [_lohasBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_lohasBtn setTitleColor:[UIColor orangeColor] forState:(UIControlStateSelected)];
     
     
     
     
     _moodBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_moodBtn setTitle:@"心情" forState:(UIControlStateNormal)];
+    [_moodBtn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
     _moodBtn.frame = CGRectMake(280, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_moodBtn];
     _moodBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_moodBtn addTarget:self action:@selector(moodBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [_moodBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_moodBtn setTitleColor:[UIColor orangeColor] forState:(UIControlStateSelected)];
     
     
 
     _elseBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
     [_elseBtn setTitle:@"其他" forState:(UIControlStateNormal)];
+    [_elseBtn setTitleColor:[UIColor grayColor] forState:(UIControlStateNormal)];
     _elseBtn.frame = CGRectMake(360, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_elseBtn];
     _elseBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
     [_elseBtn addTarget:self action:@selector(elseBtnBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
-    [_elseBtn setTitleColor:[UIColor redColor] forState:(UIControlStateSelected)];
+    [_elseBtn setTitleColor:[UIColor orangeColor] forState:(UIControlStateSelected)];
     
 }
 

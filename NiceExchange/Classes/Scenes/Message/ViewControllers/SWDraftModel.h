@@ -26,4 +26,6 @@
 
 @property(nonatomic,strong)NSString *subhead;
 
+@property(nonatomic,strong)NSString *time;
+
 @end
