@@ -35,7 +35,7 @@ UITextViewDelegate
 @property (nonatomic, strong)SWAddRule *addrule;//规则
 @property (strong, nonatomic)SWLayoutTextView *textView;//内容
 @property (nonatomic, strong)UIScrollView *scrollview;
-@property(nonatomic,strong) UIImagePickerController *imagepicker;
+@property(nonatomic,strong) UIImagePickerController *imagepicker;//系统相册
 @property (strong ,nonatomic) UIImageView *photoimageView;//图像 imageView
 @property (strong, nonatomic) UIView *Viewaddimage;
 @property (strong, nonatomic) UIView *tageView;
@@ -577,7 +577,7 @@ UITextViewDelegate
     }];
     UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SWLog(@"调用相机");
-        // [self CameraImage];
+         [self CameraImage];
         
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -587,10 +587,10 @@ UITextViewDelegate
     [self presentViewController:alert animated:YES completion:nil];
     //[alert showInView:self.view];
     [alert addAction:action];
+
     [alert addAction:action1];
     [alert addAction:action2];
-    
-}
+    }
 
 #pragma  maek --图片选择器图片的代理方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
