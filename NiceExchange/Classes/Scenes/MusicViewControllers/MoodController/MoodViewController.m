@@ -129,7 +129,7 @@
     }
     
     swshowVC.titlestring = activity.createBy.userImage.url;
-    swshowVC.dataImage = cell.backgrandHeaderView.image;
+//    swshowVC.dataImage = cell.backgrandHeaderView.image;
     
     
     [self.navigationController pushViewController:swshowVC animated:YES];
