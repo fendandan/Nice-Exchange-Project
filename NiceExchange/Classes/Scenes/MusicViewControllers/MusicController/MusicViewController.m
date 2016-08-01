@@ -305,9 +305,8 @@
     
     
     
-    
     _readBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-    [_readBtn setTitle:@"阅读" forState:(UIControlStateNormal)];
+    [_readBtn setTitle:@"文艺" forState:(UIControlStateNormal)];
     _readBtn.frame = CGRectMake(100, 0, 50, 50);
     [self.ScrollViewnNav addSubview:_readBtn];
     _readBtn.titleLabel.font = [UIFont systemFontOfSize:16.0];
@@ -395,7 +394,6 @@
     btn.selected = YES;
     self.elseBtn.selected = NO;
     self.BottomScrollView.contentOffset = CGPointMake(kScreenWidth * 3, 0);
-    
     
 }
 

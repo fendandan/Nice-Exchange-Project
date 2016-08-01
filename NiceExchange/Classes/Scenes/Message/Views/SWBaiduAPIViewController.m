@@ -79,8 +79,8 @@ BMKPoiSearchDelegate
 {
     if (!isOrNO) {
         self.an = [[SWAnnotation alloc]init];
-        //an.title = @"爱好递归";
-        self.an.subtitle = self.string;
+        self.an.title = self.string;
+        self.an.subtitle = @"还饿IP第";
         self.an.coordinate = CLLocationCoordinate2DMake(  self.latitude,self.longitude);
         self.an.icon = [UIImage imageNamed:@"1.jpeg"];
         [self.mapView addAnnotation:self.an];
