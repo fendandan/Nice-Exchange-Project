@@ -430,8 +430,9 @@
     SWBaiduAPIViewController *baiduMap = [SWBaiduAPIViewController new];
     baiduMap.longitude = self.activity.point.longitude;
     baiduMap.latitude = self.activity.point.latitude;
-    baiduMap.an.title = self.activity.title;
+    //baiduMap.na.title = self.activity.title;
     baiduMap.string = self.activity.subhead;
+    SWLog(@"++++++%@",baiduMap.string);
     [self.navigationController pushViewController:baiduMap animated:YES];
     
     
