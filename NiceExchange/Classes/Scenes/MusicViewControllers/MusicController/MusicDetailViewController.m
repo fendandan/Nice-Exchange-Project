@@ -8,6 +8,7 @@
 
 #import "MusicDetailViewController.h"
 #import "BaseOrganViewController.h"
+#import "MusicPlayerViewController.h"
 
 @interface MusicDetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -136,6 +137,19 @@
 {
     return 80;
 }
+
+
+
+//cell 跳转事件
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MusicPlayerViewController *musicVC = [MusicPlayerViewController new];
+    
+
+    [self.navigationController pushViewController:musicVC animated:YES];
+    
+}
+
 
 
 

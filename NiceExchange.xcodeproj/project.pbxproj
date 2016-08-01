@@ -388,6 +388,52 @@
 		CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC21D37CD6900AEF415 /* SWLoginViewController.m */; };
 		CCB33FC61D37CD7000AEF415 /* SWRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */; };
 		CCD8362A1D460479004CC453 /* SWMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CCD836291D460479004CC453 /* SWMessage.m */; };
+		CCE42D151D4DDB100036969F /* AVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D0B1D4DDB100036969F /* AVPlayerManager.m */; };
+		CCE42D161D4DDB100036969F /* LyricInfosHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D0D1D4DDB100036969F /* LyricInfosHandle.m */; };
+		CCE42D171D4DDB100036969F /* MusicInfosHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D0F1D4DDB100036969F /* MusicInfosHandle.m */; };
+		CCE42D1A1D4DDB100036969F /* NetWorkRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D141D4DDB100036969F /* NetWorkRequestManager.m */; };
+		CCE42D291D4DDCD80036969F /* NSString+timeFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D1D1D4DDCD80036969F /* NSString+timeFormatter.m */; };
+		CCE42D2A1D4DDCD80036969F /* LyricCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D231D4DDCD80036969F /* LyricCell.m */; };
+		CCE42D2B1D4DDCD80036969F /* MusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D251D4DDCD80036969F /* MusicPlayerViewController.m */; };
+		CCE42D2C1D4DDCD80036969F /* MusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D261D4DDCD80036969F /* MusicPlayerViewController.xib */; };
+		CCE42D2D1D4DDCD80036969F /* RowLyricInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D281D4DDCD80036969F /* RowLyricInfo.m */; };
+		CCE42D361D4DDDDB0036969F /* MusicInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D301D4DDDDB0036969F /* MusicInfo.m */; };
+		CCE42D371D4DDDDB0036969F /* MusicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D321D4DDDDB0036969F /* MusicListCell.m */; };
+		CCE42D381D4DDDDB0036969F /* MusicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D331D4DDDDB0036969F /* MusicListCell.xib */; };
+		CCE42D391D4DDDDB0036969F /* MusicListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D351D4DDDDB0036969F /* MusicListViewController.m */; };
+		CCE42D3D1D4DDF5C0036969F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE42D3C1D4DDF5C0036969F /* MBProgressHUD.m */; };
+		CCE42D5E1D4DE1AF0036969F /* arrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D3F1D4DE1AF0036969F /* arrowdown.png */; };
+		CCE42D5F1D4DE1AF0036969F /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D401D4DE1AF0036969F /* forward.png */; };
+		CCE42D601D4DE1AF0036969F /* forward_h.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D411D4DE1AF0036969F /* forward_h.png */; };
+		CCE42D611D4DE1AF0036969F /* guoya.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D421D4DE1AF0036969F /* guoya.png */; };
+		CCE42D621D4DE1AF0036969F /* loop-s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D431D4DE1AF0036969F /* loop-s.png */; };
+		CCE42D631D4DE1AF0036969F /* loop.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D441D4DE1AF0036969F /* loop.png */; };
+		CCE42D641D4DE1AF0036969F /* music-s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D451D4DE1AF0036969F /* music-s.png */; };
+		CCE42D651D4DE1AF0036969F /* music.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D461D4DE1AF0036969F /* music.png */; };
+		CCE42D661D4DE1AF0036969F /* musicalnote-s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D471D4DE1AF0036969F /* musicalnote-s.png */; };
+		CCE42D671D4DE1AF0036969F /* musicalnote.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D481D4DE1AF0036969F /* musicalnote.png */; };
+		CCE42D681D4DE1AF0036969F /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D491D4DE1AF0036969F /* pause.png */; };
+		CCE42D691D4DE1AF0036969F /* pause_h.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D4A1D4DE1AF0036969F /* pause_h.png */; };
+		CCE42D6A1D4DE1AF0036969F /* place_holder.PNG in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D4B1D4DE1AF0036969F /* place_holder.PNG */; };
+		CCE42D6B1D4DE1AF0036969F /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D4C1D4DE1AF0036969F /* play.png */; };
+		CCE42D6C1D4DE1AF0036969F /* play_h.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D4D1D4DE1AF0036969F /* play_h.png */; };
+		CCE42D6D1D4DE1AF0036969F /* rewind.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D4E1D4DE1AF0036969F /* rewind.png */; };
+		CCE42D6E1D4DE1AF0036969F /* rewind_h.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D4F1D4DE1AF0036969F /* rewind_h.png */; };
+		CCE42D6F1D4DE1AF0036969F /* shuffle-s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D501D4DE1AF0036969F /* shuffle-s.png */; };
+		CCE42D701D4DE1AF0036969F /* shuffle.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D511D4DE1AF0036969F /* shuffle.png */; };
+		CCE42D711D4DE1AF0036969F /* singleloop-s.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D521D4DE1AF0036969F /* singleloop-s.png */; };
+		CCE42D721D4DE1AF0036969F /* singleloop.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D531D4DE1AF0036969F /* singleloop.png */; };
+		CCE42D731D4DE1AF0036969F /* songzhongji.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D541D4DE1AF0036969F /* songzhongji.jpg */; };
+		CCE42D741D4DE1AF0036969F /* thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D551D4DE1AF0036969F /* thumb@2x.png */; };
+		CCE42D751D4DE1AF0036969F /* thumb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D561D4DE1AF0036969F /* thumb@3x.png */; };
+		CCE42D761D4DE1AF0036969F /* volume_max.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D571D4DE1AF0036969F /* volume_max.png */; };
+		CCE42D771D4DE1AF0036969F /* volume_mute.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D581D4DE1AF0036969F /* volume_mute.png */; };
+		CCE42D781D4DE1AF0036969F /* volumehigh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D591D4DE1AF0036969F /* volumehigh@2x.png */; };
+		CCE42D791D4DE1AF0036969F /* volumehigh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D5A1D4DE1AF0036969F /* volumehigh@3x.png */; };
+		CCE42D7A1D4DE1AF0036969F /* volumelow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D5B1D4DE1AF0036969F /* volumelow@2x.png */; };
+		CCE42D7B1D4DE1AF0036969F /* volumelow@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D5C1D4DE1AF0036969F /* volumelow@3x.png */; };
+		CCE42D7C1D4DE1AF0036969F /* volumn_slider_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D5D1D4DE1AF0036969F /* volumn_slider_thumb@2x.png */; };
+		CCE42D7E1D4DE3260036969F /* Unknown.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CCE42D7D1D4DE3260036969F /* Unknown.jpeg */; };
 		CCEACCD81D47507E0026996C /* 微软雅黑.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCEACCD71D47507E0026996C /* 微软雅黑.ttf */; };
 		CCEACCEB1D478F170026996C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCEACCEA1D478F170026996C /* libsqlite3.tbd */; };
 		CCF61FC51D3896190071EC51 /* MusicDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCF61FC31D3896190071EC51 /* MusicDetailTableViewCell.m */; };
@@ -910,6 +956,66 @@
 		CCB33FC51D37CD7000AEF415 /* SWRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRegisterViewController.m; path = NiceExchange/Classes/Scenes/ViewControllers/SWRegisterViewController.m; sourceTree = SOURCE_ROOT; };
 		CCD836281D460479004CC453 /* SWMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWMessage.h; sourceTree = "<group>"; };
 		CCD836291D460479004CC453 /* SWMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWMessage.m; sourceTree = "<group>"; };
+		CCE42D0A1D4DDB100036969F /* AVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerManager.h; sourceTree = "<group>"; };
+		CCE42D0B1D4DDB100036969F /* AVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerManager.m; sourceTree = "<group>"; };
+		CCE42D0C1D4DDB100036969F /* LyricInfosHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricInfosHandle.h; sourceTree = "<group>"; };
+		CCE42D0D1D4DDB100036969F /* LyricInfosHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricInfosHandle.m; sourceTree = "<group>"; };
+		CCE42D0E1D4DDB100036969F /* MusicInfosHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicInfosHandle.h; sourceTree = "<group>"; };
+		CCE42D0F1D4DDB100036969F /* MusicInfosHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicInfosHandle.m; sourceTree = "<group>"; };
+		CCE42D131D4DDB100036969F /* NetWorkRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkRequestManager.h; sourceTree = "<group>"; };
+		CCE42D141D4DDB100036969F /* NetWorkRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkRequestManager.m; sourceTree = "<group>"; };
+		CCE42D1C1D4DDCD80036969F /* NSString+timeFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+timeFormatter.h"; sourceTree = "<group>"; };
+		CCE42D1D1D4DDCD80036969F /* NSString+timeFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+timeFormatter.m"; sourceTree = "<group>"; };
+		CCE42D1F1D4DDCD80036969F /* DataSource_Url.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource_Url.h; sourceTree = "<group>"; };
+		CCE42D201D4DDCD80036969F /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		CCE42D221D4DDCD80036969F /* LyricCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LyricCell.h; sourceTree = "<group>"; };
+		CCE42D231D4DDCD80036969F /* LyricCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LyricCell.m; sourceTree = "<group>"; };
+		CCE42D241D4DDCD80036969F /* MusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicPlayerViewController.h; sourceTree = "<group>"; };
+		CCE42D251D4DDCD80036969F /* MusicPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicPlayerViewController.m; sourceTree = "<group>"; };
+		CCE42D261D4DDCD80036969F /* MusicPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayerViewController.xib; sourceTree = "<group>"; };
+		CCE42D271D4DDCD80036969F /* RowLyricInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RowLyricInfo.h; sourceTree = "<group>"; };
+		CCE42D281D4DDCD80036969F /* RowLyricInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RowLyricInfo.m; sourceTree = "<group>"; };
+		CCE42D2F1D4DDDDB0036969F /* MusicInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicInfo.h; sourceTree = "<group>"; };
+		CCE42D301D4DDDDB0036969F /* MusicInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicInfo.m; sourceTree = "<group>"; };
+		CCE42D311D4DDDDB0036969F /* MusicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListCell.h; sourceTree = "<group>"; };
+		CCE42D321D4DDDDB0036969F /* MusicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListCell.m; sourceTree = "<group>"; };
+		CCE42D331D4DDDDB0036969F /* MusicListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicListCell.xib; sourceTree = "<group>"; };
+		CCE42D341D4DDDDB0036969F /* MusicListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicListViewController.h; sourceTree = "<group>"; };
+		CCE42D351D4DDDDB0036969F /* MusicListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicListViewController.m; sourceTree = "<group>"; };
+		CCE42D3B1D4DDF5C0036969F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CCE42D3C1D4DDF5C0036969F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CCE42D3F1D4DE1AF0036969F /* arrowdown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowdown.png; sourceTree = "<group>"; };
+		CCE42D401D4DE1AF0036969F /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
+		CCE42D411D4DE1AF0036969F /* forward_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward_h.png; sourceTree = "<group>"; };
+		CCE42D421D4DE1AF0036969F /* guoya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guoya.png; sourceTree = "<group>"; };
+		CCE42D431D4DE1AF0036969F /* loop-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loop-s.png"; sourceTree = "<group>"; };
+		CCE42D441D4DE1AF0036969F /* loop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loop.png; sourceTree = "<group>"; };
+		CCE42D451D4DE1AF0036969F /* music-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-s.png"; sourceTree = "<group>"; };
+		CCE42D461D4DE1AF0036969F /* music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music.png; sourceTree = "<group>"; };
+		CCE42D471D4DE1AF0036969F /* musicalnote-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicalnote-s.png"; sourceTree = "<group>"; };
+		CCE42D481D4DE1AF0036969F /* musicalnote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicalnote.png; sourceTree = "<group>"; };
+		CCE42D491D4DE1AF0036969F /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		CCE42D4A1D4DE1AF0036969F /* pause_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause_h.png; sourceTree = "<group>"; };
+		CCE42D4B1D4DE1AF0036969F /* place_holder.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place_holder.PNG; sourceTree = "<group>"; };
+		CCE42D4C1D4DE1AF0036969F /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		CCE42D4D1D4DE1AF0036969F /* play_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play_h.png; sourceTree = "<group>"; };
+		CCE42D4E1D4DE1AF0036969F /* rewind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind.png; sourceTree = "<group>"; };
+		CCE42D4F1D4DE1AF0036969F /* rewind_h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind_h.png; sourceTree = "<group>"; };
+		CCE42D501D4DE1AF0036969F /* shuffle-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shuffle-s.png"; sourceTree = "<group>"; };
+		CCE42D511D4DE1AF0036969F /* shuffle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuffle.png; sourceTree = "<group>"; };
+		CCE42D521D4DE1AF0036969F /* singleloop-s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "singleloop-s.png"; sourceTree = "<group>"; };
+		CCE42D531D4DE1AF0036969F /* singleloop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = singleloop.png; sourceTree = "<group>"; };
+		CCE42D541D4DE1AF0036969F /* songzhongji.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = songzhongji.jpg; sourceTree = "<group>"; };
+		CCE42D551D4DE1AF0036969F /* thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@2x.png"; sourceTree = "<group>"; };
+		CCE42D561D4DE1AF0036969F /* thumb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumb@3x.png"; sourceTree = "<group>"; };
+		CCE42D571D4DE1AF0036969F /* volume_max.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume_max.png; sourceTree = "<group>"; };
+		CCE42D581D4DE1AF0036969F /* volume_mute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volume_mute.png; sourceTree = "<group>"; };
+		CCE42D591D4DE1AF0036969F /* volumehigh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumehigh@2x.png"; sourceTree = "<group>"; };
+		CCE42D5A1D4DE1AF0036969F /* volumehigh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumehigh@3x.png"; sourceTree = "<group>"; };
+		CCE42D5B1D4DE1AF0036969F /* volumelow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumelow@2x.png"; sourceTree = "<group>"; };
+		CCE42D5C1D4DE1AF0036969F /* volumelow@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumelow@3x.png"; sourceTree = "<group>"; };
+		CCE42D5D1D4DE1AF0036969F /* volumn_slider_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "volumn_slider_thumb@2x.png"; sourceTree = "<group>"; };
+		CCE42D7D1D4DE3260036969F /* Unknown.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Unknown.jpeg; sourceTree = "<group>"; };
 		CCEACCD71D47507E0026996C /* 微软雅黑.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "微软雅黑.ttf"; sourceTree = "<group>"; };
 		CCEACCEA1D478F170026996C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CCF61FC21D3896190071EC51 /* MusicDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MusicDetailTableViewCell.h; path = ../../../General/Views/Cells/MusicDetailTableViewCell.h; sourceTree = "<group>"; };
@@ -1087,6 +1193,7 @@
 		CC26E1DB1D3DDA82007FDAEE /* MusicController */ = {
 			isa = PBXGroup;
 			children = (
+				CCE42D081D4DDB100036969F /* MusicPlaye */,
 				CC9A95D81D41CF0E00EA23BB /* MusicViewController.h */,
 				CC9A95D71D41CF0E00EA23BB /* MusicViewController.m */,
 				CC9A95D51D41CE0F00EA23BB /* MusicDetailViewController.h */,
@@ -1977,11 +2084,134 @@
 			path = ../../../../../Desktop/NiceExchange/NiceExchange/Classes/Scenes/ViewControllers;
 			sourceTree = "<group>";
 		};
+		CCE42D081D4DDB100036969F /* MusicPlaye */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D3E1D4DE1AF0036969F /* Resources */,
+				CCE42D3A1D4DDF5C0036969F /* MBProgressHUD */,
+				CCE42D2E1D4DDDDB0036969F /* MusicList */,
+				CCE42D1B1D4DDCD80036969F /* General */,
+				CCE42D1E1D4DDCD80036969F /* Marco */,
+				CCE42D211D4DDCD80036969F /* musicp */,
+				CCE42D091D4DDB100036969F /* Helpers */,
+			);
+			path = MusicPlaye;
+			sourceTree = "<group>";
+		};
+		CCE42D091D4DDB100036969F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D0A1D4DDB100036969F /* AVPlayerManager.h */,
+				CCE42D0B1D4DDB100036969F /* AVPlayerManager.m */,
+				CCE42D0C1D4DDB100036969F /* LyricInfosHandle.h */,
+				CCE42D0D1D4DDB100036969F /* LyricInfosHandle.m */,
+				CCE42D0E1D4DDB100036969F /* MusicInfosHandle.h */,
+				CCE42D0F1D4DDB100036969F /* MusicInfosHandle.m */,
+				CCE42D131D4DDB100036969F /* NetWorkRequestManager.h */,
+				CCE42D141D4DDB100036969F /* NetWorkRequestManager.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CCE42D1B1D4DDCD80036969F /* General */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D1C1D4DDCD80036969F /* NSString+timeFormatter.h */,
+				CCE42D1D1D4DDCD80036969F /* NSString+timeFormatter.m */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		CCE42D1E1D4DDCD80036969F /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D1F1D4DDCD80036969F /* DataSource_Url.h */,
+				CCE42D201D4DDCD80036969F /* Singleton.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		CCE42D211D4DDCD80036969F /* musicp */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D221D4DDCD80036969F /* LyricCell.h */,
+				CCE42D231D4DDCD80036969F /* LyricCell.m */,
+				CCE42D241D4DDCD80036969F /* MusicPlayerViewController.h */,
+				CCE42D251D4DDCD80036969F /* MusicPlayerViewController.m */,
+				CCE42D261D4DDCD80036969F /* MusicPlayerViewController.xib */,
+				CCE42D271D4DDCD80036969F /* RowLyricInfo.h */,
+				CCE42D281D4DDCD80036969F /* RowLyricInfo.m */,
+			);
+			path = musicp;
+			sourceTree = "<group>";
+		};
+		CCE42D2E1D4DDDDB0036969F /* MusicList */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D2F1D4DDDDB0036969F /* MusicInfo.h */,
+				CCE42D301D4DDDDB0036969F /* MusicInfo.m */,
+				CCE42D311D4DDDDB0036969F /* MusicListCell.h */,
+				CCE42D321D4DDDDB0036969F /* MusicListCell.m */,
+				CCE42D331D4DDDDB0036969F /* MusicListCell.xib */,
+				CCE42D341D4DDDDB0036969F /* MusicListViewController.h */,
+				CCE42D351D4DDDDB0036969F /* MusicListViewController.m */,
+			);
+			path = MusicList;
+			sourceTree = "<group>";
+		};
+		CCE42D3A1D4DDF5C0036969F /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D3B1D4DDF5C0036969F /* MBProgressHUD.h */,
+				CCE42D3C1D4DDF5C0036969F /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		CCE42D3E1D4DE1AF0036969F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCE42D3F1D4DE1AF0036969F /* arrowdown.png */,
+				CCE42D401D4DE1AF0036969F /* forward.png */,
+				CCE42D411D4DE1AF0036969F /* forward_h.png */,
+				CCE42D421D4DE1AF0036969F /* guoya.png */,
+				CCE42D431D4DE1AF0036969F /* loop-s.png */,
+				CCE42D441D4DE1AF0036969F /* loop.png */,
+				CCE42D451D4DE1AF0036969F /* music-s.png */,
+				CCE42D461D4DE1AF0036969F /* music.png */,
+				CCE42D471D4DE1AF0036969F /* musicalnote-s.png */,
+				CCE42D481D4DE1AF0036969F /* musicalnote.png */,
+				CCE42D491D4DE1AF0036969F /* pause.png */,
+				CCE42D4A1D4DE1AF0036969F /* pause_h.png */,
+				CCE42D4B1D4DE1AF0036969F /* place_holder.PNG */,
+				CCE42D4C1D4DE1AF0036969F /* play.png */,
+				CCE42D4D1D4DE1AF0036969F /* play_h.png */,
+				CCE42D4E1D4DE1AF0036969F /* rewind.png */,
+				CCE42D4F1D4DE1AF0036969F /* rewind_h.png */,
+				CCE42D501D4DE1AF0036969F /* shuffle-s.png */,
+				CCE42D511D4DE1AF0036969F /* shuffle.png */,
+				CCE42D521D4DE1AF0036969F /* singleloop-s.png */,
+				CCE42D531D4DE1AF0036969F /* singleloop.png */,
+				CCE42D541D4DE1AF0036969F /* songzhongji.jpg */,
+				CCE42D551D4DE1AF0036969F /* thumb@2x.png */,
+				CCE42D561D4DE1AF0036969F /* thumb@3x.png */,
+				CCE42D571D4DE1AF0036969F /* volume_max.png */,
+				CCE42D581D4DE1AF0036969F /* volume_mute.png */,
+				CCE42D591D4DE1AF0036969F /* volumehigh@2x.png */,
+				CCE42D5A1D4DE1AF0036969F /* volumehigh@3x.png */,
+				CCE42D5B1D4DE1AF0036969F /* volumelow@2x.png */,
+				CCE42D5C1D4DE1AF0036969F /* volumelow@3x.png */,
+				CCE42D5D1D4DE1AF0036969F /* volumn_slider_thumb@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D60167681D42445200CA54BA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				CC3F70821D438ECE00F0909F /* SWCreationViewController.h */,
 				CC3F70831D438ECE00F0909F /* SWCreationViewController.m */,
+				CCE42D7D1D4DE3260036969F /* Unknown.jpeg */,
 				CC4D9B991D4C9C1200FA303F /* SWDraftModel.h */,
 				CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */,
 				CC3F12141D4B5774006CF2D1 /* SWDraftViewController.h */,
@@ -2121,9 +2351,11 @@
 				CC5A3CEB1D40C5D200984F1F /* p31b0006.png in Resources */,
 				CC5A3D341D40C5D200984F1F /* p31b0079.png in Resources */,
 				CC5A3D781D40C5D200984F1F /* p31b0147.png in Resources */,
+				CCE42D661D4DE1AF0036969F /* musicalnote-s.png in Resources */,
 				CC704E071D3CF5CC00D5A269 /* ios-social-sdk-comment-quick.html in Resources */,
 				CC5A3D161D40C5D200984F1F /* p31b0049.png in Resources */,
 				CC5A3D6B1D40C5D200984F1F /* p31b0134.png in Resources */,
+				CCE42D6F1D4DE1AF0036969F /* shuffle-s.png in Resources */,
 				CC5A3D941D40C5D200984F1F /* p31b0175.png in Resources */,
 				CC5A3D701D40C5D200984F1F /* p31b0139.png in Resources */,
 				CC5A3D001D40C5D200984F1F /* p31b0027.png in Resources */,
@@ -2139,12 +2371,14 @@
 				CC5A675A1D35F71B008AE01A /* LaunchScreen.storyboard in Resources */,
 				CC5A3D731D40C5D200984F1F /* p31b0142.png in Resources */,
 				CC5A3D501D40C5D200984F1F /* p31b0107.png in Resources */,
+				CCE42D7B1D4DE1AF0036969F /* volumelow@3x.png in Resources */,
 				CC5A3CFE1D40C5D200984F1F /* p31b0025.png in Resources */,
 				CC5A3D661D40C5D200984F1F /* p31b0129.png in Resources */,
 				CC26E1FC1D3DDD21007FDAEE /* 4.png in Resources */,
 				CC5A3DA81D40C5D200984F1F /* p3_b_21.png in Resources */,
 				CCA3B8021D3A7C95003361CC /* SWusrTableViewCell.xib in Resources */,
 				CC5A3D8E1D40C5D200984F1F /* p31b0169.png in Resources */,
+				CCE42D761D4DE1AF0036969F /* volume_max.png in Resources */,
 				CC5A3D0E1D40C5D200984F1F /* p31b0041.png in Resources */,
 				CC5A3D8F1D40C5D200984F1F /* p31b0170.png in Resources */,
 				CCA3B7FE1D3A7C95003361CC /* SWpratTableViewCell.xib in Resources */,
@@ -2153,6 +2387,7 @@
 				CC5A3D911D40C5D200984F1F /* p31b0172.png in Resources */,
 				CC5A3D671D40C5D200984F1F /* p31b0130.png in Resources */,
 				CCA3B7EC1D3A7C95003361CC /* 已收藏.png in Resources */,
+				CCE42D7E1D4DE3260036969F /* Unknown.jpeg in Resources */,
 				CC5A3D581D40C5D200984F1F /* p31b0115.png in Resources */,
 				CC704E0D1D3CF5CC00D5A269 /* ios-social-sdk-share-quick.html in Resources */,
 				CCA3B7EB1D3A7C95003361CC /* 图片.png in Resources */,
@@ -2188,6 +2423,7 @@
 				CC5A3D421D40C5D200984F1F /* p31b0093.png in Resources */,
 				CC5A3D531D40C5D200984F1F /* p31b0110.png in Resources */,
 				CC704E031D3CF5CC00D5A269 /* README.txt in Resources */,
+				CCE42D621D4DE1AF0036969F /* loop-s.png in Resources */,
 				D6616D8C1D3A85190018794B /* practise_c_s_day.png in Resources */,
 				CC26E1FB1D3DDD21007FDAEE /* 3.png in Resources */,
 				CC5A3CFF1D40C5D200984F1F /* p31b0026.png in Resources */,
@@ -2213,15 +2449,18 @@
 				CC704DF91D3CF5CC00D5A269 /* UMSShareListController.xib in Resources */,
 				CC704E091D3CF5CC00D5A269 /* ios-social-sdk-login-detail.html in Resources */,
 				CC5A3D721D40C5D200984F1F /* p31b0141.png in Resources */,
+				CCE42D611D4DE1AF0036969F /* guoya.png in Resources */,
 				CC5A3D801D40C5D200984F1F /* p31b0155.png in Resources */,
 				CC5A3D571D40C5D200984F1F /* p31b0114.png in Resources */,
 				CC5A3CFC1D40C5D200984F1F /* p31b0023.png in Resources */,
+				CCE42D631D4DE1AF0036969F /* loop.png in Resources */,
 				CC5A3DA61D40C5D200984F1F /* p3_b_2.png in Resources */,
 				CC5A3DA71D40C5D200984F1F /* p3_b_20.png in Resources */,
 				CC5A3D991D40C5D200984F1F /* p31b0180.png in Resources */,
 				CC704E0E1D3CF5CC00D5A269 /* ios-social-sdk-socialbar.html in Resources */,
 				CC5A3CFD1D40C5D200984F1F /* p31b0024.png in Resources */,
 				CC6EF8E91D364018000A9B44 /* Book.png in Resources */,
+				CCE42D6E1D4DE1AF0036969F /* rewind_h.png in Resources */,
 				CCA3B7F41D3A7C95003361CC /* 双引号-左-01.png in Resources */,
 				CC7BA04F1D484EDC000833A6 /* 评论轮.png in Resources */,
 				CC5A3D881D40C5D200984F1F /* p31b0163.png in Resources */,
@@ -2231,6 +2470,7 @@
 				CC5A3D251D40C5D200984F1F /* p31b0064.png in Resources */,
 				CC5A3D7C1D40C5D200984F1F /* p31b0151.png in Resources */,
 				CC5A3D9E1D40C5D200984F1F /* p3_b_12.png in Resources */,
+				CCE42D2C1D4DDCD80036969F /* MusicPlayerViewController.xib in Resources */,
 				CC5A3D791D40C5D200984F1F /* p31b0148.png in Resources */,
 				CC5A3CEA1D40C5D200984F1F /* p31b0005.png in Resources */,
 				CCA3B7EE1D3A7C95003361CC /* 收藏.png in Resources */,
@@ -2239,8 +2479,10 @@
 				D6616D861D3A85190018794B /* 2.png in Resources */,
 				CC5A3DAB1D40C5D200984F1F /* p3_b_3.png in Resources */,
 				CC5A3D0D1D40C5D200984F1F /* p31b0040.png in Resources */,
+				CCE42D381D4DDDDB0036969F /* MusicListCell.xib in Resources */,
 				D6616D881D3A85190018794B /* practise_a_s_day.png in Resources */,
 				CC5A3D6D1D40C5D200984F1F /* p31b0136.png in Resources */,
+				CCE42D7A1D4DE1AF0036969F /* volumelow@2x.png in Resources */,
 				CC5A3D621D40C5D200984F1F /* p31b0125.png in Resources */,
 				CC704E051D3CF5CC00D5A269 /* iOS-social-releasenote.html in Resources */,
 				D6B5CEEC1D4766200065C581 /* 沙龙动态.png in Resources */,
@@ -2252,8 +2494,11 @@
 				CC6EF8F01D364018000A9B44 /* User_Selected.png in Resources */,
 				CC5A3CF91D40C5D200984F1F /* p31b0020.png in Resources */,
 				CC5A3D191D40C5D200984F1F /* p31b0052.png in Resources */,
+				CCE42D721D4DE1AF0036969F /* singleloop.png in Resources */,
 				CC6EF8EA1D364018000A9B44 /* Book_Selected.png in Resources */,
+				CCE42D711D4DE1AF0036969F /* singleloop-s.png in Resources */,
 				CC5A3D901D40C5D200984F1F /* p31b0171.png in Resources */,
+				CCE42D5E1D4DE1AF0036969F /* arrowdown.png in Resources */,
 				CC5A3D1F1D40C5D200984F1F /* p31b0058.png in Resources */,
 				CC5A3D681D40C5D200984F1F /* p31b0131.png in Resources */,
 				CC5A3D1C1D40C5D200984F1F /* p31b0055.png in Resources */,
@@ -2261,6 +2506,7 @@
 				CC5A3D031D40C5D200984F1F /* p31b0030.png in Resources */,
 				CC5A3D101D40C5D200984F1F /* p31b0043.png in Resources */,
 				CCA3B7EA1D3A7C95003361CC /* 分享.png in Resources */,
+				CCE42D5F1D4DE1AF0036969F /* forward.png in Resources */,
 				CC5A3D961D40C5D200984F1F /* p31b0177.png in Resources */,
 				CCA3B7F11D3A7C95003361CC /* ii.jpg in Resources */,
 				CC5A3DA01D40C5D200984F1F /* p3_b_14.png in Resources */,
@@ -2288,7 +2534,9 @@
 				CC5A3D831D40C5D200984F1F /* p31b0158.png in Resources */,
 				CC5A3D451D40C5D200984F1F /* p31b0096.png in Resources */,
 				CC11C92D1D459F660075FB5F /* MovieTableViewCell.xib in Resources */,
+				CCE42D791D4DE1AF0036969F /* volumehigh@3x.png in Resources */,
 				D6B5CEEF1D4766200065C581 /* 官方通知.png in Resources */,
+				CCE42D6C1D4DE1AF0036969F /* play_h.png in Resources */,
 				CC5A3D761D40C5D200984F1F /* p31b0145.png in Resources */,
 				CCA3B7F51D3A7C95003361CC /* 呵呵.png in Resources */,
 				CC6EF8EB1D364018000A9B44 /* Fireworks.png in Resources */,
@@ -2307,6 +2555,7 @@
 				CC5A3D301D40C5D200984F1F /* p31b0075.png in Resources */,
 				CC5A3CF41D40C5D200984F1F /* p31b0015.png in Resources */,
 				CC5A3D3A1D40C5D200984F1F /* p31b0085.png in Resources */,
+				CCE42D781D4DE1AF0036969F /* volumehigh@2x.png in Resources */,
 				CC32933F1D45BC470035C32F /* SWViewController.xib in Resources */,
 				CC5A3CE81D40C5D200984F1F /* p31b0003.png in Resources */,
 				CC5A3CF61D40C5D200984F1F /* p31b0017.png in Resources */,
@@ -2319,16 +2568,19 @@
 				CC5A3D211D40C5D200984F1F /* p31b0060.png in Resources */,
 				CC5A3D0B1D40C5D200984F1F /* p31b0038.png in Resources */,
 				CC5A3D411D40C5D200984F1F /* p31b0092.png in Resources */,
+				CCE42D6D1D4DE1AF0036969F /* rewind.png in Resources */,
 				CC704DFD1D3CF5CC00D5A269 /* WeiboSDK.bundle in Resources */,
 				CC704DF01D3CF5CC00D5A269 /* UMSocialLocalizable.strings in Resources */,
 				CCA3B7F01D3A7C95003361CC /* icon.jpg in Resources */,
 				CC5A3D851D40C5D200984F1F /* p31b0160.png in Resources */,
+				CCE42D601D4DE1AF0036969F /* forward_h.png in Resources */,
 				CC5A3D981D40C5D200984F1F /* p31b0179.png in Resources */,
 				CC5A3D6C1D40C5D200984F1F /* p31b0135.png in Resources */,
 				CC5A3DAA1D40C5D200984F1F /* p3_b_23.png in Resources */,
 				CC26E1D21D3DD6C7007FDAEE /* ReadTableViewCell.xib in Resources */,
 				CC5A3DA91D40C5D200984F1F /* p3_b_22.png in Resources */,
 				CC5A3D181D40C5D200984F1F /* p31b0051.png in Resources */,
+				CCE42D701D4DE1AF0036969F /* shuffle.png in Resources */,
 				CC26E1FA1D3DDD21007FDAEE /* 2.png in Resources */,
 				CC5A3D4E1D40C5D200984F1F /* p31b0105.png in Resources */,
 				CC5A3D431D40C5D200984F1F /* p31b0094.png in Resources */,
@@ -2339,13 +2591,17 @@
 				CC5A3D3C1D40C5D200984F1F /* p31b0087.png in Resources */,
 				CC6EF8EC1D364018000A9B44 /* Fireworks_Selected.png in Resources */,
 				CC5A3D611D40C5D200984F1F /* p31b0124.png in Resources */,
+				CCE42D7C1D4DE1AF0036969F /* volumn_slider_thumb@2x.png in Resources */,
 				CC11C9271D459F380075FB5F /* ElseTableViewCell.xib in Resources */,
 				CC5A3DAF1D40C5D200984F1F /* p3_b_7.png in Resources */,
 				CC5A3D8A1D40C5D200984F1F /* p31b0165.png in Resources */,
+				CCE42D641D4DE1AF0036969F /* music-s.png in Resources */,
 				CC5A3D9D1D40C5D200984F1F /* p3_b_11.png in Resources */,
 				CC5A3D971D40C5D200984F1F /* p31b0178.png in Resources */,
 				CC5A3D151D40C5D200984F1F /* p31b0048.png in Resources */,
 				D67172331D465D65003857D4 /* Release.png in Resources */,
+				CCE42D771D4DE1AF0036969F /* volume_mute.png in Resources */,
+				CCE42D651D4DE1AF0036969F /* music.png in Resources */,
 				CC5A3D131D40C5D200984F1F /* p31b0046.png in Resources */,
 				CC5A3D7A1D40C5D200984F1F /* p31b0149.png in Resources */,
 				CC704DF21D3CF5CC00D5A269 /* UMSCommentDetailController.xib in Resources */,
@@ -2359,8 +2615,11 @@
 				CC3293381D45A3360035C32F /* SWChatTableViewCell.xib in Resources */,
 				D67172381D466076003857D4 /* Release_Selected.png in Resources */,
 				CCA3B7EF1D3A7C95003361CC /* 返回.png in Resources */,
+				CCE42D6A1D4DE1AF0036969F /* place_holder.PNG in Resources */,
 				CC5A3DAD1D40C5D200984F1F /* p3_b_5.png in Resources */,
+				CCE42D751D4DE1AF0036969F /* thumb@3x.png in Resources */,
 				CC5A67571D35F71B008AE01A /* Assets.xcassets in Resources */,
+				CCE42D671D4DE1AF0036969F /* musicalnote.png in Resources */,
 				CC5A3CFA1D40C5D200984F1F /* p31b0021.png in Resources */,
 				CC5A67551D35F71B008AE01A /* Main.storyboard in Resources */,
 				CC5A3D5A1D40C5D200984F1F /* p31b0117.png in Resources */,
@@ -2377,6 +2636,7 @@
 				CC5A3CF51D40C5D200984F1F /* p31b0016.png in Resources */,
 				CC592B6A1D3F16CB002CD37D /* 444.png in Resources */,
 				CC5A3CE61D40C5D200984F1F /* p31b0001.png in Resources */,
+				CCE42D681D4DE1AF0036969F /* pause.png in Resources */,
 				CC7BA0761D48AB39000833A6 /* bb.jpg in Resources */,
 				CC5A3CF71D40C5D200984F1F /* p31b0018.png in Resources */,
 				CC5A3D0C1D40C5D200984F1F /* p31b0039.png in Resources */,
@@ -2389,10 +2649,13 @@
 				CC5A3D9F1D40C5D200984F1F /* p3_b_13.png in Resources */,
 				CC5A3DAE1D40C5D200984F1F /* p3_b_6.png in Resources */,
 				CC5A3CE91D40C5D200984F1F /* p31b0004.png in Resources */,
+				CCE42D691D4DE1AF0036969F /* pause_h.png in Resources */,
 				CC5A3D4B1D40C5D200984F1F /* p31b0102.png in Resources */,
+				CCE42D731D4DE1AF0036969F /* songzhongji.jpg in Resources */,
 				CC5A3D2A1D40C5D200984F1F /* p31b0069.png in Resources */,
 				CC5A3CF11D40C5D200984F1F /* p31b0012.png in Resources */,
 				CC5A3DA51D40C5D200984F1F /* p3_b_19.png in Resources */,
+				CCE42D741D4DE1AF0036969F /* thumb@2x.png in Resources */,
 				CC704DF31D3CF5CC00D5A269 /* UMSCommentInputController.xib in Resources */,
 				D6616D871D3A85190018794B /* practise_a_n_day.png in Resources */,
 				CC5A3D021D40C5D200984F1F /* p31b0029.png in Resources */,
@@ -2400,6 +2663,7 @@
 				CC5A3D3F1D40C5D200984F1F /* p31b0090.png in Resources */,
 				CC704DF61D3CF5CC00D5A269 /* UMShareEditViewControlleriPad.xib in Resources */,
 				CC5A3D471D40C5D200984F1F /* p31b0098.png in Resources */,
+				CCE42D6B1D4DE1AF0036969F /* play.png in Resources */,
 				CC5A3D751D40C5D200984F1F /* p31b0144.png in Resources */,
 				CC5A3D4C1D40C5D200984F1F /* p31b0103.png in Resources */,
 				CC5A3D491D40C5D200984F1F /* p31b0100.png in Resources */,
@@ -2473,6 +2737,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC11C9261D459F380075FB5F /* ElseTableViewCell.m in Sources */,
+				CCE42D171D4DDB100036969F /* MusicInfosHandle.m in Sources */,
 				CC5A677E1D35F758008AE01A /* BaseSwitchViewController.m in Sources */,
 				CC11C92C1D459F660075FB5F /* MovieTableViewCell.m in Sources */,
 				CC3F70891D438ECE00F0909F /* SWMessViewController.m in Sources */,
@@ -2481,14 +2746,17 @@
 				D601676F1D4249CA00CA54BA /* SWAnnotation.m in Sources */,
 				CC6EF8C31D3622B6000A9B44 /* BaseOrganCollectionViewCell.m in Sources */,
 				CC6EF8C51D3622B6000A9B44 /* SWTabBar.m in Sources */,
+				CCE42D2D1D4DDCD80036969F /* RowLyricInfo.m in Sources */,
 				CC7257A31D4225B600500D16 /* SWAboutMeViewController.m in Sources */,
 				CC6EF8F41D365AE0000A9B44 /* BaseRequest.m in Sources */,
 				CC26E1F11D3DDA82007FDAEE /* TwoViewController.m in Sources */,
+				CCE42D2A1D4DDCD80036969F /* LyricCell.m in Sources */,
 				CCA3B7FF1D3A7C95003361CC /* SWUserDetailViewController.m in Sources */,
 				CCB33FB11D37B5F600AEF415 /* SWCertificationView.m in Sources */,
 				CC6EF8DF1D36377C000A9B44 /* SWNavigationViewController.m in Sources */,
 				D6F554A11D3DD62A00CB1B3D /* SWLayoutTextView.m in Sources */,
 				D601676C1D4244A700CA54BA /* SWBaiduAPIViewController.m in Sources */,
+				CCE42D1A1D4DDB100036969F /* NetWorkRequestManager.m in Sources */,
 				CC26E1EE1D3DDA82007FDAEE /* OneScrollViewController.m in Sources */,
 				CC26E1ED1D3DDA82007FDAEE /* FourViewController.m in Sources */,
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
@@ -2509,6 +2777,7 @@
 				CC9A95D91D41CF0E00EA23BB /* MusicViewController.m in Sources */,
 				D6616D751D3A844F0018794B /* SWTableViewCell.m in Sources */,
 				CC11C91D1D459EF60075FB5F /* MoodTableViewCell.m in Sources */,
+				CCE42D2B1D4DDCD80036969F /* MusicPlayerViewController.m in Sources */,
 				CC9BFC401D40C3B500F40EF6 /* SWMark.m in Sources */,
 				CCB064891D48A6BA00FE9063 /* DataBaseHandle.m in Sources */,
 				CCD8362A1D460479004CC453 /* SWMessage.m in Sources */,
@@ -2521,6 +2790,7 @@
 				CC26E1F01D3DDA82007FDAEE /* ThreeViewController.m in Sources */,
 				D6B5CEE51D4765BC0065C581 /* SWNotLoggedViewController.m in Sources */,
 				CC7E0CF21D3D080700313F32 /* SWTableViewController.m in Sources */,
+				CCE42D151D4DDB100036969F /* AVPlayerManager.m in Sources */,
 				CC9BFC3F1D40C3B500F40EF6 /* SWLcAvUSer.m in Sources */,
 				CC9CF4261D470C6400E58069 /* SWRSPViewController.m in Sources */,
 				CCA3B7FB1D3A7C95003361CC /* SWJoinTableViewCell.m in Sources */,
@@ -2538,13 +2808,17 @@
 				CC6EF8B81D361C25000A9B44 /* RootViewController.m in Sources */,
 				CCAC397D1D3BA2D900CCE229 /* SWUserInfoCell.m in Sources */,
 				D6616D691D3A82F70018794B /* SWAddRule.m in Sources */,
+				CCE42D371D4DDDDB0036969F /* MusicListCell.m in Sources */,
 				CC5A677C1D35F758008AE01A /* BaseOrganViewController.m in Sources */,
 				CCA3B8011D3A7C95003361CC /* SWusrTableViewCell.m in Sources */,
 				CCF61FC91D38C7F60071EC51 /* MusicDetailModel.m in Sources */,
+				CCE42D361D4DDDDB0036969F /* MusicInfo.m in Sources */,
 				CC3F70881D438ECE00F0909F /* SWCreationViewController.m in Sources */,
 				CCA3B7F91D3A7C95003361CC /* SWFridenSharOnTableViewCell.m in Sources */,
 				CC3293321D459E990035C32F /* SWcommentsViewController.m in Sources */,
+				CCE42D391D4DDDDB0036969F /* MusicListViewController.m in Sources */,
 				CCA3B7E51D3A7C95003361CC /* SWFocusonViewController.m in Sources */,
+				CCE42D3D1D4DDF5C0036969F /* MBProgressHUD.m in Sources */,
 				CCAC398A1D3BA65300CCE229 /* BaseManager.m in Sources */,
 				CCB33FA61D37B4CF00AEF415 /* BaseView.m in Sources */,
 				CC7E0CEF1D3D07F500313F32 /* TKAddressBook.m in Sources */,
@@ -2555,7 +2829,9 @@
 				CC5A677D1D35F758008AE01A /* BaseShowViewController.m in Sources */,
 				CC3293371D45A3360035C32F /* SWChatTableViewCell.m in Sources */,
 				CC592B711D3F1701002CD37D /* MSGuideViewCell.m in Sources */,
+				CCE42D161D4DDB100036969F /* LyricInfosHandle.m in Sources */,
 				CCA3B7E61D3A7C95003361CC /* SWshowViewController.m in Sources */,
+				CCE42D291D4DDCD80036969F /* NSString+timeFormatter.m in Sources */,
 				CC5A674C1D35F71B008AE01A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
