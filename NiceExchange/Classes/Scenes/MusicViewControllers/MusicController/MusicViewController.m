@@ -177,7 +177,7 @@
             
             NSMutableArray *collectionsArray = [tempDIC objectForKey:@"collections"];
             
-            if (i==4 || i==5 || i==7|| i==8) {
+            if (i==list[3] || i==list[4] || i==list[6]|| i==list[7]) {
                 
                [self.titleArray addObject:[tempDIC objectForKey:@"title"]];
             }

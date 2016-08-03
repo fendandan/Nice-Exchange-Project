@@ -112,7 +112,7 @@
 
 - (void)requestData {
     // 查询活动
-    [GiFHUD setGifWithImageName:@"pika.gif"];
+    //[GiFHUD setGifWithImageName:@"pika.gif"];
     [GiFHUD show];
     AVQuery *aQ = [SWActivityList query];
     [aQ addDescendingOrder:@"createdAt"]; // 按时间 新到老

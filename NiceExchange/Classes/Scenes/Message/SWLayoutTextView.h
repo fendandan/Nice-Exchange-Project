@@ -16,6 +16,6 @@
 @interface SWLayoutTextView : BaseView
 @property (strong, nonatomic) UITextView *textView;
 @property (copy, nonatomic) NSString *placeholder;
-@property (weak ,nonatomic) id <SwLayoutTextViewDelegate> delegate;
+@property (weak ,nonatomic) id <SwLayoutTextViewDelegate> delegates;
 
 @end

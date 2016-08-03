@@ -27,7 +27,8 @@ UITextFieldDelegate,
 SwLayoutTextViewDelegate,
 UIImagePickerControllerDelegate,
 UINavigationControllerDelegate,
-UITextViewDelegate
+UITextViewDelegate,
+UIScrollViewDelegate
 >
 
 @property(nonatomic,strong)UIImageView *imageview;//箭头
@@ -38,10 +39,10 @@ UITextViewDelegate
 @property(nonatomic,strong) UIImagePickerController *imagepicker;//系统相册
 @property (strong ,nonatomic) UIImageView *photoimageView;//图像 imageView
 @property (strong, nonatomic) UIView *Viewaddimage;
-@property (strong, nonatomic) UIView *tageView;
+@property (strong, nonatomic) UIView *tageView;//弹窗标签
 @property (strong, nonatomic) UIButton *addtageButton;// 标签 button
-@property (nonatomic,strong)UIWindow *window;
-
+//@property (nonatomic,strong)UIWindow *window;
+@property (strong,nonatomic) UIView *popupview;//视图弹窗
 @property(nonatomic,strong)NSString *dbPath;
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
@@ -53,7 +54,6 @@ UITextViewDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
     [self releaseAction];
      [self addmodule];//导航栏
     //[self.view addSubview:self.backgrandHeaderView];
@@ -67,6 +67,7 @@ UITextViewDelegate
     //将触摸事件添加到当前view
     [self.scrollview addGestureRecognizer:tapGestureRecognizer];
     
+    
     [[DataBaseHandle shareDataBaseHandle] openDB];
     self.dataArray = [NSMutableArray array];
     [self.dataArray addObjectsFromArray:[[DataBaseHandle shareDataBaseHandle] searchAll]];
@@ -77,9 +78,21 @@ UITextViewDelegate
 
 
 -(void)keyboardHide:(UITapGestureRecognizer*)tap{
+    
     [self.titleTF resignFirstResponder];
     [self.textView.textView resignFirstResponder];
     [self.addrule.textfield resignFirstResponder];
+    
+    [tap locationOfTouch:0 inView:self.popupview];
+   // SWLog(@"-------%@",NSStringFromCGPoint([tap locationOfTouch:0 inView:self.popupview]));
+    CGPoint xorigin = [tap locationOfTouch:0 inView:self.scrollview];
+    
+    if (xorigin.x < self.tageView.frame.origin.x + self.tageView.frame.size.width && xorigin.y <self.tageView.frame.origin.y+ self.tageView.frame.size.height&& xorigin.x > self.tageView.frame.origin.x  && xorigin.y >self.tageView.frame.origin.y) {
+        
+    }else{
+    
+   [self.tageView removeFromSuperview];
+    }
 }
 //导航栏
 -(void)addmodule
@@ -143,24 +156,18 @@ UITextViewDelegate
     [addlabBtn setBackgroundColor:[UIColor blackColor]];
     [addlabBtn addTarget:self action:@selector(addlabBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     addlabBtn.titleLabel.textAlignment = UITextAlignmentCenter;
-    
-    
- 
-    
     [self.scrollview addSubview:addlabBtn];
       self.addtageButton = addlabBtn;
     //活动标题
     self.titleTF.delegate = self;
     self.titleTF = [[UITextField alloc]initWithFrame:CGRectMake(self.view.bounds.size.width -(self.view.bounds.size.width - 20) ,CGRectGetMaxY(addlabBtn.frame)+20,self.view.bounds.size.width -40, 60)];
-    self.titleTF.backgroundColor = [UIColor cyanColor];
+    self.titleTF.backgroundColor = [UIColor whiteColor];
     self.titleTF.layer.masksToBounds = YES;
     self.titleTF.layer.cornerRadius = self.titleTF.bounds.size.height/4;
     [self.titleTF setFont:[UIFont fontWithName:@"" size:20]];
     self.titleTF.placeholder = @"来个响亮的名字";
-    
-
-    
     [self.scrollview addSubview:self.titleTF];
+    self.titleTF.alpha = 0.8;
     //
     self.Viewaddimage = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.titleTF.frame) , CGRectGetMaxY(self.titleTF.frame)+10,self.titleTF.frame.size.width, 70)];
     self.Viewaddimage.backgroundColor= [UIColor whiteColor];
@@ -175,14 +182,13 @@ UITextViewDelegate
 
     
     [self.scrollview addSubview:self.textView];
-    self.textView.delegate = self;
+    self.textView.delegates = self;
     //self.textview.frame = CGRectMake(CGRectGetMinX(self.titleTF.frame), CGRectGetMaxY(self.titleTF.frame)+10, self.titleTF.frame.size.width, self.textview.contentSize.height);
     //添加规则
     self.addrule = [[SWAddRule alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.frame) +10,self.textView.frame.size.width,160 )];
     self.addrule.backgroundColor = [UIColor whiteColor];
     self.addrule.layer.masksToBounds = YES;
     self.addrule.layer.cornerRadius = self.addrule.frame.size.height/6;
-
     self.addrule.textfield.delegate = self;
     [self.scrollview addSubview:self.addrule];
     self.addrule.alpha = 0.8;
@@ -191,12 +197,8 @@ UITextViewDelegate
 
 //-(void)changeLayoutView
 //{
-//    self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
-//    if (self.addrule.frame.origin.y + self.addrule.frame.size.height >= kScreenHeight) {
-//        self.scrollview.contentSize = CGSizeMake(kScreenWidth, self.addrule.frame.origin.y +self.addrule.frame.size.height) ;
-//        self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - kScreenHeight);
-//    }
-//}
+//    self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-
+//改变原来frame 的位置大小
 -(void)changeLayoutView
 {
   self.addrule.frame = CGRectMake(CGRectGetMinX(self.textView.textView.frame)+CGRectGetMinX(self.textView.frame),CGRectGetMaxY(self.textView.textView.frame)+CGRectGetMaxY(self.textView.frame)+10-self.textView.frame.size.height,self.textView.frame.size.width,160 );
@@ -205,9 +207,54 @@ UITextViewDelegate
                self.scrollview.contentOffset = CGPointMake(0,self.scrollview.contentSize.height - self.scrollview.frame.size.height);
     }
 }
+
+
+//字体颜色
+//-(void)textViewDidBeginEditing:(UITextView *)textView
+//{
+//    if ([textView.text  isEqual: self.textView.placeholder]) {
+//        self.textView.textView.text = @"";
+//    }
+//    
+//    self.textView.textView.textColor = [UIColor purpleColor];
+//}
+//改变textview的大小
+-(void)textViewDidChange:(UITextView *)textView
+{
+    CGRect frame = textView.frame;
+    CGSize constraintSize = CGSizeMake(frame.size.width, MAXFLOAT);
+    CGSize size = [textView sizeThatFits:constraintSize];
+    if (size.height < 100) {
+        size.height = 100;
+    }else
+    {
+        if (size.height > 300 ) {
+            size.height = 300;
+            textView.scrollEnabled = YES;// 允许滚动
+        }
+        else
+        {
+            textView.scrollEnabled = NO;// 不允许滚动
+        }
+    }
+    
+   self.textView.textView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, size.height);
+//    if (_delegate) {
+//        [_delegate changeLayoutView];
+//    }
+    //调用代理方法
+    [self changeLayoutView];
+}
 //textview代理方法
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+    
+    if ([textView.text  isEqual: self.textView.placeholder]) {
+        self.textView.textView.text = @"";
+    }
+    
+    self.textView.textView.textColor = [UIColor purpleColor];
+    
     //滑动效果（动画）
     NSTimeInterval animationDuration = 0.30f;
     [UIView beginAnimations:@ "ResizeForKeyboard"  context:nil];
@@ -215,6 +262,8 @@ UITextViewDelegate
     
     //将视图的Y坐标向上移动，以使下面腾出地方用于软键盘的显示
     self.scrollview.frame = CGRectMake(0, - 252.0f, kScreenWidth, kScreenHeight); //64-216
+    
+    
     
     [UIView commitAnimations];
 
@@ -263,6 +312,8 @@ UITextViewDelegate
 {
     if (textField == self.titleTF) {
         if (self.titleTF.text.length > 20 )
+            
+            
             return NO;
     }
     return YES;
@@ -428,17 +479,8 @@ UITextViewDelegate
     
     //关闭数据库
     //    [dataBase closeDb];
-    
-    
-
     [self addDraftViewWith:@"你的草稿存储成功"];
-    
-    
-    
-    
-    
-    
- 
+
 }
 
 
@@ -475,9 +517,6 @@ UITextViewDelegate
     [deleteBtn addTarget:self action:@selector(deleteBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
     
     [self.draftView addSubview:deleteBtn];
-    
-    
-    
 }
 
 
@@ -504,16 +543,6 @@ UITextViewDelegate
     [self presentViewController:swdVC animated:YES completion:nil];
     
 }
-
-
-
-
-
-
-
-
-
-
 
 
 //存草稿
@@ -548,10 +577,6 @@ UITextViewDelegate
     
 }
 
-
-
-
-
 //button
 -(void)uploadAction:(UIButton *)sender{
    // NSLog(@"上传图片");
@@ -582,7 +607,7 @@ UITextViewDelegate
     }];
     UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         SWLog(@"返回");
-        [self dismissViewControllerAnimated:YES completion:nil];
+       // [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [self presentViewController:alert animated:YES completion:nil];
     //[alert showInView:self.view];
@@ -622,9 +647,10 @@ UITextViewDelegate
 //添加标签
 -(void)addTags
 {
-    //
-    [self.view addSubview:self.tageView];
-    
+//    self.popupview = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    [self.scrollview addSubview:self.popupview];
+//    [self.popupview addSubview:self.tageView];
+    [self.scrollview addSubview:self.tageView];
 }
 -(UIView *)tageView
 {
@@ -633,7 +659,7 @@ UITextViewDelegate
         _tageView.backgroundColor = [UIColor whiteColor];
         _tageView.layer.masksToBounds = YES;
         _tageView.layer.cornerRadius = _tageView.frame.size.height/4;
-        
+       // _tageView.userInteractionEnabled = NO;
         NSArray *array = @[@[@"娱乐",@"文艺",@"乐活",@"旅行"],@[@"吃喝",@"时尚",@"美容",@"情感"]];
         for (int j = 0; j < array.count; j++) {
             NSArray *arr = array[j];
@@ -649,6 +675,7 @@ UITextViewDelegate
             }
             
         }
+        
     }
     
     return _tageView;
@@ -656,10 +683,9 @@ UITextViewDelegate
 //tagsAssignment赋值
 -(void)tagsAssignment:(UIButton *)sender
 {
-    
     self.addtageButton.titleLabel.text = sender.titleLabel.text;
-    
-    [self.tageView removeFromSuperview];
+  // [self.popupview removeFromSuperview];
+  [self.tageView removeFromSuperview];
     
 //    [self dismissViewControllerAnimated:YES completion:^{
 //
@@ -672,12 +698,14 @@ UITextViewDelegate
      [self.titleTF resignFirstResponder];
     [self.textView resignFirstResponder];
     [self.textView.textView resignFirstResponder];
+    
     return YES;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    [self.scrollview resignFirstResponder];
+    //[self.scrollview resignFirstResponder];
+    [self.tageView removeFromSuperview];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

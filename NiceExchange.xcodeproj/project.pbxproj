@@ -2370,7 +2370,6 @@
 				TargetAttributes = {
 					CC5A67461D35F71B008AE01A = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 65A9B7AQ22;
 					};
 				};
 			};
@@ -3042,7 +3041,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.icoc.msdyw2.NiceExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -3069,7 +3067,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.icoc.msdyw2.NiceExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "f490d938-3c36-47e7-bb24-6cb3a038db9e";
 			};
 			name = Release;
 		};

@@ -263,7 +263,7 @@
 }
 
 -(void)getGIF {
-    [GiFHUD setGifWithImageName:@"pika.gif"];
+   // [GiFHUD setGifWithImageName:@"pika.gif"];
     
     [GiFHUD show];
 

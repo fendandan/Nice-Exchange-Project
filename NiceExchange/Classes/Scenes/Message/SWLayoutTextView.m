@@ -42,7 +42,7 @@ UITextViewDelegate
         
         self.textView.backgroundColor = [UIColor cyanColor];
         UITextView *textView = [[UITextView alloc] init];
-        //textView.delegate   = self;
+        textView.delegate   = self;
         textView.textColor   = [UIColor grayColor];
         textView.backgroundColor = [UIColor whiteColor];
         textView.font = textViewFont;
@@ -69,20 +69,21 @@ UITextViewDelegate
         self.textView.layer.cornerRadius = self.textView.bounds.size.height/6;
         self.textView.alpha = 0.8;
     }
-//字体颜色
--(void)textViewDidBeginEditing:(UITextView *)textView
-{
-    if ([textView.text  isEqual: self.placeholder]) {
-        self.textView.text = @"";
-    }
-    
-    self.textView.textColor = [UIColor purpleColor];
-    }
-
+////字体颜色
+//-(void)textViewDidBeginEditing:(UITextView *)textView
+//{
+//    if ([textView.text  isEqual: self.placeholder]) {
+//        self.textView.text = @"";
+//    }
+//
+//    self.textView.textColor = [UIColor purpleColor];
+//    }
+//
 - (void)setPlaceholder:(NSString *)placeholder{
     _placeholder = placeholder;
     _textView.text = _placeholder;
 }
+/*
 -(void)textViewDidChange:(UITextView *)textView
 {
     CGRect frame = textView.frame;
@@ -103,11 +104,11 @@ UITextViewDelegate
     }
     
     textView.frame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, size.height);
-    if (_delegate) {
-        [_delegate changeLayoutView];
+    if (_delegates) {
+        [_delegates changeLayoutView];
     }
     
     
 }
-
+*/
 @end
