@@ -57,6 +57,7 @@
 		CC455C4A1D4F85AC0019F14C /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = CC455C491D4F85AC0019F14C /* delete.png */; };
 		CC4D9B9B1D4C9C1200FA303F /* SWDraftModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */; };
 		CC53128C1D4EFF780053C126 /* bbBB.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC53128B1D4EFF780053C126 /* bbBB.jpg */; };
+		CC5312931D4F97150053C126 /* SWOMDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5312921D4F97150053C126 /* SWOMDetailViewController.m */; };
 		CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC56436A1D44E596005CEEB4 /* SWComment.m */; };
 		CC592B681D3F16CB002CD37D /* 222.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B651D3F16CB002CD37D /* 222.png */; };
 		CC592B691D3F16CB002CD37D /* 333.png in Resources */ = {isa = PBXBuildFile; fileRef = CC592B661D3F16CB002CD37D /* 333.png */; };
@@ -553,6 +554,8 @@
 		CC4D9B991D4C9C1200FA303F /* SWDraftModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWDraftModel.h; sourceTree = "<group>"; };
 		CC4D9B9A1D4C9C1200FA303F /* SWDraftModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWDraftModel.m; sourceTree = "<group>"; };
 		CC53128B1D4EFF780053C126 /* bbBB.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bbBB.jpg; sourceTree = "<group>"; };
+		CC5312911D4F97150053C126 /* SWOMDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWOMDetailViewController.h; sourceTree = "<group>"; };
+		CC5312921D4F97150053C126 /* SWOMDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWOMDetailViewController.m; sourceTree = "<group>"; };
 		CC5643691D44E596005CEEB4 /* SWComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWComment.h; sourceTree = "<group>"; };
 		CC56436A1D44E596005CEEB4 /* SWComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWComment.m; sourceTree = "<group>"; };
 		CC592B651D3F16CB002CD37D /* 222.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 222.png; sourceTree = "<group>"; };
@@ -1277,6 +1280,15 @@
 			path = icon;
 			sourceTree = "<group>";
 		};
+		CC53128D1D4F93AB0053C126 /* MessageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CC5312911D4F97150053C126 /* SWOMDetailViewController.h */,
+				CC5312921D4F97150053C126 /* SWOMDetailViewController.m */,
+			);
+			name = MessageDetail;
+			sourceTree = "<group>";
+		};
 		CC592B641D3F16CB002CD37D /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -1723,6 +1735,7 @@
 		CC6EF8C91D362F01000A9B44 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CC53128D1D4F93AB0053C126 /* MessageDetail */,
 				CC6EF8FF1D366409000A9B44 /* MyViewController.h */,
 				CC6EF9001D366409000A9B44 /* MyViewController.m */,
 				CC9CF4231D470C0400E58069 /* ReSetPassword */,
@@ -2832,6 +2845,7 @@
 				CCA3B7E31D3A7C95003361CC /* SWcommentViewController.m in Sources */,
 				CC56436B1D44E596005CEEB4 /* SWComment.m in Sources */,
 				D6616D7B1D3A84DA0018794B /* SWNotfcTableViewCell.m in Sources */,
+				CC5312931D4F97150053C126 /* SWOMDetailViewController.m in Sources */,
 				CC32933E1D45BC470035C32F /* SWViewController.m in Sources */,
 				CCB33FC31D37CD6900AEF415 /* SWLoginViewController.m in Sources */,
 				CC9A95D61D41CE0F00EA23BB /* MusicDetailViewController.m in Sources */,

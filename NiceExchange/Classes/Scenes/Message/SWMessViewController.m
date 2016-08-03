@@ -12,6 +12,8 @@
 
 #import "SWNotLoggedViewController.h"
 #define TableviewCell @"TableviewCell"
+
+#import "SWOMDetailViewController.h"
 @interface SWMessViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
@@ -82,6 +84,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    if (indexPath.row == 5) {
+        SWOMDetailViewController *omVC = [[SWOMDetailViewController alloc] init];
+        
+        [self.navigationController pushViewController:omVC animated:YES];
+    }
     NSLog(@"点我,我就走了");
     
 }

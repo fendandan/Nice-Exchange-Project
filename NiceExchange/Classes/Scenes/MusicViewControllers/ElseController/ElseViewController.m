@@ -173,9 +173,8 @@
 
 
 //关注的点击事件
-- (void)elseTableViewCellAttentionBtnClickend:(ElseTableViewCell *)cell
+- (void)readTableViewPlayBtnClickend:(ElseTableViewCell *)cell
 {
-    
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     SWLog(@"indexPath %@",indexPath);
     // suppose we have a user we want to follow
@@ -185,15 +184,20 @@
         
         UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
         
+        
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
+        
+        
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             
-            // -------------------------------------------------------------
+// -------------------------------------------------------------
+//            [GiFHUD setGifWithImageName:@"pika.gif"];
+//            [GiFHUD show];
             [LCManager lcToCancelFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
                 cell.attentionBtn.selected = NO;
-                [self.rootVC.followedArray removeObject:activity.createBy];
-                [self.tableView reloadData];
+                [self.rootVC.followArray removeObject:activity.createBy];
+                [self dudue];
                 LCManager.shareManagerB = NO; // 置为可调用状态
             }];
             
@@ -207,26 +211,48 @@
         
     }else{
         
-        // -------------------------------------------------------------
+// -------------------------------------------------------------
+//        [GiFHUD setGifWithImageName:@"pika.gif"];
+//        [GiFHUD show];
         [LCManager lcToFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
             
             cell.attentionBtn.selected = YES;
-            [self.rootVC.followedArray addObject:activity.createBy];
-            [self.tableView reloadData];
+            [self.rootVC.followArray addObject:activity.createBy];
+            [self dudue];
             LCManager.shareManagerB = NO; // 置为可调用状态
             
         }];
     }
 }
 
+-(void)dudue {
+    
+    if (self.dataArray.count > 0) {
+        [self.dataArray removeAllObjects];
+        [self.tableView reloadData];
+        [self requestData];
+    }
+    
+}
 
 //用户名的点击事件
 - (void)elseTableViewCellUserNameBtnClikend:(ElseTableViewCell *)cell
 {
     
-    SWUserDetailViewController *swVC = [SWUserDetailViewController new];
+    cell.titleImageView.userInteractionEnabled = YES;
+    SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
     
-    [self.navigationController pushViewController:swVC animated:YES];
+    //根据 cell 获得 indexPatch
+    NSIndexPath *indexPatch = [self.tableView indexPathForCell:cell];
+    
+    SWActivityList *act = self.dataArray[indexPatch.row];
+    
+    usweVC.userString = act.createBy.objectId;
+    
+    
+    NSLog(@"usweVC%@",usweVC.userString);
+    
+    [self.navigationController pushViewController:usweVC animated:YES];
     
 }
 
@@ -235,9 +261,20 @@
 //用户头像点击事件
 - (void)elsetableViewCellUserimageViewClikend:(ElseTableViewCell *)cell
 {
-    SWUserDetailViewController *swVC = [SWUserDetailViewController new];
+    cell.titleImageView.userInteractionEnabled = YES;
+    SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
     
-    [self.navigationController pushViewController:swVC animated:YES];
+    //根据 cell 获得 indexPatch
+    NSIndexPath *indexPatch = [self.tableView indexPathForCell:cell];
+    
+    SWActivityList *act = self.dataArray[indexPatch.row];
+    
+    usweVC.userString = act.createBy.objectId;
+    
+    
+    NSLog(@"usweVC%@",usweVC.userString);
+    
+    [self.navigationController pushViewController:usweVC animated:YES];
     
 }
 
