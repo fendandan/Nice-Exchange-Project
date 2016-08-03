@@ -29,7 +29,7 @@
 
 }
 
-- (void) requestData {
+- (void)requestData {
 {
     
     AVQuery *avq =  [AVQuery queryWithClassName:@"_User"];

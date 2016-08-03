@@ -136,7 +136,8 @@
     // 查询活动
     AVQuery *Q = [SWActivityList query];
     [Q addDescendingOrder:@"createdAt"]; // 按时间 新到老
-    [Q includeKey:@"createBy"];
+    AVQuery *Q2 = [SWActivityList query];
+    [Q2 includeKey:@"createBy"];
     Q.limit = 20;
     
     AVQuery *q1 = [SWActivityList query];
@@ -148,7 +149,7 @@
     AVQuery *q4 = [SWActivityList query];
     [q4 whereKey:@"label" equalTo:@"吃喝"];
     AVQuery *qq = [AVQuery orQueryWithSubqueries:[NSArray arrayWithObjects:q1, q2, q3, q4, nil]];
-    AVQuery *aQ = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects:Q, qq,nil]];
+    AVQuery *aQ = [AVQuery andQueryWithSubqueries:[NSArray arrayWithObjects: Q, Q2, qq,nil]];
     [aQ findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
 //        SWLog( @" ++++++++ %@",objects);
@@ -166,27 +167,31 @@
 
 
 //关注点击事件
--(void)movieTableViewplayBtnClickend:(MovieTableViewCell *)cell
+- (void)readTableViewPlayBtnClickend:(MovieTableViewCell *)cell
 {
-    
     NSIndexPath * indexPath = [self.tableView indexPathForCell:cell];
     SWLog(@"indexPath %@",indexPath);
     // suppose we have a user we want to follow
     SWActivityList *activity = self.dataArray[indexPath.row];
     
-    if (cell.attentionBtn.selected == YES) {
+    if (cell.attentionBtn.selected == YES && LCManager.shareManagerB == NO) {
         
         UIAlertController *uialert = [UIAlertController alertControllerWithTitle: nil message:@"不再关注此用户" preferredStyle:(UIAlertControllerStyleAlert)];
         
+        
         UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleDefault) handler:nil];
+        
+        
         
         UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
             
-            // -------------------------------------------------------------
+// -------------------------------------------------------------
+//            [GiFHUD setGifWithImageName:@"pika.gif"];
+//            [GiFHUD show];
             [LCManager lcToCancelFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
                 cell.attentionBtn.selected = NO;
-                [self.rootVC.followedArray removeObject:activity.createBy];
-                [self.tableView reloadData];
+                [self.rootVC.followArray removeObject:activity.createBy];
+                [self dudue];
                 LCManager.shareManagerB = NO; // 置为可调用状态
             }];
             
@@ -198,25 +203,31 @@
         [self presentViewController:uialert animated:YES completion:nil];
         
         
-    }else{
+    }else if (cell.attentionBtn.selected == NO  && LCManager.shareManagerB == NO){
         
-        // -------------------------------------------------------------
+// -------------------------------------------------------------
+//        [GiFHUD setGifWithImageName:@"pika.gif"];
+//        [GiFHUD show];
         [LCManager lcToFollowOtherUserWithActivityList:activity completion:^(NSArray *mArray) {
             
             cell.attentionBtn.selected = YES;
-            [self.rootVC.followedArray addObject:activity.createBy];
-            [self.tableView reloadData];
+            [self.rootVC.followArray addObject:activity.createBy];
+            [self dudue];
             LCManager.shareManagerB = NO; // 置为可调用状态
             
         }];
     }
 }
 
-
-
-
-
-
+-(void)dudue {
+    
+    if (self.dataArray.count > 0) {
+        [self.dataArray removeAllObjects];
+        [self.tableView reloadData];
+        [self requestData];
+    }
+    
+}
 
 
 
@@ -226,10 +237,21 @@
 - (void)movieTableViewUserNameBtnClickend:(MovieTableViewCell *)cell
 {
     
-    SWUserDetailViewController *swVC = [SWUserDetailViewController new];
+    cell.ImageView.userInteractionEnabled = YES;
+    SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
     
-    [self.navigationController pushViewController:swVC animated:YES];
+    //根据 cell 获得 indexPatch
+    NSIndexPath *indexPatch = [self.tableView indexPathForCell:cell];
     
+    SWActivityList *act = self.dataArray[indexPatch.row];
+    
+    SWLog(@" __ ___ _____ %@",act.createBy.objectId);
+    usweVC.userString = act.createBy.objectId;
+    
+    
+    NSLog(@"usweVC%@",usweVC.userString);
+    
+    [self.navigationController pushViewController:usweVC animated:YES];
 }
 
 
@@ -238,9 +260,21 @@
 - (void)movieTableViewUserImageViewClickend:(MovieTableViewCell *)cell
 {
 
-    SWUserDetailViewController *swVC = [SWUserDetailViewController new];
+    cell.ImageView.userInteractionEnabled = YES;
+    SWUserDetailViewController *usweVC = [SWUserDetailViewController new];
     
-    [self.navigationController pushViewController:swVC animated:YES];
+    //根据 cell 获得 indexPatch
+    NSIndexPath *indexPatch = [self.tableView indexPathForCell:cell];
+    
+    SWActivityList *act = self.dataArray[indexPatch.row];
+    
+    SWLog(@" __ ___ _____ %@",act.createBy.objectId);
+    usweVC.userString = act.createBy.objectId;
+    
+    
+    NSLog(@"usweVC%@",usweVC.userString);
+    
+    [self.navigationController pushViewController:usweVC animated:YES];
     
 }
 

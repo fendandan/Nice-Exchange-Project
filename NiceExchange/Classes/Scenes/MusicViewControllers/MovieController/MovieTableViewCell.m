@@ -24,7 +24,7 @@
 
 - (IBAction)attentionBtn:(UIButton *)sender {
     
-    if (_delegate &&[_delegate respondsToSelector:@selector(movieTableViewplayBtnClickend:)]) {
+    if (_delegate && [_delegate respondsToSelector:@selector(movieTableViewplayBtnClickend:)]) {
         
         [_delegate movieTableViewplayBtnClickend:self];
     }

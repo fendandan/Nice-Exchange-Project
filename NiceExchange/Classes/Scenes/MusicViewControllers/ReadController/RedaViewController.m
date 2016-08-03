@@ -188,7 +188,15 @@
     }
 }
 
-
+-(void)dudue {
+    
+    if (self.dataArray.count > 0) {
+        [self.dataArray removeAllObjects];
+        [self.tableView reloadData];
+        [self requestData];
+    }
+    
+}
 
 
 //点击title
@@ -267,15 +275,7 @@
 }
 
 
--(void)dudue {
-    
-    if (self.dataArray.count > 0) {
-        [self.dataArray removeAllObjects];
-        [self.tableView reloadData];
-        [self requestData];
-    }
-    
-}
+
 
 /*
 #pragma mark - Navigation

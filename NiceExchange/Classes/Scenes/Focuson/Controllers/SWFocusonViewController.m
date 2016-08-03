@@ -415,7 +415,7 @@
         
         
         SWActivityList *activity = self.dataArray[indexPath.row];
-        showVC.activity =  activity ;
+        showVC.activity = activity ;
         
         if (activity.createBy.displayName) {
             showVC.string = activity.createBy.displayName;
